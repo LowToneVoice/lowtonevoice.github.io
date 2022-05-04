@@ -1,0 +1,592 @@
+<html>
+
+<head>
+    <title>How to use Penrose Graphical Notation of Vectors and Tensors, with some formulas</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+
+        </script>
+</head>
+
+<body>
+    <header>
+        <h1 id="title-HowToUse">How to use</h1>
+        <h1 id="title-PenroseGraphicalNotation">Penrose Graphical Notation</h1>
+        <h2 id="title-forVectors">for vectors</h2>
+        <h3 id="title-withSomeFormulas">with some formulas</h3>
+    </header>
+
+    <section id="introduction">
+        <p>In this page, the knowledge about</p>
+        <ul>
+            <li>Difference of scalars and vectors</li>
+            <li>Definitions of dot/cross products</li>
+            <li>grad, div, rot, and Laplacian</li>
+            <li>index notation of vectors</li>
+            <li>Levi-Civita symbol and its contraction formula</li>
+        </ul>
+        <p>is necessary.</p>
+    </section>
+
+    <section id="index">
+        <h1>Index</h1>
+        <ul>
+            <li><a href="#fundamentals">Fundamentals</a></li>
+            <ul>
+                <li><a href="#DotProduct">Dot product</a></li>
+                <li><a href="#AntiSymmetry">Anti-symmetry</a></li>
+                <li><a href="#LeviCivitaSymbol">Levi-Civita Symbol</a></li>
+                <li><a href="#CrossProduct">Cross product</a></li>
+            </ul>
+            <li><a href="#FormulasWithProducts">Formulas with dot/cross products</a></li>
+            <ul>
+                <li><a href="#LeviCivitaContraction">Contraction formula for the Levi-Civita symbols</a></li>
+                <li><a href="#ScalarTriple">Scalar triple product</a></li>
+                <li><a href="#VectorTriple">Vector triple product</a></li>
+                <li><a href="#VectorQuadruple">Vector quadruple product</a></li>
+            </ul>
+            <li><a href="PartialDifferentialoperators">Partial differential operators</a></li>
+            <ul>
+                <li><a href="#Gradient">Gradient</a></li>
+                <li><a href="#Divergence">Divergence</a></li>
+                <li><a href="#Rotation">Rotation</a></li>
+                <li><a href="#Laplacian">Laplacian</a></li>
+                <li><a href="#LeibnitzRule">Leibnitz rule</a></li>
+                <li><a href="#ExchangeDifferentialOrder">Exchange of the differential order</a></li>
+            </ul>
+            <li><a href="#FormulasWithDifferentialOperators">Formulas with differential operators</a></li>
+            <ul>
+                <li><a href="#rotgrad-f">rot grad \(f\)</a></li>
+                <li><a href="#divrot-v">div rot \(\boldsymbol{v}\)</a></li>
+                <li><a href="#divgrad-f">div grad \(f\)</a></li>
+                <li><a href="#grad-fg">grad \((fg)\)</a></li>
+                <li><a href="#div-fv">div \(f\boldsymbol{v}\)</a></li>
+                <li><a href="#div-uv">div \(\boldsymbol{u}\times\boldsymbol{v}\)</a></li>
+                <li><a href="#rot-fv">rot \(f\boldsymbol{v}\)</a></li>
+                <li><a href="#rot-uv">rot \(\boldsymbol{u}\times\boldsymbol{v}\)</a></li>
+                <li><a href="#rotrot-v">rot rot \(\boldsymbol{v}\)</a></li>
+                <li><a href="#Laplac-fg">\(\Delta (fg)\)</a></li>
+            </ul>
+            <li><a href="FormulasWithDerivativesOfPositionVectors">Formulas with derivatives of position vectors</a></li>
+            <ul>
+                <li><a href="#div-r">div \(\boldsymbol{r}\)</a></li>
+                <li><a href="#rot-r">rot \(\boldsymbol{r}\)</a></li>
+            </ul>
+        </ul>
+    </section>
+
+    <section>
+        <h1 id="fundamentals">Fundamentals</h1>
+        <div class="subsection">
+            <p>A vector has a stick on it, but a scalar does not.</p>
+            <figure>
+                <img src="images/vecandscalar.png" alt="How to represent a scalar and a vector.">
+                <figcaption></figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection">
+            <p>Scalar doubling can be represented by simply putting the items side by side.</p>
+            <figure>
+                <img src="images/fgv.png" alt="">
+                <!-- <figcaption>Scalar doubling represented by simply putting the items side by side.</figcaption> -->
+            </figure>
+        </div>
+
+        <div class="subsection" id="DotProduct">
+            <h2>Dot product</h2>
+            <p>Dot product is represented by connecting sticks of two vectors</p>
+            <figure>
+                <img src="images/udotv.png" alt="dot product">
+                <figcaption>\(\boldsymbol{u}\cdot\boldsymbol{v}=u_i\delta_{ij}v_j\).<br>The stick represents Kronecker
+                    delta
+                    \(\delta_{ij}\).</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="AntiSymmetry">
+            <h2>Anti-symmetry</h2>
+            <p>The horizontal thick line represents antisymmetry. Odd substitution of the position og the vertical stick
+                reverses the sign.</p>
+            <figure>
+                <img src="images/eps_xy.png" alt="">
+                <!-- <figcaption>Antisymmetry represented by thick line.</figcaption> -->
+            </figure>
+        </div>
+
+        <div class="subsection" id="LeviCivitaSymbol">
+            <h2>Levi-Civita symbol</h2>
+            <p>Levi-Civita symbol is shown as following:</p>
+            <figure>
+                <img src="images/eps_ijk.png" alt="Levi Civita symbol">
+                <figcaption>Levi-Civita symbol \(\epsilon_{ijk}\).</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="CrossProduct">
+            <h2>Cross product</h2>
+            <p>Using this notation, cross product is represented as following:</p>
+            <figure>
+                <img src="images/ucrosv.png" alt="cross product of vectors u and v">
+                <figcaption>\(\boldsymbol{u}\times\boldsymbol{v}=\epsilon_{ijk}\boldsymbol{e}_iu_jv_k\)</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="FormulasWithProducts">
+        <h1>Formulas with dot/cross products</h1>
+
+        <div class="subsection" id="LeviCivitaContraction">
+            <h2>Contraction formula for the Levi-Civita symbols</h2>
+            <figure>
+                <img src="images/levicivita-contract.png" alt="Contraction formula for the Levi-Civita symbol">
+                <figcaption>\(\epsilon_{ijm}\epsilon_{klm}=\delta_{ik}\delta_{jl}-\delta_{il}\delta_{jk}\)</figcaption>
+            </figure>
+            <p>It is recommended that this formula is memorized.</p>
+        </div>
+
+        <div class="subsection" id="ScalarTriple">
+            <h2>Scalar triple product</h2>
+            <p>Even permutation:</p>
+            <figure>
+                <img src="images/scalar-triple-even.png" alt="Scalar triple product (even permutation)">
+                <figcaption>\(A\cdot(B\times C)=B\cdot(C\times A)=C\cdot(A\times B)\)</figcaption>
+            </figure>
+            <p>Odd permutation:</p>
+            <figure>
+                <img src="images/scalar-triple-odd.png" alt="Scalar triple product (odd permutation).">
+                <figcaption>\(A\cdot(C\times B)=B\cdot(A\times C)=C\cdot(B\times A)=-A\cdot(B\times C)\)</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="VectorTriple">
+            <h2>Vector triple product</h2>
+            <p>With the contraction formula of Levi-Civita symbol.</p>
+            <figure>
+                <img src="images/vec-triple.png" alt="Vector triple product">
+                <figcaption>\(A\times(B\times C)=B(A\cdot C)-C(A\cdot B)\)</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="VectorQuadruple">
+            <h2>Vector quadruple product</h2>
+            <p>From the contraction formula of Levi-Civita symbol.</p>
+            <figure>
+                <img src="images/quadruple.png" alt="Vector quadruple product">
+                <figcaption>
+                    \(
+                    \begin{array}{rcl}
+                    (A\times B)\cdot(C\times B)
+                    &=&
+                    \mathrm{det}\left(
+                    \begin{matrix}
+                    A\cdot C & A\cdot D
+                    \\
+                    B\cdot C & B\cdot D
+                    \end{matrix}
+                    \right)
+                    \\
+                    &=&
+                    (A\cdot C)(B\cdot D)-(A\cdot D)(B\cdot C)
+                    \end{array}
+                    \)
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="PartialDifferentialOperators">
+        <h1>Partial differential operators</h1>
+        <p>The differential operator in Penrose graphical notation is nabla \(\nabla\), represented by a circle around
+            the scalars/vectors to be differentiated and a stick connected to the circle.</p>
+
+        <div class="subsection" id="Gradient">
+            <h2>Gradient</h2>
+            <p>Circle contains a scalar f.</p>
+            <figure>
+                <img src="images/grad.png" alt="gradient f">
+                <figcaption>\(\mathrm{grad}\:f\)</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="Divergence">
+            <h2>Divergence</h2>
+            <p>Connecting the sticks of vector \(\boldsymbol{v}\) and nabla.</p>
+            <figure>
+                <img src="images/div.png" alt="Divergence v">
+                <figcaption>\(\mathrm{div}\:\boldsymbol{v}=\nabla\cdot\boldsymbol{v}\)</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="Rotation">
+            <h2>Rotation</h2>
+            <p>Cross product of nabla and differential target.</p>
+            <figure>
+                <img src="images/rot.png" alt="rotation v">
+                <figcaption>\(\mathrm{rot}\:\boldsymbol{v}=\nabla\times\boldsymbol{v}\)</figcaption>
+            </figure>
+            <p>The root of the stick from the circle corresponding to nabla is <b>always connected to the immediate left
+                    of the differential target</b>.</p>
+        </div>
+
+        <div class="subsection" id="Laplacian">
+            <h2>Laplacian</h2>
+            <p>Both of scalars and vectors can be differentiated.</p>
+            <figure>
+                <img src="images/laplacian.png" alt="Laplacians of scalar f and vector v">
+                <figcaption>\(\nabla^2=\nabla\cdot\nabla=\Delta\)</figcaption>
+            </figure>
+            <p>From the upper figure we can see \(\mathrm{div\:grad}\:f=\Delta f\) at a glance.</p>
+        </div>
+
+        <div class="subsection" id="LeibnitzRule">
+            <h2>Leibnitz rule</h2>
+            <figure>
+                <img src="images/leibnitz.png" alt="Leibnitz rule">
+                <figcaption>\(\nabla(AB)=(\nabla A)B+A(\nabla B)\)</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="ExchangeDifferentialOrder">
+            <h2>Exchange of the differential order</h2>
+            <p>If the function f is of \(C^2\) class (i.e. f, f' and f'' exists and are continuous), the order of
+                derivatives can be
+                exchanged.</p>
+            <figure>
+                <img src="images/diff-change.png" alt="differential order exchange.">
+            </figure>
+            <p>From here, the following formulas in which two circles appear basically assume the \(C^2\) class,
+                regardless of whether Penrose graphical notation is used or not.</p>
+        </div>
+    </section>
+
+    <section id="FormulasWithDifferentialOperators">
+        <h1>Formulas with differential operators</h1>
+        <p>All the formulas can be calculated only with the five following transformations:</p>
+        <ol>
+            <li>Leibnitz rule</li>
+            <li>Contraction of Levi-Civita symbols</li>
+            <li>Antisymmetry (odd permutation)</li>
+            <li>Even permutation</li>
+            <li>Exchange of the differential order</li>
+        </ol>
+        <p>You can prove all formulas as well as that in the index notation.</p>
+
+        <div class="subsection" id="rotgrad-f">
+            <h2>\(\mathrm{rot\:grad}\:f=\nabla\times\nabla f=0\)</h2>
+            <p>With the exchange of the differential order and antisymmetry (odd permutation).</p>
+            <figure>
+                <img src="images/rot-grad.png" alt="rotation gradient f">
+                <caption>Differential order exchange in the first line, antisymmetry on the left hand side in the second
+                    line.</caption>
+            </figure>
+            <p>Since the right hand sides are opposite signs of each other, the value is 0. </p>
+        </div>
+
+        <div class="subsection" id="divrot-v">
+            <h2>\(\mathrm{div\:rot}\:\boldsymbol{v}=\nabla\cdot(\nabla\times\boldsymbol{v})=0\)</h2>
+            <p>With the differential order exchange and antisymmetry.</p>
+            <figure>
+                <img src="images/div-rot.png" alt="divergence rotation v">
+                <figcaption>Differential order exchange in the first line, antisymmetry in the second line.</figcaption>
+            </figure>
+            <p>Since the right hand sides are opposite signs of each other, the value is 0. </p>
+        </div>
+
+        <div class="subsection" id="divgrad-f">
+            <h2>\(\mathrm{div\:grad}\:f=\Delta f\)</h2>
+            <p>This is confirmed earlier, but should be reiterated as a formula.</p>
+            <figure>
+                <img src="images/divgrad-f.png" alt="divergence gradient f">
+            </figure>
+        </div>
+
+        <div class="subsection" id="grad-fg">
+            <h2>\(\begin{array}{rcl}\mathrm{grad}\:(fg)&=&(\mathrm{grad}\:f)g+f(\mathrm{grad}\:g);\\
+                \nabla(fg)&=&(\nabla f)g+f(\nabla g)\end{array}\)</h2>
+            <p>With Leibnitz rule.</p>
+            <figure>
+                <img src="images/grad-fg.png" alt="gradient fg">
+                <!-- <figcaption></figcaption> -->
+            </figure>
+        </div>
+
+        <div class="subsection" id="div-fv">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{div}(f\boldsymbol{v})
+                &=&
+                (\mathrm{grad}\:f)\cdot\boldsymbol{v}
+                +
+                f(\mathrm{div}\:\boldsymbol{v});
+                \\
+                \nabla\cdot(f\boldsymbol{v})
+                &=&
+                (\nabla f)\cdot\boldsymbol{v}
+                +
+                f(\nabla\cdot\boldsymbol{v})
+                \end{array}
+                \)
+            </h2>
+            <p>With Leibnitz rule.</p>
+            <figure>
+                <img src="images/div-fv.PNG" alt="divergence fv">
+            </figure>
+        </div>
+
+        <div class="subsection" id="div-uv">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{div}(\boldsymbol{u}\times\boldsymbol{v})
+                &=&
+                (\mathrm{rot}\:\boldsymbol{u}\cdot\boldsymbol{v})
+                -
+                \boldsymbol{u}\cdot(\mathrm{rot}\:\boldsymbol{v});
+                \\
+                \nabla\cdot(\boldsymbol{u}\times\boldsymbol{v})
+                &=&
+                (\nabla\times\boldsymbol{u})\cdot\boldsymbol{v}
+                -
+                \boldsymbol{u}\cdot(\nabla\times\boldsymbol{v})
+                \end{array}
+                \)
+            </h2>
+            <p>With Leibnitz rule.</p>
+            <figure>
+                <img src="images/div-uv.png" alt="divergence u cross v">
+                <figcaption>The second line is odd permutation of the first line.</figcaption>
+            </figure>
+            <p>After Leibnitz rule, the second term is transformed using antisymmetry to follow the principle "the root
+                of the stick of nabla is always immediate left of the differential target."</p>
+        </div>
+
+        <div class="subsection" id="rot-fv">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{rot}(f\boldsymbol{v})
+                &=&
+                (\mathrm{grad}\:f)\times\boldsymbol{v}
+                +
+                f(\mathrm{rot}\:\boldsymbol{v});
+                \\
+                \nabla\times(f\boldsymbol{v})
+                &=&
+                (\nabla f)\times\boldsymbol{v}
+                +
+                f(\nabla\times\boldsymbol{v})
+                \end{array}
+                \)
+            </h2>
+            <p>With Leibnitz rule.</p>
+            <figure>
+                <img src="images/rot-fv.png" alt="rotation fv">
+                <figcaption>Scalar \(f\) can be placed anywhere.</figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="rot-uv">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{rot}\:(\boldsymbol{u}\times\boldsymbol{v})
+                &=&
+                (\boldsymbol{v}\cdot\mathrm{grad})\boldsymbol{u}
+                +
+                \boldsymbol{u}\:\mathrm{div}\:\boldsymbol{v}
+                -
+                \boldsymbol{v}\:\mathrm{div}\:\boldsymbol{u}
+                -
+                (\boldsymbol{u}\cdot\mathrm{grad})\boldsymbol{v};
+                \\
+                \nabla\times(\boldsymbol{u}\times\boldsymbol{v})
+                &=&
+                (\boldsymbol{v}\cdot\nabla)\boldsymbol{u}
+                +
+                \boldsymbol{u}(\nabla\cdot\boldsymbol{v})
+                -
+                \boldsymbol{v}(\nabla\cdot\boldsymbol{u})
+                -
+                (\boldsymbol{u}\cdot\nabla)\boldsymbol{v}
+                \end{array}
+                \)
+            </h2>
+            <p>With Levi-Civita contraction and Leibnitz rule.</p>
+            <figure>
+                <img src="images/rot-uv.png" alt="rotation u cross v">
+                <figcaption>Starting from the first line, even permutation, Levi-Civita contraction, and Leibnitz rule.
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="subsection" id="rotrot-v">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{rot}\:(\mathrm{rot}\:\boldsymbol{v})
+                &=&
+                \mathrm{grad}\:(\mathrm{div}\:\boldsymbol{v})
+                -
+                \Delta\boldsymbol{v};
+                \\
+                \nabla\times(\nabla\times\boldsymbol{v})
+                &=&
+                \nabla(\nabla\cdot\boldsymbol{v})
+                -
+                \nabla^2\boldsymbol{v}
+                \end{array}
+                \)
+            </h2>
+            <p>With Levi-Civita contraction and differential order exchange.</p>
+            <figure>
+                <img src="images/rotrot.png" alt="rotation rotation v">
+                <figcaption>Differential order exchange from the second to third line.</figcaption>
+            </figure>
+            <p>You have to exchange the differential order because there is no operation corresponding to the first term
+                in the second line.</p>
+        </div>
+
+        <div class="subsection">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{grad}\:(\boldsymbol{u}\cdot\boldsymbol{v})
+                &=&
+                \boldsymbol{v}\times(\mathrm{rot}\:\boldsymbol{u})
+                +
+                (\boldsymbol{v}\cdot\mathrm{grad})\boldsymbol{u}
+                +
+                \boldsymbol{u}\times(\mathrm{rot}\:\boldsymbol{v})
+                +
+                (\boldsymbol{u}\cdot\mathrm{grad})\boldsymbol{v}
+                \\
+                \nabla(\boldsymbol{u}\cdot\boldsymbol{v})
+                &=&
+                \boldsymbol{v}\times(\nabla\times\boldsymbol{u})
+                +
+                (\boldsymbol{v}\cdot\nabla)\boldsymbol{u}
+                +
+                \boldsymbol{u}\times(\nabla\times\boldsymbol{v})
+                +
+                (\boldsymbol{u}\cdot\nabla)\boldsymbol{v}
+                \end{array}
+                \)
+            </h2>
+            <p>This is much more difficult to prove. First, Leibnitz rule.</p>
+            <figure>
+                <img src="images/grad-uv1.png" alt="">
+                <figcaption>No operator corresponds to R.H.S.</figcaption>
+            </figure>
+            <p>Since there is no operator corresponding to the right hand side, we consider the following equation.</p>
+            <figure>
+                <img src="images/grad-uv2.png" alt="">
+                <figcaption>The first term of R.H.S. is the first term of the former equation.</figcaption>
+            </figure>
+            <p>Therefore, we get this notation of the formula.</p>
+            <figure>
+                <img src="images/div-uv.png" alt="divergence u dot v">
+            </figure>
+        </div>
+
+        <div class="subsection" id="Laplac-fg">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \Delta(fg)
+                &=&
+                f(\Delta g)
+                +
+                2(\mathrm{grad}\:f)\cdot(\mathrm{grad}\:g)
+                +
+                (\Delta f)g;
+                \\
+                \nabla^2(fg)
+                &=&
+                f(\nabla^2g)
+                +
+                2(\nabla f)\cdot(\nabla g)
+                +
+                (\nabla^2 f)g
+                \end{array}
+                \)
+            </h2>
+            <p>You can get the formula by twice Leibnitz rule.</p>
+        </div>
+    </section>
+
+    <section id="FormulasWithDerivativesOfPositionVectors">
+        <h1>Formulas with derivatives of position vectors</h1>
+        \begin{align}
+        \dfrac{\partial}{\partial r_i}r_j\boldsymbol{e}_j
+        =
+        \delta_{i,j}\boldsymbol{e}_j
+        \end{align}
+        <p>This formula is represented as the following notation: the circle and position vector disappear, instead the
+            line is connected.</p>
+        <figure>
+            <img src="images/grad-r.PNG" alt="">
+        </figure>
+        <p>With this equation, some formulas are proved.</p>
+
+        <div class="subsection" id="div-r">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{div}\:\boldsymbol{r}
+                &=&
+                \delta_{i,i}
+                &=&
+                3;
+                \\
+                \nabla\cdot\boldsymbol{r}
+                &=&
+                \delta_{i,i}
+                &=&
+                3
+                \end{array}
+                \)
+            </h2>
+            <figure>
+                <img src="images/div-r.PNG" alt="divergence r">
+            </figure>
+            <p>The ring of the right hand side is Kronecker delta of which both ends are connected, thus
+                \(\delta_{i,i}\). The answer 3
+                is the number of dimension. In 4-dim \(\mathrm{div}\:\boldsymbol{r}=4\), in n-dim
+                \(\mathrm{div}\:\boldsymbol{r}=n\).</p>
+        </div>
+
+        <div class="subsection" id="rot-r">
+            <h2>
+                \(
+                \begin{array}{rcl}
+                \mathrm{rot}\:\boldsymbol{r}&=&0
+                \\
+                \nabla\times\boldsymbol{r}&=&0
+                \end{array}
+                \)
+            </h2>
+            <figure>
+                <img src="images/rot-r.PNG" alt="rotation r">
+            </figure>
+            <p>Since the right hand side represents \(\epsilon_{ijk}\delta_{j,k}=\epsilon_{ijj}=0\).</p>
+        </div>
+    </section>
+
+    <footer>
+        <h3>© Teion</h3>
+        <!-- <i class="fa-brands fa-twitter" class="faa-vertical animated-hover"></i> -->
+        <!-- <a href="https://twitter.com/teion_burns">@teion</a> -->
+        <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="#">Page Top</a></p>
+        <!-- Google Form の方が楽でいい？-->
+    </footer>
+</body>
+
+</html>

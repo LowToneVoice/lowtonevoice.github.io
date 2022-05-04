@@ -1,0 +1,128 @@
+html
+{
+    body
+    {
+        margin: 0;
+        height: auto;
+
+        header
+        {
+            background-color: darkcyan;
+            color: white;
+            padding: 15pt;
+            #title-HowToUse
+            {
+                font-size: 40;
+                height: 5px;
+                margin: 0;
+                line-height: 0;
+            }
+            #title-PenroseGraphicalNotation
+            {
+                font-size: 50;
+                margin: 0;
+                height: 15px;
+                line-height: 0  pt;
+            }
+            #title-forVectors
+            {
+                font-size: 30;
+                margin-bottom: 0;
+            }
+            #title-withSomeFormulas
+            {
+                font-size: 25;
+                margin: 0;
+                line-height: 0;
+            }
+        }
+
+        #index
+        {
+            li
+            {
+                list-style-type: none;
+                padding: 10px;
+            }
+        }
+
+        section
+        {
+            width: 90%;
+            padding: 50pt;
+
+            div
+            {
+                margin-bottom: 80px;
+            }
+
+            h1
+            {
+                font-size: 36;
+            }
+
+            @media (max-width: 320px) {
+                h2
+                {
+                    font-size: 25;
+                }
+
+                p
+                {
+                    font-size: 20;
+                }
+
+                ol
+                {
+                    font-size: 20;
+                }
+            }
+            @media (min-wdth: 320px) {
+                h2
+                {
+                    font-size: 15;
+                }
+
+                p
+                {
+                    max-width: 80%;
+                    font-size: 12;
+                }
+
+                ol
+                {
+                    font-size: 12;
+                }
+            }
+
+
+            figure
+            {
+                text-align: center;
+                color: rgb(70, 70, 70);
+                width: 90%;
+                max-width: 500px;
+                img
+                {
+                    width: 100%;
+                }
+            }
+        }
+
+        footer
+        {
+            background-color: darkcyan;
+            color: white;
+            padding: 15pt;
+
+            a
+            {
+                color: white;
+                :visited
+                {
+                    color: azure;
+                }
+            }
+        }
+    }
+}
