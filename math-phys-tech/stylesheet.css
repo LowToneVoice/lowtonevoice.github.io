@@ -1,0 +1,54 @@
+html body {
+  margin: 0;
+  height: auto;
+}
+
+html body header {
+  background-color: darkcyan;
+  color: white;
+  padding: 15pt;
+}
+
+html body #index li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+html body section {
+  width: 90%;
+  padding: 50pt;
+}
+
+html body section div {
+  margin-bottom: 80px;
+}
+
+html body section h1 {
+  font-size: 36;
+}
+
+html body section figure {
+  text-align: center;
+  color: #464646;
+  width: 90%;
+  max-width: 500px;
+}
+
+html body section figure img {
+  width: 100%;
+}
+
+html body footer {
+  background-color: darkcyan;
+  color: white;
+  padding: 15pt;
+}
+
+html body footer a {
+  color: white;
+}
+
+html body footer a :visited {
+  color: azure;
+}
+/*# sourceMappingURL=stylesheet.css.map */
