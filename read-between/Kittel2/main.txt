@@ -1,0 +1,8 @@
+\documentclass[]{jsarticle}
+\usepackage[]{amsmath,amssymb}
+\usepackage[]{graphicx}
+\begin{document}
+
+
+p. 321 
+\end{document}
