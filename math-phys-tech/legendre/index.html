@@ -1,0 +1,122 @@
+<html lang="ja">
+
+<head>
+    <title>ルジャンドル多項式と周辺事項に関する覚書</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>ルジャンドル多項式と</h1>
+        <h1>周辺事項に関する覚書</h1>
+    </header>
+
+    <section>
+        <p>
+            <a href="ver1-0-0.pdf">pdf版はこちらから。</a>
+            相互参照やハイパーリンクなどをしっかり入れています。
+            また学習進度に合わせてレベル分けなども行っていますので、ぜひご参照ください。
+        </p>
+        <p>
+            誤植・質問等ありましたら、<a href="https://note.com/teion_burns/n/nfc8de0fab123">こちらに</a>遠慮なくご連絡ください。
+        </p>
+    </section>
+
+    <section id="index">
+        <h1>目次</h1>
+            <ul>
+                <li><a href="part1/index.html">第I部 はじめに</a></li>
+                <ul>
+                    <li><a href="part1/index.html#how-to-read">1 この記事の読み方</a></li>
+                    <li><a href="part1/index.html#knowledge">2 必要な知識</a></li>
+                    <li><a href="part1/index.html#bibliography">3 参考文献について</a></li>
+                    <ul>
+                        <li><a href="part1/index.html#bib-meet">3.1 ルジャンドル多項式と出会うための参考文献</a></li>
+                        <li><a href="part1/index.html#bib-know">3.2 ルジャンドル多項式とお付き合いを始めるための参考文献</a></li>
+                        <li><a href="part1/index.html#bib-friend">3.3 ルジャンドル多項式とマブダチになるための参考文献</a></li>
+                    </ul>
+                    <li><a href="part1/appear/index.html">4 ルジャンドル多項式の登場場面</a></li>
+                    <ul>
+                        <li><a href="part1/appear/index.html#field">4.1 静電場決定問題</a></li>
+                        <li><a href="part1/appear/index.html#wave">4.2 定常的な波動方程式</a></li>
+                        <li><a href="part1/appear/index.html#schroedinger">4.3 中心力ポテンシャル問題の空間に関するシュレディンガー方程式</a></li>
+                        <li><a href="part1/appear/index.html#momentum">4.4 軌道角運動量の固有状態の極座標表示</a></li>
+                        <li><a href="part1/appear/index.html#polynomial">4.5 多重極展開</a></li>
+                    </ul>
+                </ul>
+                <li><a href="part2/index.html">第II部 斉次ポアソン方程式のためのルジャンドル</a></li>
+                <ul>
+                    <li><a href="part2/poisson-analys/index.html">5 極座標系の斉次ポアソン方程式の解析</a></li>
+                    <ul>
+                        <li><a href="part2/poisson-analys/index.html#poissonanalys-separate">5.1 変数分離</a></li>
+                        <li><a href="part2/poisson-analys/index.html#poissonanalys-eq">5.2 変数分離された分布のみたす微分方程式</a></li>
+                    </ul>
+                    <li><a href="part2/legendre-feature/index.html">6 ルジャンドルの陪微分方程式から得られる性質</a></li>
+                    <ul>
+                        <li><a href="part2/legendre-feature/index.html#series">6.1 陪微分方程式の級数展開</a></li>
+                        <li><a href="part2/legendre-feature/index.html#orthog">6.2 直交性</a></li>
+                        <li><a href="part2/legendre-feature/index.html#boundary">6.3 ポアソン方程式の一般的な境界条件とパラメーター \(\lambda, m\) の制限</a></li>
+                    </ul>
+                    <li><a href="part2/rodrigues/index.html">7 ロドリゲスの公式</a></li>
+                    <ul>
+                        <li><a href="part2/rodrigues/index.html#general">7.1 ロドリゲスの公式概論</a></li>
+                        <li><a href="part2/rodrigues/index.html#legendre">7.2 ロドリゲスの公式によるルジャンドル多項式</a></li>
+                        <li><a href="part2/rodrigues/index.html#asclegendre">7.3 ロドリゲスの公式によるルジャンドル陪多項式</a></li>
+                    </ul>
+                    <li><a href="part2/solution/index.html">8 極座標斉次ポアソン方程式一般解</a></li>
+                    <ul>
+                        <li><a href="part2/solution/index.html#problem">8.1 ポアソン方程式を解く問題の定式化</a></li>
+                        <li><a href="part2/solution/index.html#unique">8.2 解の一位性</a></li>
+                        <li><a href="part2/solution/index.html#search">8.3 ポアソン方程式の一般解探索</a></li>
+                    </ul>
+                    <li><a href="part2/sphharmonic/index.html">9 球面調和関数</a></li>
+                    <ul>
+                        <li><a href="part2/sphharmonic/index.html#property">9.1 球面調和関数の具体系</a></li>
+                    </ul>
+                </ul>
+                <li><a href="part3/index.html">第III部 固有方程式のためのルジャンドル</a></li>
+                <ul>
+                    <li><a href="part3/angular-momentum/index.html">軌道角運動量の固有関数</a></li>
+                    <ul>
+                        <li><a href="part3/angular-momentum/index.html#operator">極座標における軌道角運動量にまつわる演算子</a></li>
+                        <li><a href="part3/angular-momentum/index.html#property">軌道角運動量の固有波動関数の具体形</a></li>
+                    </ul>
+                </ul>
+                <li><a href="part4/index.html">第IV部 多項式展開のためのルジャンドル</a></li>
+                <ul>
+                    <li><a href="part4/gen-func/index.html">ルジャンドル多項式の母関数</a></li>
+                    <ul>
+                        <li><a href="part4/gen-func/index.html#leg-def">ルジャンドル多項式の母関数による定義</a></li>
+                        <li><a href="part4/gen-func/index.html#appropriate">母関数表示の妥当性</a></li>
+                    </ul>
+                </ul>
+                <li><a href="appendix/index.html">付録</a></li>
+                <ul>
+                    <li><a href="appendix/gamma-beta/index.html">&Gamma; 関数と &Beta; 関数</a></li>
+                    <ul>
+                        <li><a href="appendix/gamma-beta/index.html#gamma">&Gamma; 関数</a></li>
+                        <li><a href="appendix/gamma-beta/index.html#beta">&Beta; 関数</a></li>
+                        <li><a href="appendix/gamma-beta/index.html#integ">積分への応用</a></li>
+                    </ul>
+                </ul>
+            </ul>
+    </section>
+
+    <footer>
+        <p>Edited by 低音</p>
+        <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
+    </footer>
+</body>
+</html>

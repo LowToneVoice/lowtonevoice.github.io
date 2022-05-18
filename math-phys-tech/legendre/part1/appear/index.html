@@ -1,0 +1,354 @@
+<html lang="ja">
+
+<head>
+    <title>ルジャンドル多項式と周辺事項に関する覚書 ルジャンドル多項式の登場場面</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>ルジャンドル多項式と</h1>
+        <h1>周辺事項に関する覚書</h1>
+        <h2>第I部 第4章 ルジャンドル多項式の登場場面</h2>
+    </header>
+
+    <section>
+        <h1>第4章 ルジャンドル多項式の登場場面</h1>
+
+        <p>
+            ルジャンドル多項式は物理学徒が初めて本気で解析を迫られる超関数の一つですね。
+            電磁気学の静電場決定問題にはじまり、電気双極子の多重極展開、量子力学では中心力ポテンシャル問題のシュレディンガー方程式から軌道角運動量の固有状態にまで現れます。
+        </p>
+        <p>
+            大概のテキストはルジャンドル関数の話に入ると、説明を放棄して巻末に参考文献を掲げるか、本題を忘れるくらいの長ったらしい解説を展開していきます。
+            ただ、それって避けられないんですよ。
+            物理学徒にとって特殊関数は避けては通れないものの、天から降ってきたものと捉えて説明を読み飛ばしたくなるくらいに面倒な計算が待ち構えていますから。
+        </p>
+        <p>
+            ルジャンドル多項式は第一に<b style="color: red;">極座標系におけるポアソン方程式の解</b>に現れます。
+            上記の例で言えば静電場の決定問題と定常的な波動方程式、および中心力ポテンシャル問題のシュレディンガー方程式がこれにあたります。
+            軌道角運動量についても、このポアソン方程式の側面を一部引き継いでいます。
+            多重極展開は<b style="color: red;">ルジャンドル多項式の母関数を使った手法</b>です。
+            上記とはルジャンドル多項式の使い道を大きく異にしていることにお気をつけください。
+        </p>
+        <p>
+            本節の参考文献は砂川・猪木川合です。
+        </p>
+    </section>
+
+    <section id="index">
+        <h1>目次</h1>
+        <ul>
+            <li><a href="#field">4.1 静電場決定問題</a></li>
+            <li><a href="#wave">4.2 定常的な波動方程式</a></li>
+            <li><a href="#schroedinger">4.3 中心力ポテンシャル問題の空間に関するシュレディンガー方程式</a></li>
+            <li><a href="#momentum">4.4 軌道角運動量の固有波動関数の極座標表示</a></li>
+            <li><a href="#polynomial">4.5 多重極展開</a></li>
+        </ul>
+    </section>
+
+    <section id="field">
+        <h1>4.1 静電場決定問題</h1>
+        <p>
+            物理学徒が最初に極座標のラプラス方程式を解くことになるのが、静電場の決定問題です。
+            この手の問題で電場を決定するには、まず電荷分布に基づいて電位を計算し、その勾配を取ることで解決に持ち込みます。
+            つまり
+            \begin{align}
+            \Delta\phi(\boldsymbol{x})=-\rho(\boldsymbol{x})/\varepsilon
+            \end{align}
+            から \(\phi(\boldsymbol{x})\) を求め、
+            \begin{align}
+            \boldsymbol{E}(\boldsymbol{x})=-\nabla\phi(\boldsymbol{x})
+            \end{align}
+            とします。
+            ここでは \(\rho(\boldsymbol{x})\) で
+            \begin{align}
+                \tag{4.1}
+                \label{poisson}
+                \Delta\phi(\boldsymbol{x})=0
+            \end{align}
+            となる系を考えます。
+        </p>
+        <p>
+            \eqref{poisson}を極座標で \(\phi=R(r)\Theta(\theta)\Phi(\varphi)\) のように変数分離して得られる方程式のうち、<span style="color: blue;">\(\Theta\) (厳密には \(\Theta\) の変形) が満たすのがルジャンドルの陪微分方程式と呼ばれるもの</span>です。
+            \(R, \Phi\) についても解を求め、その積によって電位 \(\phi\) の一般解が求められます。
+            あとは適切な境界条件を付して未定係数を決定し、勾配を求めれば電場が得られますね。
+        </p>
+    </section>
+
+    <section id="wave">
+        <h1>4.2 定常的な波動方程式</h1>
+
+        <p>
+            電磁波をはじめとして、波動と呼ばれるものは基本的に波動方程式
+            \begin{align}
+                \left(
+                    \Delta
+                    -
+                    \frac{1}{c^2}\frac{\partial}{\partial^2}
+                \right)
+                \psi(\boldsymbol{x},t)
+                =0
+            \end{align}
+            を満たします。
+            定常波
+            \begin{align}
+                \psi(\boldsymbol{x},t)
+                =
+                e^{i\omega t}
+                \phi(\boldsymbol{x})
+            \end{align}
+            がこの方程式を満たすとき、方程式は
+            \begin{align}
+                \tag{4.2}
+                \label{wave helmholtz}
+                \Delta\phi(\boldsymbol{x})
+                =
+                -\frac{\omega^2}{c^2}\phi(\boldsymbol{x})
+            \end{align}
+            の形に書き換えられます。
+        </p>
+        <p>
+            静電場決定問題同様、\(\phi=R(r)\Theta(\theta)\Phi(\varphi)\) と変数分離して得られる方程式のうち、\(\Theta\) (厳密には \(\Theta\) の変形) が満たすのがルジャンドルの陪微分方程式です。
+        </p>
+    </section>
+
+    <section id="schroedinger">
+        <h1>4.3 中心力ポテンシャル問題の空間に関するシュレディンガー方程式</h1>
+
+        <p>
+            空間に関するシュレディンガー方程式
+            \begin{align}
+                \left(
+                    \frac{\hat{\boldsymbol{p}}^2}{2m}
+                    +
+                    \hat{V}(\boldsymbol{x})
+                \right)
+                \phi(\boldsymbol{x})
+                =
+                E\phi(\boldsymbol{x})
+            \end{align}
+            は運動量演算子の2乗が
+            \(
+                \hat{\boldsymbol{p}}^2
+                =
+                -\hbar^2\Delta
+            \)
+            で与えられるので、
+            \begin{align}
+                \left(
+                    -\frac{\hbar^2}{2m}\Delta
+                    +
+                    \hat{V}(\boldsymbol{x})
+                \right)
+                \phi(\boldsymbol{x})
+                =
+                E\phi(\boldsymbol{x})
+            \end{align}
+            となります。
+            水素原子型や調和振動子型のポテンシャルを考えれば、
+            \begin{align}
+                \tag{4.3}
+                \label{schroedinger}
+                \Delta\phi(\boldsymbol{x})
+                =
+                -\frac{2m}{\hbar^2}
+                (E-V(r))\phi(\boldsymbol{x})
+            \end{align}
+            の形になりますね。
+        </p>
+        <p>
+            §4.1, §4.2 同様に \(\phi=R(r)\Theta(\theta)\Phi(\varphi)\) と変数分離すれば、\(\Theta\) (厳密には \(\Theta\) の変形) がルジャンドルの陪微分方程式を満たします。
+            \(\Phi\) は簡単に解けますが、\(R\) については一般にはより複雑な方法を用いなければ解けません。
+            かくして \(R, \Theta, \Phi\) が求まれば、その積によって波動関数 \(\phi\) が得られます。
+        </p>
+    </section>
+
+    <section id="momentum">
+        <h1>4.4 軌道角運動量の固有波動関数の極座標表示</h1>
+
+        <p>
+            最終的には極座標のポアソン方程式を解くときに得られる関数に帰着しますが、そもそもの目的が異なるものとして量子力学で扱う1粒子の極座標における軌道角運動量の固有状態があります。
+        </p>
+        <p>
+            一般に角運動量 \(\hat{\boldsymbol{l}}\) は演算子のベクトルであり、空間3成分 \(\hat{l}_x, \hat{l}_y, \hat{l}_z\) を持っています。
+            特に \(\hat{\boldsymbol{l}}^2=\hat{l}_x^2+\hat{l}_y^2+\hat{l}_z^2\) の固有値から得られる量子数 \(l\) と \(\hat{l}_z\) の固有値 \(m\) で状態を書き分けます。
+            雑多な公式がありますが、まとめると
+            \(\require{physics}\)
+            \begin{array}{l}
+            \tag{4.4}
+            \label{momentum}
+                l=0, \dfrac{1}{2}, 1, \dfrac{3}{2}, \cdots
+                \\
+                m=-l, -l+1, \cdots, l-1, l
+                \\
+                \hat{\boldsymbol{l}}^2
+                =
+                \hat{l}_x^2+\hat{l}_y^2+\hat{l}_z^2
+                \\
+                \hat{l}_+=\hat{l}_x+i\hat{l}_y
+                \\
+                \hat{l}_-=\hat{l}_x-i\hat{l}_y
+                \\
+                \hat{\boldsymbol{l}}^2\ket{l,m}
+                =
+                l(l+1)\ket{l,m}
+                \\
+                \hat{l}_z\ket{l,m}
+                =
+                m\ket{l,m}
+                \\
+                \hat{l}_+\ket{l,m}
+                =
+                \sqrt{l(l+1)-m(m+1)}\ket{l,m+1}
+                \\
+                \hat{l}_-\ket{l,m}
+                =
+                \sqrt{l(l+1)-m(m-1)}\ket{l,m-1}
+            \end{array}
+            です。
+        </p>
+        <p>
+            1粒子系の角運動量として軌道角運動量 \(\hbar\hat{\boldsymbol{l}}=\hat{\boldsymbol{r}}\times\hat{\boldsymbol{p}}\) を考えましょう。
+            座標表示における演算子 \(\hat{\boldsymbol{l}}\) の具体形は煩瑣ですが高度ではない計算によって求められます。
+            固有状態の座標表示を極座標で \(Y_l^m(r,\theta,\varphi)=\bra{r,\theta,\varphi}\ket{l,m}\) と表したとき、\eqref{momentum}に応じて
+            \begin{array}{l}
+                \hat{\boldsymbol{l}}^2Y_l^m(r,\theta,\varphi)
+                =
+                l(l+1)Y_l^m(r,\theta,\varphi)
+                \\
+                \hat{l}_zY_l^m(r,\theta,\varphi)
+                =
+                mY_l^m(r,\theta,\varphi)
+                \\
+                \hat{l}_+Y_l^m(r,\theta,\varphi)
+                =
+                \sqrt{l(l+1)-m(m+1)}Y_l^{m+1}(r,\theta,\varphi)
+                \\
+                \hat{l}_-Y_l^m(r,\theta,\varphi)
+                =
+                \sqrt{l(l+1)-m(m-1)}Y_l^{m-1}(r,\theta,\varphi)
+            \end{array}
+            のように振る舞います。
+            この関数 \(Y_l^m(r,\theta,\varphi)\) の具体形を解析すると、§4.3で得られる関数形と一致します。
+            これによって中心力ポテンシャルのシュレディンガー方程式の解は軌道角運動量の固有状態の線型結合で表されることがわかります。
+        </p>
+    </section>
+
+    <section id="polynomial">
+        <h1>4.5 多重極展開</h1>
+
+        <p>
+            電荷密度 \(\rho(\boldsymbol{x}')\) が有界閉領域 \(\boldsymbol{x}'\in V\) でのみ値を持つとします。
+            すなわち、電荷は全て体積 \(V\) の中に入っています。
+            総電荷を
+            \begin{align}
+                Q=\int_Vd^3x'\rho(\boldsymbol{x}'')
+            \end{align}
+            としましょう。
+            このとき、\(V\) から十分離れた場所では、\(V\) の中に電荷密度 \(\rho\) が分布しているのと、\(V\) の中心に点電荷 \(Q\) があるのとで、区別がつきにくいと考えられます。
+        </p>
+        <div class="note">
+            <p>
+                夜空の星をアナロジーに使ってみましょう。
+                本来恒星は球体であって、地球からの見かけの輝度は表面上各点で異なります。
+                星の輝度が均質に分布している場合を考えても、星を見込んだときの中心に当たる点からの光が最も強く、外側ほど弱く見えるはずです。
+                しかし我々人間の目からすれば、点光源と区別がつきませんね。
+            </p>
+        </div>
+        <p>
+            この効果を記述するのが電荷密度分布の多重極展開です。
+        </p>
+        <p>
+            具体的な話をしましょう。
+            \begin{align}
+                \Delta G(\boldsymbol{x},\boldsymbol{x}')
+                =
+                -\delta(\boldsymbol{x}-\boldsymbol{x}')
+            \end{align}
+            を満たすグリーン関数を用いることで、ポアソン方程式
+            \begin{align}
+                \Delta\phi(\boldsymbol{x})
+                =
+                -\frac{\rho(\boldsymbol{x})}{\varepsilon}
+            \end{align}
+            の特解を
+            \begin{align}
+                \phi(\boldsymbol{x})
+                =
+                \int_Vd^3x'
+                G(\boldsymbol{x},\boldsymbol{x}')
+                \frac{\rho(\boldsymbol{x}')}{\varepsilon}
+            \end{align}
+            とすることができます。
+        </p>
+        <div class="note">
+            <p>
+                この手のグリーン関数についての解説は砂川 pp. 85- などを参照。
+            </p>
+        </div>
+        <p>
+            フーリエ変換などを用いることで
+            \begin{align}
+                G(\boldsymbol{x},\boldsymbol{x}')
+                =
+                \frac{1}{4\pi}
+                \frac{1}{|\boldsymbol{x}-\boldsymbol{x}'|}
+            \end{align}
+            が得られるので、\(\boldsymbol{x}, \boldsymbol{x}'\) のなす角を \(\theta\) とおけば、余弦定理から
+            \begin{array}{rcl}
+            \tag{4.6}
+                \phi(\boldsymbol{x})
+                &=&
+                \displaystyle
+                \int_V d^3x'
+                \dfrac{1}{4\pi\varepsilon}
+                \dfrac{\rho(\boldsymbol{x}')}{\sqrt{x^2+x'^2-2xx'\cos\theta}}
+                \\
+                &=&
+                \displaystyle
+                \dfrac{1}{4\pi\varepsilon}
+                \int_Vd^3x'
+                \dfrac{\rho(\boldsymbol{x}')}{\sqrt{1+\left(\dfrac{x'}{x}\right)^2-2\dfrac{x'}{x}\cos\theta}}
+            \end{array}
+            となります。
+            この被積分関数を
+            \begin{align}
+                \phi(\boldsymbol{x})
+                =
+                \dfrac{1}{x}
+                \sum_n\int_Vd^3x'
+                \rho(\boldsymbol{x}')
+                a_n(\cos\theta)
+                \left(\dfrac{x'}{x}\right)^n
+            \end{align}
+            の形にしたいですね。
+            例えば「\(O(x'/x)^2\) までなら無視して良い」などと判断できれば、電位の概算値、ひいてはおおよその電場を求めることができます。
+            この展開係数 \(a_n(\cos\theta)\) こそがルジャンドル多項式になります。
+        </p>
+    </section>
+
+    <section>
+        <a href="../../part2/index.html">次回 第II部 斉次ポアソン方程式のためのルジャンドル</a>
+    </section>
+
+
+    <footer>
+        <p>Edited by 低音</p>
+        <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
+    </footer>
+</body>
+
+</html>
