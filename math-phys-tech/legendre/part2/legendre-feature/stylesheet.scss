@@ -3,6 +3,11 @@ html {
         margin: 0;
         height: auto;
 
+        span.MJXc-display {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
         header {
             background-color: darkcyan;
             color: white;

@@ -1,0 +1,947 @@
+<html lang="ja">
+
+<head>
+    <title>ルジャンドル多項式と周辺事項に関する覚書 ルジャンドルの陪微分方程式から得られる性質</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>ルジャンドル多項式と</h1>
+        <h1>周辺事項に関する覚書</h1>
+        <h2>第II部 第6章 ルジャンドルの陪微分方程式から得られる性質</h2>
+    </header>
+
+    <section>
+        <h1>6 ルジャンドルの陪微分方程式から得られる性質</h1>
+        <p>
+            以下、微分についてはオイラーの記法 \(d/dx=D\) を用いることとします。
+        </p>
+        <p>
+            ここまでで我々はルジャンドルの陪微分方程式
+            \[
+                \tag{6.1}
+                \label{asc Leg eq}
+                L_\lambda^m[y]
+                =
+                (1-x^2)D^2y
+                -
+                2xDy
+                +
+                \left(
+                    \lambda
+                    -
+                    \dfrac{m^2}{1-x^2}
+                \right)
+                y
+                =0
+            \]
+            がどのような文脈で得られるのかをみてきました。
+            方程式はわかっても、その解(せめてその解の特性)が求まらなければ、物理への応用はできません。
+            とはいえ、この方程式の解を簡潔な形で与えることは容易ではありません。
+            そこで本節ではルジャンドル陪微分方程式からできる限り解の特性を検討していきます。
+        </p>
+        <p>
+            本節の参考文献は、砂川・柴田是常・金子松本です。
+        </p>
+    </section>
+
+    <section id="index">
+        <h1>目次</h1>
+        <ul>
+            <li><a href="#series">6.1 陪微分方程式の級数展開</a></li>
+            <ul>
+                <li><a href="#singularity">6.1.1 特異点解析</a></li>
+                <li><a href="#series-around-origin">6.1.2 原点周りの級数展開</a></li>
+            </ul>
+            <li><a href="#orthog">6.2 直交性</a></li>
+            <ul>
+                <li><a href="#orthog-func">6.2.1 関数の直交性</a></li>
+                <li><a href="#orthog-leg">6.2.2 ルジャンドルの陪微分方程式の解における直交性の証明</a></li>
+            </ul>
+            <li><a href="#boundary">6.3 ポアソン方程式の一般的な境界条件とパラメーター \(\lambda, m\) の制限</a></li>
+            <ul>
+                <li><a href="#boundary-phi">6.3.1 \(\phi\) に関する一般的な境界条件と \(m\) の制限</a></li>
+                <li><a href="boundary-theta">6.3.2 \(\theta\) に関するルジャンドルの微分方程式の一般的な境界条件と \(\lambda\) の制限</a></li>
+                <li><a href="boundary-theta-asc">6.3.3 \(\theta\) に関するルジャンドルの陪微分方程式の一般的な境界条件と \(\lambda\) の制限</a></li>
+            </ul>
+        </ul>
+    </section>
+
+    <section id="series">
+        <h1>6.1 陪微分方程式の級数展開</h1>
+        <p>
+            2 階線形常微分方程式の解析でまず行われるのが解の級数展開です。
+            具体的には\eqref{asc Leg eq}の解を
+            \[
+                P_\lambda^m(x)=\sum_{k\in\mathbb{Z}}a_k(x-x_0)^k
+            \]
+            の形に仮定して、微分方程式に代入して得られる \(a_k\) の漸化式などから一般解を求めようというものです。
+            一般の2回線形常微分方程式に対する解析については参考文献に任せるとして、ここではルジャンドルの陪微分方程式に特化した解析を行なっていきます。
+        </p>
+
+        <div class="subsection" id="singularity">
+            <h2>6.1.1 特異点解析</h2>
+            <p>
+                まずはじめに行うのが特異点解析です。
+                \eqref{asc Leg eq}の2回微分の係数を \(1\) にすると
+                \[
+                    \tag{6.2}
+                    \label{asc Leg eq monic}
+                    D^2y
+                    -\dfrac{2x}{(1-x)(1+x)}Dy
+                    +
+                    \left(
+                        \dfrac{\lambda}{(1-x)(1+x)}
+                        -
+                        \dfrac{m^2}{(1-x)^2(1+x)^2}
+                    \right)
+                    y
+                    =0
+                \]
+                となります。
+                以降の議論の簡単のために、1回微分と0回微分の係数を
+                \begin{array}{rcl}
+                    p(x)
+                    &=&
+                    -\dfrac{2x}{(1-x)(1+x)}
+                    \\
+                    q(x)
+                    &=&
+                    \dfrac{\lambda}{(1-x)(1+x)}
+                    -
+                    \dfrac{m^2}{(1-x)^2(1+x)^2}
+                \end{array}
+                としておきましょう。
+                「\(p, q\) が共に正則」とならないのは、\(x=\pm1, \infty\) なのは一目瞭然ですね。
+            </p>
+            <div class="note">
+                <p>
+                    実数の無限大は正負で2つあるが、この手の微分方程式論ではより広範に \(x\in\mathbb{C}\) で考えるため、無限遠点は1つである。
+                    複素数における無限大はリーマン球面を援用して解釈される。
+                    詳しくはアールフォルスなど複素解析の文献を参照のこと。
+                </p>
+            </div>
+            <p>
+                \(x=\pm1\) では
+                \begin{array}{l}
+                    \lim_{x\to\pm1}|(x\pm1)p(x)|\lt\infty
+                    \\
+                    \lim_{x\to\pm1}|(x\pm1)^2q(x)|\lt\infty
+                \end{array}
+                より、\(x=\pm1\) が確定特異点であることがわかります。
+            </p>
+            <div class="note">
+                <p>
+                    領域 \(S\subset\mathbb{C}\) 上の2階線形斉次微分方程式 \(u''+p(z)u'+q(z)u=0\) を考え、\(c\in S\) にて \(\lim_{z\to c}(z-c)p(z), \lim_{z\to c}(z-c)^2q(z)\) が共に有限である特異点 \(c\) を確定特異点と呼ぶ。
+                    これに当たらない特異点を不確定特異点と呼ぶ。
+                    金子松本参照。
+                </p>
+            </div>
+            <p>
+                無限遠点の特異点解析は \(\xi=1/x\to0\) とするのが常套手段です。
+                \eqref{asc Leg eq}に \(\xi\) を代入して\eqref{asc Leg eq monic}同様に2階微分の係数を \(1\) とすれば、
+                \[
+                    \dfrac{d^2y}{d\xi^2}
+                    +
+                    \dfrac{2\xi}{(\xi^2-1)}
+                    \dfrac{dy}{d\xi}
+                    +
+                    \left(
+                        \dfrac{\lambda}{\xi^2(\xi^2-1)}
+                        -
+                        \dfrac{m^2}{(\xi^2-1)^2}
+                    \right)
+                    y
+                    =0
+                \]
+                が得られます。
+                従って
+                \begin{array}{rl}
+                    \lim_{\xi\to0}
+                    &
+                    \xi
+                    \left|
+                        \dfrac{2\xi}{(\xi^2-1)}
+                    \right|
+                    \lt\infty
+                    \\
+                    \lim_{\xi\to0}
+                    &
+                    \xi^2
+                    \left|
+                        \dfrac{2\lambda}{\xi^2(\xi^2-1)}
+                        -
+                        \dfrac{m^2}{(\xi^2-1)^2}
+                    \right|
+                    \lt\infty
+                \end{array}
+                より、無限遠点も確定特異点であることがわかります。
+            </p>
+        </div>
+
+        <div class="subsection" id="series-around-origin">
+            <h2>6.1.2 原点周りの級数展開</h2>
+            <p>
+                §6.1.1 で見たように、ルジャンドル陪微分方程式の特異点は \(\pm1, \infty\) の3点に限られます。
+                特に原点は正則点ですから、原点周りでは解 \(P_\lambda^m\) をテイラー展開できます。
+            </p>
+            <p>
+                微分方程式の解は
+                \[
+                    y(x)=\sum_{k=0}^\infty a_kx^k
+                \]
+                の形で書けます。
+                ここで、原点から最も近い特異点 \(\pm1\) までの距離が \(1\) ですから、級数の収束半径は \(1\) ですね。
+            </p>
+            <p>
+                従ってはじめから \(x\lt1\) を仮定してもよく、\eqref{asc Leg eq}の0階微分の項が
+                \[
+                    \left(
+                        \lambda
+                        -
+                        \dfrac{m^2}{1-x^2}
+                    \right)
+                    y
+                    =
+                    \left(
+                        \lambda
+                        -
+                        m^2\sum_{n=0}^\infty x^2n
+                    \right)
+                    y
+                \]
+                となることに注意して、\eqref{asc Leg eq}に級数を代入すると、
+                \begin{array}{cl}
+                    &
+                    \displaystyle
+                    \sum_{k=2}^\infty k(k-1)a_kx^{k-2}
+                    +
+                    \sum_{k=0}^\infty [-k(k-1)-2k+\lambda]a_kx^k
+                    -
+                    \sum_{k,n=0}^\infty m^2a_kx^{k+2n}
+                    \\
+                    =&
+                    \displaystyle
+                    y
+                    \left(
+                        (k+2)(k+1)a_{k+2}
+                        +
+                        [\lambda-k(k+1)]a_k
+                        -
+                        \sum_{n=0}^{[k/2]}m^2a_{k-2n}
+                    \right)
+                    x^k
+                \end{array}
+                です。
+            </p>
+            <p>
+                微分方程式\eqref{asc Leg eq}が常に満たされるには、\(x^k\) の係数がそれぞれ \(0\) すなわち
+                \[
+                    \tag{6.3}
+                    \label{recurrence}
+                    a_{k+2}
+                    =
+                    -\dfrac{\lambda-k(k+1)}{(k+2)(k+1)}a_k
+                    +
+                    \dfrac{m^2}{(k+2)(k+1)}
+                    \sum_{n=0}^{[k/2]}a_{k-2n}
+                \]
+                が必要です。
+                これがルジャンドルの陪微分方程式の級数の係数の関する漸化式になります。
+            </p>
+            <p>
+                \(a_k\) が \(k\) の偶奇で完全に独立であることに注意しましょう。
+                実際、はじめのいくつかを挙げると以下のようになります。
+                \begin{array}{rcl}
+                    a_2&=&\dfrac{-\lambda+m^2}{2}a_0
+                    \\
+                    a_3&=&\dfrac{-\lambda+2+m^2}{6}a_1
+                    \\
+                    a_4&=&\dfrac{-\lambda+6}{12}a_2+\dfrac{m^2}{12}(a_2+a_0)
+                    \\
+                    a_5&=&\dfrac{-\lambda+30}{42}a_3+\dfrac{m^2}{42}(a_3+a_1)
+                \end{array}
+                ここからわかる通り、\(k\) が偶数なら \(a_k\) は \(a_0\) に、奇数なら \(a_1\) に比例しますね。
+            </p>
+            <p>
+                \eqreg{asc Leg eq}の解の級数展開は、漸化式\eqref{recurrence}によって得られる \(a_k\) を用いて
+                \(\displaystyle\sum_{k=0}^\infty a_kx^k\) で与えられます。
+                \begin{cases}
+                    y_0&=&\displaystyle\sum_{k=0}^\infty a_{2k}x^{2k}
+                    &(a_0\neq0, a_1=0)
+                    \\
+                    y_1&=&\displaystyle\sum_{k=0}^\infty a_{2k+1}x^{2k+1}
+                    &(a_0=0, a_1\neq0)
+                \end{cases}
+                \(y_0, y_1\) は共に\eqreg{asc Leg eq}の独立な2解になっていますから、ルジャンドルの陪微分方程式の一般解は \(y_0, y_1\) の線型結合で表されます。
+            </p>
+            <p>
+                より深く解析するために \(m=0\) すなわちルジャンドルの微分方程式の級数展開を考えてみましょう。
+                \eqref{recurrence}にて \(m=0\) を考えれば、
+                \[
+                    \tag{6.4}
+                    \label{recurrence of Leg eq}
+                    a_{k+2}
+                    =
+                    -\dfrac{\lambda-k(k+1)}{(k+2)(k+1)}a_k
+                \]
+                です。
+                複素数 \(l\) を用いて \(\lambda=l(l+1)\) と表せば、
+                \[
+                    \tag{6.5}
+                    \label{recurrence of Leg eq with l}
+                    a_{k+2}
+                    =
+                    -\dfrac{(l-k)(l+k+1)}{(k+2)(k+1)}a_k
+                \]
+                よって、
+                \begin{array}{rcl}
+                    a_{2k}
+                    &=&
+                    -\dfrac{(l-2k+2)(l+2k-1)}{2k(2k-1)}a_{2k-2}
+                    \\
+                    &=&
+                    \cdots
+                    \\
+                    &=&
+                    \dfrac{(-1)^;(l-2k+2)(l-2k+4)\cdots l\cdot(l+2k-1)(l+2k-3)\cdots(l+1)}{(2k)!}a_0
+                    \\
+                    a_{2k+1}
+                    &=&
+                    -\dfrac{(l-2k+3)(l+2k)}{2k(2k+1)}a_{2k-1}
+                    \\
+                    &=&
+                    \cdots
+                    \\
+                    &=&
+                    \dfrac{(-1)^;(l-2k+3)(l-2k+5)\cdots(l+1)\cdot(l+2k)(l+2k-2)\cdots(l+2)}{(2k+1)!}a_1
+                \end{array}
+                が得られます。
+            </p>
+            <p>
+                特に \(l\in\mathbb{Z}\) のとき、\eqref{recurrence of Leg eq with l}の \((l-k)(l+k+1)\) の効果によって \(a_{k_0}=0\) なる \(k_0\in\mathbb{Z}_{\geq0}\) が存在します。
+                かくなる \(k_0\) に対し、\(a_{k_0+2}=a_{k_0+4}=\cdots=0\) ですから、係数は偶奇いずれかが途中で断絶しますね。
+                つまりルジャンドルの微分方程式の特解が多項式で与えられます。
+            </p>
+            <p>
+                この係数が途中で断絶した多項式は一般に<b style="color: red;">「第1種ルジャンドル関数」「ルジャンドル多項式」</b>などと呼ばれます。
+                その具体形に関しては、より簡潔な形で表すことができますから、追々みていくことにしましょう。
+                多項式の解と独立な解、すなわち第1種ルジャンドル関数と偶奇が異なる解は、係数が打ち止めされず無限級数になりますね。
+                この無限級数は一般に「第2種ルジャンドル関数」などと呼ばれます。
+            </p>
+        </div>
+    </section>
+
+    <section id="orthog">
+        <h1>6.2 直交性</h1>
+        <p>
+            ルジャンドルの微分方程式 (5.13) の解は \(x\in[-1,1]\) で直交性
+            \[
+                \int_{-1}^1y_\lambda^m(x)y_{\lambda'}^m(x)dx=0
+                \qquad
+                for\;\lambda\neq\lambda'
+            \]
+            を満たすことが知られています。
+        </p>
+        <div class="note">
+            <p>
+                ポアソン方程式の解を取り扱うとき、<b>ルジャンドル陪微分方程式の解の直交性は \(m\) を揃えて議論</b>する。
+                \(m\) が異なる場合は、この方程式の解が直行しなくても、\(\Phi(\varphi)\) の直交性によって
+                \begin{array}{cl}
+                    &
+                    \left(
+                        R_{\lambda'}\Theta_{\lambda'}^{m'}\Phi_m, R_\lambda\Theta_\lambda^m\Phi_m
+                    \right)
+                    \\
+                    =&
+                    \left(
+                        R_{\lambda'}\Theta_{\lambda'}^{m'}, R_\lambda\Theta_\lambda^m
+                    \right)
+                    \displaystyle\int(\Phi_m)^\ast\Phi_md\varphi
+                    \\
+                    =&
+                    \left(
+                        R_{\lambda'}\Theta_{\lambda'}^{m'}, R_\lambda\Theta_\lambda^m
+                    \right)
+                    \displaystyle\int e^{i(m-m')\varphi}d\varphi
+                    \\
+                    &=
+                    2\pi\delta_{m,m'}
+                    \left(
+                        R_{\lambda'}\Theta_{\lambda'}^{m'}, R_\lambda\Theta_\lambda^m
+                    \right)
+                \end{array}
+                となり、ポアソン方程式の解は直交するからである。
+            </p>
+        </div>
+        <p>
+            すなわち<b>ルジャンドル多項式は \(\lambda\) について直交関係</b>を成します。
+        </p>
+
+        <div class="subsection" id="orthog-func">
+            <h2>6.2.1 関数の直交性</h2>
+            <p>
+                関数が直交するということについて考える前に、まずはベクトルの直行性を思い出しておきましょう。
+                ベクトル \(\boldsymbol{u}=(u_1, u_2, \cdots), \boldsymbol{v}=(v_1, v_2, \cdots)\) があったとき、これらが直交するとは
+                \[
+                    (\boldsymbol{u},\boldsymbol{v})
+                    :=
+                    \sum_i u_iv_i
+                    =0
+                \]
+                で定義されるのでした。
+                すなわちベクトルが \(i=1,2,\cdots\) によってラベリングされており、各ラベルについて積を取って足し上げるというものだったわけです。
+            </p>
+            <p>
+                これを関数の直交性に援用します。
+                区間 \(I\) 上の関数 \(f(x), g(x)\) は \(x\) によってラベリングされていると考えると、
+                \[
+                    (f,g)
+                    :=
+                    \int_I f(x)g(x)dx
+                    =0
+                \]
+                とすればよさそうです。
+            </p>
+            <p>
+                しかし、内積の定義には双線型性 \((f,\lambda g)=(\lambda f, g)=\lambda(f,g)\) と正値性 \((f,f)\geq0\) が必要であり、上記の定義では \(f(x), g(x)\) が複素数値を取ったとき (例えば \(f(x)=g(x)=i\) のとき) に正値性を満たしません。
+                そこで左側の関数について複素共役をとり、
+                \[
+                    (f,g)
+                    :=
+                    \int_I f^\ast(x)g(x)dx
+                    =0
+                \]
+                と定義してあげます。
+                電磁気など実数値関数しか使わない場面において複素共役は不要ですが、量子力学を含め一般の議論では必要不可欠であることに注意しましょう。
+            </p>
+        </div>
+
+        <div class="subsection" id="orthog-leg">
+            <h2>6.2.2 ルジャンドルの陪微分方程式の解における直交性の証明</h2>
+            <p>
+                それではルジャンドル陪微分方程式の解に直交性があることを示していきます。
+            </p>
+            <p>
+                線形微分方程式の解が直交であることの証明では、\(L_{\lambda'}^m[y_{\lambda'}^m]=0\) を使って
+                \[
+                    \int(y_\lambda^m)^\ast L_{\lambda'}^m[y_{\lambda'}^m]dx=0
+                \]
+                とするのが常套手段です。
+                部分積分を用いて計算すると、
+                \begin{array}{rcl}
+                    0
+                    &=&
+                    \displaystyle
+                    \int_{-1}^1
+                    (y_\lambda^m)^\ast
+                    \left[
+                        D
+                        \left(
+                            (1-x^2)Dy_{\lambda'}^m
+                        \right)
+                        +
+                        \lambda'y_{\lambda'}^m
+                        -
+                        \dfrac{m^2}{1-x^2}y_{\lambda'}^m
+                    \right]
+                    dx
+                    \\
+                    &=&
+                    \displaystyle
+                    \left[
+                        (y_\lambda^m)^\ast
+                        (1-x^2)
+                        Dy_{\lambda'}^m
+                    \right]_{x=-1}^{x=1}
+                    +
+                    \int_{-1}^1
+                    \left[
+                        (x^2-1)
+                        (Dy_\lambda^m)^\ast
+                        Dy_{\lambda'}^m
+                        +
+                        \left(
+                            \lambda'
+                            -
+                            \dfrac{m^2}{1-x^2}
+                        \right)
+                        (y_\lambda^m)^\ast
+                        y_{\lambda'}^m
+                    \right]
+                    dx
+                    \\
+                    &=&
+                    \displaystyle
+                    \left[
+                        (x^2-1)
+                        (Dy_\lambda^m)^\ast
+                        y_{\lambda'}^m
+                    \right]_{x=-1}^{x=1}
+                    +
+                    \int_{-1}^1
+                    \left[
+                        -D
+                        [(x^2-1)(Dy_\lambda^m)^\ast]
+                        y_{\lambda'}^m
+                        +
+                        \left(
+                            \lambda'
+                            -
+                            \dfrac{m^2}{1-x^2}
+                        \right)
+                        (y_\lambda^m)^\ast
+                        y_{\lambda'}^m
+                    \right]
+                    dx
+                    \\
+                    &=&
+                    \displaystyle
+                    (\lambda'-\lambda)
+                    \int_{-1}^1
+                    (y_\lambda^m)^\ast
+                    y_{\lambda'}^m
+                    dx
+                    \qquad\because(5.13)
+                \end{array}
+                となります。
+                \(\lambda\neq\lambda'\) のときは積分が \(0\) となるので、直交性が示されました。
+            </p>
+        </div>
+    </section>
+
+    <section id="boundary">
+        <h1>6.3 ポアソン方程式の一般的な境界条件とパラメーター \(\lambda, m\) の制限</h1>
+
+        <p>
+            ポアソン方程式 (5.1) を純粋に数学的な興味から扱うのであれば、\(\lambda, m\) といった定数は複素数にとるべきでしょう。
+            しかし我々がとりあえず求めたいのは3次元空間内における極座標ポアソン方程式の一般解です。
+            <b>もし適切な境界条件を付すことによってこれらのパラメーターが制限されるのであれば、これに越したことはありません</b>。
+        </p>
+        <p>
+            そこで本節では、物理の問題で広く要求される境界条件のもとで \(\lambda, m\) といった定数が満たすべき条件を求めていきます。
+        </p>
+
+        <div class="subsection" id="boundary-phi">
+            <h2>6.3.1 \(\phi\) に関する一般的な境界条件と \(m\) の制限</h2>
+
+            <p>
+                はじめに、解が求まっている \(\Phi(\varphi)\) について一般に要求される境界
+                条件を与えることで、\(m\) の値を絞っていきます。
+            </p>
+            <p>
+                §4で挙げたような状況では基本的に \(\varphi\to\varphi+2\pi\) としても不変であることが要求されます。
+                これは(5.15)が \(\varphi\to\varphi+2\pi\) の変換で不変、すなわち \(\phi\) の値がただ一つに定まる (1価関数になる) というものです。
+            </p>
+            <div class="note">
+                <p>
+                    この条件が破れるのは、例えば \(\varphi=\varphi_0\)に壁のような不連続面が入っているような場合である。
+                    複素対数関数に代表される分枝切断を想像してもらえればわかりやすいだろう。
+                    ご承知の通り、物理ではそのような不連続性による不都合は断りのない限り考えないのが通例である。
+                </p>
+            </div>
+            <p>
+                従って複号同順で
+                \[
+                    \Phi(\varphi)=\Phi(\varphi+2\pi)
+                    \qquad i.e.\qquad
+                    e^{\pm im\varphi}
+                    =
+                    e^{\pm im\varphi}
+                    e^{\pm 2\pi mi}
+                \]
+                となるので、
+                \[
+                    \tag{6.7}
+                    \label{m in Z}
+                    m\in\mathbb{Z}
+                \]
+                に限られます。
+            </p>
+        </div>
+
+        <div class="subsection" id="boundary-theta">
+            <h2>6.3.2 \(\theta\) に関するルジャンドルの微分方程式の一般的な境界条件と \(\lambda\) の制限</h2>
+            <p>
+                一般に与えられるもう一つの条件として、\(0\leq\theta\leq\pi\) にて \(\phi\) が正則 (値が発散しない) というものがあります。
+            </p>
+            <div class="note">
+                <p>
+                    この条件が破れるのは、例えば直線状電荷が原点を貫いているときなどである。
+                    このような状況では、少なくとも電磁気学では別の方法 (ガウスの発散定理を用いた方法・鏡像法・等角写像を用いた方法など。砂川など参照)で対処できる問題が多い。
+                    量子力学でこの条件が破れる事例は考えにくい。
+                </p>
+            </div>
+            <p>
+                この条件を求めるために、\(\theta\approx0,\pi\) での挙動を調べましょう。
+                いきなり一般の \(m\in\mathbb{Z}\) について調べるのは難しいので、はじめは \(m=0\) のルジャンドルの微分方程式における条件を見ていきます。
+            </p>
+            <p>
+                \eqref{recurrence of Leg eq}において \(k\to\infty\) を考えると \(a_{k+2}\approx a_k\) ですね。
+                \(x\to\pm1\) を考えると、\(a_l=0\) となる \(l\in\mathbb{Z}_{\geq0}\) がなければ、
+                \begin{array}{rcl}
+                    y_\lambda(x\to\pm1)
+                    &=&
+                    \lim_{n\to\infty}
+                    \sum_{k=0}^n
+                    (a_{2k}\pm a_{2k+1})
+                    \\
+                    &\approx&
+                    \lim_{n\to\infty}
+                    (2ka_{2k}\pm(2k+1)a_{2k+1})
+                \end{array}
+                となってしまいます。
+                (5.9)の \(x=\cos\theta\) は \(1\) にも \(-1\) にもなることを考えれば、係数 \(a_0\) はどこかしらで打ち止めされていなければなりません。
+                従ってルジャンドルの微分方程式の解が正則であるためには、級数展開の係数\eqref{recurrence of Leg eq}が
+                \[
+                    \exists l\in\mathbb{Z}_{\geq0}
+                    \quad s.t.\quad
+                    a_{l+2}
+                    =
+                    -\dfrac{\lambda-l(l+1)}{(l+2)(l+1)}
+                    =0
+                \]
+                を満たすことが要求されます。
+                ゆえに
+                \[
+                    \lambda=l(l+1)\qquad(l\in\mathbb{Z}_{\geq0})
+                \]
+                が必要となりますね。
+            </p>
+        </div>
+
+        <div class="subsection" id="boundary-theta-asc">
+            <h2>6.3.3 \(\theta\) に関するルジャンドルの陪微分方程式の一般的な境界条件と \(\lambda\) の制限</h2>
+
+            <p>
+                一般の \(m\) については、実際に解を構成してからでないと条件を示すのが困難です。
+                ここでは天下りになりますが、後に§7.3で与えるルジャンドル陪多項式を特解として認め、議論を進めていきます。
+            </p>
+            <p>
+                出発点は(5.10)を移項した固有方程式
+                \[
+                    \tag{6.9}
+                    \label{asc Leg eq for lambda constraint}
+                    \left(
+                        D((1-x^2)D)
+                        -
+                        \dfrac{m^2}{(x+1)(x-1)}
+                    \right)
+                    y\lambda^m
+                    =
+                    -\lambda y_\lambda^m
+                \]
+                です。
+            </p>
+            <div class="note">
+                <p>
+                    演算子 \(\hat{O}\) とスカラー \(O\) について、\(\hat{O}y=Oy\) を満たす方程式を固有方程式と呼び、\(O\) を固有値、\(y\) を固有関数と称す。
+                    \eqref{asc Leg eq for lambda constraint}は \(D((1-x^2)D)-\dfrac{m^2}{(x+1)(x-1)}\) を演算子と見たときに \(-\lambda\) が固有値となるような固有関数である。
+                </p>
+            </div>
+            <p>
+                与えられた \(m\) に対して異なる固有値 \(\lambda\lt\lambda'\) を与える固有関数 \(y_\lambda^m, y_{\lambda'}^m\) を用いて、
+            </p>
+            <ol>
+                <li>\(y_{\lambda'}^m\) の零点の数は \(y_\lambda^m\) より多いことを示す</li>
+                <li>\(\lambda-l(l+1)\) のときに、特解であるルジャンドル陪多項式の零点が高々 \(l-m\) 個しかないことを示す</li>
+            </ol>
+            <p>
+                の手順で条件を導きます。
+            </p>
+            <div class="subsubsection">
+                <h3>手順1</h3>
+                <p>
+                    \(x=\pm1\) で正則な解が
+                    \[
+                        y_\lambda^m(x)
+                        =
+                        (x\mp1)^\mu
+                        \sum_{k\in\mathbb{Z}_{\geq0}}
+                        a_k(x\mp1)^k
+                        \qquad
+                        (\mu\in\mathbb{Z}_{\geq0})
+                    \]
+                    と展開されるとして代入すると、\(x\approx\pm1\) で最低次の項は
+                    \[
+                        \mu(\mu-1)(x\mp1)^{\mu-2}
+                        +
+                        \dfrac{2\cdot(\pm1)}{\pm2(x\mp1)}
+                        \mu(x\mp1)^{\mu-1}
+                        -
+                        \dfrac{m^2}{4}
+                        (x\mp1)^{\mu-2}
+                        +
+                        O((x\mp1)^{\mu+1})
+                        \approx
+                        \dfrac{\lambda}{\pm2}
+                        (x\mp1)^{\mu-1}
+                    \]
+                    である。
+                    微分方程式が成り立つには左辺の係数が \(0\) すなわち
+                    \[
+                        \mu(\mu-1)
+                        +
+                        \mu
+                        -
+                        \dfrac{m^2}{4}
+                        =
+                        0
+                        \quad i.e.\quad
+                        \mu=\pm\dfrac{m}{2}
+                    \]
+                    が得られます。
+                </p>
+                <div class="note">
+                    <p>
+                        ここでは \(\mu\) の具体形を求めるよりも、\(\mu\geq0\) となる解が存在することを使う。
+                        以下度々 \((x+1)^{|m|/2}\) という形式が現れるが、どれも「負冪でない関数」と捉えておけば十分でsる。
+                    </p>
+                </div>
+                <p>
+                    \(\lambda\lt\lambda'\) のもとで<b>異なる固有方程式</b>の解 \(y_\lambda^m, y_{\lambda'}^m\) が \(x=-1\) で正則としましょう。
+                    すなわち \(y_\lambda^m, y_{\lambda'}^m\) はそれぞれ
+                    \begin{cases}
+                        \left(
+                            D((1-x^2)D)-\dfrac{m^2}{(x-1)(x+1)}
+                        \right)
+                        y_\lambda^m
+                        =
+                        -\lambda y_\lambda^m
+                        \\
+                        \left(
+                            D((1-x^2)D)-\dfrac{m^2}{(x-1)(x+1)}
+                        \right)
+                        y_{\lambda'}^m
+                        =
+                        -\lambda y_{\lambda'}^m
+                    \end{cases}
+                    を満たし、またテイラー展開できて
+                    \begin{array}{}
+                        \displaystyle
+                        y_\lambda^m(x=-1)
+                        =
+                        \left[
+                            (x+1)^{|m|/2}
+                            \sum_{k=0}^\infty
+                            a_k(x+1)^k
+                        \right]_{x=-1}
+                        =
+                        0
+                        \\
+                        \displaystyle
+                        y_{\lambda'}^m(x=-1)
+                        =
+                        \left[
+                            (x+1)^{|m|/2}
+                            \sum_{k=0}^\infty
+                            a_k'(x+1)^k
+                        \right]_{x=-1}
+                        =
+                        0
+                    \end{array}
+                    です。
+                    固有方程式の両辺にスカラーをかければわかる通り、固有関数のスカラー倍も固有関数ですから、先頭の係数を \(a_0=a_0'=1\) とすることができます。
+                    このとき \(y_\lambda^m, y_{\lambda'}^m\approx(x+1)^{|m|/2}\) なので、\(Dy_\lambda^m(x=-1), Dy_{\lambda'}^m(x=-1)>0\) となります。
+                </p>
+                <p>
+                    この条件下で \(y_\lambda^m\) の零点 \(-1\) とその次の零点 \(x_0\) との間に、\(y_{\lambda'}^m\) は零点を持つことを背理法で証明します。
+                    ロンスキアンを
+                    \[
+                        \tag{6.10}
+                        \label{Wronskian}
+                        W
+                        :=
+                        (1-x^2)
+                        \left(
+                            y_{\lambda'}^m
+                            Dy_\lambda^m
+                            -
+                            y_\lambda^m
+                            Dy_{\lambda'}^m
+                        \right)
+                    \]
+                    で定めます。
+                </p>
+                <div class="note">
+                    <p>
+                        関数列 \(\{f_i(x)\}_{i=1,2,\cdots}\) のロンスキアンは一般には
+                        \[
+                            \left|
+                                \begin{matrix}
+                                    f_1 & f_2 & \cdots
+                                    \\
+                                    f_1'(x) & f_2'(x) & \cdots
+                                    \\
+                                    f_1''(x) & f_2''(x) & \cdots
+                                    \\
+                                    \vdots & \vdots & \ddots
+                                \end{matrix}
+                            \right|
+                        \]
+                        で定義されるが、今回は固有方程式による変形を見込んで係数に \(1-x^2\) を付している。
+                    </p>
+                </div>
+                <p>
+                    これで \(x\) を微分すると
+                    \begin{array}{rcl}
+                        DW
+                        &=&
+                        D[
+                            y_{\lambda'}^m\cdot(1-x^2)Dy_\lambda^m
+                            -
+                            y_\lambda\cdot(1-x^2)Dy_{\lambda'}^m
+                        ]
+                        \\
+                        &=&
+                        Dy_{\lambda'}^m\cdot(1-x^2)Dy_\lambda^m
+                        +
+                        y_{\lambda'}^mD[(1-x^2)Dy_\lambda^m]
+                        -
+                        Dy_{\lambda'}^m
+                        -
+                        y_\lambda^mD[(1-x^2)Dy_{\lambda'}^m]
+                        \\
+                        &=&
+                        -y_{\lambda'}^m\lambda y_\lambda^m
+                        +
+                        y_{\lambda'}^m\dfrac{m^2}{x^2-1}y_\lambda^m
+                        +
+                        y_\lambda^m\lambda'y_{\lambda'}^m
+                        -
+                        y_\lambda^m\dfrac{m^2}{x^2-1}y_{\lambda'}^m
+                        \quad\because\eqref{asc Leg eq for lambda constraint}
+                        \\
+                        &=&
+                        (\lambda'-\lambda)y_\lambda^my_{\lambda'}^m
+                    \end{array}
+                    となります。
+                </p>
+                <figure>
+                    <img src="wronskian.png" alt="">
+                    <figcaption>図2 \(y_{\lambda'}^m\) の零点が \(x_0\) までに存在しない場合</figcaption>
+                </figure>
+                <p>
+                    \(-1\leq x\leq x_0\) に \(y_{\lambda'}^m\) の零点がないと仮定すると、図2に示す通りこの範囲では \(y_\lambda^m, y_{\lambda'}^m\) ともに正です。
+                    従って
+                    \[
+                        DW
+                        =
+                        (\lambda'-\lambda)y_\lambda^my_{\lambda'}^m
+                        \gt0.
+                    \]
+                    ロンスキアンの初期値が \(W(x=-1)=0\) ですから、\(W>0\;(-1\leq x\leq x_0)\) が得られます。
+                    一方図2からもわかるとおり、\(y_\lambda^m\) は \(x_0\) 近傍で減少関数です。
+                    \eqref{Wronskian}より、\(y_\lambda^m\) の零点 \(x_0\) にて
+                    \begin{array}{rclc}
+                        W(x_0)
+                        &=&
+                        (1-x_0^2)(y_{\lambda'}^mDy_\lambda^m-0)
+                        &
+                        \because y_\lambda^m(x_0)=0
+                        \\
+                        &\lt&0
+                    \end{array}
+                    となり矛盾します。
+                    よって \(y_{\lambda'}^m\) の零点の数は \(y_\lambda^m\) より多いことがわかりました。
+                </p>
+            </div>
+            <div class="subsubsection">
+                <h3>手順2</h3>
+                <p>
+                    以下、ルジャンドルの陪微分方程式の特解として
+                    \[
+                        P_l^m(x)
+                        =
+                        \dfrac{(1-x^2)^{m/2}}{2^ll!}
+                        \left(\dfrac{d}{dx}\right)^{l+m}
+                        (x^2-1)^l
+                    \]
+                    を与えます。
+                    \(\lambda=l(l+1), l\in\mathbb{Z}_{\geq0}, m\in\{-l,-l+1,\cdots,l-1,l\}\) にて解になっていること、さらに
+                    \[
+                        P_l^{-m}(x)
+                        =
+                        (-1)^m\frac{(l-m)!}{(l+m)!}P_l^m(x)
+                    \]
+                    を認めてください。
+                    また \(m\lt0\) ではこの式によって
+                    \[
+                        P_l^m(x)
+                        =
+                        (-1)^m
+                        \frac{(l-|m|)!}{(l+|m|)!}
+                        \frac{(1-x^2)^{|m|/2}}{2^ll!}
+                        D^{l+|m|}(x^2-1)^l
+                    \]
+                    とします。
+                    これによって、以下では \(m\geq0\) とします。
+                </p>
+                <p>
+                    先に非負整数 \(m\) を与え、\(l\) を動かして考えます。
+                    \(l\lt|m|\) のときは \((x^2-1)^l\) が高々 \(2l\) 次の多項式であるのに対して微分回数が \(2l\) を超えるので、\(P_l^m(x)=0\) となります。
+                    \(l=|m|\) のとき微分からは最高次の項からの寄与だけが残り、
+                    \[
+                        P_l^l(x)
+                        =
+                        \frac{(1-x^2)^{l/2}}{2^ll!}
+                        \cdot
+                        2l(2l-1)\cdots(l+1)
+                    \]
+                    となります。
+                    右辺は \(-1\) に零点を持ちません。
+                    \(l\gt|m|\) のときは \((x^2-1)^l\) が \(2l\) 次の多項式であり、それを \(l+m\) 回微分するので \(D^{l+m}(x^2-1)^l\) は高々 \(l-m\) 次の多項式です。
+                    \(P_l^m\) 右辺には微分より左に零点を与える因数がありませんから、\(P_l^m\) は \(-1\) に零点を高々 \(l-m\) 個しか持たないことがわかります。
+                </p>
+                <p>
+                    従って \(P_0^m, P_1^m, \cdots, P_m^m\) は \(-1\) に零点がありません。
+                    また手順1で示した通り、\(l\) の増加によって零点は必ず増えるので、\(l\gt|m|\) のとき \(P_l^m\) の零点はちょうど \(l-m\) 個です。
+                </p>
+                <p>
+                    さて、仮に \(l\lt0\) であるとします。
+                    手順1から、零点の数は \(P_l^m\) よりも \(P_0^m\) の方が多いはずです。
+                    しかし \(P_0^m\) は任意の \(m\in\mathbb{Z}\) に対して零点がありませんから、これは矛盾します。
+                    今度は非負整数 \(l_0\) を使って \(l_0\lt l\lt l_0+1\) と書けるとしましょう。
+                    手順1で示したことから、\(P_l^m\) の零点の数は \(P_{l_0}\) の零点の数 \(l_0-m\) より多く \(P_{l_0+1}^m\) の零点の数 \(l_0+1\) よりも少ないはずです。
+                    そのような関数は存在し得ないので、これもやはり矛盾します。
+                </p>
+            </div>
+            <p>
+                以上より、<b>\(l\) は \(|m|\) を下回らない整数</b>であることが必要だとわかりました。
+                本節で得られた条件をまとめると、
+                \begin{align}
+                    \tag{6.11}
+                    &\lambda=l(l+1)
+                    \\
+                    \tag{6.12}
+                    &l\in\mathbb{Z}_{\geq0}
+                    \\
+                    \tag{6.13}
+                    &l\geq|m|
+                \end{align}
+                です。
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <a href="../rodrigues/index.html">次回 第7章 ロドリゲスの公式</a>
+    </section>
+    
+    <footer>
+        <p>Edited by 低音</p>
+        <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
+    </footer>
+</body>
+</html>
