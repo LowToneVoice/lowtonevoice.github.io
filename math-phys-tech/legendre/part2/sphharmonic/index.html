@@ -14,32 +14,45 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
         crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <h1>ルジャンドル多項式と</h1>
         <h1>周辺事項に関する覚書</h1>
         <h2>第II部 第9章 球面調和関数</h2>
         <div class="menu">
-            <a href="../../index.html">目次</a>
-            <a href="../../ver1-0-0.pdf">pdf版</a>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/">目次</a>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/ver1-0-0.pdf">pdf版</a>
         </div>
     </header>
 
     <section>
+        <p>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/ver1-0-0.pdf">pdf版はこちらから。</a>
+            相互参照やハイパーリンクなどをしっかり入れています。
+            また学習進度に合わせてレベル分けなども行っていますので、ぜひご参照ください。
+        </p>
+        <p>
+            誤植・質問等ありましたら、<a href="https://note.com/teion_burns/n/nfc8de0fab123">こちらに</a>遠慮なくご連絡ください。
+        </p>
+    </section>
+
+    <section>
         <h1>9 球面調和関数</h1>
         <p>
-            前章までは \(\theta\) に関するルジャンドル陪関数 \(P_l^m(\cos\theta)\) と \(\varphi\) に関する解 \(\Phi_m(\varphi)=e^{im\varphi}\) を分けて考えましたが、この二つを合わせて2変数関数 \(Y_l^m(\theta,\varphi)\) を考えることも少なくありません。
+            前章までは \(\theta\) に関するルジャンドル陪関数 \(P_l^m(\cos\theta)\) と \(\varphi\) に関する解 \(\Phi_m(\varphi)=e^{im\varphi}\)
+            を分けて考えましたが、この二つを合わせて2変数関数 \(Y_l^m(\theta,\varphi)\) を考えることも少なくありません。
         </p>
         <p>
             角変数に関する解の積を \(\theta,\varphi\) の2変数関数とみなして扱うときに「半径 \(1\) の球面上の積分で規格化されている」すなわち
             \[
-                \tag{9.1}
-                \label{sphere harmonic integral}
-                \int d\Omega
-                Y_{l'}^{m'\ast}(\theta,\varphi)
-                Y_{l}^{m}(\theta,\varphi)
-                =
-                \delta_{l,l'}\delta_{m,m'}
+            \tag{9.1}
+            \label{sphere harmonic integral}
+            \int d\Omega
+            Y_{l'}^{m'\ast}(\theta,\varphi)
+            Y_{l}^{m}(\theta,\varphi)
+            =
+            \delta_{l,l'}\delta_{m,m'}
             \]
             という規格化条件を課すことにより、調和関数としての性質が表れてきます。
         </p>
@@ -70,88 +83,89 @@
             <p>
                 前章まで扱ってきた極座標ポアソン方程式の角変数に関する解 \(\Theta_l^m(\theta),\Phi_m(\varphi)\) の規格化を駆使していきます。
                 \[
-                    Y_l^m(\theta,\varphi)
-                    =
-                    C_l^mP_l^m(\cos\theta)e^{im\varphi}
+                Y_l^m(\theta,\varphi)
+                =
+                C_l^mP_l^m(\cos\theta)e^{im\varphi}
                 \]
                 として定数 \(C_l^m\) を求めていく方針を取ります。
                 このとき\eqref{sphere harmonic integral}は、
                 \[
-                    \int_{r=1}\sin\theta d\theta d\varphi
-                    Y_{l'}^{m'\ast}(\theta,\varphi)
-                    Y_{l}^{m}(\theta,\varphi)
-                    =
-                    C_{l'}^{m'\ast}
-                    C_l^m
-                    \int_0^\pi\sin\theta d\theta
-                    P_{l'}^{m'}(\cos\theta)
-                    P_{l}^{m}(\cos\theta)
-                    \int_0^{2\pi}d\varphi e^{i(m-m')\varphi}
+                \int_{r=1}\sin\theta d\theta d\varphi
+                Y_{l'}^{m'\ast}(\theta,\varphi)
+                Y_{l}^{m}(\theta,\varphi)
+                =
+                C_{l'}^{m'\ast}
+                C_l^m
+                \int_0^\pi\sin\theta d\theta
+                P_{l'}^{m'}(\cos\theta)
+                P_{l}^{m}(\cos\theta)
+                \int_0^{2\pi}d\varphi e^{i(m-m')\varphi}
                 \]
                 となりますね。
             </p>
             <div class="note">
                 <p>
-                    ルジャンドル多項式 \(P_l^m\) は実関数だが、定数 \(C_l^m, C_{l'}^{m'}\) 及び \(\varphi\) に関する関数 \(\Phi_m(\varphi)=e^{im\varphi}\) は一般に複素数値関数であることに注意。
+                    ルジャンドル多項式 \(P_l^m\) は実関数だが、定数 \(C_l^m, C_{l'}^{m'}\) 及び \(\varphi\) に関する関数
+                    \(\Phi_m(\varphi)=e^{im\varphi}\) は一般に複素数値関数であることに注意。
                 </p>
             </div>
             <p>
                 まず \(\varphi\) に関する規格化は容易に計算できて、
                 \begin{array}{rcl}
-                    \displaystyle
-                    \int_0^{2\pi}d\varphi e^{i(m-m')\varphi}
-                    &=&
-                    \displaystyle
-                    \begin{cases}
-                        0
-                        &
-                        m-m'\neq0
-                        \\
-                        2\pi
-                        &
-                        m-m'=0
-                    \end{cases}
-                    \\
-                    &=&
-                    2\pi\delta_{m,m'}
+                \displaystyle
+                \int_0^{2\pi}d\varphi e^{i(m-m')\varphi}
+                &=&
+                \displaystyle
+                \begin{cases}
+                0
+                &
+                m-m'\neq0
+                \\
+                2\pi
+                &
+                m-m'=0
+                \end{cases}
+                \\
+                &=&
+                2\pi\delta_{m,m'}
                 \end{array}
                 となります。
                 クロネッカーの \(\delta\) によって \(m,m'\) が揃うことを使って、\(\theta\) 依存性については、
                 \begin{array}{rl}
-                    &
-                    \displaystyle
-                    \int_0^\pi\sin\theta d\theta
-                    P_{l'}^{m'}(\cos\theta)
-                    P_l^m(\cos\theta)
-                    \delta_{m,m'}
-                    \\
-                    =&
-                    \displaystyle
-                    \int_1^{-1}-dxP_{l'}^m(x)P_l^m(x)\delta_{m,m'}
-                    \quad\because(5.9)
-                    \\
-                    =&
-                    \dfrac{(l+m)!}{(l-m)!}\dfrac{2}{2l+1}\delta_{l,l'}\delta_{m,m'}
-                    \quad\because(7.12)
+                &
+                \displaystyle
+                \int_0^\pi\sin\theta d\theta
+                P_{l'}^{m'}(\cos\theta)
+                P_l^m(\cos\theta)
+                \delta_{m,m'}
+                \\
+                =&
+                \displaystyle
+                \int_1^{-1}-dxP_{l'}^m(x)P_l^m(x)\delta_{m,m'}
+                \quad\because(5.9)
+                \\
+                =&
+                \dfrac{(l+m)!}{(l-m)!}\dfrac{2}{2l+1}\delta_{l,l'}\delta_{m,m'}
+                \quad\because(7.12)
                 \end{array}
                 と計算できますね。
             </p>
             <p>
                 従って\eqref{sphere harmonic integral}は、
                 \[
-                    |C_l^m|^2
-                    \dfrac{(l+m)!}{(l-m)!}\dfrac{4\pi}{2l+1}
-                    \delta_{l,l'}\delta_{m,m'}
-                    =
-                    \delta_{l,l'}\delta_{m,m'}
+                |C_l^m|^2
+                \dfrac{(l+m)!}{(l-m)!}\dfrac{4\pi}{2l+1}
+                \delta_{l,l'}\delta_{m,m'}
+                =
+                \delta_{l,l'}\delta_{m,m'}
                 \]
                 となるので、位相の不定性はあれど、
                 \[
-                    \tag{9.2}
-                    \label{abs of coefficient}
-                    |C_l^m|
-                    =
-                    \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
+                \tag{9.2}
+                \label{abs of coefficient}
+                |C_l^m|
+                =
+                \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
                 \]
                 がわかります。
             </p>
@@ -162,13 +176,13 @@
             <p>
                 以上の議論によって、球面調和関数は
                 \[
-                    \tag{9.3}
-                    \label{sphere harmonic func}
-                    Y_l^m(\theta,\varphi)
-                    =
-                    \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
-                    P_l^m(\cos\theta)
-                    e^{im\varphi}
+                \tag{9.3}
+                \label{sphere harmonic func}
+                Y_l^m(\theta,\varphi)
+                =
+                \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
+                P_l^m(\cos\theta)
+                e^{im\varphi}
                 \]
                 とすればいいことがわかるでしょう。
                 実際、電磁気学をはじめとして古典論では\eqref{sphere harmonic func}を球面調和関数の定義とすることが多いです。
@@ -176,35 +190,37 @@
             <p>
                 しかし、特に量子力学においては第III部で取り上げる角運動量の議論のために、位相の取り方を若干変更して
                 \[
-                    \tag{9.4}
-                    \label{sphere harmonic func in another phase}
-                    Y_l^m(\theta,\varphi)
-                    =
-                    (-1)^m
-                    \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
-                    P_l^m(\cos\theta)
-                    e^{im\varphi}
+                \tag{9.4}
+                \label{sphere harmonic func in another phase}
+                Y_l^m(\theta,\varphi)
+                =
+                (-1)^m
+                \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
+                P_l^m(\cos\theta)
+                e^{im\varphi}
                 \]
                 とする流儀があります。この際(7.10)を考慮すると、\(m\lt0\) では
                 \begin{array}{rcl}
-                    Y_l^m(\theta,\varphi)
-                    &=&
-                    (-1)^m
-                    \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
-                    (-1)^m
-                    \dfrac{(l+m)!}{(l-m)!}
-                    P_l^{-m}(\cos\theta)
-                    e^{im\varphi}
-                    \\
-                    &=&
-                    \sqrt{\dfrac{(l-|m|)!}{(l+|m|)!}\dfrac{2l+1}{4\pi}}
-                    P_l^{|m|}(\cos\theta)
-                    e^{im\varphi}
+                Y_l^m(\theta,\varphi)
+                &=&
+                (-1)^m
+                \sqrt{\dfrac{(l-m)!}{(l+m)!}\dfrac{2l+1}{4\pi}}
+                (-1)^m
+                \dfrac{(l+m)!}{(l-m)!}
+                P_l^{-m}(\cos\theta)
+                e^{im\varphi}
+                \\
+                &=&
+                \sqrt{\dfrac{(l-|m|)!}{(l+|m|)!}\dfrac{2l+1}{4\pi}}
+                P_l^{|m|}(\cos\theta)
+                e^{im\varphi}
                 \end{array}
-                と、露わな負号が消えることに詳しくは<a href="../../part3/angular-momentum/index.html">10.2</a>にて紹介しますが、「\(m=l\) から下降演算子によって順次 \(m\) の値を下げる」という関数の構成方法のために、\(m\) ごとに正負が変わります。
+                と、露わな負号が消えることに詳しくは<a href="../../part3/angular-momentum/index.html">10.2</a>にて紹介しますが、「\(m=l\)
+                から下降演算子によって順次 \(m\) の値を下げる」という関数の構成方法のために、\(m\) ごとに正負が変わります。
             </p>
             <p>
-                \eqref{sphere harmonic func}, \eqref{sphere harmonic func in another phase}いずれの場合でも\eqref{abs of coefficient}を満たすことは一目瞭然ですね。
+                \eqref{sphere harmonic func}, \eqref{sphere harmonic func in another phase}いずれの場合でも\eqref{abs of
+                coefficient}を満たすことは一目瞭然ですね。
             </p>
         </div>
     </section>
@@ -220,4 +236,5 @@
         <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
     </footer>
 </body>
+
 </html>

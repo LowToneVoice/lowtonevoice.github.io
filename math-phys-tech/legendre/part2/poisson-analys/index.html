@@ -14,6 +14,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
         crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <header>
@@ -21,10 +22,21 @@
         <h1>周辺事項に関する覚書</h1>
         <h2>第II部 第5章 極座標系の斉次ポアソン方程式の解析</h2>
         <div class="menu">
-            <a href="../../index.html">目次</a>
-            <a href="../../ver1-0-0.pdf">pdf版</a>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/">目次</a>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/ver1-0-0.pdf">pdf版</a>
         </div>
     </header>
+
+    <section>
+        <p>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/ver1-0-0.pdf">pdf版はこちらから。</a>
+            相互参照やハイパーリンクなどをしっかり入れています。
+            また学習進度に合わせてレベル分けなども行っていますので、ぜひご参照ください。
+        </p>
+        <p>
+            誤植・質問等ありましたら、<a href="https://note.com/teion_burns/n/nfc8de0fab123">こちらに</a>遠慮なくご連絡ください。
+        </p>
+    </section>
 
     <section>
         <h1>5 極座標系の斉次ポアソン方程式の解析</h1>
@@ -35,17 +47,17 @@
             静電場決定問題の (4.1) にしても、定常波の波動方程式 (4.2) にしても、中心力ポテンシャルのシュレディンガー方程式 (4.3) にしても、ポアソン方程式
             \begin{align}
             \label{poisson}
-                \Delta\phi(\boldsymbol{x})
-                =
-                -f(\boldsymbol{x})
+            \Delta\phi(\boldsymbol{x})
+            =
+            -f(\boldsymbol{x})
             \end{align}
             の右辺が極座標でいう \(r\) だけの関数と \(\phi\) の積になって、
             \begin{align}
             \label{poisson eq}
             \tag{5.1}
-                \Delta\phi(\boldsymbol{x})
-                =
-                -f(r)\phi(\boldsymbol{x})
+            \Delta\phi(\boldsymbol{x})
+            =
+            -f(r)\phi(\boldsymbol{x})
             \end{align}
             の形をしています。
             すなわち<b>斉次ポアソン方程式</b>です。
@@ -86,107 +98,108 @@
             <p>
                 変数分離によって
                 \begin{align}
-                    \tag{5.2}
-                    \label{separated phi}
-                    \phi(\boldsymbol{x})
-                    =
-                    \phi(r,\theta,\varphi)
-                    =
-                    R(r)\Theta(\theta)\Phi(\varphi)
+                \tag{5.2}
+                \label{separated phi}
+                \phi(\boldsymbol{x})
+                =
+                \phi(r,\theta,\varphi)
+                =
+                R(r)\Theta(\theta)\Phi(\varphi)
                 \end{align}
                 とします。
                 これを\eqref{poisson eq}に入れれば、
                 \begin{align}
-                    \Delta\phi
-                    =
-                    \frac{1}{r^2}\frac{d}{dr}
-                    \left(
-                        r^2\frac{dR}{dr}
-                    \right)
-                    \Theta\Phi
-                    +
-                    \frac{1}{r^2\sin\theta}
-                    \frac{d}{d\theta}
-                    \left(
-                        \sin\theta\frac{d\Theta}{d\theta}
-                    \right)
-                    \Phi R
-                    +
-                    \frac{1}{r^2\sin^2\theta}
-                    \frac{d^2\Phi}{d\varphi^2}
-                    R\Theta
-                    =
-                    -f(r)R\Theta\Phi
+                \Delta\phi
+                =
+                \frac{1}{r^2}\frac{d}{dr}
+                \left(
+                r^2\frac{dR}{dr}
+                \right)
+                \Theta\Phi
+                +
+                \frac{1}{r^2\sin\theta}
+                \frac{d}{d\theta}
+                \left(
+                \sin\theta\frac{d\Theta}{d\theta}
+                \right)
+                \Phi R
+                +
+                \frac{1}{r^2\sin^2\theta}
+                \frac{d^2\Phi}{d\varphi^2}
+                R\Theta
+                =
+                -f(r)R\Theta\Phi
                 \end{align}
                 となります。
                 両辺を \(r^2/R\Theta\Phi\) 倍して
                 \[
-                    \dfrac{1}{R}
-                    \dfrac{d}{dr}
-                    \left(
-                        r^2\dfrac{dR}{dr}
-                    \right)
-                    +
-                    \dfrac{1}{\Theta\sin\theta}
-                    \dfrac{d}{d\theta}
-                    \left(
-                        \sin\theta\dfrac{d\Theta}{d\theta}
-                    \right)
-                    +
-                    \dfrac{1}{\Phi\sin^2\theta}
-                    \dfrac{d^2\Phi}{d\varphi^2}
-                    =
-                    -r^2f(r)
+                \dfrac{1}{R}
+                \dfrac{d}{dr}
+                \left(
+                r^2\dfrac{dR}{dr}
+                \right)
+                +
+                \dfrac{1}{\Theta\sin\theta}
+                \dfrac{d}{d\theta}
+                \left(
+                \sin\theta\dfrac{d\Theta}{d\theta}
+                \right)
+                +
+                \dfrac{1}{\Phi\sin^2\theta}
+                \dfrac{d^2\Phi}{d\varphi^2}
+                =
+                -r^2f(r)
                 \]
                 です。
                 \(r\) 依存部分と \(\theta, \varphi\) 依存部分を分ければ、
                 \[
-                    \tag{5.3}
-                    \label{separated poisson}
-                    \dfrac{1}{R}
-                    \dfrac{d}{dr}
-                    \left(
-                        r^2\frac{dR}{dr}
-                    \right)
-                    +
-                    r^2f(r)
-                    =
-                    -\dfrac{1}{\Theta\sin\theta}
-                    \dfrac{d}{d\theta}
-                    \left(
-                        \sin\theta\dfrac{d\Theta}{d\theta}
-                    \right)
-                    -
-                    \dfrac{1}{\Phi\sin^2\theta}
-                    \dfrac{d^2\Phi}{d\varphi^2}
+                \tag{5.3}
+                \label{separated poisson}
+                \dfrac{1}{R}
+                \dfrac{d}{dr}
+                \left(
+                r^2\frac{dR}{dr}
+                \right)
+                +
+                r^2f(r)
+                =
+                -\dfrac{1}{\Theta\sin\theta}
+                \dfrac{d}{d\theta}
+                \left(
+                \sin\theta\dfrac{d\Theta}{d\theta}
+                \right)
+                -
+                \dfrac{1}{\Phi\sin^2\theta}
+                \dfrac{d^2\Phi}{d\varphi^2}
                 \]
                 が得られます。
             </p>
             <p>
-                \eqref{separated poisson}左辺は \(r\) のみに、右辺は \(\theta, \varphi\) のみに依存しているので、恒等的に等号が成り立つには両辺とも定数でなければなりません。
+                \eqref{separated poisson}左辺は \(r\) のみに、右辺は \(\theta, \varphi\)
+                のみに依存しているので、恒等的に等号が成り立つには両辺とも定数でなければなりません。
                 この定数を
                 \[
-                    \tag{5.4}
-                    \label{lambda def}
-                    \dfrac{1}{R}
-                    \dfrac{d}{dr}
-                    \left(
-                    r^2\frac{dR}{dr}
-                    \right)
-                    +
-                    r^2f(r)
-                    =
-                    -\dfrac{1}{\Theta\sin\theta}
-                    \dfrac{d}{d\theta}
-                    \left(
-                    \sin\theta\dfrac{d\Theta}{d\theta}
-                    \right)
-                    -
-                    \dfrac{1}{\Phi\sin^2\theta}
-                    \dfrac{d^2\Phi}{d\varphi^2}
-                    \equiv
-                    \lambda
-                    \quad(\lambda\in\mathbb{C})
+                \tag{5.4}
+                \label{lambda def}
+                \dfrac{1}{R}
+                \dfrac{d}{dr}
+                \left(
+                r^2\frac{dR}{dr}
+                \right)
+                +
+                r^2f(r)
+                =
+                -\dfrac{1}{\Theta\sin\theta}
+                \dfrac{d}{d\theta}
+                \left(
+                \sin\theta\dfrac{d\Theta}{d\theta}
+                \right)
+                -
+                \dfrac{1}{\Phi\sin^2\theta}
+                \dfrac{d^2\Phi}{d\varphi^2}
+                \equiv
+                \lambda
+                \quad(\lambda\in\mathbb{C})
                 \]
                 としておきます。
             </p>
@@ -200,36 +213,37 @@
             <p>
                 \eqref{lambda def}の右側の等号によって、
                 \[
-                    \dfrac{\sin\theta}{\Theta}
-                    \dfrac{d}{d\theta}
-                    \left(
-                        \sin\theta\dfrac{d\Theta}{d\theta}
-                    \right)
-                    +
-                    \lambda\sin^2\theta
-                    =
-                    -
-                    \dfrac{1}{\Phi}
-                    \dfrac{d^2\Phi}{d\varphi^2}
+                \dfrac{\sin\theta}{\Theta}
+                \dfrac{d}{d\theta}
+                \left(
+                \sin\theta\dfrac{d\Theta}{d\theta}
+                \right)
+                +
+                \lambda\sin^2\theta
+                =
+                -
+                \dfrac{1}{\Phi}
+                \dfrac{d^2\Phi}{d\varphi^2}
                 \]
                 です。
-                \eqref{separated poisson}から\eqref{lambda def}を得るときと同様に、左辺は \(\theta\) のみに、右辺は \(\varphi\) のみに依存していますから、複素定数 \(m\) によって
+                \eqref{separated poisson}から\eqref{lambda def}を得るときと同様に、左辺は \(\theta\) のみに、右辺は \(\varphi\)
+                のみに依存していますから、複素定数 \(m\) によって
                 \[
-                    \tag{5.5}
-                    \label{m def}
-                    \dfrac{\sin\theta}{\Theta}
-                    \dfrac{d}{d\theta}
-                    \left(
-                    \sin\theta\dfrac{d\Theta}{d\theta}
-                    \right)
-                    +
-                    \lambda\sin^2\theta
-                    =
-                    -
-                    \dfrac{1}{\Phi}
-                    \dfrac{d^2\Phi}{d\varphi^2}
-                    \equiv
-                    m^2
+                \tag{5.5}
+                \label{m def}
+                \dfrac{\sin\theta}{\Theta}
+                \dfrac{d}{d\theta}
+                \left(
+                \sin\theta\dfrac{d\Theta}{d\theta}
+                \right)
+                +
+                \lambda\sin^2\theta
+                =
+                -
+                \dfrac{1}{\Phi}
+                \dfrac{d^2\Phi}{d\varphi^2}
+                \equiv
+                m^2
                 \]
                 とできます。
             </p>
@@ -258,43 +272,43 @@
             <p>
                 \eqref{lambda def}の両端をとれば、
                 \[
-                    \dfrac{1}{R}
-                    \dfrac{d}{dr}
-                    \left(
-                        r^2\frac{dR}{dr}
-                    \right)
-                    +
-                    r^2f(r)
-                    =
-                    \lambda
+                \dfrac{1}{R}
+                \dfrac{d}{dr}
+                \left(
+                r^2\frac{dR}{dr}
+                \right)
+                +
+                r^2f(r)
+                =
+                \lambda
                 \]
                 となります。
                 両辺 \(R\) 倍して整理すると、
                 \[
-                    \dfrac{d}{dr}
-                    \left(
-                        r^2\frac{dR}{dr}
-                    \right)
-                    +
-                    r^2f(r)R
-                    -
-                    \lambda R
-                    =0
+                \dfrac{d}{dr}
+                \left(
+                r^2\frac{dR}{dr}
+                \right)
+                +
+                r^2f(r)R
+                -
+                \lambda R
+                =0
                 \]
                 が手に入ります。
                 この解 \(R\) は一般に \(\lambda\) によって異なりますから、
                 \[
-                    \tag{5.6}
-                    \label{radial eq}
-                    \dfrac{d}{dr}
-                    \left(
-                        r^2\frac{dR_\lambda}{dr}
-                    \right)
-                    +
-                    r^2f(r)R_\lambda
-                    -
-                    \lambda R_\lambda
-                    =0
+                \tag{5.6}
+                \label{radial eq}
+                \dfrac{d}{dr}
+                \left(
+                r^2\frac{dR_\lambda}{dr}
+                \right)
+                +
+                r^2f(r)R_\lambda
+                -
+                \lambda R_\lambda
+                =0
                 \]
                 と書いておきましょう。
                 ポアソン方程式の一般解 \(\phi=R(r)\Theta(\theta)\Phi(\varphi)\) における \(R\) はこの方程式の一般解ですね。
@@ -304,17 +318,17 @@
                 \(\Theta(\theta=0,\pi)\) の正則性を考慮すると、\(\lambda=l(l+1), l\in\mathbb{Z}\) を考えるのが一般的です。
                 このとき\eqref{radial eq}は直ちに
                 \[
-                    \tag{5.7}
-                    \label{radial l}
-                    \dfrac{d}{dr}
-                    \left(
-                    r^2\frac{dR_l}{dr}
-                    \right)
-                    +
-                    r^2f(r)R_l
-                    -
-                    l(l+1) R_l
-                    =0
+                \tag{5.7}
+                \label{radial l}
+                \dfrac{d}{dr}
+                \left(
+                r^2\frac{dR_l}{dr}
+                \right)
+                +
+                r^2f(r)R_l
+                -
+                l(l+1) R_l
+                =0
                 \]
                 と書き換えられます。
                 物理でこの応用を考えるときは主にこちらの方程式を解いていきます。
@@ -333,141 +347,142 @@
             <p>
                 \eqref{m def}の両端を使えば、
                 \[
-                    \tag{5.8}
-                    \label{m and theta}
-                    \sin\theta
-                    \dfrac{d}{d\theta}
-                    \left(
-                        \sin\theta\dfrac{d\Theta}{d\theta}
-                    \right)
-                    +
-                    \lambda\Theta\sin^2\theta
-                    =
-                    m^2\Theta
+                \tag{5.8}
+                \label{m and theta}
+                \sin\theta
+                \dfrac{d}{d\theta}
+                \left(
+                \sin\theta\dfrac{d\Theta}{d\theta}
+                \right)
+                +
+                \lambda\Theta\sin^2\theta
+                =
+                m^2\Theta
                 \]
                 が要請されますね。
                 ここで \(\sin\theta\:d/d\theta\) の形が目立つので、
                 \begin{array}{rcl}
-                    \tag{5.9}
-                    \label{x and cos}
-                    \cos\theta&=&x
-                    \\
-                    -\sin\theta\:d\theta&=&dx
+                \tag{5.9}
+                \label{x and cos}
+                \cos\theta&=&x
+                \\
+                -\sin\theta\:d\theta&=&dx
                 \end{array}
                 としておきます。
                 このとき
                 \begin{array}{rcl}
-                    \dfrac{d\Theta}{d\theta}
-                    &=&
-                    -\sin\theta
-                    \dfrac{d\Theta}{dx}
-                    \\
-                    \dfrac{d^2\Theta}{d\theta^2}
-                    &=&
-                    \sin^2\theta\dfrac{d^2\Theta}{dx^2}
-                    -
-                    \cos\theta\dfrac{d\Theta}{dx}
+                \dfrac{d\Theta}{d\theta}
+                &=&
+                -\sin\theta
+                \dfrac{d\Theta}{dx}
+                \\
+                \dfrac{d^2\Theta}{d\theta^2}
+                &=&
+                \sin^2\theta\dfrac{d^2\Theta}{dx^2}
+                -
+                \cos\theta\dfrac{d\Theta}{dx}
                 \end{array}
                 が成り立つので、\eqref{m and theta}の微分をライプニッツルールで分解したのち、\(\Theta\) の微分を代入して、
                 \[
-                    \sin^2\theta
-                    \left(
-                        \sin^2\theta
-                        \dfrac{d^2\Theta}{dx^2}
-                        -
-                        \cos\theta
-                        \dfrac{d\Theta}{dx}
-                    \right)
-                    +
-                    \sin\theta\cos\theta
-                    \left(
-                        -\sin\theta
-                        \dfrac{d\Theta}{dx}
-                    \right)
-                    +
-                    \lambda\Theta\sin^2\theta
-                    -
-                    m^2\Theta
-                    =
-                    0
+                \sin^2\theta
+                \left(
+                \sin^2\theta
+                \dfrac{d^2\Theta}{dx^2}
+                -
+                \cos\theta
+                \dfrac{d\Theta}{dx}
+                \right)
+                +
+                \sin\theta\cos\theta
+                \left(
+                -\sin\theta
+                \dfrac{d\Theta}{dx}
+                \right)
+                +
+                \lambda\Theta\sin^2\theta
+                -
+                m^2\Theta
+                =
+                0
                 \]
                 が得られます。
                 両辺 \(\sin^2\theta\) で割って\eqref{x and cos}を使えば、
                 \[
-                    (1-x^2)\dfrac{d^2\Theta}{dx^2}
-                    -
-                    2x\dfrac{d\Theta}{dx}
-                    +
-                    \lambda\Theta
-                    -
-                    \dfrac{m^2}{1-x^2}\Theta
-                    =0
+                (1-x^2)\dfrac{d^2\Theta}{dx^2}
+                -
+                2x\dfrac{d\Theta}{dx}
+                +
+                \lambda\Theta
+                -
+                \dfrac{m^2}{1-x^2}\Theta
+                =0
                 \]
                 です。
                 解 \(\Theta\) は \(\lambda, m\) の値によって変わりますから、\(\Theta_\lambda^m\) と書いておけば、第1項と第2項をまとめて
                 \[
-                    \left[
-                        \dfrac{d}{dx}
-                        \left(
-                            (1-x^2)\dfrac{d}{dx}
-                        \right)
-                        +
-                        \left(
-                            \lambda
-                            -
-                            \dfrac{m^2}{1-x^2}
-                        \right)
-                    \right]
-                    \Theta_\lambda^m
-                    =0
+                \left[
+                \dfrac{d}{dx}
+                \left(
+                (1-x^2)\dfrac{d}{dx}
+                \right)
+                +
+                \left(
+                \lambda
+                -
+                \dfrac{m^2}{1-x^2}
+                \right)
+                \right]
+                \Theta_\lambda^m
+                =0
                 \]
                 と表せます。
             </p>
             <p>
                 かくして \(x\) の関数 \(y\) に関する方程式が得られます。
                 \[
-                    \tag{5.10}
-                    \label{asc Leg eq}
-                    L_\lambda^m[y_\lambda^m]
-                    :=
-                    \left[
-                        \dfrac{d}{dx}
-                        \left(
-                            (1-x^2)\dfrac{d}{dx}
-                        \right)
-                        +
-                        \left(
-                            \lambda
-                            -
-                            \dfrac{m^2}{1-x^2}
-                        \right)
-                    \right]
-                    y_\lambda^m
-                    =0
+                \tag{5.10}
+                \label{asc Leg eq}
+                L_\lambda^m[y_\lambda^m]
+                :=
+                \left[
+                \dfrac{d}{dx}
+                \left(
+                (1-x^2)\dfrac{d}{dx}
+                \right)
+                +
+                \left(
+                \lambda
+                -
+                \dfrac{m^2}{1-x^2}
+                \right)
+                \right]
+                y_\lambda^m
+                =0
                 \]
                 これこそ我々がpdf版で数十ページをかけてこねくり回す<b style="color: red;">ルジャンドルの倍微分方程式</b>です。
             </p>
             <p>
-                \(x=\pm1\) すなわち \(\theta=0,\pi\) における解の正則性を考慮すると、\(\lambda=l(l+1)\) とおいて \(l\in\mathbb{Z}_{\geq0}\) の場合を考えるのが一般的で、
+                \(x=\pm1\) すなわち \(\theta=0,\pi\) における解の正則性を考慮すると、\(\lambda=l(l+1)\) とおいて \(l\in\mathbb{Z}_{\geq0}\)
+                の場合を考えるのが一般的で、
                 \[
-                    \tag{5.11}
-                    \label{asc Leg eq with l}
-                    L_l^m[y_l^m]
-                    :=
-                    \left[
-                        \dfrac{d}{dx}
-                        \left(
-                            (1-x^2)\dfrac{d}{dx}
-                        \right)
-                        +
-                        \left(
-                            l(l+1)
-                            -
-                            \dfrac{m^2}{1-x^2}
-                        \right)
-                    \right]
-                    y_l^m
-                    =0
+                \tag{5.11}
+                \label{asc Leg eq with l}
+                L_l^m[y_l^m]
+                :=
+                \left[
+                \dfrac{d}{dx}
+                \left(
+                (1-x^2)\dfrac{d}{dx}
+                \right)
+                +
+                \left(
+                l(l+1)
+                -
+                \dfrac{m^2}{1-x^2}
+                \right)
+                \right]
+                y_l^m
+                =0
                 \]
                 と表せます。
             </p>
@@ -480,44 +495,44 @@
             <p>
                 \eqref{asc Leg eq with l}の解を \(P_l^m(x)\) と表せば、
                 \[
-                    \tag{5.12}
-                    \Theta_l^m(\theta)=P_l^m(\cos\theta)
+                \tag{5.12}
+                \Theta_l^m(\theta)=P_l^m(\cos\theta)
                 \]
                 です。
             </p>
             <p>
                 また、\(m=0\) のときは斉次方程式になって解析が容易になるので、<b style="color: red;">ルジャンドルの微分方程式</b>も用意しておきましょう。
                 \[
-                    \tag{5.13}
-                    \label{Leg eq}
-                    L_\lambda[y_\lambda]
-                    :=
-                    \left[
-                        \dfrac{d}{dx}
-                        \left(
-                            (1-x^2)\dfrac{d}{dx}
-                        \right)
-                        +
-                        \lambda
-                    \right]
-                    y_\lambda
-                    =0
+                \tag{5.13}
+                \label{Leg eq}
+                L_\lambda[y_\lambda]
+                :=
+                \left[
+                \dfrac{d}{dx}
+                \left(
+                (1-x^2)\dfrac{d}{dx}
+                \right)
+                +
+                \lambda
+                \right]
+                y_\lambda
+                =0
                 \]
                 \[
-                    \tag{5.14}
-                    \label{Leg eq with l}
-                    L_\lambda[y_l]
-                    :=
-                    \left[
-                        \dfrac{d}{dx}
-                        \left(
-                            (1-x^2)\dfrac{d}{dx}
-                        \right)
-                        +
-                        l(l+1)
-                    \right]
-                    y_l
-                    =0
+                \tag{5.14}
+                \label{Leg eq with l}
+                L_\lambda[y_l]
+                :=
+                \left[
+                \dfrac{d}{dx}
+                \left(
+                (1-x^2)\dfrac{d}{dx}
+                \right)
+                +
+                l(l+1)
+                \right]
+                y_l
+                =0
                 \]
                 今後、ことあるごとに「ルジャンドルの微分方程式で得られた解析結果を陪微分方程式に拡張する」という手法を取ります。
             </p>
@@ -528,17 +543,17 @@
             <p>
                 \eqref{m def}の右側の等号によって直ちに
                 \[
-                    \dfrac{d^2\Phi}{d\varphi^2}
-                    =
-                    -m^2\Phi
+                \dfrac{d^2\Phi}{d\varphi^2}
+                =
+                -m^2\Phi
                 \]
             </p>
             が得られます。
             この方程式は調和振動子の運動方程式として有名で、一般解は
             \[
-                \tag{5.15}
-                \label{Phi solution}
-                \Phi_m(\varphi)=e^{\pm im\varphi}
+            \tag{5.15}
+            \label{Phi solution}
+            \Phi_m(\varphi)=e^{\pm im\varphi}
             \]
             ですね。
         </div>
@@ -555,4 +570,5 @@
         <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
     </footer>
 </body>
+
 </html>

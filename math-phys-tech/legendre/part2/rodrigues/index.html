@@ -14,16 +14,28 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
         crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <h1>ルジャンドル多項式と</h1>
         <h1>周辺事項に関する覚書</h1>
         <h2>第II部 第7章 ロドリゲスの公式</h2>
         <div class="menu">
-            <a href="../../index.html">目次</a>
-            <a href="../../ver1-0-0.pdf">pdf版</a>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/">目次</a>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/ver1-0-0.pdf">pdf版</a>
         </div>
     </header>
+
+    <section>
+        <p>
+            <a href="https://lowtonevoice.github.io/math-phys-tech/legendre/ver1-0-0.pdf">pdf版はこちらから。</a>
+            相互参照やハイパーリンクなどをしっかり入れています。
+            また学習進度に合わせてレベル分けなども行っていますので、ぜひご参照ください。
+        </p>
+        <p>
+            誤植・質問等ありましたら、<a href="https://note.com/teion_burns/n/nfc8de0fab123">こちらに</a>遠慮なくご連絡ください。
+        </p>
+    </section>
 
     <section>
         <h1>7 ロドリゲスの公式</h1>
@@ -69,22 +81,22 @@
             唐突ですが、定義域 \(I\subset\mathbb{R}\) 上で可積分な正の関数 \(w(x)\) を用意します。
             つまり
             \[
-                \left|
-                    \int_I w(x)dx
-                \right|
-                \let\infty
+            \left|
+            \int_I w(x)dx
+            \right|
+            \let\infty
             \]
             です。
             この \(w\) を一般に重み関数などと表現します。
             \(x\) の高々2次の整式 \(X(x)\) と重み関数 \(w\) 及び定数 \(C\) を使って
             \[
-                \tag{7.1}
-                \label{Rodrigues}
-                u_n(x)
-                =
-                \frac{C}{w(x)}
-                \frac{d^n}{dx^n}
-                (w(x)X^n(x))
+            \tag{7.1}
+            \label{Rodrigues}
+            u_n(x)
+            =
+            \frac{C}{w(x)}
+            \frac{d^n}{dx^n}
+            (w(x)X^n(x))
             \]
             と表される式を、一般に<b>ロドリゲスの公式</b>と呼びます。
         </p>
@@ -118,17 +130,19 @@
         <div class="subsection" id="rodrigues-nord">
             <h2>7.1.2 ロドリゲスの公式が n 次多項式であることの証明</h2>
             <p>
-                以下ではこうしたロドリゲスの公式が直交関数系であることを導出するわけですが、そもそも何処の馬の骨とも知らぬ\eqref{Rodrigues}がちゃんと \(n\) 次多項式になっていることを確認しなければなりません。
-                ルジャンドル多項式を考える分には、表3から \(n\) 次多項式であることは自明ですのでこの確認は不要ですが、一般には \(w\) が分母に現れたり \(w\) が多項式函数でなかったりすることから、必要不可欠となります。
+                以下ではこうしたロドリゲスの公式が直交関数系であることを導出するわけですが、そもそも何処の馬の骨とも知らぬ\eqref{Rodrigues}がちゃんと \(n\)
+                次多項式になっていることを確認しなければなりません。
+                ルジャンドル多項式を考える分には、表3から \(n\) 次多項式であることは自明ですのでこの確認は不要ですが、一般には \(w\) が分母に現れたり \(w\)
+                が多項式函数でなかったりすることから、必要不可欠となります。
             </p>
             <p>
                 有限区間 \(I=[a,b]\) で証明します。
                 \begin{array}{l}
-                    w(x)=(x-a)^\alpha(b-x)^\beta
-                    \\
-                    X(x)=(x-a)(b-x)
-                    \\
-                    \alpha, \beta\gt1
+                w(x)=(x-a)^\alpha(b-x)^\beta
+                \\
+                X(x)=(x-a)(b-x)
+                \\
+                \alpha, \beta\gt1
                 \end{array}
                 とすれば、表3に挙げられた有限区間のロドリゲスの公式は全て調べ上げられます。
                 らゲール・エルミートの場合は表3の形式をそのまま使えば証明可能です。
@@ -138,25 +152,25 @@
                 文献によっては昇冪で定義するので、注意が必要です。
                 \(w(x)X^n(x)=(x-a)^{n+\alpha}(b-x)^{n+\beta}\) にライプニッツルールを適用すれば、
                 \begin{array}{rcl}
-                    D^n(wX^n)
-                    &=&
-                    \sum_{k=0}^n
-                    \left(
-                        \begin{matrix}
-                            n\\k
-                        \end{matrix}
-                    \right)
-                    (D^k(x-a)^{n+\alpha})(D^{n-k}(b-x)^{n+\beta})
-                    \\
-                    &=&
-                    \sum_{k=0}^n
-                    \left(
-                        \begin{matrix}
-                            n\\k
-                        \end{matrix}
-                    \right)
-                    ((n+\alpha)_k(x-a)^{n+\alpha-k})
-                    ((n+\beta)_{n-k}(-1)^{n-k}(b-x)^{\beta+k})
+                D^n(wX^n)
+                &=&
+                \sum_{k=0}^n
+                \left(
+                \begin{matrix}
+                n\\k
+                \end{matrix}
+                \right)
+                (D^k(x-a)^{n+\alpha})(D^{n-k}(b-x)^{n+\beta})
+                \\
+                &=&
+                \sum_{k=0}^n
+                \left(
+                \begin{matrix}
+                n\\k
+                \end{matrix}
+                \right)
+                ((n+\alpha)_k(x-a)^{n+\alpha-k})
+                ((n+\beta)_{n-k}(-1)^{n-k}(b-x)^{\beta+k})
                 \end{array}
                 となるので、\(D^n(wX^n)\) は \(n+\alpha+\beta\) 次多項式です。
                 これを \(\alpha+\beta\) 次多項式 \(w\) で割った\eqref{Rodrigues}は \(n\) 次多項式になりますね。
@@ -169,11 +183,11 @@
                 ロドリゲスの公式が表3の直交関数を表すという以上、\eqref{Rodrigues}は直交関数系になっているはずです。
                 ただし内積は重み関数を伴い、かつ実関数であることから、直交関係は
                 \[
-                    \tag{7.2}
-                    \label{Rodrigues orthog}
-                    \int_I u_m(x)u_n(x)w(x)dx
-                    \propto
-                    \delta_{m,n}
+                \tag{7.2}
+                \label{Rodrigues orthog}
+                \int_I u_m(x)u_n(x)w(x)dx
+                \propto
+                \delta_{m,n}
                 \]
                 とします。
             </p>
@@ -187,77 +201,77 @@
                 \(n=m\) では内積の正値性から \(0\) 以上であり、\(u_n(x)\neq0\) なる \(x\) が必ず存在するので、内積は値を保ちます。
                 そこで \(m\lt n\) として部分積分を使うと、
                 \begin{array}{cl}
-                    &
-                    \displaystyle
-                    \int_a^bu_m(x)u_n(x)w(x)dx
-                    \\
-                    =&
-                    \displaystyle
-                    \int_a^b
-                    u_m(x)
-                    D^n
-                    (
-                        (x-a)^{n+\alpha}
-                        (b-x)^{n+\beta})
-                    )
-                    dx
-                    \\
-                    =&
-                    \displaystyle
-                    \left[
-                        u_m(x)
-                        D^{n-1}
-                        (
-                            (x-a)^{n+\alpha}
-                            (b-x)^{n+\beta}
-                        )
-                    \right]_a^b
-                    \\
-                    &
-                    \displaystyle
-                    -\int_a^b
-                    Du_m(x)
-                    \cdot
-                    D^{n-1}(
-                        (x-a)^{n+\alpha}
-                        (b-x)^{n+\beta}
-                    )
-                    dx.
+                &
+                \displaystyle
+                \int_a^bu_m(x)u_n(x)w(x)dx
+                \\
+                =&
+                \displaystyle
+                \int_a^b
+                u_m(x)
+                D^n
+                (
+                (x-a)^{n+\alpha}
+                (b-x)^{n+\beta})
+                )
+                dx
+                \\
+                =&
+                \displaystyle
+                \left[
+                u_m(x)
+                D^{n-1}
+                (
+                (x-a)^{n+\alpha}
+                (b-x)^{n+\beta}
+                )
+                \right]_a^b
+                \\
+                &
+                \displaystyle
+                -\int_a^b
+                Du_m(x)
+                \cdot
+                D^{n-1}(
+                (x-a)^{n+\alpha}
+                (b-x)^{n+\beta}
+                )
+                dx.
                 \end{array}
                 ここで、右辺第1項の内部は
                 \begin{array}{cl}
-                    D^{n-1}(
-                        (x-a)^{n+\alpha}
-                        (b-x)^{n+\beta}
-                    )
-                    &=&
-                    (const.)\times
-                    (x-a)^{1+\alpha}
-                    (b-x)^{n+\beta}
-                    \\
-                    &+&\cdots
-                    \\
-                    &+&
-                    (const.)\times
-                    (x-a)^{n+\alpha}
-                    (b-x)^{1+\beta}
+                D^{n-1}(
+                (x-a)^{n+\alpha}
+                (b-x)^{n+\beta}
+                )
+                &=&
+                (const.)\times
+                (x-a)^{1+\alpha}
+                (b-x)^{n+\beta}
+                \\
+                &+&\cdots
+                \\
+                &+&
+                (const.)\times
+                (x-a)^{n+\alpha}
+                (b-x)^{1+\beta}
                 \end{array}
                 となるので、境界 \(x=a,b\) で消去されます。
                 \(\alpha, \beta\gt1\) に注意してください。
                 従って部分積分を続けると、
                 \[
-                    \int_a^b
-                    u_m(x)u_n(x)w(x)dx
-                    =
-                    (-1)^n
-                    \int_a^b
-                    D^nu_m(x)
-                    \cdot
-                    \left(
-                        (x-a)^{n+\alpha}
-                        (b-x)^{n+\beta}
-                    \right)
-                    dx=0
+                \int_a^b
+                u_m(x)u_n(x)w(x)dx
+                =
+                (-1)^n
+                \int_a^b
+                D^nu_m(x)
+                \cdot
+                \left(
+                (x-a)^{n+\alpha}
+                (b-x)^{n+\beta}
+                \right)
+                dx=0
                 \]
                 となります。
                 これで直交性が示せました。
@@ -269,130 +283,132 @@
             <p>
                 結論を先に提示すれば、ロドリゲスの公式\eqref{Rodrigues}は微分方程式
                 \begin{array}{l}
-                    \tag{7.3}
-                    \label{Rodrigues eq}
-                    \displaystyle
-                    \frac{1}{w(x)}
-                    D(w(x)X(x)Du_n(x))
-                    =
-                    \lambda_nu_n(x)
-                    \\
-                    \displaystyle
-                    \lambda_n
-                    =
-                    nu_1'(x)
-                    +
-                    \frac{n(n-1)}{2}
-                    X''(x)
+                \tag{7.3}
+                \label{Rodrigues eq}
+                \displaystyle
+                \frac{1}{w(x)}
+                D(w(x)X(x)Du_n(x))
+                =
+                \lambda_nu_n(x)
+                \\
+                \displaystyle
+                \lambda_n
+                =
+                nu_1'(x)
+                +
+                \frac{n(n-1)}{2}
+                X''(x)
                 \end{array}
                 を満たします。
                 逆に、これら方程式がルジャンドルの微分方程式やエルミートの微分方程式などを与えます。
             </p>
             <p>
-                証明は、まず\eqref{Rodrigues eq}第1式を満たす \(\lambda_n\) が存在することを示し、次いでその \(\lambda_n\) が第2式の表式になることを示すという順序で行います。
+                証明は、まず\eqref{Rodrigues eq}第1式を満たす \(\lambda_n\) が存在することを示し、次いでその \(\lambda_n\)
+                が第2式の表式になることを示すという順序で行います。
             </p>
             <p>
                 \eqref{Rodrigues eq}第1式左辺を計算して
                 \begin{array}{rcl}
-                    \dfrac{1}{w(x)}
-                    D(w(x)X(x)Du_n(x))
-                    &=&
-                    \dfrac{1}{w(x)}
-                    D(w(x)X(x))
-                    Du_n(x)
-                    +
-                    X(x)D^2u_n(x)
-                    \\
-                    &=&
-                    u_1(x)Du_n(x)
-                    +
-                    X(x)D^2u_n(x)
+                \dfrac{1}{w(x)}
+                D(w(x)X(x)Du_n(x))
+                &=&
+                \dfrac{1}{w(x)}
+                D(w(x)X(x))
+                Du_n(x)
+                +
+                X(x)D^2u_n(x)
+                \\
+                &=&
+                u_1(x)Du_n(x)
+                +
+                X(x)D^2u_n(x)
                 \end{array}
                 より、左辺は \(n\) 次式。
                 表3を見れば \(w(x)X(x)\) が境界部分で \(0\) になっていますから、左辺と \(u_m(x)\) との内積を\eqref{Rodrigues orthog}により部分積分で計算すると、
                 \begin{array}{cl}
-                    &
-                    \displaystyle
-                    \left(
-                        \frac{1}{w}
-                        D(wXDu_n)
-                        ,
-                        u_m
-                    \right)
-                    \\
-                    =&
-                    \displaystyle
-                    \int_I
-                    \frac{1}{w}
-                    D(wXDu_n)u_mwdx
-                    \\
-                    =&
-                    \displaystyle
-                    [u_mwXDu_n]_I
-                    -
-                    \int_I
-                    wXDu_m\cdot Du_ndx
-                    \\
-                    =&
-                    \displaystyle
-                    -[u_nwXDu_m]_I
-                    +
-                    \int_I u_nD(wXDu_m)dx
-                    \\
-                    =&
-                    \displaystyle
-                    \left(
-                        u_n
-                        ,
-                        \frac{1}{w}D(wXDu_m)
-                    \right)
+                &
+                \displaystyle
+                \left(
+                \frac{1}{w}
+                D(wXDu_n)
+                ,
+                u_m
+                \right)
+                \\
+                =&
+                \displaystyle
+                \int_I
+                \frac{1}{w}
+                D(wXDu_n)u_mwdx
+                \\
+                =&
+                \displaystyle
+                [u_mwXDu_n]_I
+                -
+                \int_I
+                wXDu_m\cdot Du_ndx
+                \\
+                =&
+                \displaystyle
+                -[u_nwXDu_m]_I
+                +
+                \int_I u_nD(wXDu_m)dx
+                \\
+                =&
+                \displaystyle
+                \left(
+                u_n
+                ,
+                \frac{1}{w}D(wXDu_m)
+                \right)
                 \end{array}
                 が得られます。
             </p>
             <div class="note">
                 <p>
-                    演算子 \(\hat{O}=\displaystyle\frac{1}{w}DwXD\) が \((\hat{O}u_n,u_m)=(u_n,\hat{O}u_m)\) を満たすこと、すなわち \(\hat{O}\) がエルミート演算子であることを示したことになる。
+                    演算子 \(\hat{O}=\displaystyle\frac{1}{w}DwXD\) が \((\hat{O}u_n,u_m)=(u_n,\hat{O}u_m)\) を満たすこと、すなわち
+                    \(\hat{O}\) がエルミート演算子であることを示したことになる。
                 </p>
             </div>
             <p>
                 ここで \(n\geq m\) とし、\(n\) 次式である\eqref{Rodrigues eq}第1式左辺が
                 \[
-                    \frac{1}{w}D(wXDu_n)
-                    =
-                    \sum_{k=0}^n
-                    \lambda_ku_k
-                    \quad
-                    (\lambda_n\neq0)
+                \frac{1}{w}D(wXDu_n)
+                =
+                \sum_{k=0}^n
+                \lambda_ku_k
+                \quad
+                (\lambda_n\neq0)
                 \]
                 と書けるとしましょう。
                 上記の内積は、左辺が
                 \[
-                    \left(
-                        \frac{1}{w}
-                        D(wXDu_n)
-                        ,
-                        u_m
-                    \right)
-                    =
-                    \lambda_m(u_m,u_m)
+                \left(
+                \frac{1}{w}
+                D(wXDu_n)
+                ,
+                u_m
+                \right)
+                =
+                \lambda_m(u_m,u_m)
                 \]
                 であり、右辺は
                 \[
-                    \left(
-                        u_n
-                        ,
-                        \frac{1}{w}D(wXDu_m)
-                    \right)
-                    =
-                    (u_n,O(x^m))
+                \left(
+                u_n
+                ,
+                \frac{1}{w}D(wXDu_m)
+                \right)
+                =
+                (u_n,O(x^m))
                 \]
                 です。
                 \(n\gt m\) のときは \((u_n,O(x^m))=0\) である一方、内積の正値性から \((u_m,u_m\gt0\) ですから、\(\lambda_m=0\) となります。
                 よって
                 \[
-                    \frac{1}{w}D(wXDU_n)
-                    =
-                    \lambda_nu_n
+                \frac{1}{w}D(wXDU_n)
+                =
+                \lambda_nu_n
                 \]
                 となり、\eqref{Rodrigues eq}第1式を満たす \(\lambda_n\) が存在します。
             </p>
@@ -405,43 +421,43 @@
                 次いで\eqref{Rodrigues eq}第1式右辺の最高次の係数を比較します。
                 \(u_n(x)=\alpha_nx^n+O(x^{n-1}), X(x)=X_0x^2+O(x)\) とすると、
                 \begin{array}{cl}
-                    &
-                    \dfrac{1}{w}D(wXDu_n)
-                    \\
-                    =&
-                    \dfrac{1}{w}D(wX)Du_n
-                    +
-                    XD^2u_n
-                    \\
-                    =&
-                    u_1D\alpha_nx^n
-                    +
-                    XD^2\alpha_nx^n
-                    +
-                    O(x^{n-1})
-                    \\
-                    =&
-                    (\alpha_1x+O(x^0))
-                    \alpha_nnx^{n-1}
-                    +
-                    (X_0x^2+O(x))\alpha_nn(n-1)x^{n-2}
-                    +
-                    O(x^{n-1})
-                    \\
-                    =&
-                    (n\alpha_1+n(n-1)X_0)\alpha_nx^n
-                    +
-                    O(x^{n-1})
-                    \\
-                    =&
-                    \left(
-                        nu_1'
-                        +
-                        \dfrac{X''}{2}n(n-1)
-                    \right)
-                    \alpha_nx^n
-                    +
-                    O(x^{n-1})
+                &
+                \dfrac{1}{w}D(wXDu_n)
+                \\
+                =&
+                \dfrac{1}{w}D(wX)Du_n
+                +
+                XD^2u_n
+                \\
+                =&
+                u_1D\alpha_nx^n
+                +
+                XD^2\alpha_nx^n
+                +
+                O(x^{n-1})
+                \\
+                =&
+                (\alpha_1x+O(x^0))
+                \alpha_nnx^{n-1}
+                +
+                (X_0x^2+O(x))\alpha_nn(n-1)x^{n-2}
+                +
+                O(x^{n-1})
+                \\
+                =&
+                (n\alpha_1+n(n-1)X_0)\alpha_nx^n
+                +
+                O(x^{n-1})
+                \\
+                =&
+                \left(
+                nu_1'
+                +
+                \dfrac{X''}{2}n(n-1)
+                \right)
+                \alpha_nx^n
+                +
+                O(x^{n-1})
                 \end{array}
                 となるので、\eqref{Rodrigues eq}第2式が得られます。
             </p>
@@ -454,34 +470,35 @@
         <p>
             ルジャンドルの微分方程式(5.14)とロドリゲスの公式が満たす微分方程式\eqref{Rodrigues eq}を見比べると、
             \[
-                w(x)=1,
-                X(x)=1-x^2,
-                \lambda_n=-l(l+1)
+            w(x)=1,
+            X(x)=1-x^2,
+            \lambda_n=-l(l+1)
             \]
             とすれば良いことがわかります。
             従ってルジャンドルの微分方程式に対するロドリゲスの公式は
             \[
-                \label{Leg polyn propto}
-                P_l(x)
-                \propto
-                \dfrac{d^l}{dx^l}(1-x^2)^l
+            \label{Leg polyn propto}
+            P_l(x)
+            \propto
+            \dfrac{d^l}{dx^l}(1-x^2)^l
             \]
             と表せますね。
             通常、定数は正規化した形から求めるのですが、こと直交関数系に関しては \(x=1\) での値が \(1\) となるように揃えることが多いです。
             これを踏まえると
             \[
-                \tag{7.4}
-                \label{Leg polyn}
-                P_l(x)
-                =
-                \frac{1}{2^ll!}
-                \frac{d^l}{dx^l}
-                (x^2-1)^l
+            \tag{7.4}
+            \label{Leg polyn}
+            P_l(x)
+            =
+            \frac{1}{2^ll!}
+            \frac{d^l}{dx^l}
+            (x^2-1)^l
             \]
             となります (証明<a href="leg-coefficient">7.2.1</a>)。
         </p>
         <p>
-            また、この表式で \(P_l\) はルジャンドルの微分方程式を満たす \(l\) 次多項式ですから(<a href="#rodrigues-eq">7.1.4</a>, <a href="#leg-eq">7.2.2</a>参照)、\(P_l\) は(6.5)を係数とする原点周りの級数展開と見なすことができるでしょう。
+            また、この表式で \(P_l\) はルジャンドルの微分方程式を満たす \(l\) 次多項式ですから(<a href="#rodrigues-eq">7.1.4</a>, <a
+                href="#leg-eq">7.2.2</a>参照)、\(P_l\) は(6.5)を係数とする原点周りの級数展開と見なすことができるでしょう。
             ゆえに \(P_l\) を <b style="color: red;">\(l\) 次のルジャンドル多項式</b>と呼びます。
         </p>
 
@@ -490,15 +507,15 @@
             <p>
                 さて、上で注意したように直交関数系ではノルムを \(1\) に揃える通常の正規化の代わりに \(x=1\) での値が \(1\) となるような標準化
                 \[
-                    \tag{7.5}
-                    \label{Leg polyn normal}
-                    P_l(1)
-                    =
-                    \left(
-                        \dfrac{1}{2^ll!}
-                        D^l(x^2-1)^l
-                    \right)_{x=1}
-                    =1
+                \tag{7.5}
+                \label{Leg polyn normal}
+                P_l(1)
+                =
+                \left(
+                \dfrac{1}{2^ll!}
+                D^l(x^2-1)^l
+                \right)_{x=1}
+                =1
                 \]
                 を行います。
                 ここでは係数 \(\dfrac{1}{2^ll!}\) によって標準化されていることを証明していきましょう。
@@ -507,59 +524,59 @@
                 \(P_l\) の微分を帰納的に実行します。
                 まず \(l=0\) では自明に
                 \[
-                    \dfrac{1}{2^ll!}
-                    D^l(x^2-1)^l
-                    =1
+                \dfrac{1}{2^ll!}
+                D^l(x^2-1)^l
+                =1
                 \]
                 となります。
                 \(0, 1, \cdots, l\) で\eqref{Leg polyn normal}が成り立っているとして、\(l+1\) では
                 \begin{array}{cl}
-                    &
-                    \dfrac{1}{2^{l+1}(l+1)!}
-                    D^{l+1}(x^2-1)^{l+1}_{x=1}
-                    \\
-                    =&
-                    \dfrac{1}{2^{l+1}l!}
-                    D^l
-                    \left(
-                        (x^2-1)^l\cdot2x
-                    \right)_{x=1}
-                    \\
-                    =&
-                    \dfrac{1}{2^{l+1}l!}
-                    \left[
-                        2xD^l(x^2-1)^l
-                        +
-                        2D^{l-1}(x^2-1)^l
-                    \right]_{x=1}
-                    \\
-                    =&
-                    \dfrac{1}{2^ll!}D^l(x^2-1)^l
-                    +
-                    \dfrac{1}{2^ll!}
-                    D^{l-1}(x^2-1)^l_{x=1}
+                &
+                \dfrac{1}{2^{l+1}(l+1)!}
+                D^{l+1}(x^2-1)^{l+1}_{x=1}
+                \\
+                =&
+                \dfrac{1}{2^{l+1}l!}
+                D^l
+                \left(
+                (x^2-1)^l\cdot2x
+                \right)_{x=1}
+                \\
+                =&
+                \dfrac{1}{2^{l+1}l!}
+                \left[
+                2xD^l(x^2-1)^l
+                +
+                2D^{l-1}(x^2-1)^l
+                \right]_{x=1}
+                \\
+                =&
+                \dfrac{1}{2^ll!}D^l(x^2-1)^l
+                +
+                \dfrac{1}{2^ll!}
+                D^{l-1}(x^2-1)^l_{x=1}
                 \end{array}
                 となります。
                 第1項は仮定から \(1\) です。
                 第2項は
                 \begin{array}{cl}
-                    &
-                    D^{l-1}(x^2-1)^l
-                    \\
-                    =&
-                    D^{l-1}[(x+1)^l(x-1)^l]
-                    \\
-                    =&
-                    (x+1)^lD^{l-1}(x-1)^l
-                    +
-                    lD(x+1)^l\cdot D^{l-2}(x-1)^l
-                    +
-                    \cdots
-                    \\
-                    \propto&
-                    (x-1)
-                    \xrightarrow{x=1}
-                    0
+                &
+                D^{l-1}(x^2-1)^l
+                \\
+                =&
+                D^{l-1}[(x+1)^l(x-1)^l]
+                \\
+                =&
+                (x+1)^lD^{l-1}(x-1)^l
+                +
+                lD(x+1)^l\cdot D^{l-2}(x-1)^l
+                +
+                \cdots
+                \\
+                \propto&
+                (x-1)
+                \xrightarrow{x=1}
+                0
                 \end{array}
                 となるので、\eqref{Leg polyn normal}が証明されました。
             </p>
@@ -573,56 +590,56 @@
             <p>
                 \eqref{Leg polyn}を(5.14)に入れて両辺 \(2^ll!\) をかけると、左辺 \(L\) は
                 \begin{array}{rcl}
-                    L
-                    &=&
-                    [
-                        (1-x^2)D^2
-                        -
-                        2xD
-                        +
-                        l(l+1)
-                    ]
-                    D^l(x^2-1)
-                    \\
-                    &=&
-                    [
-                        (1-x^2)D^{l+2}
-                        -
-                        2xD^{l+1}
-                        +
-                        l(l+1)D^l
-                    ]
+                L
+                &=&
+                [
+                (1-x^2)D^2
+                -
+                2xD
+                +
+                l(l+1)
+                ]
+                D^l(x^2-1)
+                \\
+                &=&
+                [
+                (1-x^2)D^{l+2}
+                -
+                2xD^{l+1}
+                +
+                l(l+1)D^l
+                ]
                 \end{array}
                 です。
                 右辺第1項に着目するとライプニッツルールによって
                 \begin{array}{cl}
-                    &
-                    (1-x^2)D^{l+2}(x^2-1)^l
-                    \\
-                    =&
-                    D^{l+2}[(1-x^2)(x^2-1)^l]
-                    -
-                    (l+2)[D(1-x^2)][D^{l+1}(x^2-1)]
-                    \\
-                    &
-                    -\left(
-                        \begin{matrix}l+2\\2\end{matrix}
-                    \right)
-                    [D^2(1-x^2)][D^l(x^2-1)^l]
-                    -
-                    \left(
-                        \begin{matrix}l+2\\3\end{matrix}
-                    \right)
-                    [D^3(1-x^2)][D^{l-1}(x^2-1)^l]
-                    -
-                    \cdots
-                    \\
-                    =&
-                    -D^{l+1}D(x^2-1)^{l+1}
-                    +
-                    2(l+2)xD^{l+1}(x^2-1)^l
-                    +
-                    (l+2)(l+1)D^l(x^2-1)^l
+                &
+                (1-x^2)D^{l+2}(x^2-1)^l
+                \\
+                =&
+                D^{l+2}[(1-x^2)(x^2-1)^l]
+                -
+                (l+2)[D(1-x^2)][D^{l+1}(x^2-1)]
+                \\
+                &
+                -\left(
+                \begin{matrix}l+2\\2\end{matrix}
+                \right)
+                [D^2(1-x^2)][D^l(x^2-1)^l]
+                -
+                \left(
+                \begin{matrix}l+2\\3\end{matrix}
+                \right)
+                [D^3(1-x^2)][D^{l-1}(x^2-1)^l]
+                -
+                \cdots
+                \\
+                =&
+                -D^{l+1}D(x^2-1)^{l+1}
+                +
+                2(l+2)xD^{l+1}(x^2-1)^l
+                +
+                (l+2)(l+1)D^l(x^2-1)^l
                 \end{array}
                 を得ます。
             </p>
@@ -630,18 +647,18 @@
                 <p>
                     ライプニッツルールによって、
                     \[
-                        D^n(AB)
-                        =
-                        AD^nB
-                        +
-                        nDAD^{n-1}B
-                        +
-                        \left(\begin{matrix}
-                            n\\2
-                        \end{matrix}\right)
-                        D^2AD^{n-2}
-                        +
-                        \cdots
+                    D^n(AB)
+                    =
+                    AD^nB
+                    +
+                    nDAD^{n-1}B
+                    +
+                    \left(\begin{matrix}
+                    n\\2
+                    \end{matrix}\right)
+                    D^2AD^{n-2}
+                    +
+                    \cdots
                     \]
                     となる。
                     「何番目の微分演算子で \(A\) が微分されるか」の場合の数を足し合わせていると考えればわかりやすいだろう。
@@ -650,40 +667,40 @@
             <p>
                 さらにこの第1項は、
                 \begin{array}{cl}
-                    &
-                    -D^{l+1}D(x^2-1)^{l+1}
-                    \\
-                    =&
-                    -(l+1)D^{l+1}[2x(x^2-1)^l]
-                    \\
-                    =&
-                    -(l+1)
-                    [
-                        2xD^{l+1}(x^2-1)^l
-                        +
-                        2(l+1)DxD^l(x^2-1)^l
-                    ]
+                &
+                -D^{l+1}D(x^2-1)^{l+1}
+                \\
+                =&
+                -(l+1)D^{l+1}[2x(x^2-1)^l]
+                \\
+                =&
+                -(l+1)
+                [
+                2xD^{l+1}(x^2-1)^l
+                +
+                2(l+1)DxD^l(x^2-1)^l
+                ]
                 \end{array}
                 と表されるので、
                 \begin{array}{rcll}
-                    L
-                    &=&
-                    -2(l+1)xD^{l+1}(x^2-1)^l
-                    &
-                    -2(l+1)^2D^l(x^2-1)^l
-                    \\
-                    &&
-                    +2(l+2)xD^{l+1}(x^2-1)^l
-                    &
-                    +(l+2)(l+1)D^l(x^2-1)^l
-                    \\
-                    &&
-                    -2xD^{l+1}(x^2-1)^l
-                    &
-                    +l(l+1)D^l(x^2-1)^l
-                    \\
-                    &=&
-                    0
+                L
+                &=&
+                -2(l+1)xD^{l+1}(x^2-1)^l
+                &
+                -2(l+1)^2D^l(x^2-1)^l
+                \\
+                &&
+                +2(l+2)xD^{l+1}(x^2-1)^l
+                &
+                +(l+2)(l+1)D^l(x^2-1)^l
+                \\
+                &&
+                -2xD^{l+1}(x^2-1)^l
+                &
+                +l(l+1)D^l(x^2-1)^l
+                \\
+                &=&
+                0
                 \end{array}
                 となります。
             </p>
@@ -702,33 +719,33 @@
                 \(n\) 次のルジャンドル多項式は \(n\) 次式ですから、\(x^n\) は \(n\) 次までのルジャンドル多項式の線形和で書けるはずです。
                 これをもとに
                 \[
-                    \tag{7.6}
-                    \label{integ of x^n and Leg polyn}
-                    \int_{-1}^1x^nP_l(x)dx
+                \tag{7.6}
+                \label{integ of x^n and Leg polyn}
+                \int_{-1}^1x^nP_l(x)dx
                 \]
                 を計算しましょう。
                 ここではルジャンドル多項式を
                 \[
-                    \tag{7.7}
-                    \label{Leg polyn with !!}
-                    P_l(x)
-                    =
-                    \dfrac{1}{2^ll!}D^l(x^2-1)^l
-                    =
-                    \dfrac{1}{(2l)!!}D^l(x^2-1)^l
+                \tag{7.7}
+                \label{Leg polyn with !!}
+                P_l(x)
+                =
+                \dfrac{1}{2^ll!}D^l(x^2-1)^l
+                =
+                \dfrac{1}{(2l)!!}D^l(x^2-1)^l
                 \]
                 の形で表しておきます。
             </p>
             <div class="note">
                 <p>
                     \[
-                        n!!
-                        =
-                        \begin{cases}
-                            n(n-2)(n-4)\cdots1&(n\:is\:odd)
-                            \\
-                            n(n-2)(n-4)\cdots2&(n\:is\:even)
-                        \end{cases}
+                    n!!
+                    =
+                    \begin{cases}
+                    n(n-2)(n-4)\cdots1&(n\:is\:odd)
+                    \\
+                    n(n-2)(n-4)\cdots2&(n\:is\:even)
+                    \end{cases}
                     \]
                     を使うと表式がわずかながら綺麗になる。
                 </p>
@@ -736,39 +753,39 @@
             <p>
                 部分積分によって
                 \begin{array}{cl}
-                    &
-                    \displaystyle
-                    \int_{-1}^1x^nP_l(x)dx
-                    \\
-                    =&
-                    \displaystyle
-                    \dfrac{1}{(2l)!!}
-                    \int_{-1}^1x^nD^l(x^2-1)^ldx
-                    \\
-                    =&
-                    \displaystyle
-                    \dfrac{1}{(2l)!!}
-                    \left(
-                        [x^nD^{l-1}(x^2-1)^l]_{-1}^1
-                        -
-                        \int_{-1}^1nx^{n-1}D^{l-1}(x^2-1)^ldx
-                    \right)
-                    \\
-                    =&\cdots
-                    \\
-                    =&
-                    \displaystyle
-                    \dfrac{1}{(2l)!!}
-                    (-1)^k
-                    \int_{-1}^1
-                    n(n-1)\cdots(n-k+1)
-                    x^{n-k}D^{l-k}(x^2-1)dx
-                    \\
-                    =&
-                    \displaystyle
-                    \dfrac{(-1)^kn!}{(2l)!!(n-k)!}
-                    \int_{-1}^1
-                    x^{n-k}D^{l-k}(x^2-1)^ldx
+                &
+                \displaystyle
+                \int_{-1}^1x^nP_l(x)dx
+                \\
+                =&
+                \displaystyle
+                \dfrac{1}{(2l)!!}
+                \int_{-1}^1x^nD^l(x^2-1)^ldx
+                \\
+                =&
+                \displaystyle
+                \dfrac{1}{(2l)!!}
+                \left(
+                [x^nD^{l-1}(x^2-1)^l]_{-1}^1
+                -
+                \int_{-1}^1nx^{n-1}D^{l-1}(x^2-1)^ldx
+                \right)
+                \\
+                =&\cdots
+                \\
+                =&
+                \displaystyle
+                \dfrac{1}{(2l)!!}
+                (-1)^k
+                \int_{-1}^1
+                n(n-1)\cdots(n-k+1)
+                x^{n-k}D^{l-k}(x^2-1)dx
+                \\
+                =&
+                \displaystyle
+                \dfrac{(-1)^kn!}{(2l)!!(n-k)!}
+                \int_{-1}^1
+                x^{n-k}D^{l-k}(x^2-1)^ldx
                 \end{array}
                 となります。
             </p>
@@ -777,11 +794,11 @@
                 <p>
                     \(k=n\) として計算すると、
                     \[
-                        \int_{-1}^1D^{l-n}(x^2-1)^ldx
-                        =
-                        \left[
-                            D^{l-n-1}(x^2-1)^l
-                        \right]_{-1}^1
+                    \int_{-1}^1D^{l-n}(x^2-1)^ldx
+                    =
+                    \left[
+                    D^{l-n-1}(x^2-1)^l
+                    \right]_{-1}^1
                     \]
                     です。
                     \(D^{l-n-1}(x^2-1)^l\) は \(x^2-1\) を必ず因数に持つので、右辺の値は \(0\) となります。
@@ -792,56 +809,56 @@
                 <p>
                     \(k=l\) として積分を計算すると、
                     \begin{array}{cl}
-                        &
-                        \displaystyle
-                        \int_{-1}^1x^{n-l}(x^2-1)^ldx
-                        \\
-                        =&
-                        \displaystyle
-                        \left[
-                            \frac{1}{n-l+1}x^{n-l+1}(x^2-1)^l
-                        \right]
-                        -
-                        \int_{-1}^1
-                        \frac{2l}{n-l+1}x^{n-l+2}(x^2-1)^{l-1}dx
-                        \\
-                        =&
-                        \displaystyle
-                        -\frac{2l}{n-l+1}
-                        \left(
-                            \left[
-                                \frac{1}{n-l+3}
-                                x^{n-l+3}
-                                (x^2-1)^{l-1}
-                            \right]_{-1}^1
-                            -
-                            \int_{-1}^1
-                            \frac{2(l-1)}{n-l+3}
-                            x^{n-l+4}
-                            (x^2-1)^{l-2}
-                            dx
-                        \right)
-                        \\
-                        =&\cdots
-                        \\
-                        =&
-                        \displaystyle
-                        \frac{(-1)^l2;\cdot2(l-1)\cdots2}{(n-l+1)(n-l+3)\cdots(n-l+2l-1)}
-                        \int_{-1}^1x^{n-l+2l}dx
-                        \\
-                        =&
-                        \displaystyle
-                        \frac{(-1)^l(2l)!!}{(n-l+1)(n-l+3)\cdots(n-l+2l-1)}
-                        \times
-                        \begin{cases}
-                            0
-                            &
-                            (n+l\:is\:odd)
-                            \\
-                            \dfrac{2}{n+l+1}
-                            &
-                            (n+l\:is\:even)
-                        \end{cases}
+                    &
+                    \displaystyle
+                    \int_{-1}^1x^{n-l}(x^2-1)^ldx
+                    \\
+                    =&
+                    \displaystyle
+                    \left[
+                    \frac{1}{n-l+1}x^{n-l+1}(x^2-1)^l
+                    \right]
+                    -
+                    \int_{-1}^1
+                    \frac{2l}{n-l+1}x^{n-l+2}(x^2-1)^{l-1}dx
+                    \\
+                    =&
+                    \displaystyle
+                    -\frac{2l}{n-l+1}
+                    \left(
+                    \left[
+                    \frac{1}{n-l+3}
+                    x^{n-l+3}
+                    (x^2-1)^{l-1}
+                    \right]_{-1}^1
+                    -
+                    \int_{-1}^1
+                    \frac{2(l-1)}{n-l+3}
+                    x^{n-l+4}
+                    (x^2-1)^{l-2}
+                    dx
+                    \right)
+                    \\
+                    =&\cdots
+                    \\
+                    =&
+                    \displaystyle
+                    \frac{(-1)^l2;\cdot2(l-1)\cdots2}{(n-l+1)(n-l+3)\cdots(n-l+2l-1)}
+                    \int_{-1}^1x^{n-l+2l}dx
+                    \\
+                    =&
+                    \displaystyle
+                    \frac{(-1)^l(2l)!!}{(n-l+1)(n-l+3)\cdots(n-l+2l-1)}
+                    \times
+                    \begin{cases}
+                    0
+                    &
+                    (n+l\:is\:odd)
+                    \\
+                    \dfrac{2}{n+l+1}
+                    &
+                    (n+l\:is\:even)
+                    \end{cases}
                     \end{array}
                     となります。
                 </p>
@@ -849,12 +866,12 @@
             <p>
                 よって \(l\leq n\) かつ \(m+l\) が偶数のときに限り\eqref{integ of x^n and Leg polyn}は値をもち、
                 \begin{array}{r}
-                    \dfrac{(-1)^ln!}{(2l)!!(n-l)!}
-                    \dfrac{(-1)^l(2l)!!}{(n-l+1)(n-l+3)\cdots(n-l+2l-1)}
-                    \dfrac{2}{n+l+1}
-                    \\
-                    =
-                    \dfrac{2\cdot n!}{(n-l)!(n-l+1)(n-l+3)\cdots(n-l+1)}
+                \dfrac{(-1)^ln!}{(2l)!!(n-l)!}
+                \dfrac{(-1)^l(2l)!!}{(n-l+1)(n-l+3)\cdots(n-l+2l-1)}
+                \dfrac{2}{n+l+1}
+                \\
+                =
+                \dfrac{2\cdot n!}{(n-l)!(n-l+1)(n-l+3)\cdots(n-l+1)}
                 \end{array}
                 です。
             </p>
@@ -863,50 +880,50 @@
                 \(P_l\) は最高次数が \(l\) の多項式であり、\(P_{l'}\) は \(l'\) 次の多項式です。
                 まず \(l\neq l'\) のときは、上の場合分け1つ目の \((l,n)=(l,l')\) または \((l,n)=(l',l)\) の場合に相当するので、
                 \[
-                    \int_{-1}^1P_l(x)P_{l'}(x)dx=0
+                \int_{-1}^1P_l(x)P_{l'}(x)dx=0
                 \]
                 が成り立ちます。一方ルジャンドル多項式\eqref{Leg eq with !!}の最高次の係数を求めると、
                 \[
-                    P_l(x)
-                    =
-                    \dfrac{1}{(2l)!!}D^lx^{2l}+O(x^{l-1})
-                    =
-                    \dfrac{(2l)!}{(2l)!!l!}x^l
-                    +
-                    O(x^{l-1})
+                P_l(x)
+                =
+                \dfrac{1}{(2l)!!}D^lx^{2l}+O(x^{l-1})
+                =
+                \dfrac{(2l)!}{(2l)!!l!}x^l
+                +
+                O(x^{l-1})
                 \]
                 です。
                 従って \(l=l'\) のときは2番目の場合分けをもとに、
                 \begin{array}{cl}
-                    &
-                    \displaystyle
-                    \int_{-1}^1P_l(x)P_(x)dx
-                    \\
-                    =&
-                    \displaystyle
-                    \int_{-1}^1\frac{(2l)!}{(2l)!!l!}x^lP_l(x)dx
-                    \\
-                    =&
-                    \displaystyle
-                    \frac{(2l)!}{(2l)!!l!}\frac{2\cdot l!}{0!(2l+1)!!}
-                    \\
-                    =&
-                    \displaystyle
-                    \frac{2l(2l-1)\cdots1\cdot2}{(2l)(2l-2)\cdots2\cdot(2l+1)(2l-1)\cdots1}
-                    \\
-                    =&
-                    \dfrac{2}{2l+1}
+                &
+                \displaystyle
+                \int_{-1}^1P_l(x)P_(x)dx
+                \\
+                =&
+                \displaystyle
+                \int_{-1}^1\frac{(2l)!}{(2l)!!l!}x^lP_l(x)dx
+                \\
+                =&
+                \displaystyle
+                \frac{(2l)!}{(2l)!!l!}\frac{2\cdot l!}{0!(2l+1)!!}
+                \\
+                =&
+                \displaystyle
+                \frac{2l(2l-1)\cdots1\cdot2}{(2l)(2l-2)\cdots2\cdot(2l+1)(2l-1)\cdots1}
+                \\
+                =&
+                \dfrac{2}{2l+1}
                 \end{array}
                 が得られます。
             </p>
             <p>
                 以上によって、ルジャンドル多項式の直交性は
                 \[
-                    \tag{7.8}
-                    \label{Leg orthog}
-                    \int_{-1}^1P_l(x)P_{l'}(x)dx
-                    =
-                    \dfrac{2}{2l+1}\delta_{l,l'}
+                \tag{7.8}
+                \label{Leg orthog}
+                \int_{-1}^1P_l(x)P_{l'}(x)dx
+                =
+                \dfrac{2}{2l+1}\delta_{l,l'}
                 \]
                 となります。
             </p>
@@ -918,19 +935,20 @@
         <p>
             ルジャンドル多項式はルジャンドルの微分方程式で \(m=0\) という特別な場合に対してのみ適用できるものです。
             特にポアソン方程式(5.1)が \(\varphi\) について対称である場合は \(m=0\) となりますが、一般には \(m\neq0\) を無視することはできません。
-            <a href="../legendre-feature/index.html#boundary-phi">6.3.1</a>でみた通り \(m\in\mathbb{Z}\) えお考えれば十分ですから、以下ではルジャンドル多項式\eqref{Leg polyn}を \(m\in\mathbb{Z}\) にまで拡張します。
+            <a href="../legendre-feature/index.html#boundary-phi">6.3.1</a>でみた通り \(m\in\mathbb{Z}\)
+            えお考えれば十分ですから、以下ではルジャンドル多項式\eqref{Leg polyn}を \(m\in\mathbb{Z}\) にまで拡張します。
             \[
-                \tag{7.9}
-                \label{asc Leg polyn}
-                P_l^m(x)
-                \equiv
-                (1-x^2)^{m/2}
-                \left(\dfrac{d}{dx}\right)^m
-                P_l(x)
-                =
-                \dfrac{(1-x^2)^{m/2}}{2^ll!}
-                \left(\dfrac{d}{dx}\right)^{l+m}
-                (x^2-1)^l
+            \tag{7.9}
+            \label{asc Leg polyn}
+            P_l^m(x)
+            \equiv
+            (1-x^2)^{m/2}
+            \left(\dfrac{d}{dx}\right)^m
+            P_l(x)
+            =
+            \dfrac{(1-x^2)^{m/2}}{2^ll!}
+            \left(\dfrac{d}{dx}\right)^{l+m}
+            (x^2-1)^l
             \]
             \(y_l^m(x)=P_l^m(x)\) はルジャンドルの陪微分方程式の特解です (証明<a href="#ascleg-eq">7.3.2</a>)。
             この性質のゆえに、\eqref{asc Leg polyn}を<b style="color: red;">ルジャンドル陪多項式</b>と呼びます。
@@ -946,13 +964,13 @@
             <p>
                 ルジャンドル陪多項式\eqref{asc Leg polyn}では \(m\lt0\) の形も許され、
                 \[
-                    \tag{7.10}
-                    \label{asc Leg polyn m negative}
-                    P_l^{-m}
-                    =
-                    (-1)^m
-                    \dfrac{(l-m)!}{(l+m)!}
-                    P_l^m
+                \tag{7.10}
+                \label{asc Leg polyn m negative}
+                P_l^{-m}
+                =
+                (-1)^m
+                \dfrac{(l-m)!}{(l+m)!}
+                P_l^m
                 \]
                 です。
                 以下、これを証明しましょう。
@@ -960,90 +978,91 @@
             <p>
                 \(D^{l+m}\) を \(D^{l-m}\) で表現したいので、
                 \begin{array}{rcl}
-                    D^{l+m}(x^2-1)^l
-                    &=&
-                    D^{l+m}[(x+1)^l(x-1)^l]
-                    \\
-                    &=&
-                    \sum_{k=0}^{l+m}
-                    \left(\begin{matrix}l+m\\k\end{matrix}\right)
-                    D^k(x+1)^l\cdot D^{l+m-k}(x-1)^l
+                D^{l+m}(x^2-1)^l
+                &=&
+                D^{l+m}[(x+1)^l(x-1)^l]
+                \\
+                &=&
+                \sum_{k=0}^{l+m}
+                \left(\begin{matrix}l+m\\k\end{matrix}\right)
+                D^k(x+1)^l\cdot D^{l+m-k}(x-1)^l
                 \end{array}
                 としておきます。
-                \(0\leq k\leq m-1\) では \(D^{l+m^k}(x-1)^l=0\) であり、\(l+1\leq k\leq l+m\) では \(D^k(x-1)^l=0\) ですから、総和のうち残る部分だけを取り出して計算すると、
+                \(0\leq k\leq m-1\) では \(D^{l+m^k}(x-1)^l=0\) であり、\(l+1\leq k\leq l+m\) では \(D^k(x-1)^l=0\)
+                ですから、総和のうち残る部分だけを取り出して計算すると、
                 \begin{array}{cl}
-                    &D^{l+m}(x^2-1)^l
-                    \\
-                    =&
-                    \displaystyle
-                    \sum_{k=m}^l
-                    \left(\begin{matrix}l+m\\k\end{matrix}\right)
-                    D^k(x+1)^l\cdot D^{l+m-k}(x-1)^l
-                    \\
-                    =&
-                    \displaystyle
-                    \sum_{k=0}^{l-m}
-                    \left(\begin{matrix}l+m\\m+k\end{matrix}\right)
-                    D^{m+k}(x+1)^l\cdot D^{l-k}(x-1)^l
-                    \\
-                    =&
-                    \displaystyle
-                    \sum_{k=0}^{l-m}
-                    \left(\begin{matrix}l+m\\m+k\end{matrix}\right)
-                    \dfrac{l!}{(l-m-k)!}(x+1)^{l-m-k}
-                    \dfrac{l!}{k!}(x-1)^k
-                    \\
-                    =&
-                    \displaystyle
-                    \sum_{k=0}^{l-m}
-                    \left(\begin{matrix}l+m\\m+k\end{matrix}\right)
-                    \dfrac{l!}{(l-m-k)!}(x+1)^{-m}(x+1)^{l-k}
-                    \dfrac{l!}{k!}(x-1)^{-m}(x-1)^{m+k}
-                    \\
-                    =&
-                    \displaystyle
-                    \dfrac{(l+m)!}{(l-m)!}(x^2-1)^{-m}
-                    \sum_{k=0}^{l-m}
-                    \dfrac{(l-m)!}{(l+m)!}
-                    \dfrac{(l+m)!}{(m+k)!(l-k)!}
-                    \dfrac{l!l!}{(l-m-k)!k!}
-                    (x+1)^{l-k}(x-1)^{m+k}
-                    \\
-                    =&
-                    \displaystyle
-                    \dfrac{(l+m)!}{(l-m)!}(x^2-1)^{-m}
-                    \sum_{k=0}^{l-m}
-                    \dfrac{(l-m)!}{(l-m-k)!k!}
-                    \dfrac{l!}{(l-k)!}(x+1)^{l-k}
-                    \dfrac{l!}{(m+k)!}(x-1)^{m+k}
-                    \\
-                    =&
-                    \displaystyle
-                    \dfrac{(l+m)!}{(l-m)!}(x^2-1)^{-m}
-                    \sum_{k=0}^{l-m}
-                    \left(\begin{matrix}l-m\\k\end{matrix}\right)
-                    D^k(x+1)^l
-                    \cdot
-                    D^{l-m-k}(x-1)^l
-                    \\
-                    =&
-                    (x^2-1)^{-m}
-                    \dfrac{(l+m)!}{(l-m)!}
-                    D^{l-m}(x^2-1)^l
+                &D^{l+m}(x^2-1)^l
+                \\
+                =&
+                \displaystyle
+                \sum_{k=m}^l
+                \left(\begin{matrix}l+m\\k\end{matrix}\right)
+                D^k(x+1)^l\cdot D^{l+m-k}(x-1)^l
+                \\
+                =&
+                \displaystyle
+                \sum_{k=0}^{l-m}
+                \left(\begin{matrix}l+m\\m+k\end{matrix}\right)
+                D^{m+k}(x+1)^l\cdot D^{l-k}(x-1)^l
+                \\
+                =&
+                \displaystyle
+                \sum_{k=0}^{l-m}
+                \left(\begin{matrix}l+m\\m+k\end{matrix}\right)
+                \dfrac{l!}{(l-m-k)!}(x+1)^{l-m-k}
+                \dfrac{l!}{k!}(x-1)^k
+                \\
+                =&
+                \displaystyle
+                \sum_{k=0}^{l-m}
+                \left(\begin{matrix}l+m\\m+k\end{matrix}\right)
+                \dfrac{l!}{(l-m-k)!}(x+1)^{-m}(x+1)^{l-k}
+                \dfrac{l!}{k!}(x-1)^{-m}(x-1)^{m+k}
+                \\
+                =&
+                \displaystyle
+                \dfrac{(l+m)!}{(l-m)!}(x^2-1)^{-m}
+                \sum_{k=0}^{l-m}
+                \dfrac{(l-m)!}{(l+m)!}
+                \dfrac{(l+m)!}{(m+k)!(l-k)!}
+                \dfrac{l!l!}{(l-m-k)!k!}
+                (x+1)^{l-k}(x-1)^{m+k}
+                \\
+                =&
+                \displaystyle
+                \dfrac{(l+m)!}{(l-m)!}(x^2-1)^{-m}
+                \sum_{k=0}^{l-m}
+                \dfrac{(l-m)!}{(l-m-k)!k!}
+                \dfrac{l!}{(l-k)!}(x+1)^{l-k}
+                \dfrac{l!}{(m+k)!}(x-1)^{m+k}
+                \\
+                =&
+                \displaystyle
+                \dfrac{(l+m)!}{(l-m)!}(x^2-1)^{-m}
+                \sum_{k=0}^{l-m}
+                \left(\begin{matrix}l-m\\k\end{matrix}\right)
+                D^k(x+1)^l
+                \cdot
+                D^{l-m-k}(x-1)^l
+                \\
+                =&
+                (x^2-1)^{-m}
+                \dfrac{(l+m)!}{(l-m)!}
+                D^{l-m}(x^2-1)^l
                 \end{array}
                 となります。
                 従って、
                 \begin{array}{rcl}
-                    P_l^{-m}(x)
-                    &=&
-                    (1-x^2)^{-m/2}\dfrac{1}{2^ll!}D^{l-m}(x^2-1)^l
-                    \\
-                    &=&
-                    (1-x^2)^{^m/2}\dfrac{1}{2^ll!}
-                    \dfrac{(l-m)!}{(l+m)!}(x^2-1)^mD^{l+m}(x^2-1)^l
-                    \\
-                    &=&
-                    (-1)^m\dfrac{(l-m)!}{(l+m)!}P_l^m(x)
+                P_l^{-m}(x)
+                &=&
+                (1-x^2)^{-m/2}\dfrac{1}{2^ll!}D^{l-m}(x^2-1)^l
+                \\
+                &=&
+                (1-x^2)^{^m/2}\dfrac{1}{2^ll!}
+                \dfrac{(l-m)!}{(l+m)!}(x^2-1)^mD^{l+m}(x^2-1)^l
+                \\
+                &=&
+                (-1)^m\dfrac{(l-m)!}{(l+m)!}P_l^m(x)
                 \end{array}
                 より、\eqref{asc Leg polyn m negative}が示されました。
             </p>
@@ -1055,171 +1074,171 @@
                 \eqref{asc Leg polyn}右辺の \(P_l\) 直前の \(m\) 階微分に着目します。
                 ルジャンドルの陪微分方程式(5.14)にルジャンドル多項式\eqref{Leg polyn}を入れた式
                 \[
-                    [D((1-x^2)D)+l(l+1)]P_l=0
+                [D((1-x^2)D)+l(l+1)]P_l=0
                 \]
                 を \(m\) 回微分すると、
                 \begin{array}{cl}
-                    \tag{7.11}
-                    \label{7.11}
-                    &
-                    D^m[(1-x^2)D^2-2xD+l(l+1)]P_l
-                    \\
-                    =&
-                    [
-                        (1-x^2)D^{m+2}
-                        -
-                        2mxD^{m+1}
-                        -
-                        m(m-1)D^m
-                        \\
-                        &
-                        -
-                        2xD^{m+1}
-                        -
-                        2mD^m
-                        +
-                        l(l+1)D^m
-                    ]P_l
-                    \\
-                    =&
-                    [
-                        (1-x^2)D^2
-                        -
-                        2(m+1)xD
-                        +
-                        l(l+1)
-                        -
-                        m(m+1)
-                    ]D^mP_l
-                    \\
-                    =&0.
+                \tag{7.11}
+                \label{7.11}
+                &
+                D^m[(1-x^2)D^2-2xD+l(l+1)]P_l
+                \\
+                =&
+                [
+                (1-x^2)D^{m+2}
+                -
+                2mxD^{m+1}
+                -
+                m(m-1)D^m
+                \\
+                &
+                -
+                2xD^{m+1}
+                -
+                2mD^m
+                +
+                l(l+1)D^m
+                ]P_l
+                \\
+                =&
+                [
+                (1-x^2)D^2
+                -
+                2(m+1)xD
+                +
+                l(l+1)
+                -
+                m(m+1)
+                ]D^mP_l
+                \\
+                =&0.
                 \end{array}
                 一方で、
                 \begin{array}{rcl}
-                    D(1-x^2)^{m/2}
-                    &=&
-                    -mx(1-x^2)^{m/2-1}
-                    \\
-                    D^2(1-x^2)^{m/2}
-                    &=&
-                    m(m-2)x^2(1-x^2)^{m/2-2}
-                    -
-                    m(1-x^2)^{m/2-1}
+                D(1-x^2)^{m/2}
+                &=&
+                -mx(1-x^2)^{m/2-1}
+                \\
+                D^2(1-x^2)^{m/2}
+                &=&
+                m(m-2)x^2(1-x^2)^{m/2-2}
+                -
+                m(1-x^2)^{m/2-1}
                 \end{array}
                 を使うと、\eqref{asc Leg polyn}をルジャンドルの陪微分方程式(5.11)に入れたものは、
                 \begin{array}{rl}
-                    &
-                    \left[
-                        (1-x^2)D^2
-                        -
-                        2xD
-                        +
-                        \left(
-                            l(l+1)
-                            -
-                            \dfrac{m^2}{1-x^2}
-                        \right)
-                    \right]
-                    (1-x^2)^{m/2}D^mP_l
-                    \\
-                    =&
-                    \Biggl[
-                        (1-x^2)^{m/2+1}D^2
-                        +
-                        2(1-x^2)(D(1-x^2)^{m/2})D
-                        +
-                        (1-x^2)(D^2(1-x^2)^{m/2})
-                        \\
-                        &
-                        -2x(1-x^2)^{m/2}D
-                        -
-                        2x(D(1-x^2)^{m/2})
-                        +
-                        \left(
-                            l(l+1)-\dfrac{m^2}{1-x^2}
-                        \right)
-                        (1-x^2)^{m/2}
-                    \Biggr]
-                    D^mP_l
-                    \\
-                    =&
-                    \Biggl[
-                        (1-x^2)^{m/2+1}D^2
-                        -
-                        2mx(1-x^2)^{m/2}D
-                        -
-                        2x(1-x^2)^{m/2}D
-                        \\
-                        &
-                        +m(m-2)x^2(1-x^2)^{m/2-1}
-                        -
-                        m(1-x^2)^{m/2}
-                        -
-                        2mx^2(1-x^2)^{m/2-1}
-                        \\
-                        &
-                        +\left(
-                            l(l+1)-\dfrac{m^2}{1-x^2}
-                        \right)
-                        (1-x^2)^{m/2}
-                    \Biggr]
-                    D^mP_l
-                    \\
-                    =&
-                    (1-x^2)^{m/2}
-                    \left[
-                        (1-x^2)D^2
-                        -
-                        2(m+1)xD
-                        +
-                        \dfrac{m(m-2)x^2}{1-x^2}
-                        -
-                        m
-                        +
-                        \dfrac{2mx^2}{1-x^2}
-                        +
-                        \left(
-                            l(l+1)-\dfrac{m^2}{1-x^2}
-                        \right)
-                    \right]
-                    D^mP_l
-                    \\
-                    =&
-                    (1-x^2)^{m/2}
-                    \left[
-                        (1-x^2)D^2
-                        -
-                        2(m+1)xD
-                        +
-                        \dfrac{m^2x^2}{1-x^2}
-                        +
-                        \dfrac{mx^2}{1-x^2}
-                        +
-                        \left(
-                            l(l+1)
-                            -
-                            \dfrac{m^2}{1-x^2}
-                            -
-                            \dfrac{m}{1-x^2}
-                        \right)
-                    \right]
-                    D^mP_l
-                    \\
-                    =&
-                    (1-x^2)^{m_2}
-                    [
-                        (1-x^2)D^2
-                        -
-                        2(m+1)xD
-                        +
-                        l(l+1)
-                        -
-                        m(m+1)
-                    ]
-                    D^mP_l
-                    \\
-                    =&0.
-                    \qquad(\because\eqref{7.11})
+                &
+                \left[
+                (1-x^2)D^2
+                -
+                2xD
+                +
+                \left(
+                l(l+1)
+                -
+                \dfrac{m^2}{1-x^2}
+                \right)
+                \right]
+                (1-x^2)^{m/2}D^mP_l
+                \\
+                =&
+                \Biggl[
+                (1-x^2)^{m/2+1}D^2
+                +
+                2(1-x^2)(D(1-x^2)^{m/2})D
+                +
+                (1-x^2)(D^2(1-x^2)^{m/2})
+                \\
+                &
+                -2x(1-x^2)^{m/2}D
+                -
+                2x(D(1-x^2)^{m/2})
+                +
+                \left(
+                l(l+1)-\dfrac{m^2}{1-x^2}
+                \right)
+                (1-x^2)^{m/2}
+                \Biggr]
+                D^mP_l
+                \\
+                =&
+                \Biggl[
+                (1-x^2)^{m/2+1}D^2
+                -
+                2mx(1-x^2)^{m/2}D
+                -
+                2x(1-x^2)^{m/2}D
+                \\
+                &
+                +m(m-2)x^2(1-x^2)^{m/2-1}
+                -
+                m(1-x^2)^{m/2}
+                -
+                2mx^2(1-x^2)^{m/2-1}
+                \\
+                &
+                +\left(
+                l(l+1)-\dfrac{m^2}{1-x^2}
+                \right)
+                (1-x^2)^{m/2}
+                \Biggr]
+                D^mP_l
+                \\
+                =&
+                (1-x^2)^{m/2}
+                \left[
+                (1-x^2)D^2
+                -
+                2(m+1)xD
+                +
+                \dfrac{m(m-2)x^2}{1-x^2}
+                -
+                m
+                +
+                \dfrac{2mx^2}{1-x^2}
+                +
+                \left(
+                l(l+1)-\dfrac{m^2}{1-x^2}
+                \right)
+                \right]
+                D^mP_l
+                \\
+                =&
+                (1-x^2)^{m/2}
+                \left[
+                (1-x^2)D^2
+                -
+                2(m+1)xD
+                +
+                \dfrac{m^2x^2}{1-x^2}
+                +
+                \dfrac{mx^2}{1-x^2}
+                +
+                \left(
+                l(l+1)
+                -
+                \dfrac{m^2}{1-x^2}
+                -
+                \dfrac{m}{1-x^2}
+                \right)
+                \right]
+                D^mP_l
+                \\
+                =&
+                (1-x^2)^{m_2}
+                [
+                (1-x^2)D^2
+                -
+                2(m+1)xD
+                +
+                l(l+1)
+                -
+                m(m+1)
+                ]
+                D^mP_l
+                \\
+                =&0.
+                \qquad(\because\eqref{7.11})
                 \end{array}
                 従って<b>ルジャンドル陪多項式\eqref{asc Leg polyn}はルジャンドルの陪微分方程式(5.11)の特解</b>となります。
             </p>
@@ -1241,88 +1260,89 @@
             <p>
                 \(m=0\) では<a href="#leg-orthog">7.2.3</a>にて\eqref{Leg orthog}となることを既に示していますので、以下では \(m\geq1\) としましょう。
                 \(m\lt0\) では\eqref{asc Leg polyn m negative}を使えば \(m\geq0\) とすることができます。
-                また次数 \(l\) が異なる場合に直交することは<a href="../legendre-feature/index.html#orthog-leg">6.2.2</a>にて示していますので、ここでは次数が揃っているときの係数に注目します。
+                また次数 \(l\) が異なる場合に直交することは<a
+                    href="../legendre-feature/index.html#orthog-leg">6.2.2</a>にて示していますので、ここでは次数が揃っているときの係数に注目します。
             </p>
             <p>
                 唐突ですが、\eqref{asc Leg polyn m negative}を使うと、
                 \begin{array}{rcl}
-                    \displaystyle
-                    \int_{-1}^1P_l^m(x)P_l^m(x)dx
-                    &=&
-                    \displaystyle
-                    (-1)^m\dfrac{(l+m)!}{(l-m)!}
-                    \int_{-1}^1P_l^{-m}(x)P_l^m(x)dx
-                    \\
-                    &=&
-                    \displaystyle
-                    \dfrac{(-1)^m(l+m)!}{(2^ll!)^2(l-m)!}
-                    \int_{-1}^1D^{l-m}(x^2-1)^lD^{l+m}(x^2-1)^ldx
+                \displaystyle
+                \int_{-1}^1P_l^m(x)P_l^m(x)dx
+                &=&
+                \displaystyle
+                (-1)^m\dfrac{(l+m)!}{(l-m)!}
+                \int_{-1}^1P_l^{-m}(x)P_l^m(x)dx
+                \\
+                &=&
+                \displaystyle
+                \dfrac{(-1)^m(l+m)!}{(2^ll!)^2(l-m)!}
+                \int_{-1}^1D^{l-m}(x^2-1)^lD^{l+m}(x^2-1)^ldx
                 \end{array}
                 と変形でき、微分回数に差を生じさせることができます。
                 部分積分を繰り返せば、
                 \begin{array}{cl}
-                    &
-                    \displaystyle
-                    \int_{-1}^1D^{l-m}(x^2-1)^lD^{l+m}(x^2-1)^ldx
-                    \\
-                    =&
-                    \displaystyle
-                    [D^{l-m-1}(x^2-1)^lD^{l+m}(x^2-1)^l]_{x=-1}^{x=1}
-                    -
-                    \int_{-1}^1D^{l-m-1}(x^2-1)^lD^{l+m+1}(x^2-1)^ldx
-                    \\
-                    =&
-                    \cdots
-                    \\
-                    =&
-                    \displaystyle
-                    (-1)^{l-m}\int_{-1}^1(x^2-1)^lD^{2l}(x^2-1)^ldx
+                &
+                \displaystyle
+                \int_{-1}^1D^{l-m}(x^2-1)^lD^{l+m}(x^2-1)^ldx
+                \\
+                =&
+                \displaystyle
+                [D^{l-m-1}(x^2-1)^lD^{l+m}(x^2-1)^l]_{x=-1}^{x=1}
+                -
+                \int_{-1}^1D^{l-m-1}(x^2-1)^lD^{l+m+1}(x^2-1)^ldx
+                \\
+                =&
+                \cdots
+                \\
+                =&
+                \displaystyle
+                (-1)^{l-m}\int_{-1}^1(x^2-1)^lD^{2l}(x^2-1)^ldx
                 \end{array}
                 となりますね。
                 2行目の境界部分で \(x^2-1\) が余ることに注意すれば、境界 \(x=\pm1\) で \(0\) となることがわかるはずです。
                 最終行 \(D^{2l}(x^2-1)^l\) の部分は \(D^{2l}[x^{2l}+O(x^{2l-1})]=(2l)!\) となりますから、元の積分に戻れば、
                 \begin{array}{rl}
-                    &
-                    \displaystyle
-                    \int_{-1}^1P_l^m(x)P_l^m(x)dx
-                    \\
-                    =&
-                    \displaystyle
-                    (-1)^m\dfrac{(l+m)!}{(2^ll!)^2(l-m)!}(-1)^{l-m}
-                    \int_{-1}^1(x^2-1)^lD^{2l}(x^2-1)^ldx
-                    \\
-                    =&
-                    \displaystyle
-                    \frac{(l+m)!}{(2^ll!)^2(l-m)!}
-                    \int_{-1}^1(2l)!(-1)^l(x^2-1)^ldx
-                    \\
-                    =&
-                    \displaystyle
-                    \frac{(l+m)!}{(l-m)!}
-                    \frac{(2l)!}{(2^ll!)^2}\int_{-1}^1(1-x^2)^ldx
-                    \\
-                    =&
-                    \displaystyle
-                    \frac{(l+m)!}{(l-m)!}2^{2l+1}B(l+1,l+1)\qquad\because(A.13)
-                    \\
-                    \\
-                    =&
-                    \displaystyle
-                    \frac{(l+m)!}{(l-m)!}
-                    \frac{2^{2l+1}(2l)!}{(2^ll!)^2}
-                    \frac{(l!)^2}{(2l+1)!}\qquad\because\text{§A.2 性質3}
-                    \\
-                    =&
-                    \displaystyle
-                    \frac{(l+m)!}{(l-m)!}\frac{2}{2l+1}
+                &
+                \displaystyle
+                \int_{-1}^1P_l^m(x)P_l^m(x)dx
+                \\
+                =&
+                \displaystyle
+                (-1)^m\dfrac{(l+m)!}{(2^ll!)^2(l-m)!}(-1)^{l-m}
+                \int_{-1}^1(x^2-1)^lD^{2l}(x^2-1)^ldx
+                \\
+                =&
+                \displaystyle
+                \frac{(l+m)!}{(2^ll!)^2(l-m)!}
+                \int_{-1}^1(2l)!(-1)^l(x^2-1)^ldx
+                \\
+                =&
+                \displaystyle
+                \frac{(l+m)!}{(l-m)!}
+                \frac{(2l)!}{(2^ll!)^2}\int_{-1}^1(1-x^2)^ldx
+                \\
+                =&
+                \displaystyle
+                \frac{(l+m)!}{(l-m)!}2^{2l+1}B(l+1,l+1)\qquad\because(A.13)
+                \\
+                \\
+                =&
+                \displaystyle
+                \frac{(l+m)!}{(l-m)!}
+                \frac{2^{2l+1}(2l)!}{(2^ll!)^2}
+                \frac{(l!)^2}{(2l+1)!}\qquad\because\text{§A.2 性質3}
+                \\
+                =&
+                \displaystyle
+                \frac{(l+m)!}{(l-m)!}\frac{2}{2l+1}
                 \end{array}
                 となります。
                 以上によってルジャンドル陪多項式の直交性
                 \[
-                    \tag{7.12}
-                    \int_{-1}^1P_{l'}^m(x)P_l^m(x)dx
-                    =
-                    \dfrac{(l+m)!}{(l-m)!}\dfrac{2}{2l+1}\delta_{l,l'}
+                \tag{7.12}
+                \int_{-1}^1P_{l'}^m(x)P_l^m(x)dx
+                =
+                \dfrac{(l+m)!}{(l-m)!}\dfrac{2}{2l+1}\delta_{l,l'}
                 \]
                 が得られました。
             </p>
@@ -1340,4 +1360,5 @@
         <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
     </footer>
 </body>
+
 </html>
