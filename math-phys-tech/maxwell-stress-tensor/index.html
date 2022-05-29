@@ -14,6 +14,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
         crossorigin="anonymous"></script>
 </head>
+
 <body>
     <header>
         <h1>マクスウェルの応力を読み解くにあたっての</h1>
@@ -22,7 +23,8 @@
 
     <section>
         <p>
-            <a href="https://lowtonevoice.github.io/math-phys-tech/maxwell-stress-tensor/MaxwellTensor.pdf">pdf版はこちらから。</a>
+            <a
+                href="https://lowtonevoice.github.io/math-phys-tech/maxwell-stress-tensor/MaxwellTensor.pdf">pdf版はこちらから</a>。
             相互参照やハイパーリンクなどをしっかり入れています。
         </p>
         <p>
@@ -133,65 +135,65 @@
                 <li>
                     運動方程式 (ローレンツ力):
                     \[
-                        \tag{1}
-                        \label{Lorentz}
-                        \displaystyle
-                        m_i\ddot{\boldsymbol{r}}_i(t)
-                        =
-                        e_i\boldsymbol{E}(\boldsymbol{r}_i(t),t)
-                        +
-                        e_i\dot{\boldsymbol{r}}_i(t)
-                        \times
-                        \boldsymbol{B}(\boldsymbol{r}_i(t),t)
+                    \tag{1}
+                    \label{Lorentz}
+                    \displaystyle
+                    m_i\ddot{\boldsymbol{r}}_i(t)
+                    =
+                    e_i\boldsymbol{E}(\boldsymbol{r}_i(t),t)
+                    +
+                    e_i\dot{\boldsymbol{r}}_i(t)
+                    \times
+                    \boldsymbol{B}(\boldsymbol{r}_i(t),t)
                     \]
                 </li>
                 <li>
                     ファラデーの法則:
                     \[
-                        \tag{2}
-                        \label{Faraday}
-                        \displaystyle
-                        \nabla\times\boldsymbol{E}(\boldsymbol{x},t)
-                        +
-                        \dfrac{\partial\boldsymbol{B}(\boldsymbol{x},t)}{\partial t}
-                        =
-                        \boldsymbol{0}
+                    \tag{2}
+                    \label{Faraday}
+                    \displaystyle
+                    \nabla\times\boldsymbol{E}(\boldsymbol{x},t)
+                    +
+                    \dfrac{\partial\boldsymbol{B}(\boldsymbol{x},t)}{\partial t}
+                    =
+                    \boldsymbol{0}
                     \]
                 </li>
                 <li>
                     アンペール・マクスウェルの法則:
                     \[
-                        \tag{3}
-                        \label{Ampere Maxwell}
-                        \displaystyle
-                        \nabla\times\boldsymbol{H}(\boldsymbol{x},t)
-                        -
-                        \dfrac{\partial\boldsymbol{D}(\boldsymbol{x},t)}{\partial t}
-                        =
-                        \sum_i
-                        e_i\dot{\boldsymbol{r}}_i(t)
-                        \delta^3(\boldsymbol{x}-\boldsymbol{r}_i(t))
+                    \tag{3}
+                    \label{Ampere Maxwell}
+                    \displaystyle
+                    \nabla\times\boldsymbol{H}(\boldsymbol{x},t)
+                    -
+                    \dfrac{\partial\boldsymbol{D}(\boldsymbol{x},t)}{\partial t}
+                    =
+                    \sum_i
+                    e_i\dot{\boldsymbol{r}}_i(t)
+                    \delta^3(\boldsymbol{x}-\boldsymbol{r}_i(t))
                     \]
                 </li>
                 <li>
                     電場に関するガウスの発散定理:
                     \[
-                        \tag{4}
-                        \label{E Gauss}
-                        \displaystyle
-                        \nabla\cdot\boldsymbol{D}(\boldsymbol{x},t)
-                        =
-                        \sum_ie_i\delta^3(\boldsymbol{x}-\boldsymbol{r}_i(t))
+                    \tag{4}
+                    \label{E Gauss}
+                    \displaystyle
+                    \nabla\cdot\boldsymbol{D}(\boldsymbol{x},t)
+                    =
+                    \sum_ie_i\delta^3(\boldsymbol{x}-\boldsymbol{r}_i(t))
                     \]
                 </li>
                 <li>
                     磁気単極子不在:
                     \[
-                        \tag{5}
-                        \label{div B}
-                        \displaystyle
-                        \nabla\cdot\boldsymbol{B}(\boldsymbol{x},t)
-                        =0
+                    \tag{5}
+                    \label{div B}
+                    \displaystyle
+                    \nabla\cdot\boldsymbol{B}(\boldsymbol{x},t)
+                    =0
                     \]
                 </li>
             </ol>
@@ -207,147 +209,147 @@
                 力学において運動量保存ないし運動量変化を議論する際には、点電荷系か否かを問わず、<b>まずは運動方程式を全て足し合わせるのが定石</b>です。
                 ここでも定石に従って第1式を総和。
                 \begin{array}{rcl}
-                    \displaystyle
-                    \sum_im_i\dfrac{d\boldsymbol{v}_t(t)}{dt}
-                    &=&
-                    \displaystyle
-                    \sum_i\int d^3x
-                    e_i\delta^3(\boldsymbol{x}-\boldsymbol{r}_i)
-                    (
-                        \boldsymbol{E}
-                        +
-                        \dot{\boldsymbol{r}}_i\times\boldsymbol{B}
-                    )
-                    \\
-                    \displaystyle
-                    \frac{d}{dt}\sum_im_i\boldsymbol{v}_i
-                    &=&
-                    \displaystyle\int d^3x
-                    \left[
-                        \sum_i
-                        e_i
-                        \delta^3(\boldsymbol{x}-\boldsymbol{r}_i)
-                        \boldsymbol{E}
-                        +
-                        \sum_i
-                        e_i
-                        \delta^3(\boldsymbol{x}-\boldsymbol{r}_i)
-                        \dot{\boldsymbol{r}}
-                        \times
-                        \boldsymbol{B}
-                    \right]
+                \displaystyle
+                \sum_im_i\dfrac{d\boldsymbol{v}_t(t)}{dt}
+                &=&
+                \displaystyle
+                \sum_i\int d^3x
+                e_i\delta^3(\boldsymbol{x}-\boldsymbol{r}_i)
+                (
+                \boldsymbol{E}
+                +
+                \dot{\boldsymbol{r}}_i\times\boldsymbol{B}
+                )
+                \\
+                \displaystyle
+                \frac{d}{dt}\sum_im_i\boldsymbol{v}_i
+                &=&
+                \displaystyle\int d^3x
+                \left[
+                \sum_i
+                e_i
+                \delta^3(\boldsymbol{x}-\boldsymbol{r}_i)
+                \boldsymbol{E}
+                +
+                \sum_i
+                e_i
+                \delta^3(\boldsymbol{x}-\boldsymbol{r}_i)
+                \dot{\boldsymbol{r}}
+                \times
+                \boldsymbol{B}
+                \right]
                 \end{array}
                 左辺は点電荷運動量 \(\boldsymbol{G}_m(t):=\sum_im_i\boldsymbol{v}_i(t)\) のの時間全微分なので、右辺が力の形になってくれると嬉しい。
                 右辺第1項を第4式（ガウスの発散定理）で、第2項を第3式（アンペール・マクスウェル）で変形して、
                 \[
-                    \tag{6}
-                    \label{ast}
-                    \dfrac{d}{dt}\boldsymbol{G}_m
-                    =
-                    \int d^3x
-                    \left[
-                        \boldsymbol{E}(\nabla\cdot\boldsymbol{E})
-                        +
-                        \left(
-                            \nabla\times\boldsymbol{H}
-                            -
-                            \frac{\partial\boldsymbol{D}}{\partial t}
-                        \right)
-                        \times\boldsymbol{B}
-                    \right]
+                \tag{6}
+                \label{ast}
+                \dfrac{d}{dt}\boldsymbol{G}_m
+                =
+                \int d^3x
+                \left[
+                \boldsymbol{E}(\nabla\cdot\boldsymbol{E})
+                +
+                \left(
+                \nabla\times\boldsymbol{H}
+                -
+                \frac{\partial\boldsymbol{D}}{\partial t}
+                \right)
+                \times\boldsymbol{B}
+                \right]
                 \]
                 となります。
                 この右辺を展開し、特に真空中では
                 \begin{array}{rlr}
-                    &
-                    \dfrac{\partial\boldsymbol{D}}{\partial t}
-                    \times\boldsymbol{B}
-                    -
-                    \boldsymbol{D}
-                    \times
-                    (\nabla\times\boldsymbol{E})
-                    \\
-                    =&
-                    \dfrac{\partial\boldsymbol{D}}{\partial t}
-                    \times\boldsymbol{B}
-                    +
-                    \boldsymbol{D}\times
-                    \dfrac{\partial\boldsymbol{B}}{\partial t}
-                    &\because\eqref{Faraday}
-                    \\
-                    =&
-                    \dfrac{\partial}{\partial t}
-                    (\boldsymbol{D}\times\boldsymbol{B})
-                    \\
-                    =&
-                    \dfrac{\partial}{\partial t}
-                    (
-                        \varepsilon\boldsymbol{D}
-                        \times
-                        \mu_0\boldsymbol{B}
-                    )
-                    \\
-                    =&
-                    \dfrac{1}{c^2}
-                    \dfrac{\partial}{\partial t}
-                    (\boldsymbol{E}\times\boldsymbol{H})
+                &
+                \dfrac{\partial\boldsymbol{D}}{\partial t}
+                \times\boldsymbol{B}
+                -
+                \boldsymbol{D}
+                \times
+                (\nabla\times\boldsymbol{E})
+                \\
+                =&
+                \dfrac{\partial\boldsymbol{D}}{\partial t}
+                \times\boldsymbol{B}
+                +
+                \boldsymbol{D}\times
+                \dfrac{\partial\boldsymbol{B}}{\partial t}
+                &\because\eqref{Faraday}
+                \\
+                =&
+                \dfrac{\partial}{\partial t}
+                (\boldsymbol{D}\times\boldsymbol{B})
+                \\
+                =&
+                \dfrac{\partial}{\partial t}
+                (
+                \varepsilon\boldsymbol{D}
+                \times
+                \mu_0\boldsymbol{B}
+                )
+                \\
+                =&
+                \dfrac{1}{c^2}
+                \dfrac{\partial}{\partial t}
+                (\boldsymbol{E}\times\boldsymbol{H})
                 \end{array}
                 を用いることで、\eqref{ast}は
                 \[
-                    \dfrac{d}{dt}\boldsymbol{G}_m
-                    =
-                    \int d^3x
-                    \left[
-                        \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
-                        +
-                        (\nabla\times\boldsymbol{H})\times\boldsymbol{B}
-                        -
-                        \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
-                        -
-                        \dfrac{1}{c^2}
-                        \dfrac{\partial}{\partial t}
-                        (\boldsymbol{E}\times\boldsymbol{H})
-                    \right]
+                \dfrac{d}{dt}\boldsymbol{G}_m
+                =
+                \int d^3x
+                \left[
+                \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
+                +
+                (\nabla\times\boldsymbol{H})\times\boldsymbol{B}
+                -
+                \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
+                -
+                \dfrac{1}{c^2}
+                \dfrac{\partial}{\partial t}
+                (\boldsymbol{E}\times\boldsymbol{H})
+                \right]
                 \]
                 と変形可能です。
                 右辺最終項を左辺に移して、残りの項の順番を入れ替えれば、
                 \[
-                    \dfrac{d}{dt}\boldsymbol{G}_m
-                    +
-                    \dfrac{d}{dt}\int d^3x
-                    \left(
-                        \dfrac{1}{c^2}\boldsymbol{E}\times\boldsymbol{H}
-                    \right)
-                    =
-                    \int d^3x
-                    [
-                        \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
-                        -
-                        \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
-                        +
-                        (\nabla\times\boldsymbol{H})\times\boldsymbol{B}
-                    ]
+                \dfrac{d}{dt}\boldsymbol{G}_m
+                +
+                \dfrac{d}{dt}\int d^3x
+                \left(
+                \dfrac{1}{c^2}\boldsymbol{E}\times\boldsymbol{H}
+                \right)
+                =
+                \int d^3x
+                [
+                \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
+                -
+                \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
+                +
+                (\nabla\times\boldsymbol{H})\times\boldsymbol{B}
+                ]
                 \]
                 となります。
                 ポインティングベクトル \(\boldsymbol{S}:=\boldsymbol{E}\times\boldsymbol{H}\) を定義して、最終項の外積順序を交換すれば、当座の目標
                 \[
-                    \tag{7}
-                    \label{astast}
-                    \dfrac{d}{dt}
-                    \left(
-                        \boldsymbol{G}_m
-                        +
-                        \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
-                    \right)
-                    =
-                    \int d^3x
-                    [
-                        \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
-                        -
-                        \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
-                        -
-                        \boldsymbol{B}\times(\nabla\times\boldsymbol{H})
-                    ]
+                \tag{7}
+                \label{astast}
+                \dfrac{d}{dt}
+                \left(
+                \boldsymbol{G}_m
+                +
+                \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
+                \right)
+                =
+                \int d^3x
+                [
+                \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
+                -
+                \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
+                -
+                \boldsymbol{B}\times(\nabla\times\boldsymbol{H})
+                ]
                 \]
                 が得られます。
             </p>
@@ -355,30 +357,31 @@
                 ここで見通しをよくするために、天下りではありますが今後の展望を眺めてみましょう。
                 \eqref{astast}右辺第1項・第2項は \(\nabla\cdot\boldsymbol{T}^e\) と、第3項は \(\nabla\cdot\boldsymbol{T}^m\) と書けば、
                 \[
-                    \tag{8}
-                    \label{a}
-                    \dfrac{d}{dt}
-                    \left(
-                        \boldsymbol{G}_m(t)
-                        +
-                        \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
-                    \right)
-                    =
-                    \int d^3x\:
-                    (
-                        \nabla\cdot\boldsymbol{T}^e
-                        +
-                        \nabla\cdot\boldsymbol{T}^m
-                    )
+                \tag{8}
+                \label{a}
+                \dfrac{d}{dt}
+                \left(
+                \boldsymbol{G}_m(t)
+                +
+                \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
+                \right)
+                =
+                \int d^3x\:
+                (
+                \nabla\cdot\boldsymbol{T}^e
+                +
+                \nabla\cdot\boldsymbol{T}^m
+                )
                 \]
-                です。左辺第2項 (微分の中) を \(\boldsymbol{G}_f(t)\) と定義した上で、\(\boldsymbol{T}:=\boldsymbol{T}^e+\boldsymbol{T}^m\) に2階テンソルでのガウスの発散定理を用いることで、
+                です。左辺第2項 (微分の中) を \(\boldsymbol{G}_f(t)\) と定義した上で、\(\boldsymbol{T}:=\boldsymbol{T}^e+\boldsymbol{T}^m\)
+                に2階テンソルでのガウスの発散定理を用いることで、
                 \[
-                    \tag{9}
-                    \label{b}
-                    \dfrac{d}{dt}
-                    (\boldsymbol{G}_m(t)+\boldsymbol{G}_f(t))
-                    =
-                    \int\boldsymbol{n}dS\cdot\boldsymbol{T}(\boldsymbol{x},t)
+                \tag{9}
+                \label{b}
+                \dfrac{d}{dt}
+                (\boldsymbol{G}_m(t)+\boldsymbol{G}_f(t))
+                =
+                \int\boldsymbol{n}dS\cdot\boldsymbol{T}(\boldsymbol{x},t)
                 \]
                 となり、左辺が電磁場全体で見た運動量変化、右辺が電磁場全体にかかる力を表すことになります。
             </p>
@@ -408,7 +411,7 @@
             <p>
                 古典粒子系において下式のようになる式は、左辺が運動量の時間変化を、右辺が系全体にかかる力 (勿体ぶって言えば力積の時間変化) を表します。
                 \[
-                    \frac{d}{dt}\boldsymbol{P}=\boldsymbol{F}
+                \frac{d}{dt}\boldsymbol{P}=\boldsymbol{F}
                 \]
                 \eqref{b}でも同様に<b>全運動量の時間変化が系全体にかかる力に等しい</b>と解釈してみましょう。
                 以下では簡単のため時間変化のない静電場で考察していきます。
@@ -423,232 +426,233 @@
             </ul>
             <p>
                 の2種類。
-                特に砂川pp.24-25, 第1章§7より、静電場では自己場が \(\boldsymbol{0}\) になりますから、\(\boldsymbol{E}=\boldsymbol{E}_{self}+\boldsymbol{E}_{out}=\boldsymbol{E}_{out}\) にて、
+                特に砂川pp.24-25, 第1章§7より、静電場では自己場が \(\boldsymbol{0}\)
+                になりますから、\(\boldsymbol{E}=\boldsymbol{E}_{self}+\boldsymbol{E}_{out}=\boldsymbol{E}_{out}\) にて、
                 \[
-                    \boldsymbol{F}
-                    =
-                    \int_V\rho(\boldsymbol{x})\boldsymbol{E}(\boldsymbol{x})d^3x
-                    =
-                    \int_V(\varepsilon_0\nabla\cdot\boldsymbol{E})\boldsymbol{E}d^3x
+                \boldsymbol{F}
+                =
+                \int_V\rho(\boldsymbol{x})\boldsymbol{E}(\boldsymbol{x})d^3x
+                =
+                \int_V(\varepsilon_0\nabla\cdot\boldsymbol{E})\boldsymbol{E}d^3x
                 \]
                 です。
                 レビチビタ記号によって \(\epsilon_{ijk}=1\) となるように、つまり \(ijk\) がこの順に \(xyz\) とサイクリックになるように添字をとって、その \(i\) 成分に着目すると、
                 \begin{array}{rcl}
-                    F_i
-                    &=&
-                    \displaystyle
-                    \varepsilon_0
-                    \int
-                    \left(
-                        \frac{\partial E_i}{\partial x_i}
-                        +
-                        \frac{\partial E_j}{\partial x_j}
-                        +
-                        \frac{\partial E_k}{\partial x_k}
-                    \right)
-                    \\
-                    &=&
-                    \displaystyle
-                    \varepsilon_0
-                    \int
-                    \left[
-                        E_i\dfrac{\partial E_i}{\partial x_i}
-                        +
-                        \left(
-                            \frac{\partial E_iE_j}{\partial x_j}
-                            -
-                            E_j\frac{\partial E_i}{\partial x_j}
-                        \right)
-                        +
-                        \left(
-                            \frac{\partial E_iE_k}{\partial x_k}
-                            -
-                            E_k\frac{\partial E_i}{\partial x_k}
-                        \right)
-                    \right]
-                    d^3x
-                    .
+                F_i
+                &=&
+                \displaystyle
+                \varepsilon_0
+                \int
+                \left(
+                \frac{\partial E_i}{\partial x_i}
+                +
+                \frac{\partial E_j}{\partial x_j}
+                +
+                \frac{\partial E_k}{\partial x_k}
+                \right)
+                \\
+                &=&
+                \displaystyle
+                \varepsilon_0
+                \int
+                \left[
+                E_i\dfrac{\partial E_i}{\partial x_i}
+                +
+                \left(
+                \frac{\partial E_iE_j}{\partial x_j}
+                -
+                E_j\frac{\partial E_i}{\partial x_j}
+                \right)
+                +
+                \left(
+                \frac{\partial E_iE_k}{\partial x_k}
+                -
+                E_k\frac{\partial E_i}{\partial x_k}
+                \right)
+                \right]
+                d^3x
+                .
                 \end{array}
                 ここで、今は時間変化のない静電場を考えていて、\eqref{Faraday}から、
                 \[
-                    \nabla\times\boldsymbol{E}=\boldsymbol{0}
-                    \quad
-                    \therefore
-                    \frac{\partial E_i}{\partial x_j}
-                    =
-                    \frac{\partial E_j}{\partial x_i}
-                    ,\;
-                    \frac{\partial E_i}{\partial x_k}
-                    =
-                    \frac{\partial E_k}{\partial x_i}
+                \nabla\times\boldsymbol{E}=\boldsymbol{0}
+                \quad
+                \therefore
+                \frac{\partial E_i}{\partial x_j}
+                =
+                \frac{\partial E_j}{\partial x_i}
+                ,\;
+                \frac{\partial E_i}{\partial x_k}
+                =
+                \frac{\partial E_k}{\partial x_i}
                 \]
                 が成り立つことに注意すると、
                 \begin{array}{rcl}
-                    F_i
-                    &=&
-                    \displaystyle
-                    \varepsilon_0
-                    \int
-                    \left[
-                        \frac{\partial}{\partial x_i}
-                        \left(
-                            \frac{1}{2}E_i^2
-                            -
-                            \frac{1}{2}E_j^2
-                            -
-                            \frac{1}{2}E_k^2
-                        \right)
-                        +
-                        \frac{\partial}{\partial x_j}(E_iE_j)
-                        +
-                        \frac{\partial}{\partial x_k}(E_iE_k)
-                    \right]
-                    d^3x
-                    \\
-                    &=&
-                    \displaystyle
-                    \varepsilon_0
-                    \int
-                    \left[
-                        \frac{\partial}{\partial x_i}
-                        \left(
-                            E_i^2
-                            -
-                            \frac{1}{2}\boldsymbol{E}^2
-                        \right)
-                        +
-                        \frac{\partial}{\partial x_j}(E_iE_j)
-                        +
-                        \frac{\partial}{\partial x_k}(E_iE_k)
-                    \right]
-                    d^3x
+                F_i
+                &=&
+                \displaystyle
+                \varepsilon_0
+                \int
+                \left[
+                \frac{\partial}{\partial x_i}
+                \left(
+                \frac{1}{2}E_i^2
+                -
+                \frac{1}{2}E_j^2
+                -
+                \frac{1}{2}E_k^2
+                \right)
+                +
+                \frac{\partial}{\partial x_j}(E_iE_j)
+                +
+                \frac{\partial}{\partial x_k}(E_iE_k)
+                \right]
+                d^3x
+                \\
+                &=&
+                \displaystyle
+                \varepsilon_0
+                \int
+                \left[
+                \frac{\partial}{\partial x_i}
+                \left(
+                E_i^2
+                -
+                \frac{1}{2}\boldsymbol{E}^2
+                \right)
+                +
+                \frac{\partial}{\partial x_j}(E_iE_j)
+                +
+                \frac{\partial}{\partial x_k}(E_iE_k)
+                \right]
+                d^3x
                 \end{array}
                 となります。
                 従って全成分を考えると、
                 \[
-                    \tag{10}
-                    \label{c}
-                    \boldsymbol{F}
-                    =
-                    \int_V\varepsilon_0
-                    \left(
-                        \begin{matrix}
-                            \partial_x(E_x^2-\boldsymbol{E}^2/2)
-                            +
-                            \partial_y(E_xE_y)
-                            +
-                            \partial_z(E_xE_z)
-                            \\
-                            \partial_x(E_yE_x)
-                            +
-                            \partial_y(E_y^2-\boldsymbol{E}^2/2)
-                            +
-                            \partial_z(E_yE_z)
-                            \\
-                            \partial_x(E_zE_x)
-                            +
-                            \partial_y(E_zE_y)
-                            +
-                            \partial_z(E_z^2-\boldsymbol{E}^2/2)
-                        \end{matrix}
-                    \right)
-                    d^3x
+                \tag{10}
+                \label{c}
+                \boldsymbol{F}
+                =
+                \int_V\varepsilon_0
+                \left(
+                \begin{matrix}
+                \partial_x(E_x^2-\boldsymbol{E}^2/2)
+                +
+                \partial_y(E_xE_y)
+                +
+                \partial_z(E_xE_z)
+                \\
+                \partial_x(E_yE_x)
+                +
+                \partial_y(E_y^2-\boldsymbol{E}^2/2)
+                +
+                \partial_z(E_yE_z)
+                \\
+                \partial_x(E_zE_x)
+                +
+                \partial_y(E_zE_y)
+                +
+                \partial_z(E_z^2-\boldsymbol{E}^2/2)
+                \end{matrix}
+                \right)
+                d^3x
                 \]
                 です。
                 中身の行列部分は、
                 \begin{array}{rl}
-                    &
-                    \left(
-                    \begin{matrix}
-                        \partial_x(E_x^2-\boldsymbol{E}^2/2)
-                        +
-                        \partial_y(E_xE_y)
-                        +
-                        \partial_z(E_xE_z)
-                        \\
-                        \partial_x(E_yE_x)
-                        +
-                        \partial_y(E_y^2-\boldsymbol{E}^2/2)
-                        +
-                        \partial_z(E_yE_z)
-                        \\
-                        \partial_x(E_zE_x)
-                        +
-                        \partial_y(E_zE_y)
-                        +
-                        \partial_z(E_z^2-\boldsymbol{E}^2/2)
-                    \end{matrix}
-                    \right)
-                    \\
-                    =&
-                    \left[
-                        \left(\begin{matrix}
-                            \dfrac{\partial}{\partial x}
-                            &
-                            \dfrac{\partial}{\partial y}
-                            &
-                            \dfrac{\partial}{\partial z}
-                        \end{matrix}\right)
-                        \underline{
-                            \left(
-                            \begin{matrix}
-                                E_x^2-\dfrac{1}{2}\boldsymbol{E}^2
-                                &
-                                E_xE_y
-                                &
-                                E_xE_z
-                                \\
-                                E_yE_x
-                                &
-                                E_y^2-\dfrac{1}{2}\boldsymbol{E}^2
-                                &
-                                E_yE_z
-                                \\
-                                E_zE_x
-                                &
-                                E_zE_y
-                                &
-                                E_z^2-\dfrac{1}{2}\boldsymbol{E}^2
-                            \end{matrix}
-                            \right)
-                        }_{:=\boldsymbol{T}^e}
-                    \right]
-                    \\
-                    =&
-                    (\nabla^T\boldsymbol{T}^e)^T
-                    \\
-                    =&
-                    (\nabla,\boldsymbol{T}^e)^T
+                &
+                \left(
+                \begin{matrix}
+                \partial_x(E_x^2-\boldsymbol{E}^2/2)
+                +
+                \partial_y(E_xE_y)
+                +
+                \partial_z(E_xE_z)
+                \\
+                \partial_x(E_yE_x)
+                +
+                \partial_y(E_y^2-\boldsymbol{E}^2/2)
+                +
+                \partial_z(E_yE_z)
+                \\
+                \partial_x(E_zE_x)
+                +
+                \partial_y(E_zE_y)
+                +
+                \partial_z(E_z^2-\boldsymbol{E}^2/2)
+                \end{matrix}
+                \right)
+                \\
+                =&
+                \left[
+                \left(\begin{matrix}
+                \dfrac{\partial}{\partial x}
+                &
+                \dfrac{\partial}{\partial y}
+                &
+                \dfrac{\partial}{\partial z}
+                \end{matrix}\right)
+                \underline{
+                \left(
+                \begin{matrix}
+                E_x^2-\dfrac{1}{2}\boldsymbol{E}^2
+                &
+                E_xE_y
+                &
+                E_xE_z
+                \\
+                E_yE_x
+                &
+                E_y^2-\dfrac{1}{2}\boldsymbol{E}^2
+                &
+                E_yE_z
+                \\
+                E_zE_x
+                &
+                E_zE_y
+                &
+                E_z^2-\dfrac{1}{2}\boldsymbol{E}^2
+                \end{matrix}
+                \right)
+                }_{:=\boldsymbol{T}^e}
+                \right]
+                \\
+                =&
+                (\nabla^T\boldsymbol{T}^e)^T
+                \\
+                =&
+                (\nabla,\boldsymbol{T}^e)^T
                 \end{array}
                 になります。
                 最後に内積 \((A,B)=A^\dagger B=\overline{A^T}B\) が現れたので、ベクトルの場合と同様、これをテンソルの発散と見ることができますよね。
                 後述するガウスの発散定理によって\eqref{c}右辺の体積積分を面積分に直せば、
                 \[
-                    \boldsymbol{F}
-                    =
-                    \int_{\partial V}\varepsilon_0
-                    \left(
-                    \begin{matrix}
-                        E_x^2-\dfrac{1}{2}\boldsymbol{E}^2
-                        &
-                        E_xE_y
-                        &
-                        E_xE_z
-                        \\
-                        E_yE_x
-                        &
-                        E_y^2-\dfrac{1}{2}\boldsymbol{E}^2
-                        &
-                        E_yE_z
-                        \\
-                        E_zE_x
-                        &
-                        E_zE_y
-                        &
-                        E_z^2-\dfrac{1}{2}\boldsymbol{E}^2
-                    \end{matrix}
-                    \right)
-                    \cdot\boldsymbol{n}dS
+                \boldsymbol{F}
+                =
+                \int_{\partial V}\varepsilon_0
+                \left(
+                \begin{matrix}
+                E_x^2-\dfrac{1}{2}\boldsymbol{E}^2
+                &
+                E_xE_y
+                &
+                E_xE_z
+                \\
+                E_yE_x
+                &
+                E_y^2-\dfrac{1}{2}\boldsymbol{E}^2
+                &
+                E_yE_z
+                \\
+                E_zE_x
+                &
+                E_zE_y
+                &
+                E_z^2-\dfrac{1}{2}\boldsymbol{E}^2
+                \end{matrix}
+                \right)
+                \cdot\boldsymbol{n}dS
                 \]
                 となることがわかります。
                 これは<b>体積 \(V\) の表面上 \(\partial V\) に、電場の寄与によってかかる力の総和</b>と見て取れなくもないですね。
@@ -662,140 +666,140 @@
             <p>
                 さて、上記の考察に基づき、以下によってマクスウェルの応力テンソルを定義していきましょう。
                 \begin{array}{rcccl}
-                    \boldsymbol{T}^e
-                    &=&
-                    \varepsilon_0
-                    \left(\begin{matrix}
-                        T^e_{xx}
-                        &
-                        T^e_{xy}
-                        &
-                        T^e_{xz}
-                        \\
-                        T^e_{yx}
-                        &
-                        T^e_{yy}
-                        &
-                        T^e_{yz}
-                        \\
-                        T^e_{zx}
-                        &
-                        T^e_{zy}
-                        &
-                        T^e_{zz}
-                    \end{matrix}\right)
-                    &:=&
-                    \varepsilon_0
-                    \left(\begin{matrix}
-                        E_x^2-\dfrac{1}{2}\boldsymbol{E}^2
-                        &
-                        E_xE_y
-                        &
-                        E_xE_z
-                        \\
-                        E_yE_x
-                        &
-                        E_y^2-\dfrac{1}{2}\boldsymbol{E}^2
-                        &
-                        E_yE_z
-                        \\
-                        E_zE_x
-                        &
-                        E_zE_y
-                        &
-                        E_z^2-\dfrac{1}{2}\boldsymbol{E}^2
-                    \end{matrix}\right)
-                    \\
-                    \boldsymbol{T}^m
-                    &=&
-                    \dfrac{1}{\mu_0}
-                    \left(\begin{matrix}
-                        T^m_{xx}
-                        &
-                        T^m_{xy}
-                        &
-                        T^m_{xz}
-                        \\
-                        T^m_{yx}
-                        &
-                        T^m_{yy}
-                        &
-                        T^m_{yz}
-                        \\
-                        T^m_{zx}
-                        &
-                        T^m_{zy}
-                        &
-                        T^m_{zz}
-                    \end{matrix}\right)
-                    &:=&
-                    \dfrac{1}{\mu_0}
-                    \left(\begin{matrix}
-                        B_x^2-\dfrac{1}{2}\boldsymbol{B}^2
-                        &
-                        B_xB_y
-                        &
-                        B_xB_z
-                        \\
-                        B_yB_x
-                        &
-                        B_y^2-\dfrac{1}{2}\boldsymbol{B}^2
-                        &
-                        B_yB_z
-                        \\
-                        B_zB_x
-                        &
-                        B_zB_y
-                        &
-                        B_z^2-\dfrac{1}{2}\boldsymbol{B}^2
-                    \end{matrix}\right)
+                \boldsymbol{T}^e
+                &=&
+                \varepsilon_0
+                \left(\begin{matrix}
+                T^e_{xx}
+                &
+                T^e_{xy}
+                &
+                T^e_{xz}
+                \\
+                T^e_{yx}
+                &
+                T^e_{yy}
+                &
+                T^e_{yz}
+                \\
+                T^e_{zx}
+                &
+                T^e_{zy}
+                &
+                T^e_{zz}
+                \end{matrix}\right)
+                &:=&
+                \varepsilon_0
+                \left(\begin{matrix}
+                E_x^2-\dfrac{1}{2}\boldsymbol{E}^2
+                &
+                E_xE_y
+                &
+                E_xE_z
+                \\
+                E_yE_x
+                &
+                E_y^2-\dfrac{1}{2}\boldsymbol{E}^2
+                &
+                E_yE_z
+                \\
+                E_zE_x
+                &
+                E_zE_y
+                &
+                E_z^2-\dfrac{1}{2}\boldsymbol{E}^2
+                \end{matrix}\right)
+                \\
+                \boldsymbol{T}^m
+                &=&
+                \dfrac{1}{\mu_0}
+                \left(\begin{matrix}
+                T^m_{xx}
+                &
+                T^m_{xy}
+                &
+                T^m_{xz}
+                \\
+                T^m_{yx}
+                &
+                T^m_{yy}
+                &
+                T^m_{yz}
+                \\
+                T^m_{zx}
+                &
+                T^m_{zy}
+                &
+                T^m_{zz}
+                \end{matrix}\right)
+                &:=&
+                \dfrac{1}{\mu_0}
+                \left(\begin{matrix}
+                B_x^2-\dfrac{1}{2}\boldsymbol{B}^2
+                &
+                B_xB_y
+                &
+                B_xB_z
+                \\
+                B_yB_x
+                &
+                B_y^2-\dfrac{1}{2}\boldsymbol{B}^2
+                &
+                B_yB_z
+                \\
+                B_zB_x
+                &
+                B_zB_y
+                &
+                B_z^2-\dfrac{1}{2}\boldsymbol{B}^2
+                \end{matrix}\right)
                 \end{array}
             </p>
             <p>
                 それぞれの成分表示は
                 \begin{array}{rcl}
-                    T^e_{ij}
-                    &=&
-                    \varepsilon_0
-                    \left(
-                        E_iE_j-\dfrac{1}{2}E^2\delta_{ij}
-                    \right)
-                    \\
-                    T^m_{ij}
-                    &=&
-                    \dfrac{1}{\mu_0}
-                    \left(
-                        B_iB_j-\dfrac{1}{2}B^2\delta_{ij}
-                    \right)
+                T^e_{ij}
+                &=&
+                \varepsilon_0
+                \left(
+                E_iE_j-\dfrac{1}{2}E^2\delta_{ij}
+                \right)
+                \\
+                T^m_{ij}
+                &=&
+                \dfrac{1}{\mu_0}
+                \left(
+                B_iB_j-\dfrac{1}{2}B^2\delta_{ij}
+                \right)
                 \end{array}
                 となります。
                 これを参考にすれば、列ベクトル
                 \[
-                    \boldsymbol{E}
-                    =
-                    \left(\begin{matrix}
-                        E_x\\E_y\\E_z
-                    \end{matrix}\right)
-                    ,\quad
-                    \boldsymbol{B}
-                    =
-                    \left(\begin{matrix}
-                        B_x\\B_y\\B_z
-                    \end{matrix}\right)
+                \boldsymbol{E}
+                =
+                \left(\begin{matrix}
+                E_x\\E_y\\E_z
+                \end{matrix}\right)
+                ,\quad
+                \boldsymbol{B}
+                =
+                \left(\begin{matrix}
+                B_x\\B_y\\B_z
+                \end{matrix}\right)
                 \]
                 及び3行3列の単位行列 \(\boldsymbol{I}\) を用いて
                 \begin{array}{rcl}
-                    \boldsymbol{T}^e
-                    &=&
-                    \varepsilon_0\boldsymbol{E}\boldsymbol{E}^T
-                    -
-                    \dfrac{1}{2}\varepsilon_0\boldsymbol{E}^T\boldsymbol{EI}
-                    \\
-                    \boldsymbol{T}^m
-                    &=&
-                    \dfrac{1}{\mu_0}\boldsymbol{B}\boldsymbol{B}^T
-                    -
-                    \dfrac{1}{2\mu_0}\boldsymbol{B}^T\boldsymbol{BI}
+                \boldsymbol{T}^e
+                &=&
+                \varepsilon_0\boldsymbol{E}\boldsymbol{E}^T
+                -
+                \dfrac{1}{2}\varepsilon_0\boldsymbol{E}^T\boldsymbol{EI}
+                \\
+                \boldsymbol{T}^m
+                &=&
+                \dfrac{1}{\mu_0}\boldsymbol{B}\boldsymbol{B}^T
+                -
+                \dfrac{1}{2\mu_0}\boldsymbol{B}^T\boldsymbol{BI}
                 \end{array}
                 です。
             </p>
@@ -804,18 +808,20 @@
         <div class="subsection" id="check">
             <h2>テンソルであることの確認</h2>
             <p>
-                さて、直行行列 \(\boldsymbol{A}\) で表される空間座標回転により、電磁場が \(\boldsymbol{E}\mapsto\boldsymbol{AE},\boldsymbol{B}\mapsto\boldsymbol{AB}\) と変換されたとしましょう。
+                さて、直行行列 \(\boldsymbol{A}\) で表される空間座標回転により、電磁場が
+                \(\boldsymbol{E}\mapsto\boldsymbol{AE},\boldsymbol{B}\mapsto\boldsymbol{AB}\) と変換されたとしましょう。
                 ちなみに座標変換を空間座標回転に限定するのは磁場が軸性ベクトルだからです。
                 実際 \(\det\boldsymbol{A}\lt0\) では基礎方程式が破綻します。
-                例えば \(\boldsymbol{A}=-\boldsymbol{I}\) は \(\boldsymbol{r}\mapsto-\boldsymbol{r}\) の変換に相当しますが、これに合わせて \(\boldsymbol{E}\mapsto-\boldsymbol{E}, \boldsymbol{B}\mapsto-\boldsymbol{B}\) とすれば、\eqref{Lorentz}は
+                例えば \(\boldsymbol{A}=-\boldsymbol{I}\) は \(\boldsymbol{r}\mapsto-\boldsymbol{r}\) の変換に相当しますが、これに合わせて
+                \(\boldsymbol{E}\mapsto-\boldsymbol{E}, \boldsymbol{B}\mapsto-\boldsymbol{B}\) とすれば、\eqref{Lorentz}は
                 \[
-                    -m\ddot{\boldsymbol{r}}
-                    =
-                    -e\boldsymbol{E}
-                    +
-                    e\dot{\boldsymbol{r}}
-                    \times
-                    \boldsymbol{B}
+                -m\ddot{\boldsymbol{r}}
+                =
+                -e\boldsymbol{E}
+                +
+                e\dot{\boldsymbol{r}}
+                \times
+                \boldsymbol{B}
                 \]
                 となって、右辺第2項の符号が反転してしまうのが見て取れますね。
                 したがって \(\boldsymbol{A}\) の条件としては \(\det\boldsymbol{A}\gt0\) が要求されます。
@@ -823,89 +829,94 @@
             <p>
                 このとき新しい応力テンソルは
                 \begin{array}{rcl}
-                    \boldsymbol{T}'^e
-                    &=&
-                    \varepsilon_0(\boldsymbol{AE})(\boldsymbol{AE})^T
-                    -
-                    \dfrac{1}{2}\varepsilon_0(\boldsymbol{AE})^T(\boldsymbol{AE})\boldsymbol{I}
-                    \\
-                    &=&
-                    \varepsilon_0\boldsymbol{AEE}^T\boldsymbol{A}^T
-                    -
-                    \dfrac{1}{2}\varepsilon_0\boldsymbol{E}^T\boldsymbol{A}^T\boldsymbol{AEI}
-                    \\
-                    &=&
-                    \boldsymbol{A}\varepsilon_0\boldsymbol{EE}^T\boldsymbol{A}^T
-                    -
-                    \dfrac{1}{2}\varepsilon_0E^2\boldsymbol{I}
-                    \\
-                    &=&
-                    \boldsymbol{A}
-                    \left(
-                        \varepsilon_0\boldsymbol{EE}^T
-                        -
-                        \dfrac{1}{2}\boldsymbol{E}^T\boldsymbol{E}
-                    \right)
-                    \boldsymbol{A}^T
-                    -
-                    \dfrac{1}{2}\varepsilon_0E^2\boldsymbol{I}
-                    +
-                    \dfrac{1}{2}\varepsilon_0\boldsymbol{AE}^T\boldsymbol{E}\boldsymbol{A}^T
-                    \\
-                    &=&
-                    \boldsymbol{AT}^e\boldsymbol{A}^T
-                    -
-                    \dfrac{1}{2}\varepsilon_0E^2\boldsymbol{I}
-                    +
-                    \dfrac{1}{2}\varepsilon_0\boldsymbol{A}E^2\boldsymbol{A}^T
-                    \\
-                    &=&
-                    \boldsymbol{AT}^e\boldsymbol{A}^T
+                \boldsymbol{T}'^e
+                &=&
+                \varepsilon_0(\boldsymbol{AE})(\boldsymbol{AE})^T
+                -
+                \dfrac{1}{2}\varepsilon_0(\boldsymbol{AE})^T(\boldsymbol{AE})\boldsymbol{I}
+                \\
+                &=&
+                \varepsilon_0\boldsymbol{AEE}^T\boldsymbol{A}^T
+                -
+                \dfrac{1}{2}\varepsilon_0\boldsymbol{E}^T\boldsymbol{A}^T\boldsymbol{AEI}
+                \\
+                &=&
+                \boldsymbol{A}\varepsilon_0\boldsymbol{EE}^T\boldsymbol{A}^T
+                -
+                \dfrac{1}{2}\varepsilon_0E^2\boldsymbol{I}
+                \\
+                &=&
+                \boldsymbol{A}
+                \left(
+                \varepsilon_0\boldsymbol{EE}^T
+                -
+                \dfrac{1}{2}\boldsymbol{E}^T\boldsymbol{E}
+                \right)
+                \boldsymbol{A}^T
+                -
+                \dfrac{1}{2}\varepsilon_0E^2\boldsymbol{I}
+                +
+                \dfrac{1}{2}\varepsilon_0\boldsymbol{AE}^T\boldsymbol{E}\boldsymbol{A}^T
+                \\
+                &=&
+                \boldsymbol{AT}^e\boldsymbol{A}^T
+                -
+                \dfrac{1}{2}\varepsilon_0E^2\boldsymbol{I}
+                +
+                \dfrac{1}{2}\varepsilon_0\boldsymbol{A}E^2\boldsymbol{A}^T
+                \\
+                &=&
+                \boldsymbol{AT}^e\boldsymbol{A}^T
                 \end{array}
                 を満たすことがわかります。
-                ただし、4つ目の等号では、\(1/2\cdot\varepsilon_0\boldsymbol{A}(\boldsymbol{E}^T\boldsymbol{E})\boldsymbol{A}^T\) を足し弾きしています。
-                \(\boldsymbol{T}^e\to\boldsymbol{T}^m\), \(\varepsilon_0\to1/\mu_0\), \(\boldsymbol{E}\to\boldsymbol{B}\) とすれば、全く同じ計算で \(\boldsymbol{T}'^m=\boldsymbol{AT}^m\boldsymbol{A}^T\) となるので、足し合わせて \(\boldsymbol{T}'=\boldsymbol{ATA}^T\) が成り立ちます。
+                ただし、4つ目の等号では、\(1/2\cdot\varepsilon_0\boldsymbol{A}(\boldsymbol{E}^T\boldsymbol{E})\boldsymbol{A}^T\)
+                を足し弾きしています。
+                \(\boldsymbol{T}^e\to\boldsymbol{T}^m\), \(\varepsilon_0\to1/\mu_0\),
+                \(\boldsymbol{E}\to\boldsymbol{B}\) とすれば、全く同じ計算で \(\boldsymbol{T}'^m=\boldsymbol{AT}^m\boldsymbol{A}^T\)
+                となるので、足し合わせて \(\boldsymbol{T}'=\boldsymbol{ATA}^T\) が成り立ちます。
                 この両辺を成分表示すると、
                 \[
-                    (\boldsymbol{T}')_{ij}
-                    =
-                    (\boldsymbol{ATA}^T)_{ij}
-                    =
-                    \sum_l(\boldsymbol{AT})_{il}\boldsymbol{A}_{lj}^T
-                    =
-                    \sum_{k,l}
-                    \boldsymbol{A}_{ik}
-                    \boldsymbol{T}_{kl}
-                    \boldsymbol{A}_jl
+                (\boldsymbol{T}')_{ij}
+                =
+                (\boldsymbol{ATA}^T)_{ij}
+                =
+                \sum_l(\boldsymbol{AT})_{il}\boldsymbol{A}_{lj}^T
+                =
+                \sum_{k,l}
+                \boldsymbol{A}_{ik}
+                \boldsymbol{T}_{kl}
+                \boldsymbol{A}_jl
                 \]
                 となって、テンソルの定義式としてよく知られる式 \(\boldsymbol{T}'_{ij}=a_{ik}a_{jl}\boldsymbol{T}_{kl}\) を満たしていることがわかります。
             </p>
             <p>
                 また \(\boldsymbol{A}\) が直交行列であることを考慮すれば、<b>基底の変換を行なっている</b>こともわかります。
-                \(\boldsymbol{A}^T=\boldsymbol{A}^{-1}\) なので、\(\boldsymbol{T}'\boldsymbol{A}=\boldsymbol{AT}\) となって、以下の図式を満たしていることを考えると良いでしょう。
+                \(\boldsymbol{A}^T=\boldsymbol{A}^{-1}\) なので、\(\boldsymbol{T}'\boldsymbol{A}=\boldsymbol{AT}\)
+                となって、以下の図式を満たしていることを考えると良いでしょう。
                 つまり \(\boldsymbol{T}'\) は、図式右側の新基底において \(\boldsymbol{T}\) に対応する作用になっていると解釈できます。
                 \begin{array}{rcl}
-                    \text{旧基底}
-                    &&
-                    \text{新基底}
-                    \\
-                    \boldsymbol{v}
-                    &
-                    \xrightarrow{\boldsymbol{A}}
-                    &
-                    \boldsymbol{Av}
-                    \\
-                    \boldsymbol{T}\downarrow
-                    &&
-                    \downarrow\boldsymbol{T}'
-                    \\
-                    \boldsymbol{Tv}
-                    &
-                    \xrightarrow{\boldsymbol{A}}
-                    &
-                    \boldsymbol{ATv}=\boldsymbol{T}'\boldsymbol{Av}
+                \text{旧基底}
+                &&
+                \text{新基底}
+                \\
+                \boldsymbol{v}
+                &
+                \xrightarrow{\boldsymbol{A}}
+                &
+                \boldsymbol{Av}
+                \\
+                \boldsymbol{T}\downarrow
+                &&
+                \downarrow\boldsymbol{T}'
+                \\
+                \boldsymbol{Tv}
+                &
+                \xrightarrow{\boldsymbol{A}}
+                &
+                \boldsymbol{ATv}=\boldsymbol{T}'\boldsymbol{Av}
                 \end{array}
-                「\(\boldsymbol{T}\) をを作用させてから基底を変換するのと、基底を変換してから \(\boldsymbol{T}'\) を作用させるのとで、同じになるようにする」と捉えれば、なおわかりやすいのではないでしょうか。
+                「\(\boldsymbol{T}\) をを作用させてから基底を変換するのと、基底を変換してから \(\boldsymbol{T}'\)
+                を作用させるのとで、同じになるようにする」と捉えれば、なおわかりやすいのではないでしょうか。
                 \(\boldsymbol{T}'=\boldsymbol{ATA}^T\) は図式右上から右下へ移る際に、真っ直ぐ下がるか反時計回りに迂回するかを表していますね。
             </p>
         </div>
@@ -915,39 +926,40 @@
             <p>
                 テンソルの発散は以下で定義します。
                 \[
-                    \nabla\cdot\boldsymbol{T}
-                    :=
-                    \left(\begin{matrix}
-                        \partial_xT_{xx}
-                        +
-                        \partial_yT_{xy}
-                        +
-                        \partial_zT_{xz}
-                        \\
-                        \partial_xT_{yx}
-                        +
-                        \partial_yT_{yy}
-                        +
-                        \partial_zT_{yz}
-                        \\
-                        \partial_xT_{zx}
-                        +
-                        \partial_yT_{zy}
-                        +
-                        \partial_zT_{zz}
-                    \end{matrix}\right)
-                    =
-                    (\nabla,\boldsymbol{T})^T
+                \nabla\cdot\boldsymbol{T}
+                :=
+                \left(\begin{matrix}
+                \partial_xT_{xx}
+                +
+                \partial_yT_{xy}
+                +
+                \partial_zT_{xz}
+                \\
+                \partial_xT_{yx}
+                +
+                \partial_yT_{yy}
+                +
+                \partial_zT_{yz}
+                \\
+                \partial_xT_{zx}
+                +
+                \partial_yT_{zy}
+                +
+                \partial_zT_{zz}
+                \end{matrix}\right)
+                =
+                (\nabla,\boldsymbol{T})^T
                 \]
                 \[
-                    (\nabla\cdot\boldsymbol{T})_i
-                    =
-                    \dfrac{\partial T_{ij}}{\partial x_j}
-                    =
-                    \dfrac{\partial T_{ji}}{\partial x_j}
+                (\nabla\cdot\boldsymbol{T})_i
+                =
+                \dfrac{\partial T_{ij}}{\partial x_j}
+                =
+                \dfrac{\partial T_{ji}}{\partial x_j}
                 \]
                 なお、内積は左側成分を転置するものとします。
-                本来、量子力学のブラケット記法に従って、複素であれば \((\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{X}^\dagger\boldsymbol{Y}\) のように共役も取りたいところですが、今回は実なので共役の有無は問題になりません。
+                本来、量子力学のブラケット記法に従って、複素であれば \((\boldsymbol{X},\boldsymbol{Y})=\boldsymbol{X}^\dagger\boldsymbol{Y}\)
+                のように共役も取りたいところですが、今回は実なので共役の有無は問題になりません。
                 また今回は \(\boldsymbol{T}\) が対称行列なので、添字の前後はあまり問題となりません。
             </p>
         </div>
@@ -959,110 +971,110 @@
                 その際、いちいちベクトルを持ち出すのではなく、第 \(i\) 成分 \((i=x,y,z)\) について計算していきます。
                 レビチビタ記号に対し \(\epsilon_{ijk}=1\) を満たすように、すなわち \(ijk\) と \(xyz\) がサイクリックになるように添字をとって、
                 \begin{array}{rcl}
-                    (\nabla\cdot\boldsymbol{T}^e)_i
-                    &=&
-                    \dfrac{\partial T_{ii}}{\partial x_i}
-                    +
-                    \dfrac{\partial T_{ji}}{\partial x_j}
-                    +
-                    \dfrac{\partial T_{ki}}{\partial x_k}
-                    \\
-                    &=&
-                    \dfrac{\partial}{\partial x_i}
-                    \left(
-                        \varepsilon_0E_i^2
-                        -
-                        \dfrac{1}{2}\varepsilon_0(E_i^2+E_j^2+E_k^2)
-                    \right)
-                    +
-                    \dfrac{\partial}{\partial x_j}
-                    (\varepsilon_0E_jE_i)
-                    +
-                    \dfrac{\partial}{\partial x_k}
-                    (\varepsilon_0E_kE_i)
-                    \\
-                    &=&
-                    \varepsilon_0
-                    \left(
-                        E_i\dfrac{\partial E_i}{\partial x_i}
-                        -
-                        E_j\dfrac{\partial E_j}{\partial x_i}
-                        -
-                        E_k\dfrac{\partial E_k}{\partial x_i}
-                        +
-                        E_j\dfrac{\partial E_i}{\partial x_j}
-                        +
-                        E_i\dfrac{\partial E_j}{\partial x_j}
-                        +
-                        E_k\dfrac{\partial E_i}{\partial x_k}
-                        +
-                        E_i\dfrac{\partial E_k}{\partial x_k}
-                    \right)
-                    \\
-                    &=&
-                    \varepsilon_0
-                    \left[
-                        E_i
-                        \left(
-                            \dfrac{\partial E_i}{\partial x_i}
-                            +
-                            \dfrac{\partial E_j}{\partial x_j}
-                            +
-                            \dfrac{\partial E_k}{\partial x_k}
-                        \right)
-                        -
-                        E_j
-                        \left(
-                            \dfrac{\partial E_j}{\partial x_i}
-                            -
-                            \dfrac{\partial E_i}{\partial x_j}
-                        \right)
-                        +
-                        E_k
-                        \left(
-                            \dfrac{\partial E_i}{\partial x_k}
-                            -
-                            \dfrac{\partial E_k}{\partial x_i}
-                        \right)
-                    \right]
-                    \\
-                    &=&
-                    \varepsilon_0
-                    [
-                        E_i\nabla\cdot\boldsymbol{E}
-                        -
-                        E_j(\nabla\times\boldsymbol{E})_k
-                        +
-                        E_k(\nabla\times\boldsymbol{E})_j
-                    ]
-                    \\
-                    &=&
-                    (\nabla\cdot\boldsymbol{D})E_i
-                    -
-                    (\boldsymbol{D}\times(\nabla\times\boldsymbol{E}))_i
+                (\nabla\cdot\boldsymbol{T}^e)_i
+                &=&
+                \dfrac{\partial T_{ii}}{\partial x_i}
+                +
+                \dfrac{\partial T_{ji}}{\partial x_j}
+                +
+                \dfrac{\partial T_{ki}}{\partial x_k}
+                \\
+                &=&
+                \dfrac{\partial}{\partial x_i}
+                \left(
+                \varepsilon_0E_i^2
+                -
+                \dfrac{1}{2}\varepsilon_0(E_i^2+E_j^2+E_k^2)
+                \right)
+                +
+                \dfrac{\partial}{\partial x_j}
+                (\varepsilon_0E_jE_i)
+                +
+                \dfrac{\partial}{\partial x_k}
+                (\varepsilon_0E_kE_i)
+                \\
+                &=&
+                \varepsilon_0
+                \left(
+                E_i\dfrac{\partial E_i}{\partial x_i}
+                -
+                E_j\dfrac{\partial E_j}{\partial x_i}
+                -
+                E_k\dfrac{\partial E_k}{\partial x_i}
+                +
+                E_j\dfrac{\partial E_i}{\partial x_j}
+                +
+                E_i\dfrac{\partial E_j}{\partial x_j}
+                +
+                E_k\dfrac{\partial E_i}{\partial x_k}
+                +
+                E_i\dfrac{\partial E_k}{\partial x_k}
+                \right)
+                \\
+                &=&
+                \varepsilon_0
+                \left[
+                E_i
+                \left(
+                \dfrac{\partial E_i}{\partial x_i}
+                +
+                \dfrac{\partial E_j}{\partial x_j}
+                +
+                \dfrac{\partial E_k}{\partial x_k}
+                \right)
+                -
+                E_j
+                \left(
+                \dfrac{\partial E_j}{\partial x_i}
+                -
+                \dfrac{\partial E_i}{\partial x_j}
+                \right)
+                +
+                E_k
+                \left(
+                \dfrac{\partial E_i}{\partial x_k}
+                -
+                \dfrac{\partial E_k}{\partial x_i}
+                \right)
+                \right]
+                \\
+                &=&
+                \varepsilon_0
+                [
+                E_i\nabla\cdot\boldsymbol{E}
+                -
+                E_j(\nabla\times\boldsymbol{E})_k
+                +
+                E_k(\nabla\times\boldsymbol{E})_j
+                ]
+                \\
+                &=&
+                (\nabla\cdot\boldsymbol{D})E_i
+                -
+                (\boldsymbol{D}\times(\nabla\times\boldsymbol{E}))_i
                 \end{array}
                 となります。
                 したがって
                 \[
-                    \nabla\cdot\boldsymbol{T}^e
-                    =
-                    (\nabla\cdot\boldsymbol{D})\boldsymbol{E}
-                    -
-                    \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
+                \nabla\cdot\boldsymbol{T}^e
+                =
+                (\nabla\cdot\boldsymbol{D})\boldsymbol{E}
+                -
+                \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
                 \]
                 です。
                 \(\boldsymbol{E}\to\boldsymbol{B}, \varepsilon_0\to1/\mu_0\) と置き換えれば、全く同じ計算で
                 \[
-                    \nabla\cdot\boldsymbol{T}^m
-                    =
-                    \dfrac{1}{\mu_0}
-                    (\nabla\cdot\boldsymbol{B})\boldsymbol{B}
-                    -
-                    \dfrac{1}{\mu_0}
-                    \boldsymbol{B}\times(\nabla\times\boldsymbol{B})
-                    =
-                    -\boldsymbol{B}\times(\nabla\times\boldsymbol
-                    {H})
+                \nabla\cdot\boldsymbol{T}^m
+                =
+                \dfrac{1}{\mu_0}
+                (\nabla\cdot\boldsymbol{B})\boldsymbol{B}
+                -
+                \dfrac{1}{\mu_0}
+                \boldsymbol{B}\times(\nabla\times\boldsymbol{B})
+                =
+                -\boldsymbol{B}\times(\nabla\times\boldsymbol
+                {H})
                 \]
                 となります。
                 なお、第2の等号で\eqref{div B}を使いました。
@@ -1070,30 +1082,30 @@
             <p>
                 かくしてテンソルの発散を得ましたので、\eqref{astast}に戻りましょう。
                 \[
-                    \dfrac{d}{dt}
-                    \left(
-                        \boldsymbol{G}_m
-                        +
-                        \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
-                    \right)
-                    =
-                    \int d^3x
-                    [
-                        \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
-                        -
-                        \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
-                        -
-                        \boldsymbol{B}\times(\nabla\times\boldsymbol{H})
-                    ]
+                \dfrac{d}{dt}
+                \left(
+                \boldsymbol{G}_m
+                +
+                \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
+                \right)
+                =
+                \int d^3x
+                [
+                \boldsymbol{E}(\nabla\cdot\boldsymbol{D})
+                -
+                \boldsymbol{D}\times(\nabla\times\boldsymbol{E})
+                -
+                \boldsymbol{B}\times(\nabla\times\boldsymbol{H})
+                ]
                 \]
                 右辺は正しく
                 \[
-                    \int d^3x
-                    (
-                        \nabla\cdot\boldsymbol{T}^e
-                        +
-                        \nabla\cdot\boldsymbol{T}^m
-                    )
+                \int d^3x
+                (
+                \nabla\cdot\boldsymbol{T}^e
+                +
+                \nabla\cdot\boldsymbol{T}^m
+                )
                 \]
                 であることがわかります。
                 これで\eqref{a}が得られました。
@@ -1118,55 +1130,55 @@
                 砂川の巻末付録Aでは以下の手順で証明しています。
                 \(V=\delta x\delta y\delta z\) を微小体積とした上で、
                 \begin{array}{rcl}
-                    \displaystyle
-                    \lim_{V\to0}\dfrac{1}{V}
-                    \oint_{\partial V}
-                    \boldsymbol{i}\cdot\boldsymbol{n}dS
-                    &=&
-                    \displaystyle
-                    \lim_{V\to0}\dfrac{1}{V}
-                    \oint_{\partial V}
-                    (
-                        i_xn_xdS
-                        +
-                        i_yn_ydS
-                        +
-                        i_zn_zdS
-                    )
-                    \\
-                    &=&
-                    \displaystyle
-                    \lim_{V\to0}\dfrac{1}{V}
-                    \dfrac{1}{\delta x\delta y\delta z}
-                    [
-                        (
-                            i_x(x+\delta x,y,z)
-                            -
-                            i_x(x,y,z)
-                        )\delta y\delta z
-                        +\cdots
-                    ]
-                    \\
-                    &=&
-                    \displaystyle
-                    \lim_{V\to0}\dfrac{1}{V}
-                    \dfrac{1}{\delta x\delta y\delta z}
-                    \left(
-                        \dfrac{\partial i_x}{\partial x}
-                        \delta x\delta y\delta z
-                        +\cdots
-                    \right)
-                    \\
-                    &=&
-                    \dfrac{\partial i_x}{\partial x}
-                    +
-                    \dfrac{\partial i_y}{\partial y}
-                    +
-                    \dfrac{\partial i_z}{\partial z}
-                    \\
-                    &=&
-                    \nabla\cdot\boldsymbol{i}
-                    .
+                \displaystyle
+                \lim_{V\to0}\dfrac{1}{V}
+                \oint_{\partial V}
+                \boldsymbol{i}\cdot\boldsymbol{n}dS
+                &=&
+                \displaystyle
+                \lim_{V\to0}\dfrac{1}{V}
+                \oint_{\partial V}
+                (
+                i_xn_xdS
+                +
+                i_yn_ydS
+                +
+                i_zn_zdS
+                )
+                \\
+                &=&
+                \displaystyle
+                \lim_{V\to0}\dfrac{1}{V}
+                \dfrac{1}{\delta x\delta y\delta z}
+                [
+                (
+                i_x(x+\delta x,y,z)
+                -
+                i_x(x,y,z)
+                )\delta y\delta z
+                +\cdots
+                ]
+                \\
+                &=&
+                \displaystyle
+                \lim_{V\to0}\dfrac{1}{V}
+                \dfrac{1}{\delta x\delta y\delta z}
+                \left(
+                \dfrac{\partial i_x}{\partial x}
+                \delta x\delta y\delta z
+                +\cdots
+                \right)
+                \\
+                &=&
+                \dfrac{\partial i_x}{\partial x}
+                +
+                \dfrac{\partial i_y}{\partial y}
+                +
+                \dfrac{\partial i_z}{\partial z}
+                \\
+                &=&
+                \nabla\cdot\boldsymbol{i}
+                .
                 \end{array}
             </p>
             <p>
@@ -1180,66 +1192,66 @@
             <p>
                 定義によって
                 \begin{array}{rcl}
-                    \nabla\cdot\boldsymbol{T}
-                    &=&
-                    \dfrac{\partial\boldsymbol{T}_x}{\partial x}
-                    +
-                    \dfrac{\partial\boldsymbol{T}_y}{\partial y}
-                    +
-                    \dfrac{\partial\boldsymbol{T}_z}{\partial z}
-                    \\
-                    &=&
-                    \displaystyle
-                    \lim_{V\to0}
-                    \frac{1}{\delta x\delta y\delta z}
-                    \left(
-                        \frac{\partial\boldsymbol{T}_x}{\partial x}
-                        \delta x\delta y\delta z
-                        +
-                        \cdots
-                    \right)
-                    \\
-                    &=&
-                    \displaystyle
-                    \lim_{V\to0}
-                    \frac{1}{V}
-                    [
-                        (
-                            \boldsymbol{T}_x(x+\delta x,y,z)
-                            -
-                            \boldsymbol{T}_x(x,y,z)
-                        )
-                        \delta y\delta z
-                        +
-                        \cdots
-                    ]
-                    \\
-                    &=&
-                    \displaystyle
-                    \lim_{V\to0}
-                    \frac{1}{V}
-                    \oint_{\partial V}
-                    (
-                        \boldsymbol{T}_x\cdot\boldsymbol{n}_xdS
-                        +
-                        \boldsymbol{T}_y\cdot\boldsymbol{n}_ydS
-                        +
-                        \boldsymbol{T}_z\cdot\boldsymbol{n}_zdS
-                    )
-                    \\
-                    &=&
-                    \displaystyle
-                    \lim_{V\to0}
-                    \frac{1}{V}
-                    \oint_{\partial V}
-                    \boldsymbol{T}\cdot\boldsymbol{n}dS
+                \nabla\cdot\boldsymbol{T}
+                &=&
+                \dfrac{\partial\boldsymbol{T}_x}{\partial x}
+                +
+                \dfrac{\partial\boldsymbol{T}_y}{\partial y}
+                +
+                \dfrac{\partial\boldsymbol{T}_z}{\partial z}
+                \\
+                &=&
+                \displaystyle
+                \lim_{V\to0}
+                \frac{1}{\delta x\delta y\delta z}
+                \left(
+                \frac{\partial\boldsymbol{T}_x}{\partial x}
+                \delta x\delta y\delta z
+                +
+                \cdots
+                \right)
+                \\
+                &=&
+                \displaystyle
+                \lim_{V\to0}
+                \frac{1}{V}
+                [
+                (
+                \boldsymbol{T}_x(x+\delta x,y,z)
+                -
+                \boldsymbol{T}_x(x,y,z)
+                )
+                \delta y\delta z
+                +
+                \cdots
+                ]
+                \\
+                &=&
+                \displaystyle
+                \lim_{V\to0}
+                \frac{1}{V}
+                \oint_{\partial V}
+                (
+                \boldsymbol{T}_x\cdot\boldsymbol{n}_xdS
+                +
+                \boldsymbol{T}_y\cdot\boldsymbol{n}_ydS
+                +
+                \boldsymbol{T}_z\cdot\boldsymbol{n}_zdS
+                )
+                \\
+                &=&
+                \displaystyle
+                \lim_{V\to0}
+                \frac{1}{V}
+                \oint_{\partial V}
+                \boldsymbol{T}\cdot\boldsymbol{n}dS
                 \end{array}
                 です。
                 両辺を体積積分すれば、2階のテンソルに関するガウスの発散定理
                 \[
-                    \int_V\nabla\cdot\boldsymbol{T}d^3x
-                    =
-                    \oint_{\partial V}\boldsymbol{T}\cdot\boldsymbol{n}dS
+                \int_V\nabla\cdot\boldsymbol{T}d^3x
+                =
+                \oint_{\partial V}\boldsymbol{T}\cdot\boldsymbol{n}dS
                 \]
                 が得られます。
             </p>
@@ -1254,20 +1266,20 @@
         <p>
             さて、再び\eqref{b}を眺めてみましょう。
             \begin{array}{}
-                \displaystyle
-                \dfrac{d}{dt}
-                (\boldsymbol{G}_m(t)+\boldsymbol{G}_f(t))
-                =
-                \int\boldsymbol{n}dS\cdot\boldsymbol{T}(\boldsymbol{x},t)
-                \\
-                \displaystyle
-                \boldsymbol{G}_m
-                :=
-                \sum_im_i\dot{\boldsymbol{r}}_i
-                ,\quad
-                \boldsymbol{G}_f
-                :=
-                \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
+            \displaystyle
+            \dfrac{d}{dt}
+            (\boldsymbol{G}_m(t)+\boldsymbol{G}_f(t))
+            =
+            \int\boldsymbol{n}dS\cdot\boldsymbol{T}(\boldsymbol{x},t)
+            \\
+            \displaystyle
+            \boldsymbol{G}_m
+            :=
+            \sum_im_i\dot{\boldsymbol{r}}_i
+            ,\quad
+            \boldsymbol{G}_f
+            :=
+            \dfrac{1}{c^2}\int d^3x\boldsymbol{S}
             \end{array}
             \(\boldsymbol{G}_m\) は点電荷の運動量の総和です。
             また先に考察したように、\(\boldsymbol{T}\) は「電場の寄与によって体積 \(V\) の表面にかかる力の総和」とみなせます。
@@ -1281,14 +1293,15 @@
 
     <section>
         <h2>参考文献</h2>
-        <p>砂川重信「理論電磁気学 第3版」共立出版</p>
+        <p>砂川重信「理論電磁気学 第3版」紀伊國屋書店</p>
     </section>
 
     <footer>
         <p>Edited by 低音</p>
-        <p><a href="#">to the TOP</a></p>
+        <p><a href="#">PAGE TOP</a></p>
         <p><a href="https://note.com/teion_burns">note</a></p>
         <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
     </footer>
 </body>
+
 </html>

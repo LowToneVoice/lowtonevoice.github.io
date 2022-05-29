@@ -2,38 +2,64 @@ html {
     body {
         margin: 0;
         height: auto;
+        font-family: Arial, Helvetica, sans-serif;
 
         header {
             background-color: darkcyan;
             color: white;
             padding: 15pt;
-            h1
-            {
+
+            h1 {
                 font-size: 36;
             }
-            h3
-            {
+
+            h3 {
                 font-size: 15;
+            }
+
+            a {
+                margin-right: 20pt;
+                color: white;
+
+                &:visited {
+                    color: azure;
+                }
             }
         }
 
         #index {
             li {
                 list-style-type: none;
-                padding: 10px;
+                padding: 5px;
             }
         }
 
         section {
             width: 70%;
+            max-width: 800px;
             padding: 20pt 80pt;
+            font-size: 16;
+            line-height: 24pt;
+
+            span.MJXc-display {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
+            mjx-container {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
 
             .subsection {
                 margin-bottom: 80px;
+
+                .subsubsection {
+                    margin-bottom: 60px;
+                }
             }
 
-            .note
-            {
+            .note {
                 background-color: rgb(245, 245, 245);
                 padding: 5%;
                 border-radius: 10px;
@@ -43,6 +69,10 @@ html {
                 font-size: 36;
             }
 
+            p {
+                margin: 10px 0;
+                padding: 10px 0;
+            }
 
             figure {
                 text-align: center;

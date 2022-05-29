@@ -23,7 +23,7 @@
 
     <section>
         <p>
-            <a href="SCtrans4Elec.pdf">pdf版はこちらから。</a>
+            <a href="SCtrans4Elec.pdf">pdf版はこちらから</a>。
             相互参照やハイパーリンクなどをしっかり入れています。
         </p>
         <p>
@@ -36,7 +36,7 @@
         <ul>
             <li><a href="#knowledge">必要な知識</a></li>
             <li>
-                <a href="#roadmap">頭角写像を探す方針</a>
+                <a href="#roadmap">等角写像を探す方針</a>
                 <ul>
                     <li><a href="#RoleOfTwoPlains">2つの複素平面の役割</a></li>
                     <li><a href="#FuncOnSurface">導体表面上における等角写像の挙動</a></li>
@@ -135,7 +135,8 @@
             <p>
                 さて、特に導体表面上では電位が一定ですから、
                 <b>\(z\) が導体表面を動くとき \(w\) の虚部は変わりません</b>。
-                そして境界面上で写像 \(f:z\mapsto w\) が連続になるという妥当な要求をすれば、\(z\) が電位 \(\phi\) の導体表面を動く間 \(w\) は実軸に平行な直線 \(\Im w=\phi\) の上を右に左にとしか動きません。
+                そして境界面上で写像 \(f:z\mapsto w\) が連続になるという妥当な要求をすれば、\(z\) が電位 \(\phi\) の導体表面を動く間 \(w\) は実軸に平行な直線 \(\Im
+                w=\phi\) の上を右に左にとしか動きません。
             </p>
             <figure>
                 <img src="images/SurfaceAxis.png" alt="">
@@ -153,8 +154,10 @@
                 複素平面と複素平面をつなぐから一見わからなかったものの、根本の考え方は高校時代と大差ありません。
             </p>
             <p>
-                パラメーター \(t\in\mathbb{R}\) を使うことで、導体表面は複素平面上の曲線 \(z(t)=x(t)+iy(t)\) で表され、そのときの電位は \(\phi(t)=\Im w(t)\) となります。
-                \(z\) と \(w\) が \(t\) の関数で表せたら、あとは「導体表面に対応する点では \(t\in\mathbb{R}\) が存在する」という条件からパラメーター \(t\) を消去し、導体表面での電位を虚部で与える軌跡 \(w=g(z)\) が求まります。
+                パラメーター \(t\in\mathbb{R}\) を使うことで、導体表面は複素平面上の曲線 \(z(t)=x(t)+iy(t)\) で表され、そのときの電位は \(\phi(t)=\Im w(t)\)
+                となります。
+                \(z\) と \(w\) が \(t\) の関数で表せたら、あとは「導体表面に対応する点では \(t\in\mathbb{R}\) が存在する」という条件からパラメーター \(t\)
+                を消去し、導体表面での電位を虚部で与える軌跡 \(w=g(z)\) が求まります。
                 電位 \(\phi(z)=\Im w=\Im g(z)\) は境界条件を満たし、軌跡 \(g\) が正則関数ならコーシー-リーマンの関係式から \(\Delta\Im g=0\) となります。
                 この \(g\) こそ冒頭で求めていた等角写像 \(f\) ですね。
             </p>
@@ -173,7 +176,8 @@
             <div class="note">
                 <h3>補足</h3>
                 <p>
-                    多様体の表現を使えば、パラメーター \(t\) を使って局所座標 \(t\mapsto z, t\mapsto w\) で写した先の空間が \(z, w\) 平面内の2次元多様体となるためには、局所座標は定義域を2次元空間内の開集合としなければならないということを表しています。
+                    多様体の表現を使えば、パラメーター \(t\) を使って局所座標 \(t\mapsto z, t\mapsto w\) で写した先の空間が \(z, w\)
+                    平面内の2次元多様体となるためには、局所座標は定義域を2次元空間内の開集合としなければならないということを表しています。
                 </p>
             </div>
             <p>
@@ -182,7 +186,8 @@
             </p>
             <p>
                 これで一番大枠の方針は掴めたかと思います。
-                しかし「等角写像の問題はパラメーターを入れて軌跡で解け」なんて言われても、いざパラメーター \(\zeta\) を使ったところで、\(z(\zeta)\) や \(w(\zeta)\) がどんな関数形になるかなんて想像もつきません。
+                しかし「等角写像の問題はパラメーターを入れて軌跡で解け」なんて言われても、いざパラメーター \(\zeta\) を使ったところで、\(z(\zeta)\) や \(w(\zeta)\)
+                がどんな関数形になるかなんて想像もつきません。
                 また作った関数が開領域でちゃんと正則になってくれるか (等角写像になるか) も非自明です。
                 ここは巨人の方に乗りましょう。
             </p>
@@ -208,15 +213,15 @@
                 ただし \(\displaystyle\sum_i\gamma_i=2\pi\) とする。
                 このとき、微分方程式
                 \begin{align}
-                    \dfrac{dz}{d\zeta}
-                    =
-                    k
-                    (\zeta-\zeta_1)^{-\gamma_1/\pi}
-                    (\zeta-\zeta_2)^{-\gamma_2/\pi}
-                    \cdots
-                    (\zeta-\zeta_n)^{-\gamma_n/\pi}
-                    \qquad
-                    (k\in\mathbb{C})
+                \dfrac{dz}{d\zeta}
+                =
+                k
+                (\zeta-\zeta_1)^{-\gamma_1/\pi}
+                (\zeta-\zeta_2)^{-\gamma_2/\pi}
+                \cdots
+                (\zeta-\zeta_n)^{-\gamma_n/\pi}
+                \qquad
+                (k\in\mathbb{C})
                 \end{align}
                 の解は、\(\zeta\) 平面の上半平面を、頂点の外角が \(\gamma_i\) となるような \(z\) 平面の (凸とは限らない) 多角形内部に移す変換である。
             </p>
@@ -236,36 +241,38 @@
             <h2>シュバルツ-クリストッフェル変換の境界線における挙動のイメージ</h2>
 
             <p>
-                \(\zeta\) を \(-\infty\) から \(\zeta_1, \zeta_2, \cdots, \zeta_n\) を通って \(+\infty\) まで、実軸上を右に動かします。\(\zeta\in(\zeta_i-\varepsilon, \zeta_i+\varepsilon)\) での挙動を考えます。
+                \(\zeta\) を \(-\infty\) から \(\zeta_1, \zeta_2, \cdots, \zeta_n\) を通って \(+\infty\)
+                まで、実軸上を右に動かします。\(\zeta\in(\zeta_i-\varepsilon, \zeta_i+\varepsilon)\) での挙動を考えます。
                 \(\zeta\) が \(\zeta_i\) の左から右に移るとき \(\zeta-\zeta_i\) の符号が変わりますね。
                 それ以外の部分は滑らかに変化します。
                 \(\varepsilon\) を十分小さくとれば、
                 \begin{array}{rcl}
-                    \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i-\varepsilon}
-                    &=&
-                    (-\varepsilon)^{-\gamma_i/\pi}
-                    k
-                    (\zeta_i-\zeta_1)^{-\gamma_1/\pi}\cdots
-                    \\
-                    \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i+\varepsilon}
-                    &=&
-                    \varepsilon^{-\gamma_i/\pi}
-                    k
-                    (\zeta_i-\zeta_1)^{-\gamma_1/\pi}\cdots
+                \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i-\varepsilon}
+                &=&
+                (-\varepsilon)^{-\gamma_i/\pi}
+                k
+                (\zeta_i-\zeta_1)^{-\gamma_1/\pi}\cdots
+                \\
+                \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i+\varepsilon}
+                &=&
+                \varepsilon^{-\gamma_i/\pi}
+                k
+                (\zeta_i-\zeta_1)^{-\gamma_1/\pi}\cdots
                 \end{array}
                 ですから、
                 \begin{array}{rcl}
-                    \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i+\varepsilon}
-                    &=&
-                    \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i-\varepsilon}
-                    (-1)^{\gamma_i/\pi}
-                    \\
-                    &=&
-                    \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i-\varepsilon}
-                    e^{i\gamma_i}
+                \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i+\varepsilon}
+                &=&
+                \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i-\varepsilon}
+                (-1)^{\gamma_i/\pi}
+                \\
+                &=&
+                \left(\dfrac{dz}{d\zeta}\right)_{\zeta=\zeta_i-\varepsilon}
+                e^{i\gamma_i}
                 \end{array}
                 となります。
-                \(dz/d\zeta\) は \(z\) 平面における向きづけられた曲線 \(z(\zeta)\) の方向ベクトルに相当しますから、\(\zeta\) が \(\zeta_i\) を超えることで方向ベクトルの偏角が反時計回りに \(\gamma_i\) だけ回っていることがわかりますね。
+                \(dz/d\zeta\) は \(z\) 平面における向きづけられた曲線 \(z(\zeta)\) の方向ベクトルに相当しますから、\(\zeta\) が \(\zeta_i\)
+                を超えることで方向ベクトルの偏角が反時計回りに \(\gamma_i\) だけ回っていることがわかりますね。
                 これゆえに「外角 \(\gamma_i\)」とか「\(z\) 平面上の多角形」という言葉が登場するわけです。
                 多角形の外角の和は一般に \(2\pi\) ですから、前提条件として \(\displaystyle\sum_i\gamma_i=2\pi\) が要求されています。
             </p>
@@ -275,11 +282,14 @@
             <h2>静電場の境界値問題を解くプロトコル</h2>
 
             <p>
-                <a href="#RoleOfTwoPlains">「2つの複素平面の役割」</a>のパートで申し上げた通り、静電場の境界値問題において等角写像で繋ぐべきは、導体系の形状を表す \(z\) 平面と、各導体の電場を虚部で表す \(w\) 平面です。
-                できることなら一発で \(z\mapsto w\) の変換を持っていきたいところですが、そんな天才的発想が可能な頭脳を持ち合わせていない我々はパラメーター \(\zeta\) を一度媒介して \(z\) と \(w\) を繋がなければなりません。
+                <a href="#RoleOfTwoPlains">「2つの複素平面の役割」</a>のパートで申し上げた通り、静電場の境界値問題において等角写像で繋ぐべきは、導体系の形状を表す \(z\)
+                平面と、各導体の電場を虚部で表す \(w\) 平面です。
+                できることなら一発で \(z\mapsto w\) の変換を持っていきたいところですが、そんな天才的発想が可能な頭脳を持ち合わせていない我々はパラメーター \(\zeta\) を一度媒介して \(z\) と
+                \(w\) を繋がなければなりません。
             </p>
             <p>
-                ということで、\(\zeta\) 平面から \(z\) 平面へのシュバルツ-クリストッフェル変換と、\(\zeta\) 平面から \(w\) 平面へのシュバルツ-クリストッフェル変換とで、<b>2回にわたって変換</b>を行います。
+                ということで、\(\zeta\) 平面から \(z\) 平面へのシュバルツ-クリストッフェル変換と、\(\zeta\) 平面から \(w\)
+                平面へのシュバルツ-クリストッフェル変換とで、<b>2回にわたって変換</b>を行います。
             </p>
             <ol>
                 <li>\(\zeta\mapsto z\) のシュバルツ-クリストッフェル変換を導出する</li>
@@ -289,7 +299,8 @@
                     <li>Pの外角 \(\gamma_1, \cdots, \gamma_n\) を数え上げる</li>
                     <li>Pの頂点 \(z_1, \cdots, z_n\) に対応する \(\zeta_1, \cdots, \zeta_n\) を順に \(\zeta\) 平面実軸上にとる</li>
                     <li>シュバルツ-クリストッフェル変換の微分方程式を積分して解く</li>
-                    <li>\(\zeta_1, \cdots, \zeta_n\) 近傍での \(\zeta\) の動きと \(z_1, \cdots, z_n\) 近傍での \(z\) の挙動から係数 \(k\) と積分定数を決定する</li>
+                    <li>\(\zeta_1, \cdots, \zeta_n\) 近傍での \(\zeta\) の動きと \(z_1, \cdots, z_n\) 近傍での \(z\) の挙動から係数 \(k\)
+                        と積分定数を決定する</li>
                 </ol>
                 <li>\(\zeta\mapsto w\) のシュバルツ-クリストッフェル変換を導出する</li>
                 <ol>
@@ -344,9 +355,11 @@
             </p>
             <p>
                 続いて \(A_1, A_2\) の外角を測ります。
-                \(A_1\) では方向ベクトルが \(\theta=0\) の向きから \(\theta=\pi\) に変わっているので外角は \(\gamma_1=\pi\) であり、\(A_2\) では \(\theta=\pi\) から \(\theta=\pi/2\) に変わって \(\gamma_2=-\pi/2\) です。
+                \(A_1\) では方向ベクトルが \(\theta=0\) の向きから \(\theta=\pi\) に変わっているので外角は \(\gamma_1=\pi\) であり、\(A_2\) では
+                \(\theta=\pi\) から \(\theta=\pi/2\) に変わって \(\gamma_2=-\pi/2\) です。
                 外角は偏角と同じく反時計回りを正に取ることをお忘れなく。
-                またシュバルツ-クリストッフェル変換の要件に \(\displaystyle\sum_i\gamma_i=2\pi\) というものがありますが、不足分の外角 \(2\pi-\pi-(-\pi/2)=3\pi/2\) は無限遠点 \(A_+, A_-\) でなんとかしてくれるものとします。
+                またシュバルツ-クリストッフェル変換の要件に \(\displaystyle\sum_i\gamma_i=2\pi\) というものがありますが、不足分の外角
+                \(2\pi-\pi-(-\pi/2)=3\pi/2\) は無限遠点 \(A_+, A_-\) でなんとかしてくれるものとします。
                 あとでご紹介するリーマン面を考慮すれば、この妥当性もわかるのではないかと思います。
             </p>
             <p>
@@ -361,47 +374,47 @@
                 これで役者は揃いました。
                 シュバルツ-クリストッフェル変換の式は
                 \begin{align}
-                    \dfrac{dz}{d\zeta}
-                    =
-                    k_1
-                    \zeta^{-1}
-                    (\zeta-1)^{1/2}.
+                \dfrac{dz}{d\zeta}
+                =
+                k_1
+                \zeta^{-1}
+                (\zeta-1)^{1/2}.
                 \end{align}
                 積分して
                 \begin{align}
-                    z=\int dz
-                    =
-                    \int
-                    k_1
-                    \dfrac{(\zeta-1)^{1/2}}{\zeta}
-                    d\zeta.
+                z=\int dz
+                =
+                \int
+                k_1
+                \dfrac{(\zeta-1)^{1/2}}{\zeta}
+                d\zeta.
                 \end{align}
                 ここで、\(u=(1-\zeta)^{1/2}\) と変数変換して
                 \begin{array}{rcl}
-                    z
-                    &=&
-                    \displaystyle\int k_1\dfrac{ui}{1-u^2}(-2udu)
-                    \\
-                    &=&
-                    -ik_1
-                    \displaystyle\int
-                    \left(
-                        \dfrac{2}{(1-u)(1+u)}-2
-                    \right)
-                    du
-                    \\
-                    &=&
-                    -ik_1
-                    \displaystyle\int
-                    \left(
-                        \dfrac{1}{1-u}+\dfrac{1}{1+u}-2
-                    \right)
-                    du
-                    \\
-                    &=&
-                    -ik_1
-                    \left(\ln\dfrac{1+u}{1-u}-2u\right)
-                    +k_2
+                z
+                &=&
+                \displaystyle\int k_1\dfrac{ui}{1-u^2}(-2udu)
+                \\
+                &=&
+                -ik_1
+                \displaystyle\int
+                \left(
+                \dfrac{2}{(1-u)(1+u)}-2
+                \right)
+                du
+                \\
+                &=&
+                -ik_1
+                \displaystyle\int
+                \left(
+                \dfrac{1}{1-u}+\dfrac{1}{1+u}-2
+                \right)
+                du
+                \\
+                &=&
+                -ik_1
+                \left(\ln\dfrac{1+u}{1-u}-2u\right)
+                +k_2
                 \end{array}
                 となります。
             </p>
@@ -416,37 +429,37 @@
             <p>
                 ここで、\(\zeta=\varepsilon e^{i\theta}\) にて
                 \begin{align}
-                    dz
-                    =
-                    k_1
-                    \dfrac{(\varepsilon e^{i\theta}-1)^{1/2}}{\varepsilon e^{i\theta}}
-                    \varepsilon e^{i\theta}id\theta
+                dz
+                =
+                k_1
+                \dfrac{(\varepsilon e^{i\theta}-1)^{1/2}}{\varepsilon e^{i\theta}}
+                \varepsilon e^{i\theta}id\theta
                 \end{align}
                 であり、\(\theta\) は \(\pi\) から \(0\) に、\(z\) は \(+\infty\) から \(+\infty+ib\) に遷移するので、
                 \begin{array}{rcl}
-                    \displaystyle\int_\infty^{\infty+ib}dz
-                    &=&
-                    \displaystyle\int_\pi^0
-                    k_1(\varepsilon e^{i\theta}-1)^{1/2}id\theta
-                    \\
-                    ib&=&k_1\pi
-                    \\
-                    \therefore\qquad k_1&=&\dfrac{ib}{\pi}.
+                \displaystyle\int_\infty^{\infty+ib}dz
+                &=&
+                \displaystyle\int_\pi^0
+                k_1(\varepsilon e^{i\theta}-1)^{1/2}id\theta
+                \\
+                ib&=&k_1\pi
+                \\
+                \therefore\qquad k_1&=&\dfrac{ib}{\pi}.
                 \end{array}
                 一方、\(A_2\) は正則点なので特別の配慮は不要です。
                 \(A_2\) では \(u=0\) なので、\(u\) と \(z\) の値を \(z\) の表式に代入して、
                 \begin{align}
-                    k_2=ib.
+                k_2=ib.
                 \end{align}
                 以上によって \(\zeta\mapsto z\) のシュバルツ-クリストッフェル変換
                 \begin{align}
-                    z
-                    =
-                    \dfrac{b}{\pi}
-                    \left(
-                        \ln\dfrac{1+u}{1-u}-2u
-                    \right)
-                    +ib
+                z
+                =
+                \dfrac{b}{\pi}
+                \left(
+                \ln\dfrac{1+u}{1-u}-2u
+                \right)
+                +ib
                 \end{align}
                 が得られますね。
             </p>
@@ -467,16 +480,17 @@
                 <figcaption>\(w\) 平面</figcaption>
             </figure>
             <p>
-                \(A_1\) では \(\phi=0\to V_0\) と変化しているので、\(\zeta_1\) に対応する \(w\) 平面での頂点 \(B_1\) は \(\infty\) と \(\infty+iV_0\) に対応する無限遠点です。
+                \(A_1\) では \(\phi=0\to V_0\) と変化しているので、\(\zeta_1\) に対応する \(w\) 平面での頂点 \(B_1\) は \(\infty\) と
+                \(\infty+iV_0\) に対応する無限遠点です。
                 一方 \(A_2\) では電位変化がありませんから、\(w\) 平面上側の直線のどこかしらに \(\zeta_2\) と対応する点 \(B_2\) が置かれます。
                 実部はどこでもいいので手っ取り早く \(w_2=iV_0\) としておきましょう。
             </p>
             <p>
                 このとき多角形各頂点の外角は \(\delta_1=\pi, \delta_2=0\) となるので、シュバルツ-クリストッフェル変換式によって
                 \begin{array}{}
-                    \dfrac{dw}{d\zeta}=k_1\zeta^{-1}
-                    \\
-                    \therefore\quad w=k_1\ln\zeta+k_2
+                \dfrac{dw}{d\zeta}=k_1\zeta^{-1}
+                \\
+                \therefore\quad w=k_1\ln\zeta+k_2
                 \end{array}
                 が直ちに得られますね。
             </p>
@@ -492,24 +506,24 @@
             <p>
                 \(w\) の表式に \(\zeta=-1, w=0\) を代入して
                 \begin{align}
-                    0=i\pi k_1+k_2.
+                0=i\pi k_1+k_2.
                 \end{align}
                 一方 \(B_2\) での挙動を \(w\) の表式に代入すれば、
                 \begin{array}{}
-                    iV_0=k_1\ln1+k_2
-                    \\
-                    \therefore\quad k_2=iV_0
+                iV_0=k_1\ln1+k_2
+                \\
+                \therefore\quad k_2=iV_0
                 \end{array}
                 となるので、
                 \begin{align}
-                    k_1=-\dfrac{V_0}{\pi}
+                k_1=-\dfrac{V_0}{\pi}
                 \end{align}
                 が得られます。
             </p>
             <p>
                 以上によって
                 \begin{align}
-                    w=-\dfrac{V_0}{\pi}\ln\zeta+iV_0
+                w=-\dfrac{V_0}{\pi}\ln\zeta+iV_0
                 \end{align}
                 ですね。
             </p>
@@ -520,35 +534,36 @@
 
             <p>
                 ここまでで、\(\zeta\mapsto z\) の変換と \(\zeta\mapsto w\) の変換、及び変数変換の関係式 \(\zeta\mapsto u\) が得られています。
-                これと導体表面上で \(\exists\zeta\in\mathbb{R},\) それ以外の多角形内部の点で \(\exists\zeta\in\mathbb{C}\) となる条件から \(\zeta\) を消去していきます。
+                これと導体表面上で \(\exists\zeta\in\mathbb{R},\) それ以外の多角形内部の点で \(\exists\zeta\in\mathbb{C}\) となる条件から \(\zeta\)
+                を消去していきます。
                 なお導体表面上で実数となるように \(z\) と \(w\) を構成してきましたから、考えなければならないのは \(\zeta\in\mathbb{C}\) の存在条件だけです。
                 つまり安直に \(\zeta\) を代入、消去すればいい。
             </p>
             <p>
                 まず \(w\) の形式より直ちに
                 \begin{align}
-                    \zeta
-                    =
-                    \exp\left(
-                        i\pi-\dfrac{w\pi}{V_0}
-                    \right)
-                    =
-                    -e^{-(\pi/V_0)w}
+                \zeta
+                =
+                \exp\left(
+                i\pi-\dfrac{w\pi}{V_0}
+                \right)
+                =
+                -e^{-(\pi/V_0)w}
                 \end{align}
                 が成り立ち、\(u\) への変換式に入れると
                 \begin{align}
-                    u=\sqrt{1+e^{-(\pi/V_0)w}}.
+                u=\sqrt{1+e^{-(\pi/V_0)w}}.
                 \end{align}
                 これを \(z\) の表式に入れて
                 \begin{align}
-                    z
-                    =
-                    \dfrac{b}{\pi}
-                    \left(
-                        \dfrac{1+\sqrt{1+e^{-(\pi/V_0)w}}}{1-\sqrt{1+e^{-(\pi/V_0)w}}}
-                        -2\sqrt{1+e^{-(\pi/V_0)w}}
-                    \right)
-                    +ib
+                z
+                =
+                \dfrac{b}{\pi}
+                \left(
+                \dfrac{1+\sqrt{1+e^{-(\pi/V_0)w}}}{1-\sqrt{1+e^{-(\pi/V_0)w}}}
+                -2\sqrt{1+e^{-(\pi/V_0)w}}
+                \right)
+                +ib
                 \end{align}
                 となります。
             </p>
@@ -577,19 +592,19 @@
         <div class="subsection" id="LineCross">
             <h2>平行直線が交わる必要性</h2>
 
-                    <p>
-                        本記事では「無限遠点」というものを使って半ば強引に複素平面上で多角形を構成してきました。
-                        本来平行な2直線は平面上で決して交わることがありません。
-                        「いや、何を今さら」と思われるでしょうが、それでは困るんですよ。
+            <p>
+                本記事では「無限遠点」というものを使って半ば強引に複素平面上で多角形を構成してきました。
+                本来平行な2直線は平面上で決して交わることがありません。
+                「いや、何を今さら」と思われるでしょうが、それでは困るんですよ。
 
-                    </p>
-                    <p>
-                        シュバルツ-クリストッフェル変換はあくまで「上半平面を多角形内部に移す」という主張のもとに成り立ちます。
-                        平行な直線に対してシュバルツ-クリストッフェル変換を使うためには、どうしてもこの交わらない2直線が交わる必要があります。
-                        気がふれたと思いました？
-                        妄言と取られかねないのは承知しています。
-                        承知の上で、議論の定式化のためには止むを得ない妄言です。
-                    </p>
+            </p>
+            <p>
+                シュバルツ-クリストッフェル変換はあくまで「上半平面を多角形内部に移す」という主張のもとに成り立ちます。
+                平行な直線に対してシュバルツ-クリストッフェル変換を使うためには、どうしてもこの交わらない2直線が交わる必要があります。
+                気がふれたと思いました？
+                妄言と取られかねないのは承知しています。
+                承知の上で、議論の定式化のためには止むを得ない妄言です。
+            </p>
         </div>
 
         <div class="subsection" id="RiemannSpher">
@@ -626,7 +641,8 @@
                 つまり \(l_0\) と複素平面の"交点" \(z_0\) は (当然そんなものは複素平面上にありませんが)、\(|z|\to\infty\) の結果として得られるものと考えるのが自然になるわけです。
             </p>
             <p>
-                ここで、\(l_0\) には \(z\) 軸を中心軸とする回転の自由度がありますが、北極以外でPと \(z\) が1対1に対応していたことを思い起こすと、北極に対応する点は \(z_0\) ただ一つであってほしいと思うのが人情というもの。
+                ここで、\(l_0\) には \(z\) 軸を中心軸とする回転の自由度がありますが、北極以外でPと \(z\) が1対1に対応していたことを思い起こすと、北極に対応する点は \(z_0\)
+                ただ一つであってほしいと思うのが人情というもの。
                 ということで、この点 \(z_0\) を"無限遠点" \(\infty\) としてしまおう、と考えるわけです。
                 このように無限遠点を実装した複素平面を \(\mathbb{C}_\infty:=\mathbb{C}\cup\{\infty\}\) などと表し、安直に"拡張複素平面"なんて読んだりします。
             </p>
@@ -661,9 +677,10 @@
 
     <footer>
         <p>Edited by 低音</p>
-        <p><a href="#">to the TOP</a></p>
+        <p><a href="#">PAGE TOP</a></p>
         <p><a href="https://note.com/teion_burns">note</a></p>
         <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
     </footer>
 </body>
+
 </html>

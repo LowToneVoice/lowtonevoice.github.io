@@ -1,6 +1,7 @@
 html body {
   margin: 0;
   height: auto;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 html body header {
@@ -17,18 +18,44 @@ html body header h3 {
   font-size: 15;
 }
 
+html body header a {
+  margin-right: 20pt;
+  color: white;
+}
+
+html body header a:visited {
+  color: azure;
+}
+
 html body #index li {
   list-style-type: none;
-  padding: 10px;
+  padding: 5px;
 }
 
 html body section {
   width: 70%;
+  max-width: 800px;
   padding: 20pt 80pt;
+  font-size: 16;
+  line-height: 24pt;
+}
+
+html body section span.MJXc-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+html body section mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 html body section .subsection {
   margin-bottom: 80px;
+}
+
+html body section .subsection .subsubsection {
+  margin-bottom: 60px;
 }
 
 html body section .note {
@@ -39,6 +66,11 @@ html body section .note {
 
 html body section h1 {
   font-size: 36;
+}
+
+html body section p {
+  margin: 10px 0;
+  padding: 10px 0;
 }
 
 html body section figure {
