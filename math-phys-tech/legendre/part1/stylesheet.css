@@ -3,11 +3,6 @@ html body {
   height: auto;
 }
 
-html body span.MJXc-display {
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
 html body header {
   background-color: darkcyan;
   color: white;
@@ -22,6 +17,15 @@ html body header h3 {
   font-size: 15;
 }
 
+html body header .menu a {
+  margin: 10px;
+  color: white;
+}
+
+html body header .menu a :visited {
+  color: azure;
+}
+
 html body #index li {
   list-style-type: none;
   padding: 10px;
@@ -30,6 +34,16 @@ html body #index li {
 html body section {
   width: 70%;
   padding: 20pt 80pt;
+}
+
+html body section span.MJXc-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+html body section mjx-container {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
 
 html body section .subsection {

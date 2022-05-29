@@ -3,17 +3,29 @@ html {
         margin: 0;
         height: auto;
 
+
         header {
             background-color: darkcyan;
             color: white;
             padding: 15pt;
-            h1
-            {
+
+            h1 {
                 font-size: 36;
             }
-            h3
-            {
+
+            h3 {
                 font-size: 15;
+            }
+
+            .menu {
+                a {
+                    margin: 10px;
+                    color: white;
+
+                    :visited {
+                        color: azure;
+                    }
+                }
             }
         }
 
@@ -28,12 +40,21 @@ html {
             width: 70%;
             padding: 20pt 80pt;
 
+            span.MJXc-display {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
+            mjx-container {
+                overflow-x: auto;
+                overflow-y: hidden;
+            }
+
             .subsection {
                 margin-bottom: 80px;
             }
 
-            .note
-            {
+            .note {
                 background-color: rgb(245, 245, 245);
                 padding: 5%;
                 border-radius: 10px;

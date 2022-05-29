@@ -22,7 +22,7 @@ html body header .menu a {
   color: white;
 }
 
-html body header .menu a :visited {
+html body header .menu a:visited {
   color: azure;
 }
 

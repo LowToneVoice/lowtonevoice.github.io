@@ -1,0 +1,239 @@
+<html lang="ja">
+
+<head>
+    <title>ルジャンドル多項式と周辺事項に関する覚書 &Gamma;関数と&Beta;関数</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <h1>ルジャンドル多項式と</h1>
+        <h1>周辺事項に関する覚書</h1>
+        <h2>付録A &Gamma;関数と&Beta;関数</h2>
+        <div class="menu">
+            <a href="../../index.html">目次</a>
+            <a href="../../ver1-0-0.pdf">pdf版</a>
+        </div>
+    </header>
+
+    <section>
+        <h1>目次</h1>
+        <ul>
+            <li><a href="#gamma">A.1 &Gamma;関数</a></li>
+            <li><a href="#beta">A.2 &Beta;関数</a></li>
+            <li><a href="#integ">A.3 積分への応用</a></li>
+        </ul>
+    </section>
+
+    <section id="gamma">
+        <h1>A.1 &Gamma;関数</h1>
+        <p>
+            一般に&Gamma;関数は
+            \[
+                \tag{A.1}
+                \label{gamma def}
+                \Gamma(x)
+                =
+                \int_0^\infty e^{-t}t^{x-1}dt
+                \quad(\Re x\gt0)
+            \]
+            で定義されます。
+        </p>
+        <p>
+            特筆すべき性質として、以下の3つがあります。
+        </p>
+        <ol>
+            <li>\(\Gamma(x+1)=x\Gamma(x)\)</li>
+            <li>\(\Gamma\left(\dfrac{1}{2}\right)=\sqrt{pi}\)</li>
+            <li>\(\Gamma(n)=(n-1)!\)</li>
+        </ol>
+        <p>
+            性質1は部分積分によって示せます。
+            実際、
+            \begin{array}{rcl}
+                \Gamma(x+1)
+                &=&
+                \displaystyle
+                \int_0^\infty e^{-t}t^xdt
+                \\
+                &=&
+                \displaystyle
+                \left[
+                    -e^{-t}t^x
+                \right]_0^\infty
+                -
+                \int_0^\infty-e^{-t}x^{t-1}dt
+                \\
+                &=&
+                \displaystyle
+                x\int_0^\infty e^{-t}x^{t-1}dt
+                \\
+                &=&
+                x\Gamma(x)
+            \end{array}
+            です。
+        </p>
+        <p>
+            性質2はガウス積分
+            \[
+                \int_{-\infty}^\infty e^{-ax^2}dx
+                =
+                \sqrt{\dfrac{\pi}{a}}
+            \]
+            を用いて示します。
+            \(t=s^2\) の変数変換によって、
+            \begin{array}{rcl}
+                \Gamma\left(\dfrac{1}{2}\right)
+                &=&
+                \displaystyle
+                \int_0^\infty e^{-t}t^{-1/2}dt
+                \\
+                &=&
+                \int_0^\infty e^{-s^2}\dfrac{2sds}{s}
+                \\
+                &=&
+                \int_{-\infty}^\infty e^{-s^2}ds
+                \\
+                &=&
+                \sqrt\pi
+            \end{array}
+            が得られます。
+        </p>
+        <p>
+            性質3は、
+            \[
+                \Gamma(1)
+                =
+                \int_0^\infty e^{-t}dt=1
+            \]
+            及び性質1から、
+            \begin{array}{rcl}
+                \Gamma(n)
+                &=&
+                (n-1)\Gamma(n-1)
+                \\
+                &=&
+                \cdots
+                \\
+                &=&
+                (n-1)(n-2)\cdots1\cdot\Gamma(1)
+                \\
+                &=&
+                (n-1)!
+            \end{array}
+            と示ます。
+            特にこの性質3のゆえに \(\Gamma\) 関数は階乗の一般化と捉えられます。
+        </p>
+    </section>
+
+    <section id="beta">
+        <h1>A.2 &Beta;関数</h1>
+        <p>
+            &Beta;関数 (ベータ関数) は、
+            \[
+                \tag{A.2}
+                \label{beta def}
+                B(x,y)
+                =
+                \int_0^1t^{x-1}(1-t)^{y-1}dt
+            \]
+            によって定義されます。
+        </p>
+        <p>
+            特筆すべき性質として以下の3つがあります。
+        </p>
+        <ol>
+            <li>\(B(x,y)=B(y,x)\)</li>
+            <li>\(B(x,y)=\displaystyle2\int_0^{\pi/2}\sin^{2x-1}\theta\cos^{2y-1}\cos\theta d\theta\)</li>
+            <li>\(B(x,y)=\dfrac{\Gamma(x)\Gamma(y)}{\Gamma(x+y)}\)</li>
+        </ol>
+        <p>
+            性質1は定義式\eqref{beta def}にて \(t\mapsto1-t\) の変数変換を行えば直ちに得られます。
+            性質2は \(t=\sin^2\theta\) と変数変換すればいいですね。
+            性質3の証明は上記2つと比べて比較的難しいです。
+            まず変数変換 \(t\mapsto x^2\) によって&Gamma;関数は
+            \[
+                \Gamma(p)
+                =
+                \int_0^\infty2e^{-x^2}x^{2p-1}dx
+            \]
+            となります。
+            よって
+            \[
+                \Gamma(p)\Gamma(q)
+                =
+                \int_0^\infty
+                \int_0^\infty
+                4e^{-(x^2+y^2)}x^{2p-1}y^{2q-1}dxdy
+            \]
+            です。
+            これを2次元極座標 \((r,\theta)\) へ変数変換して、
+            \begin{array}{rl}
+                &
+                \Gamma(p)\Gamma(q)
+                \\
+                =&
+                \int_0^\infty rdr
+                \int_0^{\pi/2}
+                d\theta4e^{-r^2}
+                (r\cos\theta)^{2p-1}(r\sin\theta)^{2q-1}
+                \\
+                =&
+                \int_0^\infty2r^{-r^2}r^{2(p+q)-1}dr
+                \int_0^{\pi/2}2\sin^{2p-1}\theta\cos^{2q-1}\theta d\theta
+                \\
+                =&
+                \Gamma(x+1)B(x,y)\quad\because(\text{性質2})
+            \end{array}
+            となります。
+            特にこの性質3によって、&Gamma;関数の加法定理
+            \[
+                \tag{A.3}
+                \Gamma(x+y)
+                =
+                \dfrac{\Gamma(x)\Gamma(y)}{\Beta(x,y)}
+            \]
+            が得られます。
+        </p>
+    </section>
+
+    <section id="integ">
+        <h1>A.3 積分への応用</h1>
+        <p>
+            &Beta;関数や&Gamma;関数は積分において強い力を発揮します。
+            ここでは応用例を1つ挙げておきましょう。
+            \[
+                \tag{A.4}
+                \int_a^b(x-a)^m(b-x)^ndx
+                =
+                (b-a)^{m+n+1}B(m+1,n+1)
+            \]
+            これは左辺を \(t=(x-a)/(b-a)\) と変数変換することによって
+            \[
+                \int_a^b(x-a)^m(b-x)^ndx
+                =
+                \int_0^1(b-a)^{m+n+1}t^m(1-t)^ndt
+                =
+                (b-a)^{m+n+1}B(m;1,n+1)
+            \]
+            となることから右辺が得られます。
+        </p>
+    </section>
+
+    <footer>
+        <p>Edited by 低音</p>
+        <p><a href="#">to the TOP</a></p>
+        <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
+    </footer>
+</body>
+</html>

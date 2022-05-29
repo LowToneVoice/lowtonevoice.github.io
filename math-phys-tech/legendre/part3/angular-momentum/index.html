@@ -1,0 +1,957 @@
+<html lang="ja">
+
+<head>
+    <title>ルジャンドル多項式と周辺事項に関する覚書 軌道角運動量の固有関数</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" id="MathJax-script" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+        </script>
+    <!-- Google Adsense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <h1>ルジャンドル多項式と</h1>
+        <h1>周辺事項に関する覚書</h1>
+        <h2>第III部 第10章 軌道角運動量の固有関数</h2>
+        <div class="menu">
+            <a href="../../index.html">目次</a>
+            <a href="../../ver1-0-0.pdf">pdf版</a>
+        </div>
+    </header>
+
+    <section>
+        <h1>10 軌道角運動量の固有関数</h1>
+        <p>
+            量子力学で扱う軌道角運動量
+            \[
+                \tag{10.1}
+                \label{angular momentum}
+                \hbar\hat{\boldsymbol{l}}
+                =
+                \hat{\boldsymbol{r}}
+                \times
+                \hat{\boldsymbol{p}}
+            \]
+            は、古典論ではおよそ粒子の公転運動の角運動量に相当します。
+            特にスピンのない1粒子極座標系では、ルジャンドル多項式を含む球面調和関数を使うことで、固有状態の波動関数を表すことができます。
+        </p>
+        <p>
+            本節では角運動量の交換関係から導かれる昇降演算子などの性質は既知のものとして議論を進めていきます。
+        </p>
+        <p>
+            参考文献は猪木川合・[4]です。
+        </p>
+    </section>
+
+    <section id="index">
+        <h1>目次</h1>
+        <ul>
+            <li><a href="#operator">10.1 極座標における軌道角運動量にまつわる演算子</a></li>
+            <ul>
+                <li><a href="#nabla">10.1.1 極座標における微分演算子 \(\nabla\) の導出</a></li>
+                <li><a href="#up-down">10.1.2 極座標での軌道角運動量の昇降演算子</a></li>
+            </ul>
+            <li><a href="#property">10.2 軌道角運動量の固有波動関数の具体形</a></li>
+            <ul>
+                <li><a href="#max-state">10.2.1 \({\hat{l}_z}\) の固有値が最大の固有状態</a></li>
+                <li><a href="#normal-state">10.2.2 一般の固有状態</a></li>
+                <li><a href="#normalize">10.2.3 固有状態の規格化</a></li>
+            </ul>
+        </ul>
+    </section>
+
+    <section id="operator">
+        <h1>10.1 極座標における軌道角運動量にまつわる演算子</h1>
+
+        <div class="subsection" id="nabla">
+            <h2>10.1.1 極座標における微分演算子 \(\nabla\) の導出</h2>
+            <p>
+                \eqref{angular momentum}より、座標表示で軌道角運動量の演算子は
+                \[
+                    \tag{10.2}
+                    \label{l hat}
+                    \hat{\boldsymbol{l}}
+                    =
+                    \dfrac{1}{\hbar}
+                    \hat{\boldsymbol{r}}\times\hat{\boldsymbol{p}}
+                    =
+                    -i\boldsymbol{r}\times\nabla
+                \]
+                となりますね。
+                極座標でこれを記述するには微分演算子 \(\nabla\) を \(\partial/\partial r,\partial/\partial\theta,\partial/\partial\varphi\) で表さなければなりません。
+                本章の読者にとっては復習だと思われますが、決して暗記するものではありませんから、ここで再度導いておくのも無駄ではないでしょう。
+            </p>
+            <p>
+                いつも通りの極座標をとり
+                \begin{array}{rcl}
+                    x&=&r\sin\theta\cos\varphi
+                    \\
+                    y&=&r\sin\theta\sin\varphi
+                    \\
+                    z&=&\cos\theta
+                \end{array}
+                とします。
+                これより、
+                \begin{array}{lll}
+                    \dfrac{\partial x}{\partial r}
+                    =
+                    \sin\theta\cos\varphi
+                    ,
+                    &
+                    \dfrac{\partial y}{\partial r}
+                    =
+                    \sin\theta\sin\varphi
+                    ,
+                    &
+                    \dfrac{\partial z}{\partial r}
+                    =
+                    \cos\theta
+                    ,
+                    \\
+                    \dfrac{\partial x}{\partial \theta}
+                    =
+                    r\cos\theta\cos\varphi
+                    ,
+                    &
+                    \dfrac{\partial y}{\partial\theta}
+                    =
+                    r\cos\theta\sin\varphi
+                    ,
+                    &
+                    \dfrac{\partial z}{\partial\theta}
+                    =
+                    -r\sin\theta
+                    ,
+                    \\
+                    \dfrac{\partial x}{\partial\varphi}
+                    =
+                    -r\sin\theta\sin\varphi
+                    ,
+                    &
+                    \dfrac{\partial y}{\partial\varphi}
+                    =
+                    r\sin\theta\cos\varphi
+                    ,
+                    &
+                    \dfrac{\partial z}{\partial\varphi}
+                    =
+                    0
+                \end{array}
+                で、ライプニッツルールによって
+                \begin{align}
+                    \left(
+                        \begin{matrix}
+                            \dfrac{\partial}{\partial r}
+                            \\
+                            \dfrac{\partial}{\partial \theta}
+                            \\
+                            \dfrac{\partial}{\partial \varphi}
+                        \end{matrix}
+                    \right)
+                    =
+                    \left(
+                    \begin{matrix}
+                        \sin\theta\cos\varphi
+                        &
+                        \sin\theta\sin\varphi
+                        &
+                        \cos\theta
+                        \\
+                        r\cos\theta\cos\varphi
+                        &
+                        r\cos\theta\sin\varphi
+                        &
+                        -r\sin\theta
+                        \\
+                        -r\sin\theta\sin\varphi
+                        &
+                        r\sin\theta\cos\varphi
+                        &
+                        0
+                    \end{matrix}
+                    \right)
+                    \left(
+                        \begin{matrix}
+                            \dfrac{\partial}{\partial x}
+                            \\
+                            \dfrac{\partial}{\partial y}
+                            \\
+                            \dfrac{\partial}{\partial z}
+                        \end{matrix}
+                    \right)
+                \end{align}
+                になりますね。
+            </p>
+            <p>
+                逆行列を計算すると、
+                \begin{array}{rl}
+                    &
+                    \left(\begin{matrix}
+                        \sin\theta\cos\varphi
+                        &
+                        \sin\theta\sin\varphi
+                        &
+                        \cos\theta
+                        \\
+                        r\cos\theta\cos\varphi
+                        &
+                        r\cos\theta\sin\varphi
+                        &
+                        -r\sin\theta
+                        \\
+                        -r\sin\theta\sin\varphi
+                        &
+                        r\sin\theta\cos\varphi
+                        &
+                        0
+                    \end{matrix}\right)^{-1}
+                    \\
+                    =&
+                    \dfrac{1}{
+                        r^2(
+                            \sin\theta\cos^2\theta\cos^2\varphi
+                            +
+                            \sin^3\theta\sin^2\varphi
+                            +
+                            \sin\theta\cos^2\theta\sin^2\varphi
+                            +
+                            \sin^3\theta\cos^2\varphi
+                        )
+                    }
+                    \\
+                    &\times
+                    \left(\begin{matrix}
+                        r^2\sin^2\theta\cos\varphi
+                        &
+                        r^2\sin^2\theta\sin\varphi
+                        &
+                        r^2\sin\theta\cos\theta
+                        \\
+                        r\sin\theta\cos\theta\cos\varphi
+                        &
+                        r\sin\theta\cos\theta\sin\varphi
+                        &
+                        -r\sin^2\theta
+                        \\
+                        -r\sin\varphi
+                        &
+                        r\cos\varphi
+                        &
+                        0
+                    \end{matrix}\right)^T
+                    \\
+                    =&
+                    \dfrac{1}{r^2\sin\theta}
+                    \left(\begin{matrix}
+                        r^2\sin^2\theta\cos\varphi
+                        &
+                        r\sin\theta\cos\theta\cos\varphi
+                        &
+                        -r\sin\varphi
+                        \\
+                        r^2\sin^2\theta\sin\varphi
+                        &
+                        r\sin\theta\cos\theta\sin\varphi
+                        &
+                        r\cos\varphi
+                        \\
+                        r^2\sin\theta\cos\theta
+                        &
+                        -r\sin^2\theta
+                        &
+                        0
+                    \end{matrix}\right)
+                \end{array}
+                ですから、
+                \[
+                    \left(\begin{matrix}
+                        \partial/\partial x
+                        \\
+                        \partial/\partial y
+                        \\
+                        \partial/\partial z
+                    \end{matrix}\right)
+                    =
+                    \left(\begin{matrix}
+                        \sin\theta\cos\varphi
+                        &
+                        \dfrac{\cos\theta\cos\varphi}{r}
+                        &
+                        -\dfrac{\sin\varphi}{r\sin\theta}
+                        \\
+                        \sin\theta\sin\varphi
+                        &
+                        \dfrac{\cos\theta\sin\varphi}{r}
+                        &
+                        \dfrac{\cos\varphi}{r\sin\theta}
+                        \\
+                        \cos\theta
+                        &
+                        -\dfrac{\sin\theta}{r}
+                        &
+                        0
+                    \end{matrix}\right)
+                    \left(\begin{matrix}
+                        \partial/\partial r
+                        \\
+                        \partial/\partial \theta
+                        \\
+                        \partial/\partial \varphi
+                    \end{matrix}\right)
+                \]
+                が得られます。
+            </p>
+        </div>
+
+        <div class="subsection" id="up-down">
+            <h2>10.1.2 極座標での軌道角運動量の昇降演算子</h2>
+            <p>
+                角運動量の計算には昇降演算子がつきものですから、そのために角運動量の各成分を極座標で求めていきます。
+                \eqref{l hat} を成分表示すれば、
+                \begin{array}{rcl}
+                    \hat{l}_x
+                    &=&
+                    -
+                    iy\dfrac{\partial}{\partial z}
+                    +
+                    iz\dfrac{\partial}{\partial y}
+                    \\
+                    &=&
+                    -i
+                    \Biggl[
+                        (
+                            r\sin\theta\sin\varphi\cdot\cos\theta
+                            -
+                            r\cos\theta\cdot\sin\theta\sin\varphi
+                        )
+                        \dfrac{\partial}{\partial r}
+                        \\
+                        &&
+                        +
+                        \left(
+                            r\sin\theta\sin\varphi\cdot\left(-\dfrac{\sin\theta}{r}\right)
+                            -
+                            r\cos\theta\dfrac{\cos\theta\sin\varphi}{r}
+                        \right)
+                        \dfrac{\partial}{\partial \theta}
+                        \\
+                        &&
+                        -
+                        r\cos\theta\dfrac{\cos\theta}{r\sin\theta}
+                        \dfrac{\partial}{\partial \varphi}
+                    \Biggr]
+                    \\
+                    &=&
+                    -i
+                    \left(
+                        -\sin\varphi\dfrac{\partial}{\partial\theta}
+                        -
+                        \cot\theta\cos\varphi\dfrac{\partial}{\partial\varphi}
+                    \right)
+                    \\
+                    \hat{l}_y
+                    &=&
+                    -
+                    iz\dfrac{\partial}{\partial x}
+                    +
+                    ix\dfrac{\partial}{\partial z}
+                    \\
+                    &=&
+                    -i
+                    \Biggl[
+                        (
+                            r\cos\theta\cdot\sin\theta\cos\varphi
+                            -
+                            r\sin\theta\cos\varphi\cdot\cos\theta
+                        )
+                        \dfrac{\partial}{\partial r}
+                        \\
+                        &&
+                        +
+                        \left(
+                            r\cos\theta\dfrac{\cos\theta\cos\varphi}{r}
+                            +
+                            r\sin\theta\cos\varphi\dfrac{\sin\theta}{r}
+                        \right)
+                        \dfrac{\partial}{\partial \theta}
+                        \\
+                        &&
+                        -
+                        r\cos\theta\dfrac{\sin\varphi}{r\sin\theta}
+                        \dfrac{\partial}{\partial \varphi}
+                    \Biggr]
+                    \\
+                    &=&
+                    -i
+                    \left(
+                        \cos\varphi\dfrac{\partial}{\partial\theta}
+                        +
+                        \cot\theta\sin\varphi\dfrac{\partial}{\partial\varphi}
+                    \right)
+                    \\
+                    \hat{l}_z
+                    &=&
+                    -
+                    ix\dfrac{\partial}{\partial y}
+                    +
+                    iy\dfrac{\partial}{\partial x}
+                    \\
+                    &=&
+                    -i
+                    \Biggl[
+                        (
+                            r\sin\theta\cos\varphi\cdot\sin\theta\sin\varphi
+                            -
+                            r\sin\theta\sin\varphi\cdot\sin\theta\cos\varphi
+                        )
+                        \dfrac{\partial}{\partial r}
+                        \\
+                        &&
+                        +
+                        \left(
+                            r\sin\theta\cos\varphi\dfrac{\cos\theta\sin\varphi}{r}
+                            -
+                            r\sin\theta\sin\varphi\dfrac{\cos\theta\cos\varphi}{r}
+                        \right)
+                        \dfrac{\partial}{\partial \theta}
+                        \\
+                        &&
+                        +
+                        \left(
+                            r\sin\theta\cos\varphi\dfrac{\cos\varphi}{r\sin\theta}
+                            +
+                            r\sin\theta\sin\varphi\dfrac{\sin\varphi}{r\sin\theta}
+                        \right)
+                        \dfrac{\partial}{\partial\varphi}
+                    \Biggr]
+                    \\
+                    &=&
+                    -i\dfrac{\partial}{\partial\varphi}
+                \end{array}
+                です。
+                これより昇降演算子を求めれば、
+                \begin{array}{rcl}
+                    \hat{l}_+
+                    &=&
+                    \hat{l}_x+i\hat{l}_y
+                    \\
+                    &=&
+                    (\cos\varphi+i\sin\varphi)
+                    \left(
+                        \dfrac{\partial}{\partial\theta}
+                        +
+                        i\cot\theta\dfrac{\partial}{\partial\varphi}
+                    \right)
+                    \\
+                    \hat{l}_-
+                    &=&
+                    \hat{l}_x-i\hat{l}_y
+                    \\
+                    &=&
+                    (\cos\varphi-i\sin\varphi)
+                    \left(
+                        -
+                        \dfrac{\partial}{\partial\theta}
+                        +
+                        i\cot\theta\dfrac{\partial}{\partial\varphi}
+                    \right)
+                \end{array}
+                が得られます。
+                以上によって座標表示における主要な演算子
+                \[
+                    \tag{10.3}
+                    \label{lz}
+                    \hat{l}_z
+                    =
+                    -\dfrac{\partial}{\partial\varphi}
+                \]
+                \[
+                    \tag{10.4}
+                    \label{l+}
+                    \hat{l}_+
+                    =
+                    e^{i\varphi}
+                    \left(
+                        \dfrac{\partial}{\partial\theta}
+                        +
+                        i\cot\theta\dfrac{\partial}{\partial\varphi}
+                    \right)
+                \]
+                \[
+                    \tag{10.5}
+                    \label{l-}
+                    \hat{l}_-
+                    =
+                    e^{-i\varphi}
+                    \left(
+                        -
+                        \dfrac{\partial}{\partial\theta}
+                        +
+                        i\cot\theta\dfrac{\partial}{\partial\varphi}
+                    \right)
+                \]
+                が揃いました。
+            </p>
+        </div>
+    </section>
+
+    <section id="property">
+        <h1>10.2 軌道角運動量の固有波動関数の具体形</h1>
+
+        <p>
+            ここまでで演算子の具体系が得られたので、固有状態に作用させることで固有状態が満たすべき方程式が得られることが期待できます。
+            一般論を扱う際は固有状態を \(\ket{l,m}\) や \(\bra{x}\ket{l,m}\) などと表すのですが、ここでは \(\bra{\boldsymbol{x}}\ket{l,m}=Y_l^m(\boldsymbol{x})\) と書いておきましょう。
+            演算子からの作用を受けると(4.5)のようになるはずです。
+        </p>
+
+        <div class="subsection" id="max-state">
+            <h2>10.2.1 \({\hat{l}_z}\) の固有値が最大の固有状態</h2>
+            <p>
+                (4.5)を満たす関数 \(Y_l^m(r,\theta\varphi)\) を一足飛びで求めるのは難しいので、まずは \(Y_l^l\) を考えましょう。
+                \eqref{lz}を考慮し \(\hat{l}_z\) を作用させたときの振る舞いを考えると、
+                \[
+                    \hat{l}_zY_l^l
+                    =
+                    -i\dfrac{\partial Y_l^l}{\partial\varphi}
+                    =
+                    lY_l^l.
+                \]
+                よって \(\varphi=0\) での値を \(R(r)\Theta_l^l(\theta)\) とすれば、\(\varphi\) については簡単に解けて、
+                \[
+                    \tag{10.6}
+                    \label{10.6}
+                    Y_l^l(\boldsymbol{x})
+                    =
+                    R(r)
+                    \Theta_l^l(\theta)
+                    e^{il\varphi}
+                \]
+                ですね。
+                ここで軌道角運動量については \(\varphi\mapsto\varphi+2\pi\) で値が変わらないとするのが妥当でしょう。
+                よって
+                \[
+                    \tag{10.7}
+                    \label{l in Z}
+                    l\in\mathbb{Z}
+                \]
+                が要求されます。
+            </p>
+            <p>
+                今度は \(Y_l^l\) に上昇演算子\eqref{l+}を作用させます。
+                \[
+                    \hat{l}_+Y_l^l
+                    =
+                    e^{il\varphi}
+                    \left(
+                        \dfrac{\partial}{\partial\theta}
+                        +
+                        i\cot\theta\dfrac{\partial}{\partial\varphi}
+                    \right)
+                    Y_l^l
+                    =
+                    0.
+                \]
+                \eqref{10.6}を使って整理すると、
+                \[
+                    \dfrac{\partial}{\partial\theta}
+                    R(r)\Theta_l^l(\theta)e^{il\varphi}
+                    =
+                    l\cot\theta R(r)\Theta_l^l(\theta)e^{il\varphi}
+                \]
+                です。
+                \(\Theta\) に関する微分方程式が得られ、変数分離型の微分方程式の解法によって
+                \[
+                    \int\dfrac{d\Theta_l^l}{\Theta_l^l}
+                    =
+                    \int l\dfrac{\cos\theta}{\sin\theta}d\theta
+                \]
+                となりますから、積分定数を \(R(r)\) に課すことで
+                \[
+                    \Theta_l^l(\theta)
+                    =
+                    \sin^l\theta
+                \]
+                と表せます。
+            </p>
+            <p>
+                \(R(r)\) が残りましたが、\eqref{lz},\eqref{l+},\eqref{l-}のいずれにも \(r\) は登場しません。
+                ゆえに角運動量の議論において \(r\) 依存性は無視できます。
+                そこで以下では \(r=1\) 上で考え、\(R(1)=N_l\) としておきます。
+                つまり、
+                \[
+                    \tag{10.8}
+                    \label{10.8}
+                    Y_l^l(r=1,\theta,\varphi)
+                    =
+                    N_l\sin^l\theta e^{il\varphi}
+                \]
+                です。
+            </p>
+        </div>
+
+        <div class="subsection" id="normal-state">
+            <h2>10.2.2 一般の固有状態</h2>
+            <p>
+                \(m=l\) での形はわかったので、一般の \(m=-l,-l+1,\cdots,l\) について関数形を求めていきましょう。
+            </p>
+            <p>
+                \(Y_l^l\) に下降演算子を順次作用させて \(Y_l^m\) を構成します。
+                \(Y_l^m\) に下降演算子がかかれば、
+                \begin{array}{rcl}
+                    \hat{l}_-Y_l^m
+                    &=&
+                    \sqrt{l(l+1)-m(m+1)}Y_l^{m-1}
+                    \\
+                    &=&
+                    \sqrt{(l-m+1)(l+m)}Y_l^{m-1}
+                \end{array}
+                ですから、
+                \begin{array}{rcl}
+                    (\hat{l}_-)^{l-m}Y_l^l
+                    &=&
+                    \sqrt{2l\cdot2(2l-1)\cdots(l-m)(l+m+1)}Y_l^m
+                    \\
+                    &=&
+                    \sqrt{1\cdot2\cdots(l-m)\cdot2l(2l-1)\cdots(l+m+1)}Y_l^m
+                    \\
+                    &=&
+                    \sqrt{(l-m)!\dfrac{(2l)!}{(l+m)!}}Y_l^m
+                    .
+                \end{array}
+                ゆえに\eqref{l-}を考慮して、
+                \begin{array}{rcl}
+                    \tag{10.9}
+                    \label{10.9}
+                    Y_l^m
+                    &=&
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}(\hat{l}_-)^{l-m}Y_l^m
+                    \\
+                    &=&
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    \left[
+                        e^{-il\varphi}
+                        \left(
+                            -\dfrac{\partial}{\partial\theta}
+                            +
+                            i\cot\theta\dfrac{\partial}{\partial\varphi}
+                        \right)
+                    \right]^{l-m}
+                    Y_l^l
+                \end{array}
+                ですね。
+            </p>
+            <p>
+                ここで天下り的ですが、
+                \begin{array}{rcl}
+                    \hat{l}_-(e^{im\varphi}f(\theta))
+                    &=&
+                    e^{-i\varphi}
+                    \left(
+                        -\dfrac{\partial}{\partial\theta}
+                        +
+                        i\cot\theta\dfrac{\partial}{\partial\varphi}
+                    \right)
+                    (e^{im\varphi}f(\theta))
+                    \\
+                    &=&
+                    -e^{-i\varphi}e^{im\varphi}\dfrac{\partial}{\partial\theta}f(\theta)
+                    -
+                    -e^{-i\varphi}e^{im\varphi}m\cot\theta f(\theta)
+                    \\
+                    &=&
+                    -e^{i(m-1)\varphi}\dfrac{1}{\sin^m\theta}\sin^m\theta\dfrac{\partial}{\partial\theta}f(\theta)
+                    -
+                    -e^{i(m-1)\varphi}m\dfrac{1}{\sin^m\theta}\sin^{m-1}\theta\cos\theta f(\theta)
+                    \\
+                    &=&
+                    -e^{i(m-1)\varphi}
+                    \dfrac{1}{\sin^m\theta}
+                    \dfrac{\partial}{\partial\theta}(\sin^m\theta f(\theta))
+                \end{array}
+                を使います。
+            </p>
+            <div class="note">
+                <p>
+                    この計算は、ゆくゆくは \(Y_l^m\) が球面調和関数になり、その中に \(\sin^{-m}\theta=(1-\cos^2\theta)^{-m/2}\) が現れるのを期待してのものである。
+                </p>
+            </div>
+            <p>
+                \eqref{10.9}に\eqref{10.8}を代入して
+                \begin{array}{rcl}
+                    Y_l^m
+                    &=&
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    (\hat{l}_-)^{l-m}
+                    (N_l\sin^l\theta e^{il\varphi})
+                    \\
+                    &=&
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_l(\hat{l}_-)^{l-m-1}
+                    \left(
+                        -e^{i(l-1)\varphi}
+                        \dfrac{1}{\sin^l\theta}
+                        \dfrac{\partial}{\partial\theta}
+                        \sin^l\theta\sin^l\theta
+                    \right)
+                    \\
+                    &=&
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_l(\hat{l}_-)^{l-m-2}
+                    \left(
+                        e^{i(l-2)\varphi}
+                        \dfrac{1}{\sin^{l-1}\theta}
+                        \dfrac{\partial}{\partial\theta}
+                        \dfrac{1}{\sin\theta}
+                        \dfrac{\partial}{\partial\theta}
+                        \sin^{2l}\theta
+                    \right)
+                    \\
+                    &=&
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_l(\hat{l}_-)^{l-m-2}
+                    \left(
+                        -e^{i(l-3)\varphi}
+                        \dfrac{1}{\sin^{l-2}\theta}
+                        \dfrac{\partial}{\partial\theta}
+                        \dfrac{1}{\sin\theta}
+                        \dfrac{\partial}{\partial\theta}
+                        \dfrac{1}{\sin\theta}
+                        \dfrac{\partial}{\partial\theta}
+                        \sin^{2l}\theta
+                    \right)
+                    \\
+                    &=&
+                    \cdots
+                    \\
+                    &=&
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_l(-1)^{l-m}
+                    e^{im\varphi}
+                    \dfrac{1}{\sin^{m+1}\theta}
+                    \dfrac{\partial}{\partial\theta}
+                    \left(
+                        \dfrac{1}{\sin\theta}
+                        \dfrac{\partial}{\partial\theta}
+                    \right)^{l-m-1}
+                    \sin^{2l}\theta
+                    \\
+                    &=&
+                    (-1)^{l-m}
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_l
+                    e^{im\varphi}
+                    \dfrac{1}{\sin^{m}\theta}
+                    \left(
+                        \dfrac{1}{\sin\theta}
+                        \dfrac{\partial}{\partial\theta}
+                    \right)^{l-m}
+                    \sin^{2l}\theta
+                \end{array}
+                と計算されます。
+                (5.9)と同様に \(x=\cos\theta,d/dx=-1/\sin\theta\partial/\partial\theta\) とすれば、
+                \begin{array}{rcl}
+                    Yl^m
+                    &=&
+                    (-1)^{l-m}
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_le^{im\varphi}
+                    \dfrac{1}{(1-x^2)^{m_2}}
+                    \left(-\dfrac{d}{dx}\right)^{l-m}
+                    (1-x^2)^l
+                    \\
+                    &=&
+                    (-1)^l
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_le^{im\varphi}
+                    \dfrac{1}{(1-x^2)^{m_2}}
+                    \left(\dfrac{d}{dx}\right)^{l-m}
+                    (x^2-1)^l
+                \end{array}
+                となって、\(\theta\) に関わる部分はルジャンドル陪多項式(7.9)の \(m\mapsto-m\) に近い形が得られます。
+                実際に、
+                \[
+                    P_l^{-m}(x)
+                    =
+                    \dfrac{1}{2^ll!(1-x^2)^{m/2}}
+                    \left(\dfrac{d}{dx}\right)^{l-m}
+                    (x^2-1)^l
+                \]
+                です。
+                角運動量の量子数の要件として \(l\) が整数または半整数に限られること、\(m=-l,-l+1,\cdots,l\) となること、さらに\eqref{l in Z}を考慮すると、\(P_l^m\) の記法は問題なく、\(Yl^m\) をルジャンドル陪多項式で表せば
+                \[
+                    \tag{10.10}
+                    Y_l^m
+                    =
+                    (-1)^l
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_le^{im\varphi}
+                    \cdot
+                    2^ll!P_l^{-m}(\cos\theta)
+                \]
+                となります。
+            </p>
+            <div class="note">
+                <p>
+                    一般に角運動量の次数 \(l,m\) は半整数でも構わないが、ルジャンドル陪多項式の次数は \(l\in\mathbb{Z}_{\geq0}\) に限られる。
+                </p>
+            </div>
+            <p>
+                これに(7.10)を用いると、
+                \begin{array}{rcl}
+                    \tag{10.11}
+                    \label{10.11}
+                    Y_l^m(\theta,\varphi)
+                    &=&
+                    (-1)^l
+                    2^ll!
+                    \sqrt{\dfrac{(l+m)!}{(2l)!(l-m)!}}
+                    N_le^{im\varphi}
+                    (-1)^m
+                    \dfrac{(l-m)!}{(l+m)!}
+                    P_l^{m}(\cos\theta)
+                    \\&=&
+                    (-1)^{l+m}
+                    2^ll!
+                    \sqrt{\dfrac{(l-m)!}{(2l)!(l+m)!}}
+                    N_le^{im\varphi}
+                    P_l^{m}(\cos\theta)
+                \end{array}
+                です。
+            </p>
+        </div>
+
+        <div class="subsection" id="normalize">
+            <h2>10.2.3 固有状態の規格化</h2>
+            <p>
+                ここまでの計算では規格化定数 \(N_l\) を残したまま計算してきましたが、\eqref{10.11}を見る限り、負号を付した球面調和関数(9.4)に形が似ていますね。
+                そこで本節では球面調和関数の規格化条件(9.1)を \(Y_l\) に要求することで \(N_l\) を決定し、固有状態の波動関数を決定していきます。
+                まずは \(Y_l\) を規格化しましょう。
+                \eqref{10.8}を規格化条件に適用すると、
+                \begin{array}{rcl}
+                    \delta_{l,l'}
+                    &=&
+                    \displaystyle
+                    \int d\Omega
+                    (Y_{l'}^{m'})^\ast Y_l^m
+                    \\
+                    &=&
+                    \displaystyle\int_{r=1}
+                    \sin\theta d\theta d\varphi
+                    N_l^\ast\sin^{l'}\theta e^{-il'\varphi}
+                    N_l\sin^l\theta e^{il\varphi}
+                    \\
+                    &=&
+                    \displaystyle
+                    N_{l'}^\ast N_l
+                    \int_0^\pi\sin\theta d\theta\sin^{l'}\theta\sin^l\theta
+                    \int_0^{2\pi}e^{i(l-l')\varphi}d\varphi
+                    \\
+                    &=&
+                    \displaystyle
+                    2\pi\delta_{l,l'}N_l^\ast N_l
+                    \int_0^\pi\sin^{2l+1}\theta d\theta
+                    \\
+                    &=&
+                    \displaystyle
+                    2\pi|N_l|^2\delta_{l,l'}\cdot2
+                    \int_0^{\pi/2}\sin^{2l+1}\theta d\theta
+                    \\
+                    &=&
+                    2\pi|N_l|^2\delta_{l,l'}
+                    B\left(l+1,\dfrac{1}{2}\right)
+                    \qquad\because\text{A.2性質2}
+                    \\
+                    &=&
+                    2\pi|N_l|^2\delta_{l,l'}
+                    \dfrac{\Gamma(l+1)\Gamma(1/2)}{\Gamma(l+3/2)}
+                    \qquad\because\text{A.2性質3}
+                    \\
+                    &=&
+                    2\pi|N_l|^2\delta_{l,l'}
+                    \dfrac{l!\sqrt{\pi}}{(l+1/2)(l-1/2)\cdots1/2\sqrt{\pi}}
+                    \qquad\because\text{A.1性質1, 2, 3}
+                    \\
+                    &=&
+                    2\pi|N_l|^2\delta_{l,l'}
+                    \dfrac{2^{l+1}l!}{(2l+1)(2l-1)\cdots3\cdot1}
+                    \\
+                    &=&
+                    2\pi|N_l|^2\delta_{l,l'}
+                    \dfrac{2^{l+1}2^ll!}{(2l+1)\cdot2l\cdot(2l-1)\cdots3\cdot2\cdot1}
+                    \\
+                    &=&
+                    4\pi|N_l|^2\delta_{l,l'}
+                    \dfrac{(2^ll!)^2}{(2l+1)!}
+                \end{array}
+                となります。
+                従って位相の不定性はあれど、
+                \[
+                    |N_l|
+                    =
+                    \dfrac{1}{2^ll!}
+                    \sqrt{\dfrac{(2l+1)!}{4\pi}}
+                \]
+                とわかります。
+            </p>
+            <p>
+                これに基づき\eqref{10.8}は位相を除いて
+                \[
+                    |Y_l^l(\theta,\varphi)|
+                    =
+                    \dfrac{1}{2^ll!}
+                    \sqrt{\dfrac{(2l+1)!}{4\pi}}
+                    \sin^l\theta e^{il\varphi}
+                \]
+                となります。
+                \eqref{10.11}は
+                \[
+                    |Y_l^m(\theta,\varphi)|
+                    =
+                    \left|
+                        (-1)^{l+m}
+                        \sqrt{\dfrac{(2l+1)(l-m)!}{4\pi(l+m)!}}
+                        P_l^m(\cos\theta)e^{il\varphi}
+                    \right|
+                \]
+                になりますね。
+                右辺 \((-1)^l\) の部分は \(m\) に依存しない位相ですから、\(1\) としておくのが望ましいでしょう。
+                ということで位相を
+                \[
+                    N_l
+                    =
+                    (-1)^l\dfrac{1}{2^ll!}
+                    \sqrt{\dfrac{(2l+1)!}{4\pi}}
+                \]
+                としておけば、
+                \[
+                    Y_l^m(\theta,\varphi)
+                    =
+                    (-1)^m
+                    \sqrt{\dfrac{(2l+1)(l-m)!}{4\pi(l+m)!}}
+                    P_l^m(\cos\theta)e^{il\varphi}
+                \]
+                となります。
+                <a href="../../part2/sphharmonic/index.html#phase">9.1.2</a>でみた2種類の位相のうち、(9.4)に一致していることに注意してください。
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <a href="../../part4/gen-func/index.html">次回 第IV部 第11章 ルジャンドル多項式の母関数</a>
+    </section>
+
+    <footer>
+        <p>Edited by 低音</p>
+        <p><a href="#">to the TOP</a></p>
+        <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
+    </footer>
+</body>
+</html>
