@@ -26,7 +26,7 @@
     </header>
 
     <section>
-        <h1>目次</h1>
+        <h1 id="index">目次</h1>
         <ul>
             <li><a href="#gamma">A.1 &Gamma;関数</a></li>
             <li><a href="#beta">A.2 &Beta;関数</a></li>
@@ -53,7 +53,7 @@
         </p>
         <ol>
             <li>\(\Gamma(x+1)=x\Gamma(x)\)</li>
-            <li>\(\Gamma\left(\dfrac{1}{2}\right)=\sqrt{pi}\)</li>
+            <li>\(\Gamma\left(\dfrac{1}{2}\right)=\sqrt{\pi}\)</li>
             <li>\(\Gamma(n)=(n-1)!\)</li>
         </ol>
         <p>
@@ -98,9 +98,11 @@
                 \int_0^\infty e^{-t}t^{-1/2}dt
                 \\
                 &=&
+                \displaystyle
                 \int_0^\infty e^{-s^2}\dfrac{2sds}{s}
                 \\
                 &=&
+                \displaystyle
                 \int_{-\infty}^\infty e^{-s^2}ds
                 \\
                 &=&
@@ -113,7 +115,9 @@
             \[
                 \Gamma(1)
                 =
-                \int_0^\infty e^{-t}dt=1
+                \int_0^\infty e^{-t}dt
+                =
+                1
             \]
             及び性質1から、
             \begin{array}{rcl}
@@ -182,12 +186,14 @@
                 \Gamma(p)\Gamma(q)
                 \\
                 =&
+                \displaystyle
                 \int_0^\infty rdr
                 \int_0^{\pi/2}
                 d\theta4e^{-r^2}
                 (r\cos\theta)^{2p-1}(r\sin\theta)^{2q-1}
                 \\
                 =&
+                \displaystyle
                 \int_0^\infty2r^{-r^2}r^{2(p+q)-1}dr
                 \int_0^{\pi/2}2\sin^{2p-1}\theta\cos^{2q-1}\theta d\theta
                 \\
