@@ -9,7 +9,7 @@
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-    </script>
+        </script>
     <!-- Google Adsense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
         crossorigin="anonymous"></script> -->
@@ -89,7 +89,9 @@
                 <img src="images/LeviCivitaConvContrv.png" alt="">
             </figure>
             <p>
-                The product of covariant and contravariant Levi-Civita symbols \(\epsilon^{ij\cdots k}\epsilon_{pq\cdots r}\) is drawn as the below, according to <a href="https://homepages.math.uic.edu/~kauffman/Penrose.pdf">Penrose's article</a>.
+                The product of covariant and contravariant Levi-Civita symbols \(\epsilon^{ij\cdots k}\epsilon_{pq\cdots
+                r}\) is drawn as the below, according to <a
+                    href="https://homepages.math.uic.edu/~kauffman/Penrose.pdf">Penrose's article</a>.
             </p>
             <figure>
                 <img src="images/LeviCivita.png" alt="">
@@ -103,17 +105,17 @@
         <div class="subsection" id="dim3-general">
             <h2>Contraction in general case</h2>
             \begin{align}
-                \epsilon^{ijk}\epsilon_{pqr}
-                =
-                \left|
-                    \begin{matrix}
-                        \delta^i_p & \delta^i_q & \delta^i_r
-                        \\
-                        \delta^j_p & \delta^j_q & \delta^j_r
-                        \\
-                        \delta^k_p & \delta^k_q & \delta^k_r
-                    \end{matrix}
-                \right|
+            \epsilon^{ijk}\epsilon_{pqr}
+            =
+            \left|
+            \begin{matrix}
+            \delta^i_p & \delta^i_q & \delta^i_r
+            \\
+            \delta^j_p & \delta^j_q & \delta^j_r
+            \\
+            \delta^k_p & \delta^k_q & \delta^k_r
+            \end{matrix}
+            \right|
             \end{align}
             <p>
                 This formula is represented with Kronecker delta as the belows:
@@ -125,7 +127,9 @@
                 Connect top three points and bottom without leaks and doubles.
                 That is, the number of terms is permutation 3!.
                 The signing can be determined to some extent by "how many intersections there are".
-                Nevertheless, as shown in the figure below, this rule can be broken if the line is written in a circuitous manner, so it is safe to consider "how many substitutions will return to the even-substitution form."
+                Nevertheless, as shown in the figure below, this rule can be broken if the line is written in a
+                circuitous manner, so it is safe to consider "how many substitutions will return to the
+                even-substitution form."
             </p>
             <figure>
                 <img src="images/TwoNotation.png" alt="">
@@ -136,14 +140,18 @@
         <div class="subsection" id="dim3-formulas">
             <h2>Contraction formulas</h2>
             <p>
-                When using Levi-Civita symbol, some indexes are usually the same; connect the same indexes with Kronecker delta.
+                When using Levi-Civita symbol, some indexes are usually the same; connect the same indexes with
+                Kronecker delta.
             </p>
             <figure>
                 <img src="images/3x3-1x1-LeviCivita.png" alt="">
-                <figcaption>\(\epsilon^{ijk}\epsilon_{pqk}=\epsilon^{ij}\epsilon_{pq}=\delta^i_p\delta^j_q-\delta^i_q\delta^j_p\)</figcaption>
+                <figcaption>
+                    \(\epsilon^{ijk}\epsilon_{pqk}=\epsilon^{ij}\epsilon_{pq}=\delta^i_p\delta^j_q-\delta^i_q\delta^j_p\)
+                </figcaption>
             </figure>
             <p>
-                In case two or more kinds of indexes are the same, you have to consider permutation, because the same indexes are reversible.
+                In case two or more kinds of indexes are the same, you have to consider permutation, because the same
+                indexes are reversible.
             </p>
             <figure>
                 <img src="images/3x3-2x2-LeviCivita.png" alt="">
@@ -164,19 +172,19 @@
         <div class="subsection" id="dim4-general">
             <h2>Contraction in general case</h2>
             \begin{align}
-                \epsilon^{ijkl}\epsilon_{pqrs}
-                =
-                \left|
-                    \begin{matrix}
-                        \delta^i_p & \delta^i_q & \delta^i_r & \delta^i_s
-                        \\
-                        \delta^j_p & \delta^j_q & \delta^j_r & \delta^j_s
-                        \\
-                        \delta^k_p & \delta^k_q & \delta^k_r & \delta^k_s
-                        \\
-                        \delta^l_p & \delta^l_q & \delta^l_r & \delta^l_s
-                    \end{matrix}
-                \right|
+            \epsilon^{ijkl}\epsilon_{pqrs}
+            =
+            \left|
+            \begin{matrix}
+            \delta^i_p & \delta^i_q & \delta^i_r & \delta^i_s
+            \\
+            \delta^j_p & \delta^j_q & \delta^j_r & \delta^j_s
+            \\
+            \delta^k_p & \delta^k_q & \delta^k_r & \delta^k_s
+            \\
+            \delta^l_p & \delta^l_q & \delta^l_r & \delta^l_s
+            \end{matrix}
+            \right|
             \end{align}
             <p>
                 This formula is represented with Kronecker delta as the below figure.
@@ -201,19 +209,19 @@
                 <img src="images/4x4-1x1-LeviCivita.png" alt="">
                 <figcaption>
                     \(
-                        \epsilon^{ijkl}\epsilon_{pqrl}
-                        =
-                        \epsilon^{ijk}\epsilon_{pqr}
-                        =
-                        \left|
-                            \begin{matrix}
-                                \delta^i_p & \delta^i_q & \delta^i_r
-                                \\
-                                \delta^j_p & \delta^j_q & \delta^j_r
-                                \\
-                                \delta^k_p & \delta^k_q & \delta^k_r
-                            \end{matrix}
-                        \right|
+                    \epsilon^{ijkl}\epsilon_{pqrl}
+                    =
+                    \epsilon^{ijk}\epsilon_{pqr}
+                    =
+                    \left|
+                    \begin{matrix}
+                    \delta^i_p & \delta^i_q & \delta^i_r
+                    \\
+                    \delta^j_p & \delta^j_q & \delta^j_r
+                    \\
+                    \delta^k_p & \delta^k_q & \delta^k_r
+                    \end{matrix}
+                    \right|
                     \)
                 </figcaption>
             </figure>
@@ -225,18 +233,18 @@
                 <img src="images/4x4-2x2-LeviCivita.png" alt="">
                 <figcaption>
                     \(
-                        \epsilon^{ijkl}\epsilon_{pqkl}
-                        =
-                        2!\epsilon^{ij}\epsilon_{pq}
-                        =
-                        2
-                        \left|
-                            \begin{matrix}
-                                \delta^i_p & \delta^i_q
-                                \\
-                                \delta^j_p & \delta^j_q
-                            \end{matrix}
-                        \right|
+                    \epsilon^{ijkl}\epsilon_{pqkl}
+                    =
+                    2!\epsilon^{ij}\epsilon_{pq}
+                    =
+                    2
+                    \left|
+                    \begin{matrix}
+                    \delta^i_p & \delta^i_q
+                    \\
+                    \delta^j_p & \delta^j_q
+                    \end{matrix}
+                    \right|
                     \)
                 </figcaption>
             </figure>
@@ -244,11 +252,11 @@
                 <img src="images/4x4-3x3-LeviCivita.png" alt="">
                 <figcaption>
                     \(
-                        \epsilon^{ijkl}\epsilon_{pjkl}
-                        =
-                        3!\epsilon^i\epsilon_p
-                        =
-                        6\delta^i_p
+                    \epsilon^{ijkl}\epsilon_{pjkl}
+                    =
+                    3!\epsilon^i\epsilon_p
+                    =
+                    6\delta^i_p
                     \)
                 </figcaption>
             </figure>
@@ -265,9 +273,9 @@
                 covariant and contravariant tensor has opposite signs.
             </p>
             \begin{align}
-                \epsilon^{ijkl}=g^i_pg^j_qg^k_rg^l_s\epsilon_{pqrs}=-\epsilon_{pqrs}
-                \qquad
-                (\{i,j,k,l\}=\{p,q,r,s\}=\{0,1,2,3\})
+            \epsilon^{ijkl}=g^i_pg^j_qg^k_rg^l_s\epsilon_{pqrs}=-\epsilon_{pqrs}
+            \qquad
+            (\{i,j,k,l\}=\{p,q,r,s\}=\{0,1,2,3\})
             \end{align}
             <p>
                 Therefore, <b>the signs of all the result above is reversed</b>.
@@ -275,37 +283,37 @@
             </p>
             \begin{align}
             \begin{array}{rcl}
-                \epsilon^{ijkl}\epsilon_{pqrl}
-                &=&
-                -
-                \left|
-                    \begin{matrix}
-                        \delta^i_p & \delta^i_q & \delta^i_r
-                        \\
-                        \delta^j_p & \delta^j_q & \delta^j_r
-                        \\
-                        \delta^k_p & \Delta^k_q & \delta^k_r
-                    \end{matrix}
-                \right|,
-                \\
-                \epsilon^{ijkl}\epsilon_{pqkl}
-                &=&
-                -2
-                \left|
-                    \begin{matrix}
-                        \delta^i_p & \delta^i_q
-                        \\
-                        \delta^j_p & \delta^j_q
-                    \end{matrix}
-                \right|,
-                \\
-                \epsilon^{ijkl}\epsilon_{pjkl}
-                &=&
-                -6\delta^i_p,
-                \\
-                \epsilon^{ijkl}\epsilon_{ijkl}
-                &=&
-                -24.
+            \epsilon^{ijkl}\epsilon_{pqrl}
+            &=&
+            -
+            \left|
+            \begin{matrix}
+            \delta^i_p & \delta^i_q & \delta^i_r
+            \\
+            \delta^j_p & \delta^j_q & \delta^j_r
+            \\
+            \delta^k_p & \Delta^k_q & \delta^k_r
+            \end{matrix}
+            \right|,
+            \\
+            \epsilon^{ijkl}\epsilon_{pqkl}
+            &=&
+            -2
+            \left|
+            \begin{matrix}
+            \delta^i_p & \delta^i_q
+            \\
+            \delta^j_p & \delta^j_q
+            \end{matrix}
+            \right|,
+            \\
+            \epsilon^{ijkl}\epsilon_{pjkl}
+            &=&
+            -6\delta^i_p,
+            \\
+            \epsilon^{ijkl}\epsilon_{ijkl}
+            &=&
+            -24.
             \end{array}
             \end{align}
         </div>
@@ -319,6 +327,8 @@
         <p><a href="#">Page Top</a></p>
         <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
         <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="https://lowtonevoice.github.io/privacy_policy">プライバシーポリシー</a></p>
     </footer>
 </body>
+
 </html>
