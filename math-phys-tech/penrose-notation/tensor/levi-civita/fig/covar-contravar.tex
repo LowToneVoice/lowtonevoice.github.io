@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(1,0);
+    \draw
+    (origin1)node[anchor=center](T1){$T$}
+    ($(T1.south west)+(-.2,0)$)rectangle($(T1.north east)+(.2,0)$)
+    (T1.north west)--++(0,.3)
+    node[anchor=south]{$i$}
+    (T1.north)--++(0,.3)
+    node[anchor=south]{$j$}
+    (T1.south east)--++(0,-.3)
+    node[anchor=north]{$k$}
+    ;
+    \node at(origin2)[anchor=west]{$T^{ij}_{\;\;\;k}$};
+\end{tikzpicture}

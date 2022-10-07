@@ -1,0 +1,66 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(3,0);
+    \coordinate(origin3)at(6,0);
+    \coordinate(origin4)at(3,-1.5);
+    \coordinate(origin5)at(6,-1.5);
+    \draw
+    (origin1)--++(1,0)
+    ++(0,-.05)--++(-1,0)
+    (origin1)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    node[anchor=north, draw, rectangle](u1){$\bm{u}$}
+    ($(origin1)+(1,0)$)--++(0,-.25)
+    node[anchor=north, draw, rectangle](v1){$\bm{v}$}
+    ($(u1.center)!.5!(v1.center)$)circle[x radius=.7, y radius=.3]
+    ($(origin1)+(0,-.25)$)--++(.1,-.1)
+    ;
+    \node at(2.125,-.5)[anchor=center]{$=$};
+    \draw
+    (origin2)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (origin2)--++(0,-.25)
+    ++(.75,.25)--++(0,-.25)
+    node[anchor=north, draw, rectangle](u2){$\bm{u}$}
+    ($(origin2)+(1.5,0)$)--++(0,-.25)
+    node[anchor=north, draw, rectangle](v2){$\bm{v}$}
+    (u2.center)circle[radius=.3]
+    ($(origin2)+(0,-.25)$)--++(.45,-.3)
+    ;
+    \node at(5.25,-.5)[anchor=center]{$+$};
+    \draw
+    (origin3)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (origin3)--++(0,-.25)
+    ++(.75,.25)--++(0,-.25)
+    node[anchor=north, draw, rectangle](u3){$\bm{u}$}
+    ($(origin3)+(1.5,0)$)--++(0,-.25)
+    node[anchor=north, draw, rectangle](v3){$\bm{v}$}
+    (v3.center)circle[radius=.3]
+    ($(origin3)+(0,-.25)$)|-++(1.4,-.5)
+    ;
+    \node at(2.125,-2)[anchor=center]{$=$};
+    \draw
+    (origin4)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (origin4)--++(0,-.25)
+    ++(.75,.25)--++(0,-.25)
+    node[anchor=north, draw, rectangle](u4){$\bm{u}$}
+    ($(origin4)+(1.5,0)$)--++(0,-.25)
+    node[anchor=north, draw, rectangle](v4){$\bm{v}$}
+    (u4.center)circle[radius=.3]
+    ($(origin4)+(0,-.25)$)--++(.45,-.3)
+    ;
+    \node at(5.25,-2)[anchor=center]{$-$};
+    \draw
+    (origin5)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (origin5)--++(0,-.25)
+    node[anchor=north, draw, rectangle](u5){$\bm{u}$}
+    ++(.75,.25)--++(0,-.25)
+    ($(origin5)+(1.5,0)$)--++(0,-.25)
+    node[anchor=north, draw, rectangle](v5){$\bm{v}$}
+    (v5.center)circle[radius=.3]
+    ($(origin5)+(.75,-.25)$)|-++(.45,-.2)
+    ;
+\end{tikzpicture}

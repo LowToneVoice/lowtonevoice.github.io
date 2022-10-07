@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+    \draw
+    node[anchor=south](i){$i$}
+    (i.south)
+    --++(0,-.2)
+    .. controls ++(0,-.2) and ++(0,.2) .. ++(.3,-.6)
+    --++(0,-.2)
+    node[anchor=north]{$j$}
+    ;
+    \node at(1,-.5)[anchor=west]{$\delta^i_{\;\;j}$};
+\end{tikzpicture}

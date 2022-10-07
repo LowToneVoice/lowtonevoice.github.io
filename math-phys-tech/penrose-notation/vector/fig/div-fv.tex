@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(2.8,0);
+    \coordinate(origin3)at(5.6,0);
+    \node[anchor=center]at(1.4,0){$=$};
+    \node[anchor=center]at(4.2,0){$+$};
+    \draw
+    ($(origin1)+(-.4,0)$) node[anchor=center,draw,rectangle]{$f$}
+    ($(origin1)+(.4,0)$) node[anchor=center,draw,rectangle](v1){$\bm{v}$}
+    (v1.north)--++(0,.7)
+    (origin1)circle[x radius=1,y radius=.4]
+    ++(0,.4)--++(0,.5)
+    .. controls ++(0,.2) and ++(0,.2) .. ++(.4,0)
+    ;
+    \draw
+    ($(origin2)+(-.4,0)$) node[anchor=center,draw,rectangle](f2){$f$}
+    ($(origin2)+(.4,0)$) node[anchor=center,draw,rectangle](v2){$\bm{v}$}
+    (f2)circle[radius=.4]
+    (v2.west)--++(-.155,0)
+    ;
+    \draw
+    ($(origin3)+(-.4,0)$) node[anchor=center,draw,rectangle]{$f$}
+    ($(origin3)+(.4,0)$) node[anchor=center,draw,rectangle](v3){$\bm{v}$}
+    (v3)circle[radius=.4]
+    ++(.2,.35)--++(0,.5)
+    (v3.north)--++(0,.65)
+    .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+    ;
+\end{tikzpicture}

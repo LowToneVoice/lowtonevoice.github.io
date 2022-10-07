@@ -1,0 +1,36 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \node at(1.8,-1)[anchor=center]{$=$};
+    \coordinate(origin2)at(3,-1);
+    \node at(4.1,-1)[anchor=center]{$-$};
+    \coordinate(origin3)at(5,-.25);
+    % LHS
+    \draw
+    (origin1)--++(1.1,0)
+    ++(0,-.05)--++(-1.1,0)
+    ++(0,.05)--++(0,-.25)
+    ++(.6,.25)--++(0,-.25) node[anchor=north,draw,rectangle](v1){$\bm{v}$}
+    ++(.5,.25)--++(0,-1.05)
+    --++(-1.1,0)
+    ++(0,.05)--++(1.1,0)
+    ++(-1.1,0)--++(0,-.25) node[anchor=north](dv1){}
+    ++(.6,.25)--++(0,-.25) node[anchor=north,draw,rectangle](u1){$\bm{u}$}
+    (u1.center)circle[radius=.3]
+    (dv1.north)|-++(.3,-.3)
+    ;
+    % RHS up
+    \draw
+    ($(origin2)+(-.4,0)$) node[anchor=center,draw,rectangle](u2){$\bm{u}$}
+    ($(origin2)+(.4,0)$) node[anchor=center,draw,rectangle](v2){$\bm{v}$}
+    (u2)circle[radius=.4]
+    ++(0,.4)--++(0,.5)
+    (u2.east)--(v2.west)
+    ;
+    \draw
+    (origin3)--++(0,-.5)
+    node[anchor=north,draw,rectangle](u3){$\bm{u}$}
+    ++(.8,0) node[anchor=north,draw,rectangle](v3){$\bm{v}$}
+    (u3)circle[radius=.4]
+    (v3.west)--++(-.155,0)
+    ;
+\end{tikzpicture}

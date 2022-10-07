@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>How to use Penrose graphical notation for Levi-Civita tensor, with some formulas</title>
+    <title>How to use Penrose's graphical notation for Levi-Civita tensor, with some formulae</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible">
@@ -18,9 +18,9 @@
 <body>
     <header>
         <h1 id="title-HowToUse">How to use</h1>
-        <h1 id="title-PenroseGraphicalNotation">Penrose Graphical Notation</h1>
+        <h1 id="title-PenroseGraphicalNotation">Penrose's Graphical Notation</h1>
         <h2 id="title-forVectors">for Levi-Civita symbol</h2>
-        <h3 id="title-withSomeFormulas">with some formulas</h3>
+        <h3 id="title-withSomeFormulas">with some formulae</h3>
     </header>
 
     <section id="introduction">
@@ -56,21 +56,15 @@
         <div class="subsection">
             <p>
                 In Penrose graphical notation, a tensor is represented as a box with as many sticks as its order.
-            </p>
-            <figure>
-                <img src="images/4ord-tensor.png" alt="">
-                <figcaption>The box has four sticks, thus it is a 4th-order tensor.</figcaption>
-            </figure>
-            <p>
                 It is possible to distinguish between covariance and contravariance.
                 The downward stick represents covariance, and upward contravariance.
             </p>
             <figure>
-                <img src="images/CovarianceContravariance.png" alt="">
+                <img src="fig/covar-contravar.png" alt="">
             </figure>
             <p>Kronecker delta is represented as a stick.</p>
             <figure>
-                <img src="images/KroneckerDelta.png" alt="">
+                <img src="fig/Kronecker-delta.png" alt="">
             </figure>
         </div>
 
@@ -78,15 +72,10 @@
             <p>
                 A horizontal thick stick represents antisymmetry.
                 Odd substitution of the position of the vertical stick reverses the sign.
-            </p>
-            <figure>
-                <img src="images/antisymmetry.png" alt="">
-            </figure>
-            <p>
                 In this notation, Levi-Civita symbol is displayed as below:
             </p>
             <figure>
-                <img src="images/LeviCivitaConvContrv.png" alt="">
+                <img src="fig/levi-civita.png" alt="">
             </figure>
             <p>
                 The product of covariant and contravariant Levi-Civita symbols \(\epsilon^{ij\cdots k}\epsilon_{pq\cdots
@@ -94,7 +83,7 @@
                     href="https://homepages.math.uic.edu/~kauffman/Penrose.pdf">Penrose's article</a>.
             </p>
             <figure>
-                <img src="images/LeviCivita.png" alt="">
+                <img src="fig/levicivita-product.png" alt="">
             </figure>
         </div>
     </section>
@@ -121,7 +110,7 @@
                 This formula is represented with Kronecker delta as the belows:
             </p>
             <figure>
-                <img src="images/3x3-LeviCivita.png" alt="">
+                <img src="fig/levi3-product.png" alt="">
             </figure>
             <p>
                 Connect top three points and bottom without leaks and doubles.
@@ -131,10 +120,6 @@
                 circuitous manner, so it is safe to consider "how many substitutions will return to the
                 even-substitution form."
             </p>
-            <figure>
-                <img src="images/TwoNotation.png" alt="">
-                <figcaption>It is often easier with detours, as notation becomes more complex.</figcaption>
-            </figure>
         </div>
 
         <div class="subsection" id="dim3-formulas">
@@ -144,7 +129,7 @@
                 Kronecker delta.
             </p>
             <figure>
-                <img src="images/3x3-1x1-LeviCivita.png" alt="">
+                <img src="fig/levi3-1contr.png" alt="">
                 <figcaption>
                     \(\epsilon^{ijk}\epsilon_{pqk}=\epsilon^{ij}\epsilon_{pq}=\delta^i_p\delta^j_q-\delta^i_q\delta^j_p\)
                 </figcaption>
@@ -154,12 +139,18 @@
                 indexes are reversible.
             </p>
             <figure>
-                <img src="images/3x3-2x2-LeviCivita.png" alt="">
+                <img src="fig/levi3-2contr.png" alt="">
                 <figcaption>\(\epsilon^{ijk}\epsilon_{pjk}=2!\epsilon^{i}\epsilon_{p}=2!\delta^i_p\)</figcaption>
             </figure>
             <p>
                 If all indexes are the same, \(\epsilon^{ijk}\epsilon_{ijk}=3!\).
             </p>
+            <figure>
+                <img src="fig/levi3-3contr.png">
+                <figcaption>
+                    \(\epsilon^{ijk}\epsilon_{ijk}=3!\)
+                </figcaption>
+            </figure>
         </div>
     </section>
 
@@ -190,13 +181,7 @@
                 This formula is represented with Kronecker delta as the below figure.
             </p>
             <figure>
-                <img src="images/4x4-LeviCivita.png" alt="">
-            </figure>
-            <p>
-                As well as in 3-dimension, it is displayed as the below figure.
-            </p>
-            <figure>
-                <img src="images/4x4-LeviCivita.png" alt="">
+                <img src="fig/levi4-product.png" alt="">
             </figure>
         </div>
 
@@ -206,7 +191,7 @@
                 You can calculate contraction formulas as of 3-dim.
             </p>
             <figure>
-                <img src="images/4x4-1x1-LeviCivita.png" alt="">
+                <img src="fig/levi4-1contr.png" alt="">
                 <figcaption>
                     \(
                     \epsilon^{ijkl}\epsilon_{pqrl}
@@ -230,7 +215,7 @@
                 The permutation follows as well as 3-dim.
             </p>
             <figure>
-                <img src="images/4x4-2x2-LeviCivita.png" alt="">
+                <img src="fig/levi4-2contr.png" alt="">
                 <figcaption>
                     \(
                     \epsilon^{ijkl}\epsilon_{pqkl}
@@ -249,7 +234,7 @@
                 </figcaption>
             </figure>
             <figure>
-                <img src="images/4x4-3x3-LeviCivita.png" alt="">
+                <img src="fig/levi4-3contr.png" alt="">
                 <figcaption>
                     \(
                     \epsilon^{ijkl}\epsilon_{pjkl}
@@ -263,6 +248,9 @@
             <p>
                 If all indexes are the same, \(\epsilon^{ijkl}\epsilon_{ijkl}=4!=24\).
             </p>
+            <figure>
+                <img src="fig/levi4-4contr.png" alt="">
+            </figure>
         </div>
 
         <div class="subsection">

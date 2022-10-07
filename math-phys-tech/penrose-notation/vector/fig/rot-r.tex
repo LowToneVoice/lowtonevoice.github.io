@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \coordinate(origin)at(0,0);
+    \node at(2,0)[anchor=center]{$=$};
+    \coordinate(origin2)at(3,0);
+    \draw
+    (origin)--++(1,0)
+    ++(0,-.05)--++(-1,0)
+    (origin)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    ($(origin)+(1,0)$)--++(0,-.25)
+    node[anchor=north, draw, rectangle](v){$\bm{r}$}
+    (v.center)circle[radius=.3]
+    ($(origin)+(.5,-.25)$)--++(.2,-.2)
+    ;
+    \draw
+    (origin2)--++(1,0)
+    ++(0,-.05)--++(-1,0)
+    (origin)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    ($(origin2)+(1,0)$)--++(0,-.25)
+    --++(-.5,0)
+    (origin2)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    ;
+\end{tikzpicture}

@@ -1,0 +1,40 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(3,0);
+    \coordinate(origin3)at(6,0);
+    \node at(1,-.5)[anchor=north, draw, rectangle](v1){$f$};
+    \node at(4,-.5)[anchor=north, draw, rectangle](v2){$f$};
+    \node at(7,-.5)[anchor=north, draw, rectangle](v3){$f$};
+    \draw
+    (origin1)--++(1,0)
+    ++(0,-.05)--++(-1,0)
+    (origin1)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    ($(origin1)+(1,0)$)--++(0,-.4)
+    (v1.center)circle[radius=.5]
+    (v1.center)circle[radius=.4]
+    ($(origin1)+(.5,-.25)$)--++(.15,-.15)
+    ;
+    \node at(2.25,-.5)[anchor=center]{$=$};
+    \draw
+    (origin2)--++(1,0)
+    ++(0,-.05)--++(-1,0)
+    (origin2)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    ($(origin2)+(1,0)$)--++(0,-.3)
+    (v2.center)circle[radius=.5]
+    (v2.center)circle[radius=.4]
+    ($(origin2)+(.5,-.25)$)--++(.25,-.25)
+    ;
+    \node at(5.25,-.5)[anchor=center]{$=-$};
+    \draw
+    (origin3)--++(1,0)
+    ++(0,-.05)--++(-1,0)
+    (origin3)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    ($(origin3)+(1,0)$)--++(0,-.4)
+    (v3.center)circle[radius=.5]
+    (v3.center)circle[radius=.4]
+    ($(origin3)+(.5,-.25)$)--++(.15,-.15)
+    ;
+\end{tikzpicture}

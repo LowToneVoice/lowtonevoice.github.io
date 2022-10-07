@@ -1,0 +1,38 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(3,0);
+    \coordinate(origin3)at(6,0);
+    \draw
+    (origin1)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (origin1)--++(0,-.25)
+    ++(1.5,.25)--++(0,-.4)
+    node[anchor=north, draw, rectangle](v1){$\bm{v}$}
+    ++(-.5,.075) node[anchor=north, draw, rectangle](f1){$f$}
+    (v1.west)circle[x radius=.7, y radius=.5]
+    ($(origin1)+(.6,0)$)--++(0,-.45)
+    ;
+    \node at(2.5,-.5)[anchor=center]{$=$};
+    \draw
+    (origin2)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (origin2)--++(0,-.25)
+    ++(1.5,.25)--++(0,-.4)
+    node[anchor=north, draw, rectangle](v2){$\bm{v}$}
+    ($(origin2)+(.6,0)$)--++(0,-.25)
+    ++(0,-.5) node[anchor=center,draw,rectangle](f2){$f$}
+    (f2.center)circle[radius=.5]
+    ;
+    \node at(5.25,-.5)[anchor=center]{$+$};
+    \draw
+    (origin3)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (origin3)--++(0,-.25)
+    ++(1.5,.25)--++(0,-.4)
+    node[anchor=north, draw, rectangle](v3){$\bm{v}$}
+    ($(origin3)+(.5,0)$)--++(0,-.25)
+    |-++(.5,-.2)
+    ($(origin3)+(-.1,-.8)$) node[anchor=center,draw,rectangle](f3){$f$}
+    (v3.center)circle[radius=.5]
+    ;
+\end{tikzpicture}

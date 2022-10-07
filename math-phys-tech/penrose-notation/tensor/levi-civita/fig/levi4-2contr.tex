@@ -1,0 +1,37 @@
+\begin{tikzpicture}
+    \coordinate(origin0)at(0,0);
+    \coordinate(origin1)at(3,0);
+    \node at(2.35,-.255)[anchor=center]{$=2!$};
+    % LHS
+    \draw
+    (origin0)node[anchor=south](i){$i$}
+    ++(.5,0)node[anchor=south](j){$j$}
+    ++(.5,0)node[anchor=south](k){}
+    ++(.5,0)node[anchor=south](l){}
+    ++(-1.5,-.55)node[anchor=north](p){$p$}
+    ++(.5,0)node[anchor=north](q){$q$}
+    ++(.5,0)node[anchor=north](r){}
+    ++(.5,0)node[anchor=north](s){}
+    (i.south)--(p.north)
+    (j.south)--(q.north)
+    (k.south)--(r.north)
+    (l.south)--(s.north)
+    ($(origin0)+(0,-.25)$)--++(1.5,0)
+    ++(0,-.05)--++(-1.5,0)
+    (l.south)..controls ++(0,.5) and ++(.0,.5) .. ++(.2,0)
+    --++(0,-.55)
+    .. controls ++(0,-.5) and ++(0,-.5) .. ++(-.2,0)
+    (k.south) .. controls ++(0,.7) and ++(0,.7) .. ++(.9,0)
+    --++(0,-.55)
+    .. controls ++(0,-.7) and ++(0,-.7) .. ++(-.9,0)
+    ;
+    % RHS
+    \draw
+    (origin1)node[anchor=south](i){$i$}
+    --++(0,-.55)node[anchor=north](p){$p$}
+    ++(.5,.55)node[anchor=south](j){$j$}
+    --++(0,-.55)node[anchor=north](q){$q$}
+    ++(0,.25)--++(-.5,0)
+    ++(0,.05)--++(.5,0)
+    ;
+\end{tikzpicture}
