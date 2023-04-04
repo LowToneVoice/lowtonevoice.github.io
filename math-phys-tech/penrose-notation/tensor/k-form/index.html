@@ -1,0 +1,382 @@
+<html>
+
+<head>
+    <title>How to use Penrose's graphical notation for k-form, with some formulae</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible">
+    <link rel="stylesheet" href="../../stylesheet.css">
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+    <!-- Google Adsense -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+        crossorigin="anonymous"></script> -->
+</head>
+
+<body>
+    <header>
+        <h1 id="title-HowToUse">How to use</h1>
+        <h1 id="title-PenroseGraphicalNotation">Penrose's Graphical Notation</h1>
+        <h2 id="title-forVectors">for k-form</h2>
+        <h3 id="title-withSomeFormulas">with some formulae</h3>
+    </header>
+
+    <section id="introduction">
+        <p>In this page, the knowledge about</p>
+        <ul>
+            <li>Definition of k-form</li>
+            <li>Levi-Civita symbol</li>
+            <li>Wedge product</li>
+            <li>exterior product</li>
+            <li>interior product</li>
+        </ul>
+        <p>is necessary.</p>
+        <p>
+            All indexes follow Einstein notation.
+            The derivative symbol \(\partial_i\) differentiates the immediately following symbol:
+            \(\partial_iA^jB^k=\partial_i(A^j)B^k\).
+        </p>
+        <p>
+            We write the symmetric group of degree \(n\) as \(\mathfrak{S}\), and the sign of \(P\in\mathfrak{S}\) as \(\mathrm{sgn}(P)\).
+            We define Levi-Civita symbol as the follows:
+            \[
+                \epsilon_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_k}
+                \equiv
+                \det\left(
+                    \begin{matrix}
+                        \delta_{\nu_1}^{\mu_1} & \cdots & \delta_{\nu_k}^{\mu_1}
+                        \\
+                        \vdots & \ddots & \vdots
+                        \\
+                        \delta_{\nu_1}^{\mu_k} & \delta_{\nu_k}^{\mu_k}
+                    \end{matrix}
+                \right)
+                =
+                \sum
+            \]
+        </p>
+    </section>
+
+    <section id="index">
+        <h1>Index</h1>
+        <ul>
+            <li><a href="#k-form-op">k-form and operations</a></li>
+            <ul>
+                <li><a href="#k-form">k-form</a></li>
+                <li><a href="#Lie-deriv">Lie derivative</a></li>
+                <li><a href="#wedge">Wedge product</a></li>
+                <li><a href="#exterior">Exterior product</a></li>
+                <li><a href="#interior">Interior product</a></li>
+            </ul>
+            <li><a href="#formulae">Formulae</a></li>
+            <ul>
+                <li><a href="#poincare">Poincaré's lemma</a></li>
+                <li><a href="#interior-other">Another representation of interior product</a></li>
+                <li><a href="#cartan">Cartan's formula</a></li>
+            </ul>
+        </ul>
+    </section>
+
+    <section id="k-form-op">
+        <h1>k-form and operations</h1>
+        <div class="subsection" id="k-form">
+            <h2>k-form</h2>
+            <p>
+                Basis of k-form is
+                \[
+                    dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                    =
+                    \sum_{P\in\mathfrak{S}}
+                    \mathrm{sgn}(P)
+                    dx^{\mu_{P(1)}}\otimes\cdots
+                    \otimes dx^{\mu_{P(k)}}
+                    =
+                    \epsilon_{\mu_1'\cdots\mu_k'}^{\mu_1\cdots\mu_k}
+                    dx^{\mu_1'}\otimes\cdots
+                    \otimes dx^{\mu_k'}
+                \]
+                so that
+                \[
+                    \omega
+                    =
+                    \omega_{\mu_1\cdots\mu_k}
+                    dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                    =
+                    \omega_{\mu_1\cdots\mu_k}
+                    \epsilon_{\mu_1'\cdots\mu_k'}^{\mu_1\cdots\mu_k}
+                    dx^{\mu_1'}\otimes\cdots
+                    \otimes dx^{\mu_k'}
+                    .
+                \]
+            </p>
+            <p>
+                We can write k-form with Levi-Civita symbol as the follows:
+            </p>
+            <figure>
+                <img src="img/k-form.png" alt="" width="100">
+            </figure>
+            <p>
+                A thick line represents Levi-Civita symbol.
+                The rectangle labeled \(\omega\) means \(\omega_{\mu_1'\cdots\mu_k'}\).
+                This entire symbol reflects \(\omega_{\mu_1'\cdots\mu_k'}\epsilon_{\mu_1\cdots\mu_k}^{\mu_1'\cdots\mu_k'}\).
+            </p>
+            <p>
+                We do not write symbols of basis \(dx\), since it is difficult to represent the basis.
+                We interpret an up-open branch is connected to basis \(\partial_i\) and down-open branch to \(dx^\mu\).
+            </p>
+        </div>
+
+        <div class="subsection" id="Lie-deriv">
+            <h2>Lie derivative</h2>
+            <p>
+                Lie derivative for a tensor is computed as
+                \[
+                \begin{array}{ll}
+                    &
+                    \mathcal{L}_V
+                    (
+                        t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                        \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                        \otimes
+                        dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                    )
+                    \\
+                    &=
+                    V^\lambda\partial_\lambda
+                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                    \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                    \otimes
+                    dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                    \\
+                    &\qquad
+                    -
+                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                    \partial_{\mu_1}
+                    V^\lambda\partial_\lambda
+                    \otimes\cdots\otimes\partial_{\mu_l}
+                    \otimes
+                    dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                    \\
+                    &\qquad-\cdots
+                    \\
+                    &\qquad
+                    -
+                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                    \partial_{\mu_1}
+                    \otimes\cdots\otimes
+                    \partial_{\mu_l}V^\lambda\partial_\lambda
+                    \otimes
+                    dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                    \\
+                    &\qquad
+                    +
+                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                    \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                    \otimes
+                    \partial_\lambda V^{\nu_1}
+                    dx^{\lambda}\otimes\cdots\otimes dx^{\nu_k}
+                    \\
+                    &\qquad+\cdots
+                    \\
+                    &\qquad
+                    +
+                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                    \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                    \otimes
+                    dx^{\nu_1}
+                    \otimes\cdots\otimes
+                    \partial_\lambda V^{\nu_k}
+                    dx^{\lambda}
+                \end{array}
+                \]
+                This is drawn as the follows in Penrose's graphical notation:
+            </p>
+            <figure>
+                <img src="img/Liederiv.png" alt="" width="400">
+            </figure>
+        </div>
+
+        <div class="subsection" id="wedge">
+            <h2>Wedge product</h2>
+            <p>
+                Wedge product satisfies
+                \[
+                \begin{array}{ll}
+                    &
+                    (
+                        \xi_{\mu_1\cdots\mu_k}
+                        dx^{\mu_1}
+                        \wedge\cdots\wedge
+                        dx^{\mu_k}
+                    )
+                    \wedge
+                    (
+                        \eta_{\mu_{k+1}\cdots\mu_{k+l}}
+                        dx^{\mu_{k+1}}
+                        \wedge\cdots\wedge
+                        dx^{\mu_{k+l}}
+                    )
+                    \\
+                    &=
+                    \xi_{\mu_1\cdots\mu_k}
+                    \eta_{\mu_{k+1}\cdots\mu_{k+l}}
+                    \epsilon^{\mu_1\cdots\mu_k\mu_{k+1}\cdots\mu_{k+l}}_{\mu_1'\cdots\mu_k'\mu_{k+1}'\cdots\mu_{k+l}'}
+                    dx^{\mu_1'}
+                    \otimes\cdots\otimes
+                    dx^{\mu_{k+l}'}
+                    .
+                \end{array}
+                \]
+                This is represented in Penrose's graphical notation by connecting thick lines of Levi-Civita symbols.
+            </p>
+            <figure>
+                <img src="img/wedge.png" alt="" width="400">
+            </figure>
+        </div>
+
+        <div class="subsection" id="exterior">
+            <h2>Exterior product</h2>
+            <p>
+                Exterior product is written as
+                \[
+                    d(
+                        \omega_{\mu_1\cdots\mu_k}
+                        dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                    )
+                    =
+                    \partial_{\mu_0}
+                    \omega_{\mu_1\cdots\mu_k}
+                    dx^{\mu_0}\wedge dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                    .
+                \]
+                In graphical notation, we draw an eclipse around rectangle of the component, stick a branch from the eclipse at the beginning of the thick line:
+            </p>
+            <figure>
+                <img src="img/exterior.png" alt="" width="300">
+            </figure>
+        </div>
+
+        <div class="subsection" id="interior">
+            <h2>Interior product</h2>
+            <p>
+                Interior product is computed as
+                \[
+                    \iota_V
+                    (
+                        \omega_{\mu_1\cdots\mu_k}
+                        dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                    )
+                    =
+                    \omega_{\mu_1\cdots\mu_k}
+                    \epsilon^{\mu_1\cdots\mu_k}_{\mu_1'\cdots\mu_k'}
+                    V^{\mu_1'}dx^{\mu_2'}
+                    \otimes\cdots\otimes
+                    dx^{\mu_k'}
+                    .
+                \]
+                In graphical notation, the branch at the beginning is connected to \(V\).
+            </p>
+            <figure>
+                <img src="img/interior.png" alt="" width="300">
+            </figure>
+        </div>
+    </section>
+
+    <section id="formulae">
+        <h1>Formulae</h1>
+        <p>
+            You can prove in the way of all the following proofs as well as Einstein's notation.
+        </p>
+
+        <div class="subsection" id="poincare">
+            <h2>Poincaré's lemma</h2>
+            <p>
+                You can prove with exchange of derivatives and anti-symmetry.
+            </p>
+            <figure>
+                <img src="img/poincare.png" alt="" width="400">
+            </figure>
+        </div>
+
+        <div class="subsection" id="interior-other">
+            <h2>Another representation of interior product</h2>
+            <p>
+                You can write interior product, putting the first branch off the thick line.
+                \[
+                    \iota_V\omega
+                    =
+                    k\omega_{\mu_1\cdots\mu_k}
+                    \epsilon^{\mu_2\cdots\mu_k}_{\mu_2'\cdots\mu_k'}
+                    V^{\mu_1'}dx^{\mu_2'}
+                    \otimes\cdots\otimes
+                    dx^{\mu_k'}
+                \]
+                Remark that the index of Levi-Civita symbol starts from \(\mu_2\).
+            </p>
+            <p>
+                To prove this, put the first branch connected to \(V\) off the thick line.
+            </p>
+            <figure>
+                <img src="img/interior2.png" alt="" width="400">
+            </figure>
+            <p>
+                \(\omega_{\mu_1\cdots\mu_k}\) is anti-symmetric for indexes.
+                All the \(k\) terms of the right hand side of the first line is equivalent.
+            </p>
+        </div>
+
+        <div class="subsection" id="cartan">
+            <h2>Cartan's formula</h2>
+            <p>
+                Cartan's formula is \((d\iota_V+\iota_V d)\omega=\mathcal{L}_V\omega\).
+                Use the another representation of interior product for the first term of the left hand side.
+            </p>
+            <figure>
+                <img src="img/cartan1.png" alt="" width="500">
+            </figure>
+            <p>
+                Use Leibnitz rule for the 1st term,
+            </p>
+            <figure>
+                <img src="img/cartan2.png" alt="" width="500">
+            </figure>
+            <p>
+                and put \(V\) off from the thick line for the second term.
+            </p>
+            <figure>
+                <img src="img/cartan3.png" alt="" width="500">
+            </figure>
+            <p>
+                All the third and the following terms in the R.H.S. of the first line is equivalent to the second term.
+            </p>
+            <p>
+                So that the L.H.S. of Cartan's formula is written as the follows:
+            </p>
+            <figure>
+                <img src="img/cartan4.png" alt="" width="500">
+            </figure>
+            <p>
+                The 1st term in the R.H.S. is expanded.
+            </p>
+            <figure>
+                <img src="img/cartan5.png" alt="" width="500">
+            </figure>
+            <p>
+                This is Lie derivative of k-form.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <h3>© Teion</h3>
+        <p><a href="#">PAGE TOP</a></p>
+        <p><a href="https://lowtonevoice.github.io">HOME</a></p>
+        <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
+        <p><a href="https://note.com/teion_burns">note</a></p>
+        <p><a href="https://lowtonevoice.github.io/privacy_policy">Privacy policy</a></p>
+    </footer>
+</body>
+
+</html>

@@ -10,6 +10,8 @@
     <script type="text/javascript" async
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
+    <!-- <link rel="stylesheet" type="text/css" href="https://tikzjax.com/v1/fonts.css">
+    <script src="https://tikzjax.com/v1/tikzjax.js"></script> -->
     <!-- Google Adsense -->
     <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462" -->
     <!-- crossorigin="anonymous"></script> -->
@@ -88,15 +90,15 @@
         <div class="subsection">
             <p>A vector has a stick on it, but a scalar does not.</p>
             <figure>
-                <img src="fig/scalar-vector.png" alt="How to represent a scalar and a vector.">
-                <figcaption></figcaption>
+                <img src="img/scalar-vector.png" alt="How to represent a scalar and a vector." width="300">
+                <!-- <figcaption></figcaption> -->
             </figure>
         </div>
 
         <div class="subsection">
             <p>Scalar doubling can be represented by simply putting the items side by side.</p>
             <figure>
-                <img src="fig/scalar-multiple.png" alt="Scalar doubling">
+                <img src="img/scalar-multiple.png" width="200">
                 <!-- <figcaption>Scalar doubling represented by simply putting the items side by side.</figcaption> -->
             </figure>
         </div>
@@ -105,7 +107,7 @@
             <h2>Dot product</h2>
             <p>Dot product is represented by connecting sticks of two vectors</p>
             <figure>
-                <img src="fig/dot-product.png" alt="dot product">
+                <img src="img/dot-product.png" alt="dot product" width="200">
                 <figcaption>\(\boldsymbol{u}\cdot\boldsymbol{v}=u_i\delta_{ij}v_j\).<br>The stick represents Kronecker
                     delta
                     \(\delta_{ij}\).</figcaption>
@@ -118,7 +120,7 @@
                 reverses the sign.</p>
             <p>With thick lines, Levi-Civita symbol is shown as following:</p>
             <figure>
-                <img src="fig/LeviCivita3.png" alt="Levi Civita symbol">
+                <img src="img/LeviCivita3.png" alt="Levi Civita symbol" width="200">
                 <figcaption>Levi-Civita symbol \(\epsilon_{ijk}\).</figcaption>
             </figure>
         </div>
@@ -127,7 +129,7 @@
             <h2>Cross product</h2>
             <p>Using this notation, cross product is represented as following:</p>
             <figure>
-                <img src="fig/cross-product.png" alt="cross product of vectors u and v">
+                <img src="img/cross-product.png" alt="cross product of vectors u and v" width="150">
                 <figcaption>\(\boldsymbol{u}\times\boldsymbol{v}=\epsilon_{ijk}\boldsymbol{e}_iu_jv_k\)</figcaption>
             </figure>
         </div>
@@ -139,7 +141,7 @@
         <div class="subsection" id="LeviCivitaContraction">
             <h2>Contraction formula for the Levi-Civita symbols</h2>
             <figure>
-                <img src="fig/LeviCivita3-formula.png" alt="Contraction formula for the Levi-Civita symbol">
+                <img src="img/LeviCivita3-formula.png" alt="Contraction formula for the Levi Civita symbol" width="250">
                 <figcaption>\(\epsilon_{ijm}\epsilon_{klm}=\delta_{ik}\delta_{jl}-\delta_{il}\delta_{jk}\)</figcaption>
             </figure>
             <p>It is recommended that this formula is memorized.</p>
@@ -148,7 +150,7 @@
         <div class="subsection" id="ScalarTriple">
             <h2>Scalar triple product</h2>
             <figure>
-                <img src="fig/scalar-triple-product.png" alt="Scalar triple product (even permutation)">
+                <img src="img/scalar-triple-product.png" alt="Scalar triple product (even permutation)" width="400">
                 <figcaption>\(A\cdot(B\times C)=B\cdot(C\times A)=C\cdot(A\times B)=-B\cdot(A\times C)\)</figcaption>
             </figure>
         </div>
@@ -157,7 +159,7 @@
             <h2>Vector triple product</h2>
             <p>With the contraction formula of Levi-Civita symbol.</p>
             <figure>
-                <img src="fig/vector-triple-product.png" alt="Vector triple product">
+                <img src="img/vector-triple-product.png" alt="Vector triple product" width="400">
                 <figcaption>\(A\times(B\times C)=B(A\cdot C)-C(A\cdot B)\)</figcaption>
             </figure>
         </div>
@@ -166,7 +168,7 @@
             <h2>Vector quadruple product</h2>
             <p>From the contraction formula of Levi-Civita symbol.</p>
             <figure>
-                <img src="fig/quadruple-product.png" alt="Vector quadruple product">
+                <img src="img/quadruple-product.png" alt="Vector quadruple product" width="300">
                 <figcaption>
                     \(
                     \begin{array}{rcl}
@@ -198,7 +200,7 @@
             <h2>Gradient</h2>
             <p>Circle contains a scalar f.</p>
             <figure>
-                <img src="fig/grad.png" alt="gradient f">
+                <img src="img/grad.png" alt="gradient f" width="100">
                 <figcaption>\(\mathrm{grad}\:f\)</figcaption>
             </figure>
         </div>
@@ -207,7 +209,7 @@
             <h2>Divergence</h2>
             <p>Connecting the sticks of vector \(\boldsymbol{v}\) and nabla.</p>
             <figure>
-                <img src="fig/div.png" alt="Divergence v">
+                <img src="img/div.png" alt="Divergence v" width="100">
                 <figcaption>\(\mathrm{div}\:\boldsymbol{v}=\nabla\cdot\boldsymbol{v}\)</figcaption>
             </figure>
         </div>
@@ -216,7 +218,7 @@
             <h2>Rotation</h2>
             <p>Cross product of nabla and differential target.</p>
             <figure>
-                <img src="fig/rot.png" alt="rotation v">
+                <img src="img/rot.png" alt="rotation v" width="150">
                 <figcaption>\(\mathrm{rot}\:\boldsymbol{v}=\nabla\times\boldsymbol{v}\)</figcaption>
             </figure>
             <p>The root of the stick from the circle corresponding to nabla is <b>always connected to the immediate left
@@ -227,7 +229,7 @@
             <h2>Laplacian</h2>
             <p>Both of scalars and vectors can be differentiated.</p>
             <figure>
-                <img src="fig/lapl.png" alt="Laplacians of scalar f and vector v">
+                <img src="img/lapl.png" alt="Laplacians of scalar f and vector v" width="150">
                 <figcaption>\(\nabla^2=\nabla\cdot\nabla=\Delta\)</figcaption>
             </figure>
             <p>From the upper figure we can see \(\mathrm{div\:grad}\:f=\Delta f\) at a glance.</p>
@@ -236,7 +238,7 @@
         <div class="subsection" id="LeibnitzRule">
             <h2>Leibniz rule</h2>
             <figure>
-                <img src="fig/leibnitz-rule.png" alt="Leibnitz rule">
+                <img src="img/leibnitz-rule.png" alt="Leibnitz rule" width="300">
                 <figcaption>\(\nabla(AB)=(\nabla A)B+A(\nabla B)\)</figcaption>
             </figure>
         </div>
@@ -247,7 +249,7 @@
                 derivatives can be
                 exchanged.</p>
             <figure>
-                <img src="fig/diff-change.png" alt="differential order exchange.">
+                <img src="img/diff-change.png" alt="differential order exchange." width="150">
             </figure>
             <p>From here, the following formulas in which two circles appear basically assume the \(C^2\) class,
                 regardless of whether Penrose graphical notation is used or not.</p>
@@ -270,7 +272,7 @@
             <h2>\(\mathrm{rot\:grad}\:f=\nabla\times\nabla f=0\)</h2>
             <p>With the exchange of the differential order and antisymmetry (odd permutation).</p>
             <figure>
-                <img src="fig/rot-grad.png" alt="rotation gradient f">
+                <img src="img/rot-grad.png" alt="rotation gradient f" width="400">
                 <caption>Differential order exchange in the first line, antisymmetry on the left hand side in the second
                     line.</caption>
             </figure>
@@ -281,7 +283,7 @@
             <h2>\(\mathrm{div\:rot}\:\boldsymbol{v}=\nabla\cdot(\nabla\times\boldsymbol{v})=0\)</h2>
             <p>With the differential order exchange and antisymmetry.</p>
             <figure>
-                <img src="fig/div-rot.png" alt="divergence rotation v">
+                <img src="img/div-rot.png" alt="divergence rotation v" width="400">
                 <figcaption>Differential order exchange in the first line, antisymmetry in the second line.</figcaption>
             </figure>
             <p>Since the right hand sides are opposite signs of each other, the value is 0. </p>
@@ -291,7 +293,7 @@
             <h2>\(\mathrm{div\:grad}\:f=\Delta f\)</h2>
             <p>This is confirmed earlier, but should be reiterated as a formula.</p>
             <figure>
-                <img src="fig/div-grad.png" alt="divergence gradient f">
+                <img src="img/div-grad.png" alt="divergence gradient f" width="100">
             </figure>
         </div>
 
@@ -300,7 +302,7 @@
                 \nabla(fg)&=&(\nabla f)g+f(\nabla g)\end{array}\)</h2>
             <p>With Leibnitz rule.</p>
             <figure>
-                <img src="fig/grad-fg.png" alt="gradient fg">
+                <img src="img/grad-fg.png" alt="gradient fg" width="400">
                 <!-- <figcaption></figcaption> -->
             </figure>
         </div>
@@ -325,7 +327,7 @@
             </h2>
             <p>With Leibnitz rule.</p>
             <figure>
-                <img src="fig/div-fv.png" alt="divergence fv">
+                <img src="img/div-fv.png" alt="divergence fv" width="450">
             </figure>
         </div>
 
@@ -349,7 +351,7 @@
             </h2>
             <p>With Leibnitz rule.</p>
             <figure>
-                <img src="fig/div-uv.png" alt="divergence u cross v">
+                <img src="img/div-uv.png" alt="divergence u cross v" width="450">
                 <figcaption>The second line is odd permutation of the first line.</figcaption>
             </figure>
             <p>After Leibnitz rule, the second term is transformed using antisymmetry to follow the principle "the root
@@ -376,7 +378,7 @@
             </h2>
             <p>With Leibnitz rule.</p>
             <figure>
-                <img src="fig/rot-fv.png" alt="rotation fv">
+                <img src="img/rot-fv.png" alt="rotation fv" width="450">
                 <figcaption>Scalar \(f\) can be placed anywhere.</figcaption>
             </figure>
         </div>
@@ -409,7 +411,7 @@
             </h2>
             <p>With Levi-Civita contraction and Leibnitz rule.</p>
             <figure>
-                <img src="fig/rot-uv.png" alt="rotation u cross v">
+                <img src="img/rot-uv.png" alt="rotation u cross v" width="550">
                 <figcaption>Starting from the first line, even permutation, Levi-Civita contraction, and Leibnitz rule.
                 </figcaption>
             </figure>
@@ -435,7 +437,7 @@
             </h2>
             <p>With Levi-Civita contraction and differential order exchange.</p>
             <figure>
-                <img src="fig/rot-rot.png" alt="rotation rotation v">
+                <img src="img/rot-rot.png" alt="rotation rotation v" width="450">
                 <figcaption>Differential order exchange from the second to third line.</figcaption>
             </figure>
             <p>You have to exchange the differential order because there is no operation corresponding to the first term
@@ -470,17 +472,17 @@
             </h2>
             <p>This is much more difficult to prove. First, Leibnitz rule.</p>
             <figure>
-                <img src="fig/grad-uv.png" alt="">
+                <img src="img/grad-uv.png" alt="" width="450">
                 <figcaption>No operator corresponds to R.H.S.</figcaption>
             </figure>
             <p>Since there is no operator corresponding to the right hand side, we consider the following equation.</p>
             <figure>
-                <img src="fig/grad-uv2.png" alt="">
+                <img src="img/grad-uv2.png" alt="" width="400">
                 <figcaption>The first term of R.H.S. is the first term of the former equation.</figcaption>
             </figure>
             <p>Therefore, we get this notation of the formula.</p>
             <figure>
-                <img src="fig/grad-uv3.png" alt="divergence u dot v">
+                <img src="img/grad-uv3.png" alt="divergence u dot v" width="550">
             </figure>
         </div>
 
@@ -507,7 +509,7 @@
                 \)
             </h2>
             <figure>
-                <img src="fig/lapl-fg.png" alt="Laplacian fg">
+                <img src="img/lapl-fg.png" alt="Laplacian fg" width="550">
             </figure>
             <p>You can get the formula by twice Leibnitz rule.</p>
         </div>
@@ -523,7 +525,7 @@
         <p>This formula is represented as the following notation: the circle and position vector disappear, instead the
             line is connected.</p>
         <figure>
-            <img src="fig/grad-r.png" alt="">
+            <img src="img/grad-r.png" alt="" width="300">
         </figure>
         <p>With this equation, some formulas are proved.</p>
 
@@ -546,7 +548,7 @@
                 \)
             </h2>
             <figure>
-                <img src="fig/div-r.png" alt="divergence r">
+                <img src="img/div-r.png" alt="divergence r" width="200">
             </figure>
             <p>The ring of the right hand side is Kronecker delta of which both ends are connected, thus
                 \(\delta_{i,i}\). The answer 3
@@ -565,7 +567,7 @@
                 \)
             </h2>
             <figure>
-                <img src="fig/rot-r.png" alt="rotation r">
+                <img src="img/rot-r.png" alt="rotation r" width="300">
             </figure>
             <p>Since the right hand side represents \(\epsilon_{ijk}\delta_{j,k}=\epsilon_{ijj}=0\).</p>
         </div>

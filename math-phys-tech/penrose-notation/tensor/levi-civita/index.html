@@ -1,323 +1,323 @@
-<html>
+    <html>
 
-<head>
-    <title>How to use Penrose's graphical notation for Levi-Civita tensor, with some formulae</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible">
-    <link rel="stylesheet" href="../../stylesheet.css">
-    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-    <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
-        </script>
-    <!-- Google Adsense -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
-        crossorigin="anonymous"></script> -->
-</head>
+    <head>
+        <title>How to use Penrose's graphical notation for Levi-Civita tensor, with some formulae</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible">
+        <link rel="stylesheet" href="../../stylesheet.css">
+        <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+        <script type="text/javascript" async
+            src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+            </script>
+        <!-- Google Adsense -->
+        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+            crossorigin="anonymous"></script> -->
+    </head>
 
-<body>
-    <header>
-        <h1 id="title-HowToUse">How to use</h1>
-        <h1 id="title-PenroseGraphicalNotation">Penrose's Graphical Notation</h1>
-        <h2 id="title-forVectors">for Levi-Civita symbol</h2>
-        <h3 id="title-withSomeFormulas">with some formulae</h3>
-    </header>
+    <body>
+        <header>
+            <h1 id="title-HowToUse">How to use</h1>
+            <h1 id="title-PenroseGraphicalNotation">Penrose's Graphical Notation</h1>
+            <h2 id="title-forVectors">for Levi-Civita symbol</h2>
+            <h3 id="title-withSomeFormulas">with some formulae</h3>
+        </header>
 
-    <section id="introduction">
-        <p>In this page, the knowledge about</p>
-        <ul>
-            <li>Index notation of vectors and tensors</li>
-            <li>Covariance and contravariance (upper and lower indices)</li>
-            <li>Levi-Civita symbol</li>
-            <li>Kronecker delta</li>
-        </ul>
-        <p>is necessary.</p>
-    </section>
-
-    <section id="index">
-        <h1>Index</h1>
-        <ul>
-            <li><a href="#fundamentals">Fundamentals</a></li>
-            <li><a href="#dim3">3-dim</a></li>
+        <section id="introduction">
+            <p>In this page, the knowledge about</p>
             <ul>
-                <li><a href="#dim3-general">Contraction in general case</a></li>
-                <li><a href="#dim3-formulas">Contraction formulas</a></li>
+                <li>Index notation of vectors and tensors</li>
+                <li>Covariance and contravariance (upper and lower indices)</li>
+                <li>Levi-Civita symbol</li>
+                <li>Kronecker delta</li>
             </ul>
-            <li><a href="#dim4">4-dim</a></li>
+            <p>is necessary.</p>
+        </section>
+
+        <section id="index">
+            <h1>Index</h1>
             <ul>
-                <li><a href="#dim4-general">Contraction in general case</a></li>
-                <li><a href="#dim4-formulas">Contraction formulas</a></li>
+                <li><a href="#fundamentals">Fundamentals</a></li>
+                <li><a href="#dim3">3-dim</a></li>
+                <ul>
+                    <li><a href="#dim3-general">Contraction in general case</a></li>
+                    <li><a href="#dim3-formulas">Contraction formulas</a></li>
+                </ul>
+                <li><a href="#dim4">4-dim</a></li>
+                <ul>
+                    <li><a href="#dim4-general">Contraction in general case</a></li>
+                    <li><a href="#dim4-formulas">Contraction formulas</a></li>
+                </ul>
             </ul>
-        </ul>
-    </section>
+        </section>
 
-    <section id="fundamentals">
-        <h1>Fundamentals</h1>
-        <div class="subsection">
-            <p>
-                In Penrose graphical notation, a tensor is represented as a box with as many sticks as its order.
-                It is possible to distinguish between covariance and contravariance.
-                The downward stick represents covariance, and upward contravariance.
-            </p>
-            <figure>
-                <img src="fig/covar-contravar.png" alt="">
-            </figure>
-            <p>Kronecker delta is represented as a stick.</p>
-            <figure>
-                <img src="fig/Kronecker-delta.png" alt="">
-            </figure>
-        </div>
+        <section id="fundamentals">
+            <h1>Fundamentals</h1>
+            <div class="subsection">
+                <p>
+                    In Penrose graphical notation, a tensor is represented as a box with as many sticks as its order.
+                    It is possible to distinguish between covariance and contravariance.
+                    The downward stick represents covariance, and upward contravariance.
+                </p>
+                <figure>
+                    <img src="img/covar-contravar.png" alt="" width="200">
+                </figure>
+                <p>Kronecker delta is represented as a stick.</p>
+                <figure>
+                    <img src="img/Kronecker-delta.png" alt="" width="200">
+                </figure>
+            </div>
 
-        <div class="subsection">
-            <p>
-                A horizontal thick stick represents antisymmetry.
-                Odd substitution of the position of the vertical stick reverses the sign.
-                In this notation, Levi-Civita symbol is displayed as below:
-            </p>
-            <figure>
-                <img src="fig/levi-civita.png" alt="">
-            </figure>
-            <p>
-                The product of covariant and contravariant Levi-Civita symbols \(\epsilon^{ij\cdots k}\epsilon_{pq\cdots
-                r}\) is drawn as the below, according to <a
-                    href="https://homepages.math.uic.edu/~kauffman/Penrose.pdf">Penrose's article</a>.
-            </p>
-            <figure>
-                <img src="fig/levicivita-product.png" alt="">
-            </figure>
-        </div>
-    </section>
+            <div class="subsection">
+                <p>
+                    A horizontal thick stick represents antisymmetry.
+                    Odd substitution of the position of the vertical stick reverses the sign.
+                    In this notation, Levi-Civita symbol is displayed as below:
+                </p>
+                <figure>
+                    <img src="img/levi-civita.png" alt="" width="400">
+                </figure>
+                <p>
+                    The product of covariant and contravariant Levi-Civita symbols \(\epsilon^{ij\cdots k}\epsilon_{pq\cdots
+                    r}\) is drawn as the below, according to <a
+                        href="https://homepages.math.uic.edu/~kauffman/Penrose.pdf">Penrose's article</a>.
+                </p>
+                <figure>
+                    <img src="img/levicivita-product.png" alt="" width="300">
+                </figure>
+            </div>
+        </section>
 
-    <section id="dim3">
-        <h1>3-dim</h1>
+        <section id="dim3">
+            <h1>3-dim</h1>
 
-        <div class="subsection" id="dim3-general">
-            <h2>Contraction in general case</h2>
-            \begin{align}
-            \epsilon^{ijk}\epsilon_{pqr}
-            =
-            \left|
-            \begin{matrix}
-            \delta^i_p & \delta^i_q & \delta^i_r
-            \\
-            \delta^j_p & \delta^j_q & \delta^j_r
-            \\
-            \delta^k_p & \delta^k_q & \delta^k_r
-            \end{matrix}
-            \right|
-            \end{align}
-            <p>
-                This formula is represented with Kronecker delta as the belows:
-            </p>
-            <figure>
-                <img src="fig/levi3-product.png" alt="">
-            </figure>
-            <p>
-                Connect top three points and bottom without leaks and doubles.
-                That is, the number of terms is permutation 3!.
-                The signing can be determined to some extent by "how many intersections there are".
-                Nevertheless, as shown in the figure below, this rule can be broken if the line is written in a
-                circuitous manner, so it is safe to consider "how many substitutions will return to the
-                even-substitution form."
-            </p>
-        </div>
+            <div class="subsection" id="dim3-general">
+                <h2>Contraction in general case</h2>
+                \begin{align}
+                \epsilon^{ijk}\epsilon_{pqr}
+                =
+                \left|
+                \begin{matrix}
+                \delta^i_p & \delta^i_q & \delta^i_r
+                \\
+                \delta^j_p & \delta^j_q & \delta^j_r
+                \\
+                \delta^k_p & \delta^k_q & \delta^k_r
+                \end{matrix}
+                \right|
+                \end{align}
+                <p>
+                    This formula is represented with Kronecker delta as the belows:
+                </p>
+                <figure>
+                    <img src="img/levi3-product.png" alt="" width="550">
+                </figure>
+                <p>
+                    Connect top three points and bottom without leaks and doubles.
+                    That is, the number of terms is permutation 3!.
+                    The signing can be determined to some extent by "how many intersections there are".
+                    Nevertheless, as shown in the figure below, this rule can be broken if the line is written in a
+                    circuitous manner, so it is safe to consider "how many substitutions will return to the
+                    even-substitution form."
+                </p>
+            </div>
 
-        <div class="subsection" id="dim3-formulas">
-            <h2>Contraction formulas</h2>
-            <p>
-                When using Levi-Civita symbol, some indexes are usually the same; connect the same indexes with
-                Kronecker delta.
-            </p>
-            <figure>
-                <img src="fig/levi3-1contr.png" alt="">
-                <figcaption>
-                    \(\epsilon^{ijk}\epsilon_{pqk}=\epsilon^{ij}\epsilon_{pq}=\delta^i_p\delta^j_q-\delta^i_q\delta^j_p\)
-                </figcaption>
-            </figure>
-            <p>
-                In case two or more kinds of indexes are the same, you have to consider permutation, because the same
-                indexes are reversible.
-            </p>
-            <figure>
-                <img src="fig/levi3-2contr.png" alt="">
-                <figcaption>\(\epsilon^{ijk}\epsilon_{pjk}=2!\epsilon^{i}\epsilon_{p}=2!\delta^i_p\)</figcaption>
-            </figure>
-            <p>
-                If all indexes are the same, \(\epsilon^{ijk}\epsilon_{ijk}=3!\).
-            </p>
-            <figure>
-                <img src="fig/levi3-3contr.png">
-                <figcaption>
-                    \(\epsilon^{ijk}\epsilon_{ijk}=3!\)
-                </figcaption>
-            </figure>
-        </div>
-    </section>
+            <div class="subsection" id="dim3-formulas">
+                <h2>Contraction formulas</h2>
+                <p>
+                    When using Levi-Civita symbol, some indexes are usually the same; connect the same indexes with
+                    Kronecker delta.
+                </p>
+                <figure>
+                    <img src="img/levi3-1contr.png" alt="" width="650">
+                    <figcaption>
+                        \(\epsilon^{ijk}\epsilon_{pqk}=\epsilon^{ij}\epsilon_{pq}=\delta^i_p\delta^j_q-\delta^i_q\delta^j_p\)
+                    </figcaption>
+                </figure>
+                <p>
+                    In case two or more kinds of indexes are the same, you have to consider permutation, because the same
+                    indexes are reversible.
+                </p>
+                <figure>
+                    <img src="img/levi3-2contr.png" alt="" width="250">
+                    <figcaption>\(\epsilon^{ijk}\epsilon_{pjk}=2!\epsilon^{i}\epsilon_{p}=2!\delta^i_p\)</figcaption>
+                </figure>
+                <p>
+                    If all indexes are the same, \(\epsilon^{ijk}\epsilon_{ijk}=3!\).
+                </p>
+                <figure>
+                    <img src="img/levi3-3contr.png" width="250">
+                    <figcaption>
+                        \(\epsilon^{ijk}\epsilon_{ijk}=3!\)
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
 
-    <section id="dim4">
-        <h1>4-dim</h1>
-        <p>
-            As well as 3-dimensional Levi-Civita symbol, though Minkovski metric changes some signs.
-        </p>
+        <section id="dim4">
+            <h1>4-dim</h1>
+            <p>
+                As well as 3-dimensional Levi-Civita symbol, though Minkovski metric changes some signs.
+            </p>
 
-        <div class="subsection" id="dim4-general">
-            <h2>Contraction in general case</h2>
-            \begin{align}
-            \epsilon^{ijkl}\epsilon_{pqrs}
-            =
-            \left|
-            \begin{matrix}
-            \delta^i_p & \delta^i_q & \delta^i_r & \delta^i_s
-            \\
-            \delta^j_p & \delta^j_q & \delta^j_r & \delta^j_s
-            \\
-            \delta^k_p & \delta^k_q & \delta^k_r & \delta^k_s
-            \\
-            \delta^l_p & \delta^l_q & \delta^l_r & \delta^l_s
-            \end{matrix}
-            \right|
-            \end{align}
-            <p>
-                This formula is represented with Kronecker delta as the below figure.
-            </p>
-            <figure>
-                <img src="fig/levi4-product.png" alt="">
-            </figure>
-        </div>
+            <div class="subsection" id="dim4-general">
+                <h2>Contraction in general case</h2>
+                \begin{align}
+                \epsilon^{ijkl}\epsilon_{pqrs}
+                =
+                \left|
+                \begin{matrix}
+                \delta^i_p & \delta^i_q & \delta^i_r & \delta^i_s
+                \\
+                \delta^j_p & \delta^j_q & \delta^j_r & \delta^j_s
+                \\
+                \delta^k_p & \delta^k_q & \delta^k_r & \delta^k_s
+                \\
+                \delta^l_p & \delta^l_q & \delta^l_r & \delta^l_s
+                \end{matrix}
+                \right|
+                \end{align}
+                <p>
+                    This formula is represented with Kronecker delta as the below figure.
+                </p>
+                <figure>
+                    <img src="img/levi4-product.png" alt="" width="450">
+                </figure>
+            </div>
 
-        <div class="subsection" id="dim4-formulas">
-            <h2>Contraction formulas</h2>
-            <p>
-                You can calculate contraction formulas as of 3-dim.
-            </p>
-            <figure>
-                <img src="fig/levi4-1contr.png" alt="">
-                <figcaption>
-                    \(
-                    \epsilon^{ijkl}\epsilon_{pqrl}
-                    =
-                    \epsilon^{ijk}\epsilon_{pqr}
-                    =
-                    \left|
-                    \begin{matrix}
-                    \delta^i_p & \delta^i_q & \delta^i_r
-                    \\
-                    \delta^j_p & \delta^j_q & \delta^j_r
-                    \\
-                    \delta^k_p & \delta^k_q & \delta^k_r
-                    \end{matrix}
-                    \right|
-                    \)
-                </figcaption>
-            </figure>
-            <p>
-                It is wiser to leave Levi-Civita symbols than to calculate it.
-                The permutation follows as well as 3-dim.
-            </p>
-            <figure>
-                <img src="fig/levi4-2contr.png" alt="">
-                <figcaption>
-                    \(
-                    \epsilon^{ijkl}\epsilon_{pqkl}
-                    =
-                    2!\epsilon^{ij}\epsilon_{pq}
-                    =
-                    2
-                    \left|
-                    \begin{matrix}
-                    \delta^i_p & \delta^i_q
-                    \\
-                    \delta^j_p & \delta^j_q
-                    \end{matrix}
-                    \right|
-                    \)
-                </figcaption>
-            </figure>
-            <figure>
-                <img src="fig/levi4-3contr.png" alt="">
-                <figcaption>
-                    \(
-                    \epsilon^{ijkl}\epsilon_{pjkl}
-                    =
-                    3!\epsilon^i\epsilon_p
-                    =
-                    6\delta^i_p
-                    \)
-                </figcaption>
-            </figure>
-            <p>
-                If all indexes are the same, \(\epsilon^{ijkl}\epsilon_{ijkl}=4!=24\).
-            </p>
-            <figure>
-                <img src="fig/levi4-4contr.png" alt="">
-            </figure>
-        </div>
+            <div class="subsection" id="dim4-formulas">
+                <h2>Contraction formulas</h2>
+                <p>
+                    You can calculate contraction formulas as of 3-dim.
+                </p>
+                <figure>
+                    <img src="img/levi4-1contr.png" alt="" width="200">
+                    <figcaption>
+                        \(
+                        \epsilon^{ijkl}\epsilon_{pqrl}
+                        =
+                        \epsilon^{ijk}\epsilon_{pqr}
+                        =
+                        \left|
+                        \begin{matrix}
+                        \delta^i_p & \delta^i_q & \delta^i_r
+                        \\
+                        \delta^j_p & \delta^j_q & \delta^j_r
+                        \\
+                        \delta^k_p & \delta^k_q & \delta^k_r
+                        \end{matrix}
+                        \right|
+                        \)
+                    </figcaption>
+                </figure>
+                <p>
+                    It is wiser to leave Levi-Civita symbols than to calculate it.
+                    The permutation follows as well as 3-dim.
+                </p>
+                <figure>
+                    <img src="img/levi4-2contr.png" alt="" width="200">
+                    <figcaption>
+                        \(
+                        \epsilon^{ijkl}\epsilon_{pqkl}
+                        =
+                        2!\epsilon^{ij}\epsilon_{pq}
+                        =
+                        2
+                        \left|
+                        \begin{matrix}
+                        \delta^i_p & \delta^i_q
+                        \\
+                        \delta^j_p & \delta^j_q
+                        \end{matrix}
+                        \right|
+                        \)
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="img/levi4-3contr.png" alt="" width="200">
+                    <figcaption>
+                        \(
+                        \epsilon^{ijkl}\epsilon_{pjkl}
+                        =
+                        3!\epsilon^i\epsilon_p
+                        =
+                        6\delta^i_p
+                        \)
+                    </figcaption>
+                </figure>
+                <p>
+                    If all indexes are the same, \(\epsilon^{ijkl}\epsilon_{ijkl}=4!=24\).
+                </p>
+                <figure>
+                    <img src="img/levi4-4contr.png" alt="" width="200">
+                </figure>
+            </div>
 
-        <div class="subsection">
-            <h2>Minkovski metric</h2>
+            <div class="subsection">
+                <h2>Minkovski metric</h2>
+                <p>
+                    The above argument only holds in Euclid metric, \(g_{ij}=g^{ij}=\delta_{ij}\).
+                    Since the three spacial or one time component of metric tensor is negative in Minkovski metric,
+                    covariant and contravariant tensor has opposite signs.
+                </p>
+                \begin{align}
+                \epsilon^{ijkl}=g^i_pg^j_qg^k_rg^l_s\epsilon_{pqrs}=-\epsilon_{pqrs}
+                \qquad
+                (\{i,j,k,l\}=\{p,q,r,s\}=\{0,1,2,3\})
+                \end{align}
+                <p>
+                    Therefore, <b>the signs of all the result above is reversed</b>.
+                    That is,
+                </p>
+                \begin{align}
+                \begin{array}{rcl}
+                \epsilon^{ijkl}\epsilon_{pqrl}
+                &=&
+                -
+                \left|
+                \begin{matrix}
+                \delta^i_p & \delta^i_q & \delta^i_r
+                \\
+                \delta^j_p & \delta^j_q & \delta^j_r
+                \\
+                \delta^k_p & \Delta^k_q & \delta^k_r
+                \end{matrix}
+                \right|,
+                \\
+                \epsilon^{ijkl}\epsilon_{pqkl}
+                &=&
+                -2
+                \left|
+                \begin{matrix}
+                \delta^i_p & \delta^i_q
+                \\
+                \delta^j_p & \delta^j_q
+                \end{matrix}
+                \right|,
+                \\
+                \epsilon^{ijkl}\epsilon_{pjkl}
+                &=&
+                -6\delta^i_p,
+                \\
+                \epsilon^{ijkl}\epsilon_{ijkl}
+                &=&
+                -24.
+                \end{array}
+                \end{align}
+            </div>
             <p>
-                The above argument only holds in Euclid metric, \(g_{ij}=g^{ij}=\delta_{ij}\).
-                Since the three spacial or one time component of metric tensor is negative in Minkovski metric,
-                covariant and contravariant tensor has opposite signs.
+                This is what is written on <i>The classical Theory of Fields</i> by L. D. Landau and E. M. Lifshitz.
             </p>
-            \begin{align}
-            \epsilon^{ijkl}=g^i_pg^j_qg^k_rg^l_s\epsilon_{pqrs}=-\epsilon_{pqrs}
-            \qquad
-            (\{i,j,k,l\}=\{p,q,r,s\}=\{0,1,2,3\})
-            \end{align}
-            <p>
-                Therefore, <b>the signs of all the result above is reversed</b>.
-                That is,
-            </p>
-            \begin{align}
-            \begin{array}{rcl}
-            \epsilon^{ijkl}\epsilon_{pqrl}
-            &=&
-            -
-            \left|
-            \begin{matrix}
-            \delta^i_p & \delta^i_q & \delta^i_r
-            \\
-            \delta^j_p & \delta^j_q & \delta^j_r
-            \\
-            \delta^k_p & \Delta^k_q & \delta^k_r
-            \end{matrix}
-            \right|,
-            \\
-            \epsilon^{ijkl}\epsilon_{pqkl}
-            &=&
-            -2
-            \left|
-            \begin{matrix}
-            \delta^i_p & \delta^i_q
-            \\
-            \delta^j_p & \delta^j_q
-            \end{matrix}
-            \right|,
-            \\
-            \epsilon^{ijkl}\epsilon_{pjkl}
-            &=&
-            -6\delta^i_p,
-            \\
-            \epsilon^{ijkl}\epsilon_{ijkl}
-            &=&
-            -24.
-            \end{array}
-            \end{align}
-        </div>
-        <p>
-            This is what is written on <i>The classical Theory of Fields</i> by L. D. Landau and E. M. Lifshitz.
-        </p>
-    </section>
+        </section>
 
-    <footer>
-        <h3>© Teion</h3>
-        <p><a href="#">PAGE TOP</a></p>
-        <p><a href="https://lowtonevoice.github.io">HOME</a></p>
-        <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
-        <p><a href="https://note.com/teion_burns">note</a></p>
-        <p><a href="https://lowtonevoice.github.io/privacy_policy">Privacy policy</a></p>
-    </footer>
-</body>
+        <footer>
+            <h3>© Teion</h3>
+            <p><a href="#">PAGE TOP</a></p>
+            <p><a href="https://lowtonevoice.github.io">HOME</a></p>
+            <p><a href="https://twitter.com/teion_burns">Twitter</a></p>
+            <p><a href="https://note.com/teion_burns">note</a></p>
+            <p><a href="https://lowtonevoice.github.io/privacy_policy">Privacy policy</a></p>
+        </footer>
+    </body>
 
-</html>
+    </html>

@@ -1,0 +1,67 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \node at(1.8,-1)[anchor=center]{$=$};
+    \coordinate(origin2)at(2.75,-.5);
+    \node at(3.6,-1)[anchor=center]{$-$};
+    \coordinate(origin3)at(4.5,-.5);
+    \node at(5.4,-1)[anchor=center]{$=$};
+    \coordinate(origin4)at(6.25,-.5);
+    \node at(7.1,-1)[anchor=center]{$-$};
+    \coordinate(origin5)at(8,-.5);
+    % LHS
+    \draw[ultra thick]
+        (origin1)--++(1.1,0)
+        ($(origin1)-(0,1)$)--++(1.1,0)
+    ;
+    \draw
+        (origin1)--++(0,-.25)
+        ++(.6,.25)--++(0,-.25) node[anchor=north](dv1){}
+        ++(.5,.25)--++(0,-1.0)
+        ($(origin1)+(0.6,-1)$)--++(0,-.25) node[anchor=north,draw,rectangle](v1){$\bm{v}$}
+        (v1.center)circle[radius=.3]
+        (v1.center)circle[radius=.4]
+        (dv1.north)--++(.2,-.85)
+        ($(origin1)+(0,-1)$)|-++(.3,-.4)
+    ;
+    % RHS up
+    \draw
+        ($(origin2)+(0,-.5)$)
+        node[anchor=north,draw,rectangle](v2){$\bm{v}$}
+        (v2.north)--++(0,.5)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(-.2,0)
+        -- ++(0,-.35)
+        (v2.center)circle[radius=.4]
+        (v2.center)circle[radius=.3]
+        ($(v2.center)+(.15,.25)$)--++(0,.45)
+    ;
+    \draw
+        ($(origin3)+(0,-.5)$)
+        node[anchor=north,draw,rectangle](v3){$\bm{v}$}
+        (v3.north)--++(0,.5)
+        ($(v3.north)+(.1,.2)$)--++(0,.4)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+        --++(0,-.7)
+        (v3.center) circle[radius=.4]
+        (v3.center) circle[radius=.3]
+    ;
+    \draw
+        ($(origin4)+(0,-.5)$)
+        node[anchor=north,draw,rectangle](v4){$\bm{v}$}
+        (v4.north)--++(0,.5)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(-.1,0)
+        -- ++(0,-.425)
+        (v4.center)circle[radius=.4]
+        (v4.center)circle[radius=.3]
+        ($(v4.center)+(.15,.375)$)--++(0,.45)
+    ;
+    \draw
+        ($(origin5)+(0,-.5)$)
+        node[anchor=north,draw,rectangle](v5){$\bm{v}$}
+        (v5.north)--++(0,.5)
+        ($(v5.north)+(.1,.2)$)--++(0,.4)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+        --++(0,-.7)
+        (v5.center) circle[radius=.4]
+        (v5.center) circle[radius=.3]
+    ;
+\end{tikzpicture}

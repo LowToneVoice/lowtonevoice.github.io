@@ -1,0 +1,46 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(-.3,0);
+    \coordinate(origin2)at(3,0);
+    \coordinate(origin3)at(5.5,0);
+    \node at(-.4,0)[anchor=east]{$(\dd{}\iota_V+\iota_V\dd{})$};
+    \node at(2.,0)[anchor=center]{$=$};
+    \node at(2.5,0)[anchor=center]{$k$};
+    \node at(5,0)[anchor=center]{$+$};
+
+    % LHS
+    \draw[ultra thick](origin1)--++(1.5,0);
+    \draw($(origin1)+(0,.25)$)rectangle++(1.5,.4);
+    \node at($(origin1)+(.75,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin1)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+    ($(origin1)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+
+    % 1st term
+    \draw[ultra thick]($(origin2)+(.0,0)$)--++(1.5,0);
+    \draw($(origin2)+(0,.75)$)rectangle++(1.5,.4);
+    \node at($(origin2)+(.75,.95)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin2)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+    ++(.5,.1)--++(0,-1)
+    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+    ($(origin2)+(1.4,.75)$)--++(0,-1)
+    (V)circle[radius=.3]
+    ++(0,-.3)--($(origin2)+(.1,0)$)--++(0,-.25)
+    ;
+
+    % 2nd term
+    \draw[ultra thick]($(origin3)+(.4,0)$)--++(1.4,0);
+    \draw($(origin3)+(.3,.25)$)rectangle++(1.5,.4);
+    \node at($(origin3)+(1.05,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin3)+(.5,.25)$)--++(0,-.5)
+    ++(.4,.5)--++(0,-.5)
+    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+    ($(origin3)+(1.7,.25)$)--++(0,-.5);
+    \draw
+    ($(origin3)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+    ($(origin3)+(.05,.4)$)--++(0,-.65)node[anchor=north, draw, rectangle]{$V$}
+    ;
+\end{tikzpicture}

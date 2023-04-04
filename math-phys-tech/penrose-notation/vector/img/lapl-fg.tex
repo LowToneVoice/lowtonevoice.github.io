@@ -1,0 +1,77 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(2.8,0);
+    \coordinate(origin3)at(5.6,0);
+    \coordinate(origin4)at(2.8,-2);
+    \coordinate(origin5)at(5.6,-2);
+    \coordinate(origin6)at(8.4,-2);
+    \coordinate(origin7)at(11.2,-2);
+    \node[anchor=center]at(1.4,0){$=$};
+    \node[anchor=center]at(4.2,0){$+$};
+    \node[anchor=center]at(1.4,-2){$=$};
+    \node[anchor=center]at(4.2,-2){$+$};
+    \node[anchor=center]at(7,-2){$+$};
+    \node[anchor=center]at(9.8,-2){$+$};
+    % LHS
+    \draw
+        ($(origin1)+(-.4,0)$) node[anchor=center,draw,rectangle]{$f$}
+        ($(origin1)+(.4,0)$) node[anchor=center,draw,rectangle]{$g$}
+        (origin1)circle[x radius=1,y radius=.4]
+        (origin1)circle[x radius=1.1,y radius=.5]
+        ++(0,.4)--++(0,.5)
+        .. controls ++(.0,.2) and ++(.,.2) .. ++(.2,0)
+        --++(0,-.4)
+    ;
+    % RHS up
+    \draw
+        ($(origin2)+(-.4,0)$) node[anchor=center,draw,rectangle](A){$f$}
+        ($(origin2)+(.4,0)$) node[anchor=center,draw,rectangle]{$g$}
+        (A)circle[radius=.4]
+        ++(0,.4)--++(0,.5)
+        (origin2)circle[x radius=1.1,y radius=.5]
+        ++(0,.5)--++(0,.4)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(-.4,0)
+    ;
+    \draw
+        ($(origin3)+(-.4,0)$) node[anchor=center,draw,rectangle]{$f$}
+        ($(origin3)+(.4,0)$) node[anchor=center,draw,rectangle](B){$g$}
+        (B)circle[radius=.4]
+        ++(0,.4)--++(0,.5)
+        (origin3)circle[x radius=1.1,y radius=.5]
+        ++(0,.5)--++(0,.4)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(.4,0)
+    ;
+    % RHS down
+    \draw
+        ($(origin4)+(-.4,0)$) node[anchor=center,draw,rectangle](A){$f$}
+        ($(origin4)+(.4,0)$) node[anchor=center,draw,rectangle]{$g$}
+        (A)circle[radius=.4]
+        ++(0,.4)--++(0,.5)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+        --++(0,-.45)
+        (A)circle[radius=.5]
+    ;
+    \draw
+    ($(origin5)+(-.5,0)$) node[anchor=center,draw,rectangle](A){$f$}
+    ($(origin5)+(.5,0)$) node[anchor=center,draw,rectangle](B){$g$}
+    (A)circle[radius=.4]
+    ++(.4,0)--++(.2,0)
+    (B)circle[radius=.4]
+    ;
+    \draw
+    ($(origin6)+(-.5,0)$) node[anchor=center,draw,rectangle](A){$f$}
+    ($(origin6)+(.5,0)$) node[anchor=center,draw,rectangle](B){$g$}
+    (A)circle[radius=.4]
+    ++(.4,0)--++(.2,0)
+    (B)circle[radius=.4]
+    ;
+    \draw
+    ($(origin7)+(-.4,0)$) node[anchor=center,draw,rectangle]{$f$}
+    ($(origin7)+(.4,0)$) node[anchor=center,draw,rectangle](B){$g$}
+    (B)circle[radius=.4]
+    ++(0,.4)--++(0,.5)
+    .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+    --++(0,-.45)
+    (B)circle[radius=.5]
+    ;
+\end{tikzpicture}
