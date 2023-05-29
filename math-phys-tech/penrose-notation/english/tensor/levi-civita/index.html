@@ -30,6 +30,8 @@
                 <li>Covariance and contravariance (upper and lower indices)</li>
                 <li>Levi-Civita symbol</li>
                 <li>Kronecker delta</li>
+                <li>Determinant</li>
+                <li>Inverse matrix</li>
             </ul>
             <p>is necessary.</p>
             <p><a href="../../main.pdf">PDF version</a> is also available.</p>
@@ -39,6 +41,12 @@
             <h1>Index</h1>
             <ul>
                 <li><a href="#fundamentals">Fundamentals</a></li>
+                <li><a href="#det-inv">Determinant and inverse matrix</a></li>
+                <ul>
+                    <li><a href="determinant">Determinant</a></li>
+                    <li><a href="cofactor-expansion">Cofactor expansion</a></li>
+                    <li><a href="inverse-mat">Inverse matrix</a></li>
+                </ul>
                 <li><a href="#dim3">3-dim</a></li>
                 <ul>
                     <li><a href="#dim3-general">Contraction in general case</a></li>
@@ -85,6 +93,151 @@
                 </p>
                 <figure>
                     <img src="img/levicivita-product.png" alt="" width="300">
+                </figure>
+            </div>
+        </section>
+
+        <section id="det-inv">
+            <h1>Determinant and inverse matrix</h1>
+            <p>
+                Levi-Civita symbols are often used for determinants and inverse matrices.
+                From now on, we have the lower indices to represent rows, and upper indices to represent columns;
+            </p>
+            \begin{align}
+                M
+                =
+                \left(\begin{matrix}
+                    a & b \\ c & d
+                \end{matrix}\right)
+                \Longrightarrow
+                M_1^2=b.
+            \end{align}
+
+            <div class="subsection" id="determinant">
+                <h2>Determinant</h2>
+                <p>According to the definition, \(n\times n\) matrix \(M\) satisfies</p>
+                \[
+                    \det M
+                    =
+                    \sum_{\sigma\in\mathfrak{S}_n}
+                    \mathrm{sgn}(\sigma)
+                    M_1^{\sigma_1}\cdots M_n^{\sigma_n},
+                \]
+                <p>
+                    with symmetry group \(\mathfrak{S}_n\).
+                    Note that the sign of permutation is equivalent to that of Levi-Civita symbol, i.e. \(\mathrm{sgn}(\sigma)=\epsilon_{\sigma_1\cdots\sigma_n}^{1\cdots n}\).
+                    Therefore
+                </p>
+                \[
+                    \det M
+                    =
+                    \epsilon_{\sigma_1\cdots\sigma_n}^{1\cdots n}
+                    M_1^{\sigma_1}\cdots M_n^{\sigma_n},
+                \]
+                <p>
+                    but it is diﬃcult to manipulate the lower indices in this notation, then we use the following representation:
+                </p>
+                \[
+                    \det M
+                    =
+                    \epsilon_{\sigma_1\cdots\sigma_n}^{1\cdots n}
+                    \epsilon^{\tau_1\cdots\tau_n}_{1\cdots n}
+                    M_1^{\sigma_1}\cdots M_n^{\sigma_n}
+                \]
+                <p>
+                    Drawing this in graphical notation, we get
+                </p>
+                <figure>
+                    <img src="img/determinant.png" alt="" width="300">
+                </figure>
+            </div>
+
+            <div class="subsection" id="cofactor-expansion">
+                <h2>Cofactor expansion</h2>
+                <p>
+                    Since we get the representation of determinant in graphical notation, we anticipate that cofactor expansion can be interpreted in an intrinsic way.
+                    Using the notation of determinant with two Levi-Civita symbols,
+                </p>
+                \[
+                    \det M
+                    =
+                    \frac{1}{n}
+                    \sum_{i,j}
+                    (-1)^{i+j}
+                    M_i^j
+                    \frac{1}{(n-1)!}
+                    \epsilon_{\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}^{1\cdots i-1,i+1\cdots n}
+                    \epsilon^{\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}_{1\cdots j-1,j+1\cdots n}
+                    M_{\tau_1}^{\sigma_1}
+                    \cdots
+                    M_{\tau_n}^{\sigma_n}.
+                \]
+                <p>
+                    \(\sigma_k, \tau_k\) runs \(\{1, \cdots, i-1, i+1, \cdots, n\}, \{1, \cdots, j-1, j+1, \cdots, n\}\), respectively.
+                    Remark that Levi-Civita part is
+                </p>
+                \begin{align}
+                    &\epsilon_{\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}^{1\cdots i-1,i+1\cdots n}
+                    \epsilon^{\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}_{1\cdots j-1,j+1\cdots n}
+                    \\&\qquad=
+                    \epsilon_{\sigma_1\cdots\sigma_{i-1}i\sigma_{i+1}\cdots\sigma_n}^{1\cdots i-1,i,i+1\cdots n}
+                    \epsilon^{\tau_1\cdots\tau_{j-1}j\tau_{j+1}\cdots\tau_n}_{1\cdots j-1,j,j+1\cdots n}
+                    \\&\qquad=
+                    \delta_{\sigma_i}^i\delta_j^{\tau_j}
+                    \epsilon_{\sigma_1\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\cdots\sigma_n}^{1\cdots i-1,i,i+1\cdots n}
+                    \epsilon^{\tau_1\cdots\tau_{j-1}\tau_j\tau_{j+1}\cdots\tau_n}_{1\cdots j-1,j,j+1\cdots n}
+                    \\&\qquad=
+                    (-1)^{i+j}
+                    \delta_{\sigma_i}^i
+                    \delta_j^{\tau_j}
+                    \epsilon_{\sigma_1\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\cdots\sigma_n}^{1\cdots i-1,i,i+1\cdots n}
+                    \epsilon^{\tau_1\cdots\tau_{j-1}\tau_j\tau_{j+1}\cdots\tau_n}_{1\cdots j-1,j,j+1\cdots n}
+                \end{align}
+                <p>
+                    thus
+                </p>
+                \[
+                    \det M
+                    =
+                    \frac{1}{n}M_{\sigma_i}^{\tau_j}
+                    \frac{1}{(n-1)!}
+                    \epsilon_{\sigma_1\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\cdots\sigma_n}^{1\cdots i-1,i,i+1\cdots n}
+                    \epsilon^{\tau_1\cdots\tau_{j-1}\tau_j\tau_{j+1}\cdots\tau_n}_{1\cdots j-1,j,j+1\cdots n}
+                    M_{\tau_1}^{\sigma_1}
+                    \cdots
+                    M_{\tau_n}^{\sigma_n}.
+                \]
+                <p>
+                    Comparing with graphical notation of determinant, \(M_{\tau_j}^{\sigma_i}\) corresponds to the
+                    first \(M\) , and remaining \(n-1 \:M\)'s composes a cofactor.
+                </p>
+                <figure>
+                    <img src="img/cofactor-expans.png" alt="" width="300">
+                </figure>
+                <p>
+                    If you do not run either index of Levi-Civita symbols, the branch of the fist \(M\) is cut oﬀ to
+                leave the same indices:
+                </p>
+                <figure>
+                    <img src="img/cofactor-expans-i.png" alt="" width="300">
+                </figure>
+                <p>
+                    This has to be the product of matrix \(M\) and its adjugate \(\tilde{M}\).
+                    Thus the adjugate
+                    matrix is,
+                </p>
+                <figure>
+                    <img src="img/adjugate.png" alt="" width="300">
+                </figure>
+            </div>
+
+            <div class="subsection" id="inverse-mat">
+                <h3>Inverse matrix</h3>
+                <p>
+                    According to definition, \(M^{-1}=\tilde{M}/\det M\), i.e.,
+                </p>
+                <figure>
+                    <img src="img/inverse.png" alt="" width="300">
                 </figure>
             </div>
         </section>
