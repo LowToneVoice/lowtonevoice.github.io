@@ -11,7 +11,8 @@
         src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
         </script>
     <!-- Google Adsense -->
-    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
+    <!-- <meta name="google-adsense-account" content="ca-pub-1940086759620462">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1940086759620462"
         crossorigin="anonymous"></script> -->
 </head>
 
@@ -40,22 +41,23 @@
             \(\partial_iA^jB^k=\partial_i(A^j)B^k\).
         </p>
         <p>
-            We write the symmetric group of degree \(n\) as \(\mathfrak{S}\), and the sign of \(P\in\mathfrak{S}\) as \(\mathrm{sgn}(P)\).
+            We write the symmetric group of degree \(n\) as \(\mathfrak{S}\), and the sign of \(P\in\mathfrak{S}\) as
+            \(\mathrm{sgn}(P)\).
             We define Levi-Civita symbol as the follows:
             \[
-                \epsilon_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_k}
-                \equiv
-                \det\left(
-                    \begin{matrix}
-                        \delta_{\nu_1}^{\mu_1} & \cdots & \delta_{\nu_k}^{\mu_1}
-                        \\
-                        \vdots & \ddots & \vdots
-                        \\
-                        \delta_{\nu_1}^{\mu_k} & \delta_{\nu_k}^{\mu_k}
-                    \end{matrix}
-                \right)
-                =
-                \sum
+            \epsilon_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_k}
+            \equiv
+            \det\left(
+            \begin{matrix}
+            \delta_{\nu_1}^{\mu_1} & \cdots & \delta_{\nu_k}^{\mu_1}
+            \\
+            \vdots & \ddots & \vdots
+            \\
+            \delta_{\nu_1}^{\mu_k} & \delta_{\nu_k}^{\mu_k}
+            \end{matrix}
+            \right)
+            =
+            \sum
             \]
         </p>
     </section>
@@ -87,29 +89,29 @@
             <p>
                 Basis of k-form is
                 \[
-                    dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
-                    =
-                    \sum_{P\in\mathfrak{S}}
-                    \mathrm{sgn}(P)
-                    dx^{\mu_{P(1)}}\otimes\cdots
-                    \otimes dx^{\mu_{P(k)}}
-                    =
-                    \epsilon_{\mu_1'\cdots\mu_k'}^{\mu_1\cdots\mu_k}
-                    dx^{\mu_1'}\otimes\cdots
-                    \otimes dx^{\mu_k'}
+                dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                =
+                \sum_{P\in\mathfrak{S}}
+                \mathrm{sgn}(P)
+                dx^{\mu_{P(1)}}\otimes\cdots
+                \otimes dx^{\mu_{P(k)}}
+                =
+                \epsilon_{\mu_1'\cdots\mu_k'}^{\mu_1\cdots\mu_k}
+                dx^{\mu_1'}\otimes\cdots
+                \otimes dx^{\mu_k'}
                 \]
                 so that
                 \[
-                    \omega
-                    =
-                    \omega_{\mu_1\cdots\mu_k}
-                    dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
-                    =
-                    \omega_{\mu_1\cdots\mu_k}
-                    \epsilon_{\mu_1'\cdots\mu_k'}^{\mu_1\cdots\mu_k}
-                    dx^{\mu_1'}\otimes\cdots
-                    \otimes dx^{\mu_k'}
-                    .
+                \omega
+                =
+                \omega_{\mu_1\cdots\mu_k}
+                dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                =
+                \omega_{\mu_1\cdots\mu_k}
+                \epsilon_{\mu_1'\cdots\mu_k'}^{\mu_1\cdots\mu_k}
+                dx^{\mu_1'}\otimes\cdots
+                \otimes dx^{\mu_k'}
+                .
                 \]
             </p>
             <p>
@@ -121,7 +123,8 @@
             <p>
                 A thick line represents Levi-Civita symbol.
                 The rectangle labeled \(\omega\) means \(\omega_{\mu_1'\cdots\mu_k'}\).
-                This entire symbol reflects \(\omega_{\mu_1'\cdots\mu_k'}\epsilon_{\mu_1\cdots\mu_k}^{\mu_1'\cdots\mu_k'}\).
+                This entire symbol reflects
+                \(\omega_{\mu_1'\cdots\mu_k'}\epsilon_{\mu_1\cdots\mu_k}^{\mu_1'\cdots\mu_k'}\).
             </p>
             <p>
                 We do not write symbols of basis \(dx\), since it is difficult to represent the basis.
@@ -135,61 +138,61 @@
                 Lie derivative for a tensor is computed as
                 \[
                 \begin{array}{ll}
-                    &
-                    \mathcal{L}_V
-                    (
-                        t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
-                        \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
-                        \otimes
-                        dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
-                    )
-                    \\
-                    &=
-                    V^\lambda\partial_\lambda
-                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
-                    \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
-                    \otimes
-                    dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
-                    \\
-                    &\qquad
-                    -
-                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
-                    \partial_{\mu_1}
-                    V^\lambda\partial_\lambda
-                    \otimes\cdots\otimes\partial_{\mu_l}
-                    \otimes
-                    dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
-                    \\
-                    &\qquad-\cdots
-                    \\
-                    &\qquad
-                    -
-                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
-                    \partial_{\mu_1}
-                    \otimes\cdots\otimes
-                    \partial_{\mu_l}V^\lambda\partial_\lambda
-                    \otimes
-                    dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
-                    \\
-                    &\qquad
-                    +
-                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
-                    \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
-                    \otimes
-                    \partial_\lambda V^{\nu_1}
-                    dx^{\lambda}\otimes\cdots\otimes dx^{\nu_k}
-                    \\
-                    &\qquad+\cdots
-                    \\
-                    &\qquad
-                    +
-                    t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
-                    \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
-                    \otimes
-                    dx^{\nu_1}
-                    \otimes\cdots\otimes
-                    \partial_\lambda V^{\nu_k}
-                    dx^{\lambda}
+                &
+                \mathcal{L}_V
+                (
+                t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                \otimes
+                dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                )
+                \\
+                &=
+                V^\lambda\partial_\lambda
+                t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                \otimes
+                dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                \\
+                &\qquad
+                -
+                t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                \partial_{\mu_1}
+                V^\lambda\partial_\lambda
+                \otimes\cdots\otimes\partial_{\mu_l}
+                \otimes
+                dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                \\
+                &\qquad-\cdots
+                \\
+                &\qquad
+                -
+                t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                \partial_{\mu_1}
+                \otimes\cdots\otimes
+                \partial_{\mu_l}V^\lambda\partial_\lambda
+                \otimes
+                dx^{\nu_1}\otimes\cdots\otimes dx^{\nu_k}
+                \\
+                &\qquad
+                +
+                t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                \otimes
+                \partial_\lambda V^{\nu_1}
+                dx^{\lambda}\otimes\cdots\otimes dx^{\nu_k}
+                \\
+                &\qquad+\cdots
+                \\
+                &\qquad
+                +
+                t^{\mu_1\cdots\mu_l}_{\nu_1\cdots\nu_k}
+                \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+                \otimes
+                dx^{\nu_1}
+                \otimes\cdots\otimes
+                \partial_\lambda V^{\nu_k}
+                dx^{\lambda}
                 \end{array}
                 \]
                 This is drawn as the follows in Penrose's graphical notation:
@@ -205,29 +208,29 @@
                 Wedge product satisfies
                 \[
                 \begin{array}{ll}
-                    &
-                    (
-                        \xi_{\mu_1\cdots\mu_k}
-                        dx^{\mu_1}
-                        \wedge\cdots\wedge
-                        dx^{\mu_k}
-                    )
-                    \wedge
-                    (
-                        \eta_{\mu_{k+1}\cdots\mu_{k+l}}
-                        dx^{\mu_{k+1}}
-                        \wedge\cdots\wedge
-                        dx^{\mu_{k+l}}
-                    )
-                    \\
-                    &=
-                    \xi_{\mu_1\cdots\mu_k}
-                    \eta_{\mu_{k+1}\cdots\mu_{k+l}}
-                    \epsilon^{\mu_1\cdots\mu_k\mu_{k+1}\cdots\mu_{k+l}}_{\mu_1'\cdots\mu_k'\mu_{k+1}'\cdots\mu_{k+l}'}
-                    dx^{\mu_1'}
-                    \otimes\cdots\otimes
-                    dx^{\mu_{k+l}'}
-                    .
+                &
+                (
+                \xi_{\mu_1\cdots\mu_k}
+                dx^{\mu_1}
+                \wedge\cdots\wedge
+                dx^{\mu_k}
+                )
+                \wedge
+                (
+                \eta_{\mu_{k+1}\cdots\mu_{k+l}}
+                dx^{\mu_{k+1}}
+                \wedge\cdots\wedge
+                dx^{\mu_{k+l}}
+                )
+                \\
+                &=
+                \xi_{\mu_1\cdots\mu_k}
+                \eta_{\mu_{k+1}\cdots\mu_{k+l}}
+                \epsilon^{\mu_1\cdots\mu_k\mu_{k+1}\cdots\mu_{k+l}}_{\mu_1'\cdots\mu_k'\mu_{k+1}'\cdots\mu_{k+l}'}
+                dx^{\mu_1'}
+                \otimes\cdots\otimes
+                dx^{\mu_{k+l}'}
+                .
                 \end{array}
                 \]
                 This is represented in Penrose's graphical notation by connecting thick lines of Levi-Civita symbols.
@@ -242,17 +245,18 @@
             <p>
                 Exterior product is written as
                 \[
-                    d(
-                        \omega_{\mu_1\cdots\mu_k}
-                        dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
-                    )
-                    =
-                    \partial_{\mu_0}
-                    \omega_{\mu_1\cdots\mu_k}
-                    dx^{\mu_0}\wedge dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
-                    .
+                d(
+                \omega_{\mu_1\cdots\mu_k}
+                dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                )
+                =
+                \partial_{\mu_0}
+                \omega_{\mu_1\cdots\mu_k}
+                dx^{\mu_0}\wedge dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                .
                 \]
-                In graphical notation, we draw an eclipse around rectangle of the component, stick a branch from the eclipse at the beginning of the thick line:
+                In graphical notation, we draw an eclipse around rectangle of the component, stick a branch from the
+                eclipse at the beginning of the thick line:
             </p>
             <figure>
                 <img src="img/exterior.png" alt="" width="300">
@@ -264,18 +268,18 @@
             <p>
                 Interior product is computed as
                 \[
-                    \iota_V
-                    (
-                        \omega_{\mu_1\cdots\mu_k}
-                        dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
-                    )
-                    =
-                    \omega_{\mu_1\cdots\mu_k}
-                    \epsilon^{\mu_1\cdots\mu_k}_{\mu_1'\cdots\mu_k'}
-                    V^{\mu_1'}dx^{\mu_2'}
-                    \otimes\cdots\otimes
-                    dx^{\mu_k'}
-                    .
+                \iota_V
+                (
+                \omega_{\mu_1\cdots\mu_k}
+                dx^{\mu_1}\wedge\cdots\wedge dx^{\mu_k}
+                )
+                =
+                \omega_{\mu_1\cdots\mu_k}
+                \epsilon^{\mu_1\cdots\mu_k}_{\mu_1'\cdots\mu_k'}
+                V^{\mu_1'}dx^{\mu_2'}
+                \otimes\cdots\otimes
+                dx^{\mu_k'}
+                .
                 \]
                 In graphical notation, the branch at the beginning is connected to \(V\).
             </p>
@@ -306,13 +310,13 @@
             <p>
                 You can write interior product, putting the first branch off the thick line.
                 \[
-                    \iota_V\omega
-                    =
-                    k\omega_{\mu_1\cdots\mu_k}
-                    \epsilon^{\mu_2\cdots\mu_k}_{\mu_2'\cdots\mu_k'}
-                    V^{\mu_1'}dx^{\mu_2'}
-                    \otimes\cdots\otimes
-                    dx^{\mu_k'}
+                \iota_V\omega
+                =
+                k\omega_{\mu_1\cdots\mu_k}
+                \epsilon^{\mu_2\cdots\mu_k}_{\mu_2'\cdots\mu_k'}
+                V^{\mu_1'}dx^{\mu_2'}
+                \otimes\cdots\otimes
+                dx^{\mu_k'}
                 \]
                 Remark that the index of Levi-Civita symbol starts from \(\mu_2\).
             </p>
