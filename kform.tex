@@ -1,0 +1,1695 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{penrosetensor}
+
+\begin{document}
+
+\section{微分形式の公式の表現}
+\label{sec: k-form}
+
+\subsection{前提知識・表記上の注意}
+
+本節では
+\begin{itemize}
+    \item 微分形式の定義
+    \item 完全反対称Levi-Civitaテンソル
+    \item wedge積
+    \item 外微分
+    \item 内部積
+    \item Hodge作用素
+\end{itemize}
+の知識を前提とする.
+
+基本的に添字を使う場合はEinsteinの縮約記法に従って表す.
+また, 微分記号$\partial_i$は括弧を使わない限り\textbf{常に直後の量のみを微分する}.
+すなわち, $\partial_iA^jB^k=\partial_i(A^j)B^k$.
+
+$n$次対称群を$\mathfrak{S}_n$で表し, $P\in\mathfrak{S}_n$の符号を$\sgn(P)$とする.
+$k$階の完全反対称Levi-Civitaテンソルは以下で定義する.
+\begin{align*}
+    &
+    \epsilon_{\mu_1\cdots\mu_k}
+    \equiv
+    \det\mqty(
+        \delta_{\mu_1}^1 & \cdots & \delta_{\mu_k}^1
+        \\
+        \vdots & \ddots & \vdots
+        \\
+        \delta_{\mu_1}^k & \cdots & \delta_{\mu_k}^k
+    )
+    =
+    \sum_{P\in\mathfrak{S}_n}\sgn(P)
+    \delta_{\mu_1}^{P(1)}
+    \cdots
+    \delta_{\mu_k}^{P(k)},
+    \\
+    &
+    \epsilon^{\mu_1\cdots\mu_k}
+    \equiv
+    \delta^{\mu_1\nu_1}\cdots\delta^{\mu_k\nu_k}
+    \epsilon_{\nu_1\cdots\nu_k},
+    \\
+    &
+    \epsilon_{\mu_1\cdots\mu_k}^{\nu_1\cdots\nu_k}
+    \equiv
+    \epsilon_{\mu_1\cdots\mu_k}
+    \epsilon^{\nu_1\cdots\nu_k}
+\end{align*}
+ただし\ref{sec: k-form: differential form on riemann manifold}で扱うRiemann多様体の場合は
+\begin{equation}
+    \label{eq: k-form: contravariant Levi-Civita}
+    \epsilon^{\mu_1\cdots\mu_k}
+    \equiv
+    g^{\mu_1\nu_1}\cdots g^{\mu_k\nu_k}
+\end{equation}
+とする.
+
+
+
+\subsection{微分形式及び各種演算}
+
+\subsubsection{k-form}
+
+k-formの基底は座標基底の双対基底で
+\begin{align*}
+    \dd{x}^{\mu_1}\wedge\cdots\wedge\dd{x}^{\mu_k}
+    =
+    \sum_{P\in\mathfrak{S}_k}\sgn(P)\dd{x}^{\mu_{P(1)}}\otimes\cdots\otimes\dd{x}^{\mu_{P(k)}}
+    =
+    \epsilon^{\mu_1\cdots\mu_k}_{\mu_1'\cdots\mu_k'}\dd{x}^{\mu_1'}\otimes\cdots\otimes\dd{x}^{\mu_k'}
+\end{align*}
+と表せ, 成分と合わせると
+\begin{align*}
+    \omega
+    \equiv
+    \frac{1}{k!}
+    \omega_{\mu_1\cdots\mu_k}\dd{x}^{\mu_1}\wedge\cdots\wedge\dd{x}^{\mu_k}
+    =
+    \frac{1}{k!}
+    \omega_{\mu_1\cdots\mu_k}\epsilon^{\mu_1\cdots\mu_k}_{\mu_1'\cdots\mu_k'}
+    \dd{x}^{\mu_1'}\otimes\cdots\otimes\dd{x}^{\mu_k'}
+\end{align*}
+である.
+
+Levi-Civitaテンソルの表現をもとにk-formは以下のように表される.
+\begin{equation*}
+    \frac{1}{k!}
+    \omega_{\mu_1\cdots\mu_k}
+    =
+    \frac{1}{k!}
+    \vcenter{\hbox{\input{img/k-form/k-form.tex}}}
+\end{equation*}
+太線はLevi-Civitaテンソルを表し, $\omega$とラベリングされている長方形は係数を表す.
+
+グラフ記法では基底を表すのが難しいので, 原則として$\dd{x}$などの記号は書かない.
+上に開いている脚は座標基底$\partial_\mu$に, 下に開いている脚は双対基底$\dd{x}^\mu$に繋がっていると解釈する.
+
+
+\subsubsection{Lie微分}
+
+テンソルに対するLie微分は一般に
+\begin{equation}
+    \label{eq: Lie derivative}
+    \begin{split}
+        &
+        \mathcal{L}_V\qty(
+            t_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_l}
+            \partial_{\mu_1}\otimes\cdots\partial_{\mu_l}
+            \otimes\dd{x}^{\nu_1}\otimes\cdots\otimes\dd{x}^{\nu_k}
+        )
+        \\
+        &=
+        V^\lambda\partial_\lambda t_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_l}
+        \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+        \otimes\dd{x}^{\nu_1}\otimes\cdots\otimes\dd{x}^{\nu_k}
+        \\
+        &\quad
+        -
+        t_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_l}
+        \partial_{\mu_1}V^\lambda\partial_\lambda\otimes\cdots\otimes\partial_{\mu_l}
+        \otimes\dd{x}^{\nu_1}\otimes\cdots\otimes\dd{x}^{\nu_k}
+        \\
+        &\quad
+        -\cdots
+        \\
+        &\quad
+        -
+        t_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_l}
+        \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}V^\lambda\partial_\lambda
+        \otimes\dd{x}^{\nu_1}\otimes\cdots\otimes\dd{x}^{\nu_k}
+        \\
+        &\quad
+        +
+        t_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_l}
+        \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+        \otimes \partial_\lambda V^{\nu_1}\dd{x}^{\lambda}\otimes\cdots\otimes\dd{x}^{\nu_k}
+        \\
+        &\quad
+        +\cdots
+        \\
+        &\quad
+        +
+        t_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_l}
+        \partial_{\mu_1}\otimes\cdots\otimes\partial_{\mu_l}
+        \otimes\dd{x}^{\nu_1}\otimes\cdots\otimes\partial_\lambda V^{\nu_k}\dd{x}^{\lambda}
+    \end{split}
+\end{equation}
+で表される.
+
+これをPenroseのグラフ記法で表すと以下の通り.
+\begin{equation*}
+    \vcenter{\hbox{\input{
+    img/k-form/Liederiv.tex}}}
+\end{equation*}
+\eqref{eq: Lie derivative}の表示でも使える直観的な作用素の付き方の判別法を紹介しよう.
+微分作用素$V=V^\mu\partial_\mu$はLeibnitz ruleに従って各々の要素を微分していく.
+成分$t_{\nu_1\cdots\nu_k}^{\mu_1\cdots\mu_l}$を微分する際は特に何も考えず丸で囲って脚を$V$に繋げれば良い.
+座標基底$\partial_\mu$に作用する際は, 成分の四角と基底から伸びる脚の間に$V^\mu$と$\partial_\nu$が差し込まれる.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/k-form/LieVector.tex}}}
+    \qquad
+    \vcenter{\hbox{\input{img/k-form/LieCovector.tex}}}
+\end{equation*}
+$V^\mu$を反変で, $\partial_\nu$を共変で差し込める形状は左図の形のみである.
+同様にして双対基底$\dd{x}^\mu$に作用する場合を考えると, 右の場合だけが許される.
+
+
+\subsubsection{wedge積}
+
+外積(wedge積)は
+$\xi\in\Omega^k(M), \eta\in\Omega^l(M)$に対して
+\begin{align*}
+    (\xi\wedge\eta)(V_1,\cdots,V_{k+l})
+    =
+    \frac{1}{k!l!}
+    \sum_{P\in\mathfrak{S}_{k+l}}\sgn(P)\xi(V_{P(1)},\cdots V_{P(k)})\eta(V_{P(k+1)},\cdots V_{P(k+l)})
+\end{align*}
+で定義されるが,
+成分表示してベクトルを除くと
+\begin{equation*}
+    \begin{split}
+        &
+        \qty(
+            \frac{1}{k!}
+            \xi_{\mu_1\cdots\mu_k}
+            \dd{x}^{\mu_1}
+            \wedge\cdots\wedge
+            \dd{x}^{\mu_k}
+        )
+        \wedge
+        \qty(
+            \frac{1}{l!}
+            \eta_{\mu_{k+1}\cdots\mu_{k+l}}
+            \dd{x}^{\mu_{k+1}}
+            \wedge\cdots\wedge
+            \dd{x}^{\mu_{k+l}}
+        )
+        \\
+        &=
+        \frac{1}{k!l!}
+        \xi_{\mu_1\cdots\mu_k}
+        \eta_{\mu_{k+1}\cdots\mu_{k+l}}
+        \dd{x}^{\mu_1}
+        \wedge\cdots\wedge
+        \dd{x}^{\mu_{k+l}}
+        \\
+        &=
+        \frac{1}{k!l!}
+        \xi_{\mu_1\cdots\mu_k}
+        \eta_{\mu_{k+1}\cdots\mu_{k+l}}
+        \epsilon^{\mu_1\cdots\mu_k\mu_{k+1}\cdots\mu_{k+l}}_{\mu_1'\cdots\mu_k'\mu_{k+1}'\cdots\mu_{k+l}}
+        \dd{x}^{\mu_1'}
+        \otimes\cdots\otimes
+        \dd{x}^{\mu_{k+l}'}
+    \end{split}
+\end{equation*}
+となる.
+
+グラフ記法では, 2つの微分形式それぞれを貫くLevi-Civita記号の太線をつなげることでwedge積を表す.
+\begin{equation*}
+    % xi
+    \frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin)at(0,0);
+            \draw[ultra thick](origin)--++(1.5,0);
+            \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+            \node at($(origin)+(.75,.45)$)[anchor=center]{$\xi$};
+            \draw
+                ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north]{$\mu_1$}
+                ++(.4,.5)--++(0,-.5)node[anchor=north]{$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north]{$\mu_k$}
+            ;
+        \end{tikzpicture}
+    }}
+    \wedge
+    % eta
+    \frac{1}{l!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin)at(0,0);
+            \draw[ultra thick](origin)--++(1.5,0);
+            \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+            \node at($(origin)+(.75,.45)$)[anchor=center]{$\eta$};
+            \draw
+                ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+1}$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+l}$}
+            ;
+        \end{tikzpicture}
+    }}
+    =
+    % xi wedge eta
+    \frac{1}{k!l!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin)at(0,0);
+            \draw[ultra thick](origin)--++(3.6,0);
+            \draw
+                ($(origin)+(0,.25)$)rectangle++(1.5,.4)
+                ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{1}$}
+                ++(.4,0)node[anchor=center]{$\cdots$}
+                ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k}$};
+                \node at($(origin)+(.75,.45)$)[anchor=center]{$\xi$}
+            ;
+            \draw
+                ($(origin)+(2.1,.25)$)rectangle++(1.5,.4)
+                ($(origin)+(2.2,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+1}$}
+                ++(.5,0)node[anchor=center]{$\cdots$}
+                ($(origin)+(3.5,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+l}$};
+                \node at($(origin)+(2.8,.45)$)[anchor=center]{$\eta$}
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation*}
+
+
+\subsubsection{外微分}
+
+外微分は
+\begin{equation*}
+    \label{eq: d omega}
+    \begin{split}
+        \dd{\qty(
+            \frac{1}{k!}
+            \omega_{\mu_1\cdots\mu_k}
+            \dd{x}^{\mu_1}
+            \wedge\cdots\wedge
+            \dd{x}^{\mu_k}
+        )}
+        &=
+        \frac{1}{k!}
+        \partial_{\mu_0}\omega_{\mu_1\cdots\mu_k}
+        \dd{x}^{\mu_0}\wedge\dd{x}^{\mu_1}\wedge\cdots\wedge\dd{x}^{\mu_k}
+        \\
+        &=
+        \frac{1}{k!}
+        \partial_{\mu_0}\omega_{\mu_1\cdots\mu_k}
+        \epsilon^{\mu_0\mu_1\cdots\mu_k}_{\mu_0'\mu_1'\cdots\mu_k'}
+        \dd{x}^{\mu_0'}\otimes\cdots\otimes\dd{x}^{\mu_k'}
+    \end{split}
+\end{equation*}
+で表される.
+
+グラフ記法では係数を表す四角を微分記号の丸で囲い, 出した脚を太線の先頭に差し込む.
+\begin{equation*}
+    \dd{\qty(
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \draw[ultra thick](origin1)--++(1.5,0);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+                    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$}
+                ;
+            \end{tikzpicture}
+        }}
+    )}
+    =
+    % RHS
+    \frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin)at(0,0);
+            \draw[ultra thick](origin)--++(1.8,0);
+            \draw($(origin)+(.3,.25)$)rectangle++(1.5,.4);
+            \node at($(origin)+(1.05,.45)$)[anchor=center]{$\omega$};
+            \draw
+                ($(origin)+(.4,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+                ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin)+(1.7,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+                \draw
+                ($(origin)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+                ($(origin)+(.05,.4)$)--++(0,-.65)node[anchor=north]{$\mu_0$}
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation*}
+
+
+\subsubsection{内部積}
+\label{sec: interior}
+
+内部積は
+\begin{align*}
+    \iota_V\omega(V_1\cdots V_{k-1})
+    =
+    \omega(V,V_1\cdots V_{k-1})
+\end{align*}
+で定義されるが, これも成分表示によって
+\begin{align*}
+    \label{eq: interior product}
+    \iota_V\qty(
+        \frac{1}{k!}
+        \omega_{\mu_1\cdots\mu_k}
+        \dd{x}^{\mu_1}
+        \wedge\cdots\wedge
+        \dd{x}^{\mu_k}
+    )
+    =
+    \frac{1}{k!}
+    \omega_{\mu_1\cdots\mu_k}
+    \epsilon_{\mu_1'\cdots\mu_k'}^{\mu_1\cdots\mu_k}
+    V^{\mu_1'}\dd{x}^{\mu_2'}
+    \otimes\cdots\otimes
+    \dd{x}^{\mu_k'}
+\end{align*}
+となる.
+
+グラフ記法で表すと, 先頭の脚を$V$で潰す形になる.
+\begin{equation*}
+    % LHS
+    \iota_V
+    \qty(
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \draw[ultra thick](origin)--++(1.5,0);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+                    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$}
+                ;
+            \end{tikzpicture}
+        }}
+    )
+    =
+    \frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin)at(0,0);
+            \draw[ultra thick](origin)--++(1.5,0);
+            \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+            \node at($(origin)+(.75,.45)$)[anchor=center]{$\omega$};
+            \draw
+                ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$}
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation*}
+
+
+
+\subsection{微分形式の公式}
+\label{sec: k-form: formulae of k-form}
+
+上記の表記を応用して微分形式の公式を直観的に導出する.
+なお以下の導出はEinsteinの縮約記法を使っても, グラフ記法の流れをそのまま追うことで証明できる.
+
+\subsubsection{Poincaréの補題 $\dd{}^2=0$}
+
+微分順序の交換と反対称性を用いる.
+\begin{equation*}
+    \frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick]($(origin1)+(-.4,0)$)--++(2.5,0);
+            \draw($(origin1)+(.3,.25)$)rectangle++(1.5,.4);
+            \node at($(origin1)+(1.05,.45)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin1)+(.4,.25)$)--++(0,-.5)
+            ($(origin1)+(1.7,.25)$)--++(0,-.5);
+            \draw
+            ($(origin1)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+            ($(origin1)+(1.05,.45)$)circle[x radius=1.1,y radius=.4]
+            ++(-1.1,0)-|++(-.3,-.7)
+            ($(origin1)+(.05,.4)$)--++(0,-.65)
+            ;
+        \end{tikzpicture}
+    }}
+    =
+    \frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick]($(origin2)+(-.4,0)$)--++(2.5,0);
+            \draw($(origin2)+(.3,.25)$)rectangle++(1.5,.4);
+            \node at($(origin2)+(1.05,.45)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin2)+(.4,.25)$)--++(0,-.5)
+            ($(origin2)+(1.7,.25)$)--++(0,-.5);
+            \draw
+            ($(origin2)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+            ++(-1,0)-|++(-.35,-.7)
+            ($(origin2)+(1.05,.45)$)circle[x radius=1.1,y radius=.4]
+            ($(origin2)+(.05,.3)$)--++(0,-.525)
+            ;
+        \end{tikzpicture}
+    }}
+    =
+    -\frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick]($(origin3)+(-.4,0)$)--++(2.5,0);
+            \draw($(origin3)+(.3,.25)$)rectangle++(1.5,.4);
+            \node at($(origin3)+(1.05,.45)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin3)+(.4,.25)$)--++(0,-.5)
+            ($(origin3)+(1.7,.25)$)--++(0,-.5);
+            \draw
+            ($(origin3)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+            ($(origin3)+(1.05,.45)$)circle[x radius=1.1,y radius=.4]
+            ++(-1.1,0)-|++(-.3,-.7)
+            ($(origin3)+(.05,.4)$)--++(0,-.65)
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation*}
+左辺と右辺は符号だけが違うので, $0$のみが許される.
+
+
+\subsubsection{内部積の別表現}
+\label{sec: interior 2}
+
+内部積$\iota_V\omega$を表す方法として, ベクトル$V$で潰した$\omega$の先頭の脚をLevi-Civitaテンソルから外す表し方がある.
+\begin{align*}
+    \iota_V\omega
+    &=
+    k\frac{1}{k!}
+    \omega_{\mu_1\cdots\mu_k}\epsilon^{\mu_2\cdots\mu_k}_{\mu_2'\cdots\mu_k'}
+    V^{\mu_1'}\dd{x}^{\mu_2'}\otimes\cdots\otimes\dd{x}^{\mu_k'}
+\end{align*}
+Levi-Civitaテンソルの添字が$\mu_2, \mu_2'$から始まることに注意.
+
+これを証明するにはまず$V$がつながった脚を反対称テンソルから外す.
+\begin{equation*}
+    \begin{split}
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin1)at(0,0);
+                \draw[ultra thick](origin1)--++(1.5,0);
+                \draw($(origin1)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin1)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin1)+(.1,.25)$)--++(0,-.5)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin1)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+            \end{tikzpicture}
+        }}
+        &=
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin2)at(2.5,0);
+                \draw[ultra thick]($(origin2)+(.5,0)$)--++(1.,0);
+                \draw($(origin2)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin2)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin2)+(.1,.25)$)--++(0,-.5)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin2)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+            \end{tikzpicture}
+        }}
+        -
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin3)at(5.,0);
+                \draw[ultra thick]($(origin3)+(.5,0)$)--++(1.,0);
+                \draw($(origin3)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin3)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin3)+(.1,.25)$)--++(.5,-.25)--++(0,-.25)node[anchor=north](mu2){$\mu_2$}
+                ++(0,.5)--++(-.5,-.25)--++(0,-.25)node[anchor=north,draw,rectangle]{$V$}
+                ++(1.,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin3)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+            \end{tikzpicture}
+        }}
+        +
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin4)at(7.5,0);
+                \draw[ultra thick]($(origin4)+(.5,0)$)--++(1.,0);
+                \draw($(origin4)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin4)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin4)+(.1,.25)$)--++(.5,-.25)--++(0,-.25)node[anchor=north](mu2){$\mu_2$}
+                ++(0,.5)--++(.5,-.25)--++(0,-.25)node[anchor=north]{$\mu_3$}
+                ++(0,.5)--++(-1,-.25)--++(0,-.25)node[anchor=north,draw,rectangle]{$V$}
+                ++(1.5,0)node[anchor=center](cdots){$\cdots$}
+                ;
+            \end{tikzpicture}
+        }}
+        -
+        \cdots
+        \\
+        &=
+        \frac{k}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin5)at(3,-1.5);
+                \draw[ultra thick]($(origin5)+(.5,0)$)--++(1.,0);
+                \draw($(origin5)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin5)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin5)+(.1,.25)$)--++(0,-.5)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin5)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+            \end{tikzpicture}
+        }}
+    \end{split}
+\end{equation*}
+$\omega_{\mu_1\cdots\mu_k}$が添字に対して反対称であることに注意すると, 上図1段目右辺にて正号がつくものは偶置換で, 負号がつくものは奇置換で第1項に戻るので, 各項全て同じ値となる.
+全部で$k$項あるので2段目を得る.
+
+
+\subsubsection{Cartanの公式 $(\dd{\iota_V}+\iota_V\dd{})\omega=\mathcal{L}_V\omega$}
+
+まずは左辺を書き出してみよう.
+% 第1項について, \ref{sec: interior}で取り上げた内部積の表式にそのまま外微分を作用させようとすると, 基底の反対称テンソルにつながっている$V$が干渉してうまく微分ができない.
+% そこで反対称テンソルから成分を分離する必要に迫られる.
+% 以上の理由から,
+第1項の内部積は\ref{sec: interior 2}を使うのが良い.
+\begin{equation}
+    \label{eqfig: kform: cartan1}
+    \begin{split}
+        (\dd{\iota_V}+\iota_V\dd{})
+        \frac{1}{k!}
+        \vcenter{\hbox{\input{img/k-form/k-form.tex}}}
+        &=
+        \dd{\frac{k}{k!}}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin2)at(0,0);
+                \draw[ultra thick]($(origin2)+(.5,0)$)--++(1.,0);
+                \draw($(origin2)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin2)+(.75,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin2)+(.1,.25)$)--++(0,-.5)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin2)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+            \end{tikzpicture}
+        }}
+        +
+        \iota_V
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin3)at(6.,0);
+                \draw[ultra thick](origin3)--++(1.8,0);
+                \draw($(origin3)+(.3,.25)$)rectangle++(1.5,.4);
+                \node at($(origin3)+(1.05,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin3)+(.4,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+                ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin3)+(1.7,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+                \draw
+                ($(origin3)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+                ($(origin3)+(.05,.4)$)--++(0,-.65)node[anchor=north]{$\mu_0$}
+                ;
+            \end{tikzpicture}
+        }}
+        \\
+        &=
+        \frac{k}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin5)at(5.5,-2.5);
+                \draw[ultra thick]($(origin4)+(.0,0)$)--++(1.5,0);
+                \draw($(origin4)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin4)+(.75,.95)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin4)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.1)--++(0,-1)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin4)+(1.4,.75)$)--++(0,-1)node[anchor=north](muk){$\mu_k$}
+                ($(origin4)+(.75,.7)$)circle[x radius=1.3,y radius=.6]
+                ++(-.45,-.55)--($(origin4)+(.1,0)$)--($(origin4)+(.1,-.25)$)node[anchor=north]{$\mu_1$}
+                ;
+            \end{tikzpicture}
+        }}
+        +
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin5)at(5.5,-2.5);
+                \draw[ultra thick](origin5)--++(1.8,0);
+                \draw($(origin5)+(.3,.25)$)rectangle++(1.5,.4);
+                \node at($(origin5)+(1.05,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin5)+(.5,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+                ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin5)+(1.7,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+                \draw
+                ($(origin5)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+                ($(origin5)+(.05,.4)$)--++(0,-.65)node[anchor=north, draw, rectangle]{$V$}
+                ;
+            \end{tikzpicture}
+        }}
+    \end{split}
+\end{equation}
+第1項は微分をLeibnitz ruleによって分解する.
+\begin{equation*}
+    \frac{k}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin1)at(-.5,0);
+            \draw[ultra thick]($(origin1)+(.0,0)$)--++(1.5,0);
+            \draw($(origin1)+(0,.75)$)rectangle++(1.5,.4);
+            \node at($(origin1)+(.75,.95)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin1)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle]{$V$}
+            ++(.5,.1)--++(0,-1)
+            ++(.4,0)node[anchor=center](cdots){$\cdots$}
+            ($(origin1)+(1.4,.75)$)--++(0,-1)
+            ($(origin1)+(.75,.7)$)circle[x radius=1.3,y radius=.6]
+            ++(-.45,-.55)--($(origin1)+(.1,0)$)--($(origin1)+(.1,-.25)$)
+            ;
+        \end{tikzpicture}
+    }}
+    =
+    \frac{k}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin2)at(3,0);
+            \draw[ultra thick]($(origin2)+(.0,0)$)--++(1.5,0);
+            \draw($(origin2)+(0,.75)$)rectangle++(1.5,.4);
+            \node at($(origin2)+(.75,.95)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin2)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+            ++(.5,.1)--++(0,-1)
+            ++(.4,0)node[anchor=center](cdots){$\cdots$}
+            ($(origin2)+(1.4,.75)$)--++(0,-1)
+            (V)circle[radius=.3]
+            ++(0,-.3)--($(origin2)+(.1,0)$)--++(0,-.25)
+            ;
+        \end{tikzpicture}
+    }}
+    +
+    \frac{k}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin3)at(6.,0);
+            \draw[ultra thick]($(origin3)+(.0,0)$)--++(1.5,0);
+            \draw($(origin3)+(0,.75)$)rectangle++(1.5,.4);
+            \node at($(origin3)+(.75,.95)$)[anchor=center](omega){$\omega$};
+            \draw
+            ($(origin3)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle]{$V$}
+            ++(.5,.1)--++(0,-1)
+            ++(.4,0)node[anchor=center](cdots){$\cdots$}
+            ($(origin3)+(1.4,.75)$)--++(0,-1)
+            (omega)circle[x radius=.8, y radius=.3]
+            ++(0,-.3)--($(origin3)+(.1,0)$)--++(0,-.25)
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation*}
+\eqref{eqfig: kform: cartan1}第2項は$V$を反対称テンソルから外す.
+\begin{equation*}
+    \begin{split}
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin1)at(-.5,0);
+                \draw[ultra thick](origin1)--++(1.8,0);
+                \draw($(origin1)+(.3,.25)$)rectangle++(1.5,.4);
+                \node at($(origin1)+(1.05,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin1)+(.5,.25)$)--++(0,-.5)
+                ++(.4,.5)--++(0,-.5)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin1)+(1.7,.25)$)--++(0,-.5);
+                \draw
+                ($(origin1)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+                ($(origin1)+(.05,.4)$)--++(0,-.65)node[anchor=north, draw, rectangle]{$V$}
+                ;
+            \end{tikzpicture}
+        }}
+        &=
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin2)at(2.5,0);
+                \draw[ultra thick]($(origin2)+(.4,0)$)--++(1.4,0);
+                \draw($(origin2)+(.3,.25)$)rectangle++(1.5,.4);
+                \node at($(origin2)+(1.05,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin2)+(.5,.25)$)--++(0,-.5)
+                ++(.4,.5)--++(0,-.5)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin2)+(1.7,.25)$)--++(0,-.5);
+                \draw
+                ($(origin2)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+                ($(origin2)+(.05,.4)$)--++(0,-.65)node[anchor=north, draw, rectangle]{$V$}
+                ;
+            \end{tikzpicture}
+        }}
+        -
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin3)at(5.5,0);
+                \draw[ultra thick]($(origin3)+(.0,0)$)--++(1.5,0);
+                \draw($(origin3)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin3)+(.75,.95)$)[anchor=center](omega){$\omega$};
+                \draw
+                ($(origin3)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.1)--++(0,-1)
+                ++(.5,1)--++(0,-1)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                (omega)circle[x radius=.8, y radius=.3]
+                ++(0,-.3)--($(origin3)+(.1,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+        +
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin4)at(8.,0);
+                \draw[ultra thick]($(origin4)+(.0,0)$)--++(1.5,0);
+                \draw($(origin4)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin4)+(.75,.95)$)[anchor=center](omega){$\omega$};
+                \draw
+                ($(origin4)+(.1,.75)$)--++(.5,-.75)--++(0,-.25)
+                ++(0,1)--++(0,-.1)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.1)--++(0,-1)
+                ++(.4,-.)node[anchor=center](cdots){$\cdots$}
+                (omega)circle[x radius=.8, y radius=.3]
+                ++(-.8,0)--++(-.1,0)--($(origin4)+(.1,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+        -
+        \cdots
+        \\
+        &=
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin5)at(2.5,-2.);
+                \draw[ultra thick]($(origin5)+(.4,0)$)--++(1.4,0);
+                \draw($(origin5)+(.3,.25)$)rectangle++(1.5,.4);
+                \node at($(origin5)+(1.05,.45)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin5)+(.5,.25)$)--++(0,-.5)
+                ++(.4,.5)--++(0,-.5)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin5)+(1.7,.25)$)--++(0,-.5);
+                \draw
+                ($(origin5)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+                ($(origin5)+(.05,.4)$)--++(0,-.65)node[anchor=north, draw, rectangle]{$V$}
+                ;
+            \end{tikzpicture}
+        }}
+        -
+        \frac{k}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin6)at(5.5,-2.);
+                \draw[ultra thick]($(origin6)+(.0,0)$)--++(1.5,0);
+                \draw($(origin6)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin6)+(.75,.95)$)[anchor=center](omega){$\omega$};
+                \draw
+                ($(origin6)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle]{$V$}
+                ++(.5,.1)--++(0,-1)
+                ++(.5,1)--++(0,-1)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                (omega)circle[x radius=.8, y radius=.3]
+                ++(0,-.3)--($(origin6)+(.1,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+    \end{split}
+\end{equation*}
+1段目右辺第2項以降で, 符号が正の項は偶置換で, 負の項は奇置換で全て第2項になるので, $V$が微分に繋がっている初項を除き右辺は全て同じ項である.
+第2項以降は$V$が$\omega$に繋がる位置を考慮すると全部で$k$項あるので, 2段目を得る.
+
+従って\eqref{eqfig: kform: cartan1}は以下の形に等しい.
+\begin{equation}
+    \label{eqfig: kform: cartan4}
+    (\dd{\iota_V}+\iota_V\dd{})
+    \frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin1)at(-.3,0);
+            \draw[ultra thick](origin1)--++(1.5,0);
+            \draw($(origin1)+(0,.25)$)rectangle++(1.5,.4);
+            \node at($(origin1)+(.75,.45)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin1)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+            ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+            ++(.4,0)node[anchor=center](cdots){$\cdots$}
+            ($(origin1)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+        \end{tikzpicture}
+    }}
+    =
+    \frac{k}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin2)at(3,0);
+            \draw[ultra thick]($(origin2)+(.0,0)$)--++(1.5,0);
+            \draw($(origin2)+(0,.75)$)rectangle++(1.5,.4);
+            \node at($(origin2)+(.75,.95)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin2)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+            ++(.5,.1)--++(0,-1)
+            ++(.4,0)node[anchor=center](cdots){$\cdots$}
+            ($(origin2)+(1.4,.75)$)--++(0,-1)
+            (V)circle[radius=.3]
+            ++(0,-.3)--($(origin2)+(.1,0)$)--++(0,-.25)
+            ;
+        \end{tikzpicture}
+    }}
+    +
+    \frac{1}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin3)at(5.5,0);
+            \draw[ultra thick]($(origin3)+(.4,0)$)--++(1.4,0);
+            \draw($(origin3)+(.3,.25)$)rectangle++(1.5,.4);
+            \node at($(origin3)+(1.05,.45)$)[anchor=center]{$\omega$};
+            \draw
+            ($(origin3)+(.5,.25)$)--++(0,-.5)
+            ++(.4,.5)--++(0,-.5)
+            ++(.4,0)node[anchor=center](cdots){$\cdots$}
+            ($(origin3)+(1.7,.25)$)--++(0,-.5);
+            \draw
+            ($(origin3)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+            ($(origin3)+(.05,.4)$)--++(0,-.65)node[anchor=north, draw, rectangle]{$V$}
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation}
+さらにこの右辺第1項は$\omega_{\mu_1\cdots\mu_k}$の添字に対する反対称性から以下のように展開できる.
+\begin{equation*}
+    \begin{split}
+        \frac{k}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin2)at(3,0);
+                \draw[ultra thick]($(origin2)+(.0,0)$)--++(1.5,0);
+                \draw($(origin2)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin2)+(.75,.95)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin2)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+                ++(.5,.1)--++(0,-1)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin2)+(1.4,.75)$)--++(0,-1)
+                (V)circle[radius=.3]
+                ++(0,-.3)--($(origin2)+(.1,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+        &=
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin2)at(3,0);
+                \draw[ultra thick]($(origin2)+(.0,0)$)--++(1.5,0);
+                \draw($(origin2)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin2)+(.75,.95)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin2)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+                ++(.5,.1)--++(0,-1)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin2)+(1.4,.75)$)--++(0,-1)
+                (V)circle[radius=.3]
+                ++(0,-.3)--($(origin2)+(.1,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+        -
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin3)at(5.,0);
+                \draw[ultra thick]($(origin3)+(.0,0)$)--++(1.5,0);
+                \draw($(origin3)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin3)+(.75,.95)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin3)+(.1,.75)$)--++(0,-.6)--($(origin3)+(.6,0)$)--++(0,-.25)
+                ++(.,1)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+                ++(.5,-.9)node[anchor=center](cdots){$\cdots$}
+                ($(origin3)+(1.4,.75)$)--++(0,-1)
+                (V)circle[radius=.3]
+                ++(0,-.3)--($(origin3)+(.1,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+        +
+        \cdots
+        \\
+        &=
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin2)at(3,0);
+                \draw[ultra thick]($(origin2)+(.0,0)$)--++(1.5,0);
+                \draw($(origin2)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin2)+(.75,.95)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin2)+(.1,.75)$)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+                ++(.5,.1)--++(0,-1)
+                ++(.4,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin2)+(1.4,.75)$)--++(0,-1)
+                (V)circle[radius=.3]
+                ++(0,-.3)--($(origin2)+(.1,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+        +
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin5)at(5.,-1.5);
+                \draw[ultra thick]($(origin5)+(.0,0)$)--++(1.5,0);
+                \draw($(origin5)+(0,.75)$)rectangle++(1.5,.4);
+                \node at($(origin5)+(.75,.95)$)[anchor=center]{$\omega$};
+                \draw
+                ($(origin5)+(.1,.75)$)--++(0,-1)
+                ++(.5,1)--++(0,-.1)node[anchor=north,draw,rectangle](V){$V$}
+                ++(.4,-.75)node[anchor=center](cdots){$\cdots$}
+                ($(origin5)+(1.4,.75)$)--++(0,-1)
+                (V)circle[radius=.3]
+                ++(0,-.3)--($(origin5)+(.6,0)$)--++(0,-.25)
+                ;
+            \end{tikzpicture}
+        }}
+        +
+        \cdots
+    \end{split}
+\end{equation*}
+\eqref{eqfig: kform: cartan4}に戻すと, これはk-formのLie微分に等しい.
+よってCartanの公式を得る.
+\begin{equation}
+    \label{eq: k-form: Cartan formula result}
+    (\dd{\iota_V}+\iota_V\dd{})\omega=\mathcal{L}_V\omega
+\end{equation}
+
+
+
+\subsection{Riemann多様体上の微分形式}
+\label{sec: k-form: differential form on riemann manifold}
+
+以下では計量$g=g_{\mu\nu}\dd{x}^\mu\otimes\dd{x}^\nu$が入った$n$次元Riemann多様体または擬Riemann多様体を扱う.
+$g$を計量テンソルの絶対値を$g=\det(g_{\mu\nu})$とする.
+擬Riemann多様体まで含めると, 必ずしも正とは限らない.
+反変Levi-Civitaテンソルは
+\eqref{eq: k-form: contravariant Levi-Civita}
+によって定義する.
+
+
+\subsubsection{Hodge star}
+\label{sec: k-form: Hodge star}
+
+微分形式を$k$-formから$(n-k)$-formへ移すHodge star $*$の作用は
+\begin{equation}
+    \label{eq: k-form: Hodge star def in Einstein contraction}
+    \begin{split}
+        &
+        \ast\qty(
+            \frac{1}{k!}
+            \omega_{\mu_1\cdots\mu_k}
+            \dd{x}^{\mu_1}
+            \wedge\cdots\wedge
+            \dd{x}^{\mu_k}
+        )
+        \\
+        &\qquad
+        =
+        \frac{\sqrt{|g|}}{k!(n-k)!}
+        g^{\mu_1\nu_1}\cdots g^{\mu_k\nu_k}
+        \omega_{\nu_1\cdots\nu_k}
+        \epsilon_{\mu_1\cdots\mu_k\mu_{k+1}\cdots\mu_n}
+        \dd{x}^{\mu_{k+1}}
+        \wedge\cdots\wedge
+        \dd{x}^{\mu_n}
+        \\
+        &\qquad
+        =
+        \frac{\sqrt{|g|}}{k!(n-k)!}
+        g^{\mu_1\nu_1}\cdots g^{\mu_k\nu_k}
+        \omega_{\nu_1\cdots\nu_k}
+        \epsilon_{\mu_1\cdots\mu_k\mu_{k+1}\cdots\mu_n}
+        \epsilon^{\mu_{k+1}\cdots\mu_{n}}_{\rho_{k+1}\cdots\rho_{n}}
+        \dd{x}^{\rho_{k+1}}
+        \otimes\cdots\otimes
+        \dd{x}^{\rho_n}
+    \end{split}
+\end{equation}
+と表される.
+成分は以下のように描ける.
+\begin{equation*}
+    \ast\qty(
+        \frac{1}{k!}
+        \vcenter{\hbox{\input{img/k-form/k-form.tex}}}
+    )
+    =
+    \frac{\sqrt{|g|}}{k!(n-k)!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin)at(0,0);
+            \draw[ultra thick]($(origin)+(1.8,0)$)--++(1.2,0);
+            \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+            \draw
+                ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                (mu1.north)
+                arc(-180:0:.1)node[anchor=north](mu1up){}
+                (mu2.north)
+                arc(-180:0:.1)node[anchor=north](mu2up){}
+                (muk.north)
+                arc(-180:0:.1)node[anchor=north](mu3up){}
+                ($(origin)+(2,1.)$)--++(0,-1.25)node[anchor=north]{$\mu_{k+1}$}
+                ++(.5,.5)node[anchor=center]{$\cdots$}
+                ($(origin)+(2.9,1.)$)--++(0,-1.25)node[anchor=north]{$\mu_n$}
+            ;
+            \draw[preaction={draw,white,line width=3pt}]
+                (mu1up.north)--++(0,1.25)
+                (mu2up.north)--++(0,1.25)
+                (mu3up.north)--++(0,1.25)
+            ;
+            \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+        \end{tikzpicture}
+    }}
+    =
+    \frac{\sqrt{|g|}}{k!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(origin)at(0,0);
+            \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+            \draw
+                ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                (mu1.north)
+                arc(-180:0:.1)node[anchor=north](mu1up){}
+                (mu2.north)
+                arc(-180:0:.1)node[anchor=north](mu2up){}
+                (muk.north)
+                arc(-180:0:.1)node[anchor=north](mu3up){}
+                ($(origin)+(2,1.)$)--++(0,-1.25)node[anchor=north]{$\mu_{k+1}$}
+                ++(.5,.5)node[anchor=center]{$\cdots$}
+                ($(origin)+(2.9,1.)$)--++(0,-1.25)node[anchor=north]{$\mu_n$}
+            ;
+            \draw[preaction={draw,white,line width=3pt}]
+                (mu1up.north)--++(0,1.25)
+                (mu2up.north)--++(0,1.25)
+                (mu3up.north)--++(0,1.25)
+            ;
+            \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+        \end{tikzpicture}
+    }}
+\end{equation*}
+
+
+\subsubsection{余微分}
+
+\begin{equation*}
+    \delta
+    =
+    (-1)^{nk+n+1}\frac{g}{|g|}\ast\dd\ast
+\end{equation*}
+の$k$-form $\omega$に対する作用は, これまでの図式から以下のように計算できる.
+\begin{equation*}
+    \begin{split}
+        \delta\qty(
+            \frac{1}{k!}
+            \vcenter{\hbox{\input{img/k-form/k-form.tex}}}
+        )
+        &=
+        (-1)^{nk+n+1}
+        \frac{g}{|g|}
+        \frac{1}{k!}
+        \ast\dd
+        \qty(
+            \frac{\sqrt{|g|}}{k!(n-k)!}
+            \vcenter{\hbox{
+                \begin{tikzpicture}
+                    \coordinate(origin)at(0,0);
+                    \draw[ultra thick]($(origin)+(1.8,0)$)--++(1.2,0);
+                    \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                    \draw
+                        ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                        ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                        ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                        ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                        (mu1.north)
+                        arc(-180:0:.1)node[anchor=north](mu1up){}
+                        (mu2.north)
+                        arc(-180:0:.1)node[anchor=north](mu2up){}
+                        (muk.north)
+                        arc(-180:0:.1)node[anchor=north](mu3up){}
+                        ($(origin)+(2,1.)$)--++(0,-1.25)node[anchor=north]{}
+                        ++(.5,.5)node[anchor=center]{$\cdots$}
+                        ($(origin)+(2.9,1.)$)--++(0,-1.25)node[anchor=north]{}
+                    ;
+                    \draw[preaction={draw,white,line width=3pt}]
+                        (mu1up.north)--++(0,1.25)
+                        (mu2up.north)--++(0,1.25)
+                        (mu3up.north)--++(0,1.25)
+                    ;
+                    \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+                \end{tikzpicture}
+            }}
+        )
+        \\
+        &=
+        \frac{(-1)^{nk+n+1}}{(k!)^2(n-k)!}
+        \frac{g}{|g|}
+        \ast\qty(
+            \vcenter{\hbox{
+                \begin{tikzpicture}
+                    \coordinate(origin)at(0,0);
+                    \draw[ultra thick]($(origin)+(1.4,-.6)$)--++(1.6,0);
+                    \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                    \draw
+                        ($(origin)+(.1,.25)$)--++(0,-.3)node[anchor=north](mu1){}
+                        ++(.4,.3)--++(0,-.3)node[anchor=north](mu2){}
+                        ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                        ($(origin)+(1.4,.25)$)--++(0,-.3)node[anchor=north](muk){}
+                        (mu1.north)
+                        arc(-180:0:.1)node[anchor=north](mu1up){}
+                        (mu2.north)
+                        arc(-180:0:.1)node[anchor=north](mu2up){}
+                        (muk.north)
+                        arc(-180:0:.1)node[anchor=north](mu3up){}
+                        ($(origin)+(2,1.)$)--++(0,-1.8)node[anchor=north]{}
+                        ++(.5,.5)node[anchor=center]{$\cdots$}
+                        ($(origin)+(2.9,1.)$)--++(0,-1.8)node[anchor=north]{}
+                    ;
+                    \node at($(mu1up.north)+(-.7,0)$)[anchor=south]{$\sqrt{|g|}$};
+                    \draw
+                        (.6,.2)circle(1.3 and .6)
+                        ++(-45:1.3 and .6)--++(0,-.6)
+                        node[anchor=north](muk){}
+                    ;
+                    \draw[preaction={draw,white,line width=3pt}]
+                        (mu1up.north)--++(0,1.05)
+                        (mu2up.north)--++(0,1.05)
+                        (mu3up.north)--++(0,1.05)
+                    ;
+                    \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+                \end{tikzpicture}
+            }}
+        )
+        \\
+        &=
+        \frac{(-1)^{nk+n+1}}{(k!)^2(n-k)!}
+        \frac{g}{|g|}
+        \frac{\sqrt{|g|}}{(k-1)!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \draw[ultra thick]($(origin)+(1.4,-.6)$)--++(1.6,0);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.3)node[anchor=north](mu1){}
+                    ++(.4,.3)--++(0,-.3)node[anchor=north](mu2){}
+                    ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.3)node[anchor=north](muk){}
+                    (mu1.north)
+                    arc(-180:0:.1)node[anchor=north](mu1up){}
+                    (mu2.north)
+                    arc(-180:0:.1)node[anchor=north](mu2up){}
+                    (muk.north)
+                    arc(-180:0:.1)node[anchor=north](mu3up){}
+                    ($(origin)+(2,1.)$)--++(0,-1.8)node[anchor=north](muk+1){}
+                    ++(.5,.5)node[anchor=center]{$\cdots$}
+                    ($(origin)+(2.9,1.)$)--++(0,-1.8)node[anchor=north](mun){}
+                ;
+                \node at($(mu1up.north)+(-.7,0)$)[anchor=south]{$\sqrt{|g|}$};
+                \draw[preaction={draw,white,line width=3pt}]
+                    (mu1up.north)--++(0,1.05)
+                    (mu2up.north)--++(0,1.05)
+                    (mu3up.north)--++(0,1.05)
+                ;
+                \draw
+                    (.6,.2)circle(1.3 and .6)
+                    ++(-45:1.3 and .6)--++(0,-.6)
+                    node[anchor=north](muk){}
+                ;
+                \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+                \draw[preaction={draw,white,line width=3pt}]
+                    (muk.north)arc(-180:0:.1)
+                    --++(0,2.25)
+                    (muk+1.north)arc(-180:0:.1)
+                    --++(0,2.25)
+                    (mun.north)arc(-180:0:.1)
+                    --++(0,2.25)
+                    node[anchor=center](nun){}
+                ;
+                \draw[ultra thick]($(muk.north)+(-.1,2.25)$)--++(3,0);
+                \draw
+                    ($(nun)+(.3,0)$)--++(0,-3)
+                    ($(nun)+(1.2,0)$)--++(0,-3)
+                    ++(-.45,1)node[anchor=center]{$\cdots$}
+                ;
+                \draw[ultra thick]($(mun.south)+(.3,-.2)$)--++(1.3,0);
+            \end{tikzpicture}
+        }}
+    \end{split}
+\end{equation*}
+微分が$\omega$から直接つながる$g^{ij}$や係数$\sqrt{|g|}$にも作用していることに注意.
+
+
+\subsection{Riemann多様体上の微分形式の公式}
+\label{sec: kform: formulae of k-form on Riemann manifold}
+
+\subsubsection{Hodge starの2回作用}
+
+$M$上の$k$-form $\omega$について,
+\begin{equation*}
+    \ast\ast\omega
+    =
+    (-1)^{k(n-k)}\frac{g}{|g|}\omega
+\end{equation*}
+であることは
+\begin{equation*}
+    \begin{split}
+        \ast\ast\qty(
+            \frac{1}{k!}
+            \vcenter{\hbox{\input{img/k-form/k-form.tex}}}
+        )
+        &=
+        \frac{(\sqrt{|g|})^2}{k!(n-k)!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+                \draw[ultra thick]($(origin)+(2,2)$)--++(3.2,0);
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                    ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                    (mu1.north)
+                    arc(-180:0:.1)node[anchor=north](mu1up){}
+                    (mu2.north)
+                    arc(-180:0:.1)node[anchor=north](mu2up){}
+                    (muk.north)
+                    arc(-180:0:.1)node[anchor=north](mu3up){}
+                    ($(origin)+(2,1.)$)--++(0,-1.25)node[anchor=north](muk1){}
+                    ++(.5,.5)node[anchor=center]{$\cdots$}
+                    ($(origin)+(2.9,1.)$)--++(0,-1.25)node[anchor=north](mun){}
+                    (muk1.north)arc(-180:0:.1)node[anchor=north](muk1up){}
+                    (mun.north)arc(-180:0:.1)node[anchor=north](munup){}
+                    ($(origin)+(3.7,2.)$)--++(0,-.5)
+                    node[anchor=north]{$\mu_1$}
+                    ++(.4,.5)--++(0,-.5)
+                    node[anchor=north]{$\mu_2$}
+                    ++(.5,.2)node[anchor=center]{$\cdots$}
+                    ($(origin)+(5,2)$)--++(0,-.5)
+                    node[anchor=north]{$\mu_k$}
+                ;
+                \draw[preaction={draw,white,line width=3pt}]
+                    (mu1up.north)--++(0,1.2)
+                    (mu2up.north)--++(0,1.2)
+                    (mu3up.north)--++(0,1.2)
+                    (muk1up.north)--++(0,2.2)
+                    (munup.north)--++(0,2.2)
+                ;
+            \end{tikzpicture}
+        }}
+        \\
+        &=
+        (-1)^{k(n-k)}
+        \frac{|g|}{k!(n-k)!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+                \draw[ultra thick]($(origin)+(0,2)$)--++(3.2,0);
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                    ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                    (mu1.north)
+                    arc(-180:0:.1)node[anchor=north](mu1up){}
+                    (mu2.north)
+                    arc(-180:0:.1)node[anchor=north](mu2up){}
+                    (muk.north)
+                    arc(-180:0:.1)node[anchor=north](mu3up){}
+                    ($(origin)+(2,1.)$)--++(0,-1.25)node[anchor=north](muk1){}
+                    ++(.5,.5)node[anchor=center]{$\cdots$}
+                    ($(origin)+(2.9,1.)$)--++(0,-1.25)node[anchor=north](mun){}
+                    (muk1.north)arc(-180:0:.1)node[anchor=north](muk1up){}
+                    (mun.north)arc(-180:0:.1)node[anchor=north](munup){}
+                    ($(origin)+(.2,2.)$)--++(0,-.5)
+                    node[anchor=north]{$\mu_1$}
+                    ++(.4,.5)--++(0,-.5)
+                    node[anchor=north]{$\mu_2$}
+                    ++(.5,.2)node[anchor=center]{$\cdots$}
+                    ($(origin)+(1.5,2)$)--++(0,-.5)
+                    node[anchor=north]{$\mu_k$}
+                ;
+                \draw[preaction={draw,white,line width=3pt}]
+                    (mu1up.north)--++(0,1.2)
+                    (mu2up.north)--++(0,1.2)
+                    (mu3up.north)--++(0,1.2)
+                    (muk1up.north)--++(0,2.2)
+                    (munup.north)--++(0,2.2)
+                ;
+            \end{tikzpicture}
+        }}
+        \\
+        &=
+        (-1)^{k(n-k)}
+        \frac{|g|}{k!(n-k)!}g^{-1}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \node at($(origin)+(.75,.425)$)[anchor=center]{$\omega$};
+                \draw[ultra thick]($(origin)+(0,-.25)$)--++(3,0);
+                \draw[ultra thick]($(origin)+(0,-.75)$)--++(3.,0);
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                    ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                    ($(origin)+(2,-.25)$)--++(0,-.5)node[anchor=north](muk1){}
+                    ++(.5,.25)node[anchor=center]{$\cdots$}
+                    ($(origin)+(2.9,-.25)$)--++(0,-.5)node[anchor=north](mun){}
+                    ($(origin)+(.1,-.75)$)--++(0,-.5)
+                    node[anchor=north]{$\mu_1$}
+                    ++(.4,.5)--++(0,-.5)
+                    node[anchor=north]{$\mu_2$}
+                    ++(.5,.2)node[anchor=center]{$\cdots$}
+                    ($(origin)+(1.4,-.75)$)--++(0,-.5)
+                    node[anchor=north]{$\mu_k$}
+                ;
+            \end{tikzpicture}
+        }}
+        \qquad\because\eqref{eq: levicivita: covar-contravar change of d-component Levi-Civita}
+        \\
+        &=
+        (-1)^{k(n-k)}\frac{1}{k!(n-k)!}
+        \frac{|g|}{g}(n-k)!
+        \vcenter{\hbox{\input{img/k-form/k-form.tex}}}
+        \qquad\because\eqref{eq: levicivita: contraction of levi-civita in general dim}
+    \end{split}
+\end{equation*}
+からわかる.
+
+
+\subsubsection{微分形式の外積}
+
+$k$-form
+\begin{equation*}
+    \xi
+    =
+    \frac{1}{k!}\xi_{\mu_1\cdots\mu_k}
+    \dd{x}^{\mu_1}
+    \wedge\cdots\wedge
+    \dd{x}^{\mu_k}
+    ,\qquad
+    \eta
+    =
+    \frac{1}{k!}\eta_{\mu_1\cdots\mu_k}
+    \dd{x}^{\mu_1}
+    \wedge\cdots\wedge
+    \dd{x}^{\mu_k}
+\end{equation*}
+の外積が
+\begin{equation*}
+    \ev{\xi,\eta}
+    =
+    \xi\wedge\ast\eta
+    =
+    \frac{1}{k!}
+    \xi_{\mu_1\cdots\mu_k}\eta^{\mu_1\cdots\mu_k}
+    \sqrt{|g|}\dd{x}^1
+    \wedge\cdots\wedge\dd{x}^n
+    =
+    \ev{\eta,\xi}
+\end{equation*}
+であることは,
+\begin{equation*}
+    \begin{split}
+        \frac{1}{k!}
+        \frac{\sqrt{|g|}}{k!(n-k)!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \coordinate(origin2)at(0,-.6);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \draw(origin2)rectangle++(1.5,-.4);
+                \node at($(origin)+(0,.25)+(.9,.2)$)[anchor=center]{$\eta$};
+                \node at($(origin2)+(.75,-.2)$)[anchor=center]{$\xi$};
+                \draw[ultra thick]($(origin2)+(0,-.75)$)--++(3,0);
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                    ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                    (mu1.north)
+                    arc(-180:0:.1)node[anchor=north](mu1up){}
+                    (mu2.north)
+                    arc(-180:0:.1)node[anchor=north](mu2up){}
+                    (muk.north)
+                    arc(-180:0:.1)node[anchor=north](mu3up){}
+                    ($(origin)+(2,1.)$)--++(0,-2.75)
+                    ++(.5,1)node[anchor=center]{$\cdots$}
+                    ($(origin)+(2.9,1.)$)--++(0,-2.75)
+                ;
+                \draw[preaction={draw,white,line width=3pt}]
+                    (mu1up.north)--++(0,1.25)
+                    (mu2up.north)--++(0,1.25)
+                    (mu3up.north)--++(0,1.25)
+                ;
+                \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+                \draw
+                    ($(origin2)+(.1,-.4)$)--++(0,-.75)
+                    ($(origin2)+(.5,-.4)$)--++(0,-.75)
+                    ($(origin2)+(1.4,-.4)$)--++(0,-.75)
+                ;
+            \end{tikzpicture}
+        }}
+        &=
+        \frac{\sqrt{|g|}}{(k!)^2(n-k)!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \coordinate(origin)at(0,0);
+                \coordinate(origin2)at(0,-.6);
+                \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+                \draw(origin2)rectangle++(1.5,-.4);
+                \node at($(origin)+(0,.25)+(.9,.2)$)[anchor=center]{$\eta$};
+                \node at($(origin2)+(.75,-.2)$)[anchor=center]{$\xi$};
+                \draw[ultra thick]($(origin2)+(0,-.75)$)--++(3,0);
+                \draw
+                    ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+                    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+                    ++(.5,0)node[anchor=center](cdots){$\cdots$}
+                    ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+                    (mu1.north)
+                    arc(-180:0:.1)node[anchor=north](mu1up){}
+                    (mu2.north)
+                    arc(-180:0:.1)node[anchor=north](mu2up){}
+                    (muk.north)
+                    arc(-180:0:.1)node[anchor=north](mu3up){}
+                    ($(origin)+(2,1.)$)--++(0,-2.35)
+                    ++(.5,1)node[anchor=center]{$\cdots$}
+                    ($(origin)+(2.9,1.)$)--++(0,-2.35)
+                ;
+                \draw[preaction={draw,white,line width=3pt}]
+                    (mu1up.north)--++(0,1.25)
+                    (mu2up.north)--++(0,1.25)
+                    (mu3up.north)--++(0,1.25)
+                ;
+                \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+                \draw
+                    ($(origin2)+(.1,-.4)$)--++(0,-.35)
+                    ($(origin2)+(.5,-.4)$)--++(0,-.35)
+                    ($(origin2)+(1.4,-.4)$)--++(0,-.35)
+                ;
+                \draw[ultra thick]($(origin2)+(0,-.9)$)--++(3,0);
+                \draw
+                    ($(origin2)+(.1,-.9)$)--++(0,-.5)
+                    ($(origin2)+(.5,-.9)$)--++(0,-.5)
+                    ($(origin2)+(1.4,-.9)$)--++(0,-.5)
+                    ($(origin2)+(2,-.9)$)--++(0,-.5)
+                    ($(origin2)+(2.9,-.9)$)--++(0,-.5)
+                ;
+            \end{tikzpicture}
+        }}
+        \\
+        &=
+        \frac{1}{(k!)^2(n-k)!}
+        (n-k)!
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \node at(.75,.45)[anchor=center]{$\xi$};
+                \draw(-.2,-.25)rectangle++(1.5,-.4);
+                \node at(.5,-.45)[anchor=center]{$\eta$};
+                \draw
+                    (-.1,-.65)--++(0,-.25)
+                    arc(-180:0:.1)
+                    node[anchor=south](mu1){}
+                    (1.2,-.65)--++(0,-.25)
+                    arc(-180:0:.1)
+                    node[anchor=south](mu2){}
+                ;
+                \node at($(mu1)!.5!(mu2)$)[anchor=north]{$\dots$};
+                \draw[preaction={draw,white,line width=3pt}]
+                    (mu1.south)--++(0,1.15)
+                    (mu2.south)--++(0,1.15)
+                ;
+                \draw[ultra thick](0,0)--++(1.5,0);
+                \draw(0,.25)rectangle++(1.5,.4);
+            \end{tikzpicture}
+        }}
+        \sqrt{|g|}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \draw[ultra thick](0,0)--++(3,0);
+                \draw(.1,0)--++(0,-.5);
+                \draw(.5,0)--++(0,-.5);
+                \draw(1.4,0)--++(0,-.5);
+                \draw(2,0)--++(0,-.5);
+                \draw(2.9,0)--++(0,-.5);
+            \end{tikzpicture}
+        }}
+        \\
+        &=
+        \frac{1}{k!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \node at(.75,.45)[anchor=center]{$\xi$};
+                \draw(-.2,-.25)rectangle++(1.5,-.4);
+                \node at(.5,-.45)[anchor=center]{$\eta$};
+                \draw
+                    (-.1,-.65)--++(0,-.25)
+                    arc(-180:0:.1)
+                    node[anchor=south](mu1){}
+                    (1.2,-.65)--++(0,-.25)
+                    arc(-180:0:.1)
+                    node[anchor=south](mu2){}
+                ;
+                \node at($(mu1)!.5!(mu2)$)[anchor=north]{$\dots$};
+                \draw[preaction={draw,white,line width=3pt}]
+                    (mu1.south)--++(0,1.15)
+                    (mu2.south)--++(0,1.15)
+                ;
+                \draw(0,.25)rectangle++(1.5,.4);
+            \end{tikzpicture}
+        }}
+        \sqrt{|g|}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \draw[ultra thick](0,0)--++(3,0);
+                \draw(.1,0)--++(0,-.5);
+                \draw(.5,0)--++(0,-.5);
+                \draw(1.4,0)--++(0,-.5);
+                \draw(2,0)--++(0,-.5);
+                \draw(2.9,0)--++(0,-.5);
+            \end{tikzpicture}
+        }}
+    \end{split}
+\end{equation*}
+から得られる.
+
+
+% \subsubsection{余微分の随伴性}
+
+% $(k-1)$-form $\xi$と$k$-form $\eta$に対し,
+% \begin{equation*}
+%     \ev{\dd{\xi},\eta}
+%     =
+%     \ev{\xi, \delta\eta}
+% \end{equation*}
+% が成立する.
+% 一般的にはStokesの定理から示すが, ここでは演習として直接計算によって導く.
+% 左辺は簡単に書き下せて,
+% \begin{equation*}
+%     \ev{\dd{\xi},\eta}
+%     =
+%     \dd{\xi}\wedge\ast\eta
+%     =
+%     \frac{1}{(k-1)!}
+%     \frac{\sqrt{|g|}}{k!(n-k)!}
+%     \vcenter{\hbox{
+%         \begin{tikzpicture}
+%             \coordinate(origin)at(0,0);
+%             \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
+%             \node at(.85,.45)[anchor=center]{$\eta$};
+%             \draw
+%                 ($(origin)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){}
+%                 ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){}
+%                 ++(.5,0)node[anchor=center](cdots){$\cdots$}
+%                 ($(origin)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){}
+%                 (mu1.north)
+%                 arc(-180:0:.1)node[anchor=north](mu1up){}
+%                 (mu2.north)
+%                 arc(-180:0:.1)node[anchor=north](mu2up){}
+%                 (muk.north)
+%                 arc(-180:0:.1)node[anchor=north](mu3up){}
+%                 ($(origin)+(2,1.)$)--++(0,-2.5)node[anchor=north]{}
+%                 ++(.5,.5)node[anchor=center]{$\cdots$}
+%                 ($(origin)+(2.9,1.)$)--++(0,-2.5)node[anchor=north]{}
+%             ;
+%             \draw[preaction={draw,white,line width=3pt}]
+%                 (mu1up.north)--++(0,1.25)
+%                 (mu2up.north)--++(0,1.25)
+%                 (mu3up.north)--++(0,1.25)
+%             ;
+%             \draw[ultra thick]($(origin)+(0,1)$)--++(3,0);
+%             \draw(.4,-.6)rectangle++(1.2,-.4);
+%             \draw
+%                 (1,-.8)circle(.7 and .3)
+%                 node[anchor=center]{$\xi$}
+%                 ++(-180:.7 and .3)-|++(-.2,-.7)
+%             ;
+%             \draw[ultra thick](0,-1.25)--++(3,0);
+%             \draw
+%                 (.5,-1)--++(0,-.5)
+%                 (1.5,-1)--++(0,-.5)
+%             ;
+%         \end{tikzpicture}
+%     }}
+% \end{equation*}
+% である.
+% 右辺は
+% \begin{equation*}
+%     \frac{1}{(k-1)!}
+%     \frac{g}{|g|}(-1)^{nk+n+1}
+%     \frac{\sqrt{|g|}}{k!(n-k)!(k-1)!}
+% \end{equation*}
+
+\end{document}

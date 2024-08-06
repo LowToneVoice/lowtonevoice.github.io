@@ -1,0 +1,795 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{penrosetensor}
+
+\begin{document}
+
+\section{行列と行列式の表現}
+\label{sec: matrix}
+
+\subsection{前提知識}
+
+本節では,
+\begin{itemize}
+    \item 学部教養課程の線形代数
+    \item Einsteinの縮約記法
+    \item 完全反対称Levi-Civita記号とグラフ記法による表記
+    \item Kroneckerの$\delta$とグラフ記法による表記
+\end{itemize}
+についての知識を前提とする.
+
+
+\subsection{Penroseのグラフ記法を用いた行列の表記}
+\label{sec: matrix: display of matrix}
+
+本節での記法は正方行列であればある程度非正則でも使用できる.
+また一部の記述について, 正方行列に限らない任意の行列に拡張可能である.
+
+以降, 行列のうち行の添字を上付き, 列の添字を下付きで表すことにする.
+例えば
+\begin{align*}
+    M=\mqty(a&b\\c&d)\Longrightarrow M^1_2=b
+\end{align*}
+である.
+列ベクトルの成分を$u^i$, 行ベクトルの成分を$v_j$で表すことにする.
+\begin{equation*}
+    \bm{u}
+    =
+    \mqty(a\\b)
+    \Longrightarrow
+    u^1=a,
+    \qquad
+    \bm{v}
+    =
+    \mqty(a&b)
+    \Longrightarrow
+    v_2=b.
+\end{equation*}
+正方行列を扱う場合, $n$は行列の次元$n=\dim A$とする.
+
+
+
+\subsubsection{行列・ベクトル}
+
+グラフ記法で行列$A$は上下または左右から脚が生えたものとして表される.
+\begin{equation*}
+    A=
+    \vcenter{\hbox{\input{img/matrix/matrix.tex}}}
+\end{equation*}
+本節では右左の脚をそれぞれ行, 列の添字に対応させる.
+これに従い$A^i_j$は
+\begin{equation*}
+    A^i_j
+    =
+    \vcenter{\hbox{\input{img/matrix/mat-index.tex}}}
+\end{equation*}
+と書ける.
+
+1階のテンソルであるベクトルは\ref{sec: vector}同様に脚が1本生えたものとして表すが, 列ベクトルと行ベクトルの区別が必要となる.
+本節では脚が右に生えたら行ベクトル, 左に生えたら列ベクトルと約束する.
+\begin{equation*}
+    u_i=
+    \vcenter{\hbox{\input{img/matrix/vector.tex}}}
+    ,\qquad
+    v^j
+    =
+    \vcenter{\hbox{\input{img/matrix/covector.tex}}}
+    .
+\end{equation*}
+
+表記の都合上, 脚を上下から生やすことも少なくない.
+その場合, 上の脚を行, 下の脚を列に対応させる.
+\begin{equation*}
+    A^i_j
+    =
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \node at(0,0)[anchor=center, draw, rectangle](A){$A$};
+            \draw
+                (A.north)--++(0,.25)
+                node[anchor=south]{$i$}
+                (A.south)--++(0,-.25)
+                node[anchor=north]{$j$}
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation*}
+
+
+\subsubsection{行列積}
+
+行列積は脚をつなげて表される.
+\begin{equation*}
+    AB
+    =
+    \vcenter{\hbox{\input{img/matrix/mat-prod.tex}}}
+\end{equation*}
+実際, Kroneckerの$\delta$が\ref{sec: sec: Kronecker for tensor}で表されることを考慮すると, $(AB)^i_j=A^i_k\delta^k_lB^l_j=A^i_kB^k_j$になっている.
+
+例えばベクトル$\bm{u},\bm{v}$と合わせて
+\begin{equation*}
+    \mqty(&\bm{u}&)
+    \mqty(&&\\ &A&\\ &&)
+    \mqty( {} \\ \bm{v} \\ {} )
+    =
+    u_iA^i_jv^j
+    =
+    \vcenter{\hbox{\input{img/matrix/mat-prod-uAv.tex}}}
+\end{equation*}
+とできる.
+脚がないことから0階のテンソルすなわちスカラーであることが一目瞭然である.
+
+
+\subsubsection{トレース}
+
+トレースは行列から出た脚をつなげて表される.
+\begin{equation*}
+    \mathrm{tr}A
+    =
+    \vcenter{\hbox{\input{img/matrix/trA.tex}}}
+\end{equation*}
+成分で見ると$A^i_j\delta^j_i=A_i^i$でたしかに対角和である.
+脚がないのでスカラーである.
+
+
+\subsubsection{転置}
+
+行列の転置は脚の向きを反対側に捻じ曲げて表せる.
+\begin{equation*}
+    A^T
+    =
+    \vcenter{\hbox{\input{img/matrix/transpose.tex}}}
+\end{equation*}
+転置を取っていることが自明な場合は転置前と同じダイアグラムにして省略することがある.
+
+
+\subsubsection{和とスカラー倍}
+
+行列の和とスカラー倍は文字式同様すれば良い.
+$a, b\in\mathbb{C}$に対して
+\begin{equation*}
+    aA+bB
+    =
+    a\vcenter{\hbox{
+        \begin{tikzpicture}
+            \node at(0,0)[anchor=center, draw, rectangle](A){$A$};
+            \draw(A.west)--++(-.25,0);
+            \draw(A.east)--++(.25,0);
+        \end{tikzpicture}
+    }}
+    +
+    b
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \node at(0,0)[anchor=center, draw, rectangle](B){$B$};
+            \draw(B.west)--++(-.25,0);
+            \draw(B.east)--++(.25,0);
+        \end{tikzpicture}
+    }}
+\end{equation*}
+である.
+
+
+\subsection{行列式と逆行列}
+\label{sec: matrix: det and inverse}
+
+形状が非自明なため説明が長くなる.
+あらかじめ結論を示しておこう.
+まず行列式は
+\begin{equation}
+    \label{eq: matrix: det M result}
+    \det M
+    =
+    \frac{1}{n!}
+    \vcenter{\hbox{\input{img/matrix/determinant.tex}}}
+\end{equation}
+で表される.
+余因子行列は
+\begin{equation*}
+    \tilde{M}
+    =
+    \frac{1}{(n-1)!}
+    \vcenter{\hbox{\input{img/matrix/adjugate-nofactor.tex}}}
+\end{equation*}
+で, これによって逆行列は
+\begin{equation*}
+    M^{-1}
+    =
+    n
+    \frac{\vcenter{\hbox{\input{img/matrix/adjugate-nofactor.tex}}}}{\vcenter{\hbox{\input{img/matrix/determinant.tex}}}}
+\end{equation*}
+とできる.
+
+
+\subsubsection{行列式}
+\label{sec: levicivita: determinant}
+
+Penroseのグラフ記法で行列式を表そう.
+$n\times n$行列の行列式は
+\begin{align*}
+    \det M
+    =
+    \sum_{\sigma\in\mathfrak{S}_n}
+    \sgn(\sigma)M^1_{\sigma_1}\cdots M^n_{\sigma_n}
+\end{align*}
+で定義された.
+ここに$\mathfrak{S}_n$は$n$次対称群(置換の集合)である.
+置換の符号$\sgn(\sigma)$はLevi-Civita記号の正負に一致する.
+すなわち$\sgn(\sigma)=\epsilon^{\sigma_1\cdots\sigma_n}_{1\cdots n}$
+である.
+縮約の際に添字が取りうる値を全て走ることに注意すると,
+\begin{align*}
+    \det M
+    =
+    \epsilon^{\sigma_1\cdots\sigma_n}_{1\cdots n}
+    M^1_{\sigma_1}\cdots M^n_{\sigma_n}
+\end{align*}
+を得る.
+Einsteinの縮約記法に従えば添字は一般に重複するが, Levi-Civita記号のため$\sigma_k$に重複がある項は0となる.
+この形をそのままグラフ記法に落とし込むと行の添字を操作することが難しくなるので, 一見冗長だが
+\begin{align}
+    \label{eq: levicivita: det with levicivita}
+    \det M
+    =
+    \frac{1}{n!}
+    \epsilon^{\sigma_1\cdots\sigma_n}_{1\cdots n}
+    \epsilon_{\tau_1\cdots\tau_n}^{1\cdots n}
+    M^{\tau_1}_{\sigma_1}\cdots M^{\tau_n}_{\sigma_n}
+\end{align}
+とする.
+先頭の係数は重複を割るために入れた.
+
+これをグラフ記法で描くと以下のようになる.
+\begin{equation}
+    \label{eqfig: levicivita: determinant}
+    \det M
+    =
+    \frac{1}{n!}
+    \vcenter{\hbox{\input{img/matrix/determinant.tex}}}
+\end{equation}
+
+
+\subsubsection{余因子展開}
+
+行列式が明示的に表せたので余因子展開も直感的に解釈できると期待される.
+\begin{align}
+    \label{eq: levicivita: cofactor expans in usual way}
+    \det M
+    =
+    \sum_j (-1)^{i+j}M^i_j\det\mqty(
+        M_1^1 & \cdots & M^1_{j-1} & M^1_{j+1} & \cdots & M^1_n
+        \\
+        \vdots & & \vdots & \vdots & & \vdots
+        \\
+        M^{i-1}_1 & \cdots & M^{i-1}_{j-1} & M^{i-1}_{j+1} & \cdots & M^{i-1}_n
+        \\
+        M^{i+1}_1 & \cdots & M^{i+1}_{j-1} & M^{i+1}_{j+1} & \cdots & M^{i+1}_n
+        \\
+        \vdots & & \vdots & \vdots & & \vdots
+        \\
+        M^n_1 & \cdots & M^n_{j-1} & M^n_{j+1} & \cdots & M_n^n
+    )
+\end{align}
+ここで添字$i$は固定しているが, $i$も回した方が見通しが良い.
+可能な添字の組み合わせ$(i,j)$全てで和をとると$i$の候補として$n$個の重複が現れるので, \eqref{eq: levicivita: det with levicivita}を利用して,
+\begin{align*}
+    \det M
+    &=
+    \frac{1}{n}
+    \sum_{i,j} (-1)^{i+j}M^i_j
+    \frac{1}{(n-1)!}
+    \epsilon^{\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}_{1\cdots i-1,i+1\cdots n}
+    \epsilon^{1\cdots j-1,j+1\cdots n}_{\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}
+    M_{\sigma_1}^{\tau_1}\cdots M^{\tau_n}_{\sigma_n}
+\end{align*}
+である.
+なお, $\sigma_k, \tau_k$はそれぞれ$\{1, \cdots, i-1, i+1, \cdots, n\}, \{1, \cdots, j-1, j+1, \cdots, n\}$すなわち$i$以外, $j$以外を走る.
+% 符号$(-1)^{i+j}$もLevi-Civita記号の中に入れることができれば$n$階のLevi-Civita記号が現れ, \ref{eq: cofactor expansion in usual notation}に比べて遥かに簡単に構成できるようになる.
+Levi-Civita記号部分が
+\begin{align}
+    \label{eq: levicivita: levicivita technique for cofactor expansion}
+    \begin{split}
+        \epsilon^{1\cdots i-1,i+1\cdots n}_{\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}
+        \epsilon_{1\cdots j-1,j+1\cdots n}^{\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}
+        &=
+        \epsilon^{1\cdots i-1,i,i+1\cdots n}_{\sigma_1\cdots\sigma_{i-1},i,\sigma_{i+1}\cdots\sigma_n}
+        \epsilon_{1\cdots j-1,j,j+1\cdots n}^{\tau_1\cdots\tau_{j-1},j,\tau_{j+1}\cdots\tau_n}
+        \\
+        &=
+        \delta_i^{\sigma_i}\delta_{\tau_j}^j
+        \epsilon^{1\cdots i-1,i,i+1\cdots n}_{\sigma_1\cdots\sigma_{i-1}\sigma_i\sigma_{i+1}\cdots\sigma_n}
+        \epsilon_{1\cdots j-1,j,j+1\cdots n}^{\tau_1\cdots\tau_{j-1}\tau_j\tau_{j+1}\cdots\tau_n}
+        \\
+        &=
+        (-1)^{i+j}
+        \delta_i^{\sigma_i}\delta_{\tau_j}^j
+        \epsilon^{1\cdots i-1,i,i+1\cdots n}_{\sigma_i\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}
+        \epsilon_{1\cdots j-1,j,j+1\cdots n}^{\tau_j\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}
+    \end{split}
+\end{align}
+となることに注意して,
+\begin{align*}
+    \det M
+    &=
+    \frac{1}{n}
+    M^{\sigma_i}_{\tau_j}
+    \frac{1}{(n-1)!}
+    \epsilon^{1\cdots i-1,i,i+1\cdots n}_{\sigma_i\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}
+    \epsilon_{1\cdots j-1,j,j+1\cdots n}^{\tau_j\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}
+    M^{\sigma_1}_{\tau_1}\cdots M_{\tau_n}^{\sigma_n}
+\end{align*}
+である.
+
+行列式の図式\eqref{eqfig: levicivita: determinant}と比べると, $M^{\sigma_i}_{\tau_j}$は先頭の記号$M$に対応し, 残りの$n-1$個が余因子とみなせる.
+係数$1/(n-1)!$は余因子の重複を解消し, $1/n$は先頭の$M$の添字のうち片方について重複を解消している.
+\begin{equation*}
+    \input{img/matrix/cofactor-expans.tex}
+\end{equation*}
+もし\eqref{eq: levicivita: cofactor expans in usual way}同様に片方の添字を回さないのであれば, 先頭の$M$の足が片方切れ, また重複を消す係数$1/n$が消える.
+切れた足の添字は同一である.
+\begin{equation*}
+    \input{img/matrix/cofactor-expans-i.tex}
+\end{equation*}
+この状態は行列$M$と余因子行列$\tilde{M}$の行列積の$ii$成分になっているはずである.
+したがって余因子行列は次の形で書けることがわかる.
+\begin{equation}
+    \label{eqfig: levicivita: adjugate mat}
+    \tilde{M}
+    =
+    \frac{1}{(\dim M-1)!}
+    \vcenter{\hbox{\input{img/matrix/adjugate-nofactor.tex}}}
+\end{equation}
+
+この表式を検証しよう.
+一般に余因子行列の定義は数式で表すと煩雑になるのであった.
+\begin{align*}
+    \tilde{M}_i^j
+    =
+    (-1)^{i+j}
+    \det\mqty(
+        M_1^1 & \cdots & M_1^{i-1} & M_1^{i+1} & \cdots & M_1^n
+        \\
+        \vdots & \ddots & \vdots & & \ddots & \vdots
+        \\
+        M_{j-1}^1 & \cdots & M_{j-1}^{i-1} & M_{j-1}^{i+1} & \cdots & M_{j-1}^n
+        \\
+        M_{j+1}^1 & \cdots & M_{j+1}^{i-1} & M_{j+1}^{i+1} & \cdots & M_{j+1}^n
+        \\
+        \vdots & \ddots & \vdots & & \ddots & \vdots
+        \\
+        M_n^1 & \cdots & M_n^{i-1} & M_n^{i+1} & \cdots & M_n^n
+    )
+\end{align*}
+一旦Levi-Civita記号を用いた表示にすると見通しが良い.
+整理のため余因子行列の転置を考えると, \eqref{eq: levicivita: det with levicivita}にしたがって,
+\begin{align*}
+    \tilde{M}_j^i
+    =
+    \frac{(-1)^{i+j}}{(n-1)!}
+    \epsilon_{1\cdots i-1,i+1\cdots n}^{\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}
+    \epsilon^{1\cdots j-1,j+1\cdots n}_{\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}
+    M_{\sigma_1}^{\tau_1}
+    \cdots
+    M_{\sigma_{i-1}}^{\tau_{i-1}}
+    M_{\sigma_{i+1}}^{\tau_i}
+    M_{\sigma_{i+2}}^{\tau_{i+1}}
+    \cdots
+    M_{\sigma_j}^{\tau_{j-1}}
+    M_{\sigma_{j+1}}^{\tau_{j+1}}
+    \cdots
+    M_{\sigma_n}^{\tau_n}
+\end{align*}
+という形になる.
+なお, $\sigma, \tau$はそれぞれ$\{1, \cdots, i-1, i+1, \cdots, n\}, \{1, \cdots, j-1, j+1, \cdots, n\}$を走る.
+Levi-Civita記号部分が\eqref{eq: levicivita: levicivita technique for cofactor expansion}に一致することに注意して, 転置まで取れば
+\begin{align*}
+    \tilde{M}_i^j
+    =
+    \frac{1}{(n-1)!}
+    \delta_{\sigma_i}^j\delta_i^{\tau_j}
+    \epsilon_{1\cdots i-1,i,i+1\cdots n}^{\sigma_i\sigma_1\cdots\sigma_{i-1}\sigma_{i+1}\cdots\sigma_n}
+    \epsilon^{1\cdots j-1,j,j+1\cdots n}_{\tau_j\tau_1\cdots\tau_{j-1}\tau_{j+1}\cdots\tau_n}
+    M_{\sigma_1}^{\tau_1}
+    \cdots
+    M_{\sigma_{i-1}}^{\tau_{i-1}}
+    M_{\sigma_{i+1}}^{\tau_i}
+    \cdots
+    M_{\sigma_j}^{\tau_{j-1}}
+    M_{\sigma_{j+1}}^{\tau_{j+1}}
+    \cdots
+    M_{\sigma_n}^{\tau_n}
+\end{align*}
+である.
+
+これほど大量の添字が並ぶと, なおのことグラフ記法の有用性がわかる.
+各添字が走る領域を考慮すると, 図式は\eqref{eqfig: levicivita: adjugate mat}が対応する.
+上の太線が$\tau_k$の置換に, 下の太線が$\sigma_k$の置換に当たる.
+係数の$(n-1)!$は後ろの$n-1$個の成分の並べ替えに対応していることが一目でわかるだろう.
+
+
+\subsubsection{逆行列}
+
+余因子行列まで求まれば逆行列の計算も難しくない.
+定義によれば正則行列$M$について, $M^{-1}=\tilde{M}/\det M$である.
+したがって直ちに以下を得る.
+\begin{equation}
+    \label{eqfig: levicivita: inverse}
+    M^{-1}
+    =
+    n
+    \frac{\vcenter{\hbox{\input{img/matrix/adjugate-nofactor.tex}}}}{\vcenter{\hbox{\input{img/matrix/determinant.tex}}}}
+\end{equation}
+
+この空いている脚に$M$をつなぐと単位行列になることを確認しよう.
+余因子行列に$M$をつないだ$M\tilde{M}$の成分は以下のようになる.
+\begin{equation}
+    \label{eqfig: levicivita: MMtilde}
+    (M\tilde{M})^i_j
+    =
+    n
+    \frac{\vcenter{\hbox{\input{img/matrix/cofactor-expans-ij.tex}}}}{\vcenter{\hbox{\input{img/matrix/determinant.tex}}}}
+\end{equation}
+これが単位行列であることを
+\begin{enumerate}
+    \item 対角行列である
+    \item 対角成分が全て等しい
+    \item 対角和が次元に等しい
+\end{enumerate}
+の手順で示していこう.
+
+まずは\eqref{eqfig: levicivita: MMtilde}が対角行列であることを示す.
+すなわち$i\neq j$で$(M\tilde{M})^i_j=0$となることを見れば良い.
+添字を扱いやすくする目的で行成分に付け加えたLevi-Civita記号だが, ここでは外した方が見通しが良い.
+Levi-Civita記号には各脚1本ずつに添字が割り当てられており, それぞれは異なって$1$から$n$まで全てをとりうる.
+先頭は$j$で固定されているので, 先頭の$M$に加えて後ろ$n-1$本の中どれかにも$i$が入っている.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/matrix/d_ii.tex}}}
+    \vcenter{\hbox{\input{img/matrix/Mj-Mj.tex}}}
+    +(\mathrm{replacements})
+\end{equation*}
+この同じ添字$j$をぶら下げた$M$どうしを奇置換しても等価な形が現れるので, Levi-Civita記号にぶら下がる図式は値が$0$となる.
+したがって$M\tilde{M}$は対角行列であることが示された.
+
+今度は対角成分が等しい, すなわち$(M\tilde{M})_{ii}=(M\tilde{M})_{jj}$を示す.
+\begin{equation*}
+    (M\tilde{M})_{ii}
+    \propto
+    \pm
+    \vcenter{\hbox{\input{img/matrix/MiMn.tex}}}
+    +(\mathrm{replacements})
+\end{equation*}
+ただし符号は下付きの添字に対応する置換に合わせる.
+どの並び順にしても, 下付き添字が$1$から$n$に順に並ぶよう置換を繰り返すと全て符号が$+$で揃うので, 値は成分によらない.
+
+最後に\eqref{eqfig: levicivita: MMtilde}で脚をつなげると分母の$\det$から出た図式と一致するので, $\tr M\tilde{M}=n=\tr 1$である.
+
+以上より$M\tilde{M}=1$である.
+全く同様にして$\tilde{M}M=1$も示される.
+$M$との行列積が単位行列となるので, \eqref{eqfig: levicivita: inverse}は逆行列に他ならない.
+
+
+\subsection{行列式の性質}
+\label{sec: matrix: properties of determinant}
+
+ここまでに求めた行列式などのグラフ記法によって諸々の性質を証明していこう.
+
+\subsubsection{定数倍の行列式}
+
+\begin{equation*}
+    \det(cA)=c^n\det A
+\end{equation*}
+Levi-Civita記号につながる$n$個全ての$A$が$c$倍される.
+\begin{equation*}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick](0,0)--++(2.7,0);
+            \draw[ultra thick](0,-1)--++(2.7,0);
+            \node at(.1,-.5)[anchor=center]{$c$};
+            \node at(2,-.5)[anchor=center]{$c$};
+            \draw
+                (.6,0)--++(0,-.25)
+                node[anchor=north,draw,rectangle](A1){$A$}
+                (A1.south)--++(0,-.25)
+                (2.5,0)--++(0,-.25)
+                node[anchor=north,draw,rectangle](A2){$A$}
+                (A2.south)--++(0,-.25)
+            ;
+            \node at(1.4,-.5)[anchor=center]{$\cdots$};
+        \end{tikzpicture}
+    }}
+    =
+    c^n
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \coordinate(O1)at(0,0);
+            \coordinate(O2)at(0,-1);
+            \draw[ultra thick]
+                (O1)--++(2,0)
+                (O2)--++(2,0)
+            ;
+            \draw
+                (O1)++(.2,0)--++(0,-.25)
+                node[anchor=north, draw, rectangle](B1){$A$}
+                (O2)++(.2,0)--(B1.south)
+                (O1)++(1.8,0)--++(0,-.25)
+                node[anchor=north, draw, rectangle](B2){$A$}
+                (O2)++(1.8,0)--(B2.south)
+                (O1)++(1,0)++(0,-.5)
+                node[anchor=center]{$\cdots$}
+            ;
+        \end{tikzpicture}
+    }}
+\end{equation*}
+
+
+\subsubsection{行列積の行列式}
+
+\begin{equation*}
+    \det(AB)=\det(A)\det(B)
+\end{equation*}
+
+この導出に先立って, 添え字が$1$から$n$の値を取るようなLevi-Civita記号に$n$次元正方行列$A$が$n$個繋がったときに成り立つ公式
+\begin{equation}
+    \label{eq: matrix: insert Levi-Civita}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick](0,0)--++(2,0);
+            \draw
+                (.2,0)--++(0,-.25)node[anchor=north, draw, rectangle](A){$A$}
+                (A.south)--++(0,-.25)
+                (1.75,0)--++(0,-.25)node[anchor=north, draw, rectangle](B){$A$}
+                (B.south)--++(0,-.25)
+            ;
+            \node at(1,-.5)[anchor=center]{$\cdots$};
+        \end{tikzpicture}
+    }}
+    =
+    \frac{1}{n!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick]
+                (0,0)--++(2,0)
+                (0,-1)--++(2,0)
+            ;
+            \draw
+                (.2,0)--++(0,-.25)node[anchor=north, draw, rectangle](A){$A$}
+                (A.south)--++(0,-.5)
+                (1.75,0)--++(0,-.25)node[anchor=north, draw, rectangle](B){$A$}
+                (B.south)--++(0,-.5)
+            ;
+            \node at(1,-.5)[anchor=center]{$\cdots$};
+            \node at(1,-1.3)[anchor=center]{$\cdots$};
+        \end{tikzpicture}
+    }}
+    =
+    \frac{1}{n!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick]
+                (0,0)--++(2,0)
+                (0,-1)--++(2,0)
+                (0,-1.2)--++(2,0)
+            ;
+            \draw
+                (.2,0)--++(0,-.25)node[anchor=north, draw, rectangle](A){$A$}
+                (A.south)--++(0,-.25)
+                (1.75,0)--++(0,-.25)node[anchor=north, draw, rectangle](B){$A$}
+                (B.south)--++(0,-.25)
+                (.2,-1.2)--++(0,-.5)
+                (1.75,-1.2)--++(0,-.5)
+            ;
+            \node at(1,-.5)[anchor=center]{$\cdots$};
+            \node at(1,-1.5)[anchor=center]{$\cdots$};
+        \end{tikzpicture}
+    }}
+\end{equation}
+を示す.
+第二の等号は\eqref{eq: Levi-Civita: product of Levi-Civita}による.
+左辺はそれぞれの$A$の交換について完全反対称なのでLevi-Civita記号に比例する.
+あとは脚が$12\dots n$の順に並んでいるとき値が合致していることを確認すれば良い.
+便宜上縮約をとる各線に全単射の置換$\sigma,\tau: \{1,\dots,n\}\to\{1,\dots,n\}$によってインデックスを振ると, 右辺は
+\begin{equation*}
+    \begin{split}
+        \frac{1}{n!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \draw[ultra thick]
+                    (0,0)--++(2,0)
+                    (0,-1.5)--++(2,0)
+                ;
+                \draw
+                    (.2,0)--++(0,-.5)node[anchor=north, draw, rectangle](A){$A$}
+                    (A.south)--++(0,-1)node[anchor=north]{$1$}
+                    (1.75,0)--++(0,-.5)node[anchor=north, draw, rectangle](B){$A$}
+                    (B.south)--++(0,-1)node[anchor=north]{$n$}
+                ;
+                \node at(1,-.75)[anchor=center]{$\cdots$};
+                \node at(.2,-.25)[anchor=west]{$\sigma(1)$};
+                \node at(1.75,-.25)[anchor=west]{$\sigma(n)$};
+                \node at(.2,-1.25)[anchor=west]{$\tau(1)$};
+                \node at(1.75,-1.25)[anchor=west]{$\tau(n)$};
+            \end{tikzpicture}
+        }}
+        &=
+        \frac{1}{n!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \draw[ultra thick]
+                    (0,0)--++(2,0)
+                    (0,-1.5)--++(2,0)
+                ;
+                \draw
+                    (.2,0)--++(0,-.5)node[anchor=north, draw, rectangle](A){$A$}
+                    (A.south)--++(0,-1)node[anchor=north]{$1$}
+                    (1.75,0)--++(0,-.5)node[anchor=north, draw, rectangle](B){$A$}
+                    (B.south)--++(0,-1)node[anchor=north]{$n$}
+                ;
+                \node at(1,-.75)[anchor=center]{$\cdots$};
+                \node at(.2,-.25)[anchor=east]{$\tau^{-1}(\sigma(1))$};
+                \node at(1.75,-.25)[anchor=west]{$\tau^{-1}(\sigma(n))$};
+                \node at(.2,-1.25)[anchor=east]{$1$};
+                \node at(1.75,-1.25)[anchor=west]{$n$};
+            \end{tikzpicture}
+        }}
+        \\
+        &=
+        \frac{\epsilon^{1\dots n}_{1\dots n}}{n!}
+        \vcenter{\hbox{
+            \begin{tikzpicture}
+                \draw[ultra thick](0,0)--++(2,0);
+                \draw
+                    (.2,0)--++(0,-.5)node[anchor=north, draw, rectangle](A){$A$}
+                    (A.south)--++(0,-.25)node[anchor=north]{$1$}
+                    (1.75,0)--++(0,-.5)node[anchor=north, draw, rectangle](B){$A$}
+                    (B.south)--++(0,-.25)node[anchor=north]{$n$}
+                ;
+                \node at(1,-.5)[anchor=center]{$\cdots$};
+                \node at(.2,-.25)[anchor=east]{$\tau^{-1}(\sigma(1))$};
+                \node at(1.75,-.25)[anchor=west]{$\tau^{-1}(\sigma(n))$};
+            \end{tikzpicture}
+        }}
+    \end{split}
+\end{equation*}
+である.
+縮約の総和は$\tau, \sigma$が任意の置換をとることに対応する.
+$\{1,\dots,n\}\to\{1,\dots,n\}$の置換は総じて$n!$個存在する.
+総和すると$\sigma,\tau$それぞれが$n!$通りの置換を走って$\tau^{-1}\circ\sigma$は$(n!)^2$通りの作り方ができる.
+しかし$\tau^{-1}\circ\sigma$もまた置換であるため, 異なるものは$n!$しかない.
+つまり
+\begin{equation*}
+    \sum_{\sigma\in\mathfrak{S}_n}
+    \sum_{\tau\in\mathfrak{S}_n}
+    \tau^{-1}\circ\sigma
+    =
+    n!\sum_{\sigma\in\mathfrak{S_n}}\sigma
+\end{equation*}
+なので, \eqref{eq: matrix: insert Levi-Civita}が成立する.
+
+\eqref{eq: matrix: insert Levi-Civita}を使えば積の行列式は半ば自明に導出できる.
+$n$次元正方行列$A, B$の積の行列式は
+\begin{equation*}
+    \det(AB)
+    =
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick](0,0)--(2,0);
+            \draw[ultra thick](0,-1.75)--(2,-1.75);
+            \draw
+                (.2,0)--++(0,-.25)
+                node[anchor=north, draw, rectangle](A1){$A$}
+                (A1.south)--++(0,-.25)
+                node[anchor=north, draw, rectangle](B1){$B$}
+                (B1.south)--++(0,-.25)
+                (1.8,0)--++(0,-.25)
+                node[anchor=north, draw, rectangle](A2){$A$}
+                (A2.south)--++(0,-.25)
+                node[anchor=north, draw, rectangle](B2){$B$}
+                (B2.south)--++(0,-.25)
+            ;
+            \node at(1,-.8)[anchor=center]{$\cdots$};
+        \end{tikzpicture}
+    }}
+    =
+    \frac{1}{n!}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick](0,0)--++(2,0);
+            \draw[ultra thick](0,-1)--++(2,0);
+            \draw[ultra thick](0,-1.2)--++(2,0);
+            \draw[ultra thick](0,-2.2)--++(2,0);
+            \draw
+                (.2,0)--++(0,-.25)
+                node[anchor=north,draw,rectangle](A1){$A$}
+                (A1.south)--++(0,-.25)
+                (1.8,0)--++(0,-.25)
+                node[anchor=north,draw,rectangle](A2){$A$}
+                (A2.south)--++(0,-.25)
+            ;
+            \draw
+                (.2,-1.2)--++(0,-.25)
+                node[anchor=north,draw,rectangle](B1){$B$}
+                (B1.south)--++(0,-.25)
+                (1.8,-1.2)--++(0,-.25)
+                node[anchor=north,draw,rectangle](B2){$B$}
+                (B2.south)--++(0,-.25)
+            ;
+            \node at(1,-.5)[anchor=center]{$\cdots$};
+            \node at(1,-1.7)[anchor=center]{$\cdots$};
+        \end{tikzpicture}
+    }}
+    =
+    \det A\det B
+\end{equation*}
+なので, 積の行列式は行列式の積となる.
+
+
+\subsubsection{逆行列の行列式}
+
+\begin{equation*}
+    \det(A^{-1})=1/\det(A)
+\end{equation*}
+$\det(AA^{-1})=\det A\det A^{-1}=1$から導出される.
+特にグラフ記法を使う必要はない.
+余因子行列の行列式が複雑なので, 上記の方法から導くのが圧倒的に簡単.
+
+
+\subsubsection{余因子行列の行列式}
+
+\begin{equation*}
+    \det\tilde{A}
+    =
+    (\det A)^{n-1}
+\end{equation*}
+逆行列の定義と行列の定数倍の行列式から
+\begin{equation*}
+    \det A^{-1}
+    =
+    \det\qty(\frac{\tilde{A}}{\det A})
+    =
+    \frac{\det\tilde{A}}{(\det A)^n}
+\end{equation*}
+となることから導出可能.
+これもグラフ記法は不要.
+
+
+\subsubsection{転置行列の行列式}
+
+\begin{equation*}
+    \det A^T=\det A
+\end{equation*}
+脚が全て潰れたグラフは特別な向きを持たないので, $\det A$と区別がつかない.
+\begin{equation*}
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick](0,0)--++(2,0);
+            \draw[ultra thick](0,-1)--++(2,0);
+            \node at(.5,-.5)[anchor=center, draw, rectangle](A){$A$};
+            \draw
+                (A.west)--++(-.1,0)
+                ..controls++(-.5,0) and ++(0,-.1)..(.5,0)
+                (A.east)--++(.1,0)
+                ..controls++(.5,0)and++(0,.1)..(.5,-1)
+            ;
+            \node at(1.5,-.5)[anchor=center]{$\cdots$};
+            \draw[<->, >=Stealth, dashed](2.1,-.05)arc(60:-60:.3 and .5);
+        \end{tikzpicture}
+    }}
+    =
+    \vcenter{\hbox{
+        \begin{tikzpicture}
+            \draw[ultra thick](0,0)--++(2,0);
+            \draw[ultra thick](0,-1)--++(2,0);
+            \node at(.5,-.5)[anchor=center, draw, rectangle](A){$A$};
+            \draw
+                (A.west)--++(-.1,0)
+                ..controls++(-.5,0) and ++(0,.1)..(.5,-1)
+                (A.east)--++(.1,0)
+                ..controls++(.5,0)and++(0,-.1)..(.5,0)
+            ;
+            \node at(1.5,-.5)[anchor=center]{$\cdots$};
+        \end{tikzpicture}
+    }}
+\end{equation*}
+
+
+
+\end{document}
