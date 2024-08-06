@@ -1,0 +1,531 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{penrosetensor}
+
+\begin{document}
+
+\section{ベクトル解析の公式の表現}
+\label{sec: vector}
+
+\subsection{前提知識}
+
+本節では
+\begin{itemize}
+    \item スカラーとベクトルの区別
+    \item ベクトルの内積と外積の定義
+    \item grad, div, rot, $\lapl$
+    \item Einsteinの縮約記法
+    \item Kroneckerの$\delta$
+    \item Levi-Civita記号とその縮約公式
+    \item 外積のLevi-Civita記号による表示
+\end{itemize}
+の知識を前提とする.
+
+基本的に添字を使う場合はEinsteinの縮約記法に従って表す.
+また, 本節では共変・反変の区別をせず, Einsteinの縮約記法の添字は全て下付きとする.
+
+
+\subsection{スカラーとベクトルおよび演算の定義}
+
+\subsubsection{スカラーとベクトルの表示}
+
+グラフ記法においてスカラーは文字を四角く囲って表される.
+\begin{equation*}
+    \text{scalar}\:f=\vcenter{\hbox{\input{img/vector/scalar-f.tex}}}
+\end{equation*}
+ベクトルは脚つきで表現される.
+\begin{equation*}
+    \text{vector}\:\bm{v}=\vcenter{\hbox{\input{img/vector/vector-v.tex}}}
+\end{equation*}
+この脚は\ref{sec: Kronecker for tensor}に示すようにKroneckerの$\delta$を表す.
+
+
+\subsubsection{スカラー倍}
+
+文字式と同様, スカラーとベクトルを並べてスカラー倍を表せる.
+\begin{equation*}
+    fg\bm{v}
+    =
+    \vcenter{\hbox{\input{img/vector/scalar-multiple.tex}}}
+\end{equation*}
+
+
+\subsubsection{ベクトルの内積}
+
+ベクトルの脚を繋ぎ合わせると内積を表す.
+\begin{equation*}
+    \bm{u\cdot v}=u_i\delta_{ij}v_j
+    =
+    \vcenter{\hbox{\input{img/vector/dot-product.tex}}}
+\end{equation*}
+
+
+\subsubsection{3成分のLevi-Civita記号}
+\label{sec: vector: 3 components levicivita}
+
+以上ではスカラーやベクトルは四角で囲って表してきたが, ベクトルの添字については四角で囲わずに表すこととする.
+この約束のもと, 3成分のLevi-Civita記号は次のように表す.
+\begin{equation*}
+    \epsilon_{ijk}
+    =
+    \vcenter{\hbox{\input{img/vector/levicivita-ijk.tex}}}
+\end{equation*}
+太線は反対称性を表し, 脚の奇置換で符号が変わる.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/vector/levicivita-ikj.tex}}}
+    =
+    -\vcenter{\hbox{\input{img/vector/levicivita-ijk.tex}}}
+\end{equation*}
+
+
+\subsubsection{ベクトルの外積}
+
+ベクトルの外積は次のように表せる.
+\begin{equation*}
+    \bm{u}\times\bm{v}
+    =
+    \vcenter{\hbox{\input{img/vector/cross-product.tex}}}
+\end{equation*}
+一番左に脚が1本残っていることからベクトルであることが一瞥できる.
+
+
+
+\subsection{ベクトルの内積と外積にまつわる公式}
+
+\subsubsection{Levi-Civita記号の縮約公式}
+\label{sec: levi-civita contraction for vectors}
+
+\begin{equation*}
+    \epsilon_{ijm}\epsilon_{klm}
+    =
+    \delta_{ik}\delta_{jl}
+    -
+    \delta_{il}\delta_{jk}
+\end{equation*}
+Levi-Civita記号の縮約公式は\ref{sec: levicivita: contraction}で詳細を取り扱うが, ここでは公式的に用いることにする.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/vector/e_ijm-e_klm.tex}}}
+    =
+    \vcenter{\hbox{\input{img/vector/d_ik-d_jl.tex}}}
+    -
+    \vcenter{\hbox{\input{img/vector/d_il-d_jk.tex}}}
+\end{equation*}
+
+
+\subsubsection{スカラー三重積}
+
+\begin{equation*}
+    \bm{A}\cdot(\bm{B}\times\bm{C})
+    =
+    \bm{B}\cdot(\bm{C}\times\bm{A})
+    =
+    \bm{C}\cdot(\bm{A}\times\bm{B})
+    =
+    -
+    \bm{B}\cdot(\bm{A}\times\bm{C})
+\end{equation*}
+外積の脚にベクトルの脚をつなげればスカラー三重積を表せる.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/vector/A-BxC.tex}}}
+    =
+    \vcenter{\hbox{\input{img/vector/B-CxA.tex}}}
+    =
+    \vcenter{\hbox{\input{img/vector/C-AxB.tex}}}
+    =
+    -
+    \vcenter{\hbox{\input{img/vector/B-AxC.tex}}}
+\end{equation*}
+偶置換で値が変わらず奇置換で符号が変わることが一目瞭然である.
+
+
+\subsubsection{ベクトル三重積}
+
+\begin{equation*}
+    \bm{A}\times(\bm{B}\times\bm{C})
+    =
+    \bm{B}(\bm{A\cdot C})
+    -
+    \bm{C}(\bm{A\cdot B})
+\end{equation*}
+外積の脚を外積に繋げばベクトル三重積となる.
+Levi-Civita記号の縮約公式に合わせて, はじめに偶置換しておくと見やすい.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/vector/AxBxC-original.tex}}}
+    =
+    \vcenter{\hbox{\input{img/vector/AxBxC.tex}}}
+    =
+    \vcenter{\hbox{\input{img/vector/BA-C.tex}}}
+    -
+    \vcenter{\hbox{\input{img/vector/CA-B.tex}}}
+\end{equation*}
+
+
+\subsubsection{ベクトル四重積}
+
+\begin{equation*}
+    (\bm{A}\times\bm{B})\cdot(\bm{C}\times\bm{D})
+    =
+    \det\mqty(
+        \bm{A}\cdot\bm{C}
+        &
+        \bm{B}\cdot\bm{C}
+        \\
+        \bm{A}\cdot\bm{D}
+        &
+        \bm{B}\cdot\bm{D}
+    )
+\end{equation*}
+行列式を使って表すことが多い.
+行列式による表式が見やすいわけではないが, Levi-Civita記号の縮約公式が
+\begin{align*}
+    \epsilon_{ijm}\epsilon_{klm}
+    =
+    \det\mqty(
+        \delta_{ik} & \delta_{il}
+        \\
+        \delta_{jk} & \delta_{jl}
+    )
+\end{align*}
+と表されることを考慮すると自明であろう.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/vector/AxB-CxD.tex}}}
+    =
+    \vcenter{\hbox{\input{img/vector/A-CB-D.tex}}}
+    -
+    \vcenter{\hbox{\input{img/vector/A-DB-C.tex}}}
+\end{equation*}
+
+
+
+\subsection{スカラー・ベクトルの微分作用素}
+
+Penroseのグラフ記法で扱う微分演算子は$\nabla$(ナブラ)である.
+微分対象を円で囲い, 円から脚を伸ばすことで表現する.
+これもまた図形的に表すことが可能である.
+\begin{equation*}
+    \nabla
+    =
+    \vcenter{\hbox{\input{img/vector/nabla.tex}}}
+\end{equation*}
+
+
+\subsubsection{勾配 $\gradop$}
+
+スカラーを円で囲って脚を伸ばす.
+\begin{equation*}
+    \gradop{f}=\nabla f
+    =
+    \vcenter{\hbox{\input{img/vector/grad.tex}}}
+\end{equation*}
+
+
+\subsubsection{発散 $\diver$}
+
+ベクトルの脚と微分演算子の脚をつなげる.
+\begin{equation*}
+    \diver\bm{v}=\nabla\cdot\bm{v}
+    =
+    \vcenter{\hbox{\input{img/vector/div.tex}}}
+\end{equation*}
+脚はKroneckerの$\delta$を表すので$\partial_i\delta_{ij}v_j$を意味する.
+
+
+\subsubsection{回転 $\rotop$}
+\label{sec: rot}
+
+単純な外積と表示は大きく変わらない.
+ただし微分対象は演算子のすぐ右の脚に配置する.
+\footnote{この追加ルールについては\ref{sec: div uv}を参照. }
+\begin{equation*}
+    \rotop\bm{v}=\nabla\times\bm{v}
+    =
+    \vcenter{\hbox{\input{img/vector/rot.tex}}}
+\end{equation*}
+
+
+\subsubsection{ラプラシアン $\lapl$}
+\label{sec: lapl}
+
+2つの微分演算子の脚をつなぎ合わせる.
+微分対象はスカラー・ベクトルを問わない.
+\begin{equation*}
+    \lapl f=\laplacian f
+    =
+    \vcenter{\hbox{\input{img/vector/lapl-f.tex}}},
+    \qquad
+    \lapl \bm{v}
+    =
+    \laplacian\bm{v}
+    =
+    \vcenter{\hbox{\input{img/vector/lapl-v.tex}}}
+\end{equation*}
+$\partial_i\delta_{ij}\partial_jA$を表す.
+特に微分対象がスカラーの場合, 直ちに$\diver\gradop f=\lapl f$が得られる.
+
+
+\subsubsection{積の微分(Leibnitz rule)}
+
+\begin{equation*}
+    \nabla(AB)=\nabla(A)B+A\nabla(B)
+\end{equation*}
+微分作用素はLeibnitz ruleに従って展開可能である.
+\begin{equation*}
+    \vcenter{\hbox{\input{img/vector/leibnitz-rule.tex}}}
+\end{equation*}
+
+
+\subsubsection{微分順序交換}
+
+$C^2$級関数(2階導関数が連続な関数)では微分順序の交換が可能である.
+グラフ記法では円の内外を入れ替えることにほかならない.
+\begin{equation*}
+    \input{img/vector/diff-change.tex}
+\end{equation*}
+以降, 特に断りのない限り全ての量は$C^2$級であるとする.
+
+
+
+\subsection{ベクトルの微分作用素にまつわる公式}
+
+本節の公式は以下に示す5つの変形\textbf{のみ}を用いて導出が可能である.
+\begin{itemize}
+    \item Levi-Civita記号の反対称性(奇置換)
+    \item Levi-Civita記号での偶置換
+    \item Levi-Civita記号の縮約公式
+    \item Leibnitz rule
+    \item 微分順序交換
+\end{itemize}
+全ての導出はEinsteinの縮約記法を用いた方法と全く同じ手順である.
+
+
+\subsubsection{$\rotop\gradop=0$}
+\label{sec: rot grad}
+
+\begin{equation*}
+    \rotop\gradop f=\nabla\times\nabla f=0
+\end{equation*}
+微分順序の交換と反対称性を用いる.
+\begin{equation*}
+    \input{img/vector/rot-grad.tex}
+\end{equation*}
+第1に微分順序交換, 第2に反対称.
+左辺と右辺で$A=-A$の形になっているので値は$0$である.
+
+
+\subsubsection{$\diver\rotop=0$}
+
+\begin{equation*}
+    \diver\rotop\bm{v}=\nabla\cdot(\nabla\times\bm{v})=0
+\end{equation*}
+\ref{sec: rot grad}と同様に示せる.
+\begin{equation*}
+    \input{img/vector/div-rot.tex}
+\end{equation*}
+第1に微分順序交換, 第2に反対称.
+やはり左辺と右辺で$A=-A$の形になっているので値は$0$となる.
+
+
+\subsubsection{$\diver\gradop=\lapl$}
+
+\begin{equation*}
+    \diver\gradop f=\nabla\cdot\nabla f=\lapl f
+\end{equation*}
+\ref{sec: lapl}で紹介したが, 公式として再掲する.
+\begin{equation*}
+    \lapl f=\laplacian f
+    =
+    \vcenter{\hbox{\input{img/vector/lapl-f.tex}}}
+\end{equation*}
+
+
+\subsubsection{$\gradop(fg)=g\gradop f+f\gradop g$}
+
+\begin{align*}
+    &\gradop(fg)=(\gradop f)g+f(\gradop g)
+    \\
+    &\nabla(fg)=(\nabla f)g+f(\nabla g)
+\end{align*}
+Leibnitz ruleで展開する.
+\begin{equation*}
+    \input{img/vector/grad-fg.tex}
+\end{equation*}
+物理学においては, 数式でも然りだが, 誤解を生む形でなければベクトルのスカラー倍を表すのに必ずしもスカラー・ベクトルの順で配する必要はない.
+グラフ記法でも同様である.
+
+
+\subsubsection{$\diver(fv)=\gradop f\cdot v+f\diver v$}
+
+\begin{align*}
+    &\diver(f\bm{v})=\gradop f\cdot\bm{v}+f\diver\bm{v}
+    \\
+    &\nabla(f\bm{v})=\nabla f\cdot\bm{v}+f\nabla\cdot\bm{v}
+\end{align*}
+これもまたLeibnitz ruleで展開する.
+\begin{equation*}
+    \input{img/vector/div-fv.tex}
+\end{equation*}
+
+
+\subsubsection{$\diver(u\times v)=\rotop u\cdot v-u\cdot\rotop v$}
+\label{sec: div uv}
+
+\begin{align*}
+    &\diver(\bm{u}\times\bm{v})=\rotop\bm{u}\cdot\bm{v}-\bm{u}\cdot\rotop\bm{v}
+    \\
+    &\nabla\cdot(\bm{u}\times\bm{v})=(\nabla\times\bm{u})\bm{v}-\bm{u}\cdot(\nabla\times\bm{v})
+\end{align*}
+Leibnitz ruleに加えて反対称性を用いる.
+\begin{equation*}
+    \input{img/vector/div-uv.tex}
+\end{equation*}
+\ref{sec: rot}で示した「rotにおいて微分対象は微分作用素のすぐ右の脚につなげる」ルールに従うようにする.
+
+
+\subsubsection{$\rotop(fv)=\gradop f\times v+f\rotop v$}
+
+\begin{align*}
+    &\rotop(f\bm{v})=\gradop f\times\bm{v}+f\:\rotop\bm{v}
+    \\
+    &\nabla\times(f\bm{v})=\nabla f\times\bm{v}+f\nabla\times\bm{v}
+\end{align*}
+Leibnitz ruleによる展開.
+\begin{equation*}
+    \input{img/vector/rot-fv.tex}
+\end{equation*}
+微分の内外を遵守する限り$f$の位置は問わない.
+
+
+\subsubsection{$\rotop(u\times v)=(v\cdot\gradop)u+u\diver v-v\diver u-(u\cdot\gradop)v$}
+
+\begin{align*}
+    &\rotop(\bm{u}\times\bm{v})
+    =
+    (\bm{v}\cdot\gradop)\bm{u}
+    +
+    \bm{u}\:\diver\bm{v}
+    -
+    \bm{v}\:\diver\bm{u}
+    -
+    (\bm{u}\cdot\gradop)\bm{v}
+    \\
+    &\nabla\times(\bm{u}\times\bm{v})
+    =
+    (\bm{v}\cdot\nabla)\bm{u}
+    +
+    \bm{u}(\nabla\cdot\bm{v})
+    -
+    \bm{v}(\nabla\cdot\bm{u})
+    -
+    (\bm{u}\cdot\nabla)\bm{v}
+\end{align*}
+Levi-Civita記号の縮約公式とLeibnitz ruleによって導出.
+\begin{equation*}
+    \input{img/vector/rot-uv.tex}
+\end{equation*}
+
+
+\subsubsection{$\rotop\rotop=\gradop\diver-\lapl$}
+
+\begin{align*}
+    &\rotop\rotop\bm{v}=\gradop\diver\bm{v}-\lapl\bm{v}
+    \\
+    &\nabla\times(\nabla\times\bm{v})=\nabla(\nabla\cdot\bm{v})-(\nabla\cdot\nabla)\bm{v}
+\end{align*}
+Levi-Civita記号の縮約公式と微分順序交換から.
+\begin{equation*}
+    \input{img/vector/rot-rot.tex}
+\end{equation*}
+
+
+\subsubsection{$\gradop(u\cdot v)=v\times\rotop u+(v\cdot\gradop)u+u\times\rotop v+(u\cdot\gradop)v$}
+
+\begin{align*}
+    &
+    \gradop(\bm{u}\cdot\bm{v})
+    =
+    \bm{v}\times\rotop\bm{u}+(\bm{v}\cdot\gradop)\bm{u}
+    +
+    \bm{u}\times\rotop\bm{v}+(\bm{u}\cdot\gradop)\bm{v}
+    \\
+    &
+    \nabla(\bm{u}\cdot\bm{v})
+    =
+    \bm{v}\times(\nabla\times\bm{u})+(\bm{v}\cdot\nabla)\bm{u}
+    +
+    \bm{u}\times(\nabla\times\bm{v})+(\bm{u}\cdot\nabla)\bm{v}
+\end{align*}
+初手は順当にLeibnitz ruleで展開する.
+\begin{equation}
+    \label{figeq: vector: grad-uv1}
+    \vcenter{\hbox{\input{img/vector/grad-uv.tex}}}
+\end{equation}
+展開した形に相当する演算がないので, 各項Levi-Civita記号の縮約公式から得られたものとみて計算する.
+右辺第1項は次のLevi-Civita記号の縮約公式から現れる.
+\begin{equation*}
+    \input{img/vector/grad-uv2.tex}
+\end{equation*}
+この右辺第2項を移項したものが\eqref{figeq: vector: grad-uv1}第1項に一致する.
+\eqref{figeq: vector: grad-uv1}第2項は$\bm{u},\bm{v}$を入れ替えたものに他ならない.
+結局以下の図式を得る.
+\begin{equation*}
+    \input{img/vector/grad-uv3.tex}
+\end{equation*}
+
+
+\subsubsection{$\lapl(fg)=(\lapl f)g+2\:\gradop f\cdot\gradop g+f(\lapl g)$}
+
+\begin{align*}
+    &\lapl(fg)
+    =
+    (\lapl f)g+2\:\gradop f\cdot\gradop g+f(\lapl g)
+    \\
+    &\nabla\cdot\nabla(fg)
+    =
+    (\nabla\cdot\nabla f)g+2(\nabla f)\cdot(\nabla g)+f(\nabla\cdot\nabla g)
+\end{align*}
+2回にわたってLeibnitz ruleを使う.
+\begin{equation*}
+    \input{img/vector/lapl-fg.tex}
+\end{equation*}
+
+
+
+\subsection{位置ベクトルの微分にまつわる公式}
+
+位置ベクトルを$\nabla$で微分する際は次の縮約が可能である.
+\begin{equation*}
+    \pdv{r_i}r_j\bm{e}_j=\delta_{ij}\bm{e}_j
+\end{equation*}
+これをPenroseのグラフ記法で表すと, $\bm{r}$とそれを囲う円が消えて両端がつながったように表される.
+\begin{equation*}
+    \input{img/vector/grad-r.tex}
+\end{equation*}
+以下では「公式」とするにふさわしいものを拾っていくことにする.
+
+
+\subsubsection{$\diver r=3$}
+
+\begin{equation*}
+    \diver\bm{r}=\nabla\cdot\bm{r}=\delta_{ii}=3
+\end{equation*}
+右辺の$3$は次元の数で, 4次元なら$4$, $n$次元なら$n$となる.
+\begin{equation*}
+    \input{img/vector/div-r.tex}
+\end{equation*}
+右辺の環はKroneckerの$\delta$の両端がつながったものであり$\delta_{ii}$となる.
+縮約のルールに則って3次元なら$i=1,2,3$で足し合わせる.
+
+
+\subsubsection{$\rotop r=0$}
+
+\begin{equation*}
+    \rotop\bm{r}=\nabla\times\bm{r}=0
+\end{equation*}
+位置ベクトルの微分の縮約をとる.
+\begin{equation*}
+    \input{img/vector/rot-r.tex}
+\end{equation*}
+右辺は$\epsilon_{ijk}\delta_{jk}=\epsilon_{ijj}$を表すので$0$である.
+
+
+
+\end{document}

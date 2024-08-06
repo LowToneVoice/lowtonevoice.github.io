@@ -1,0 +1,19 @@
+%このファイルは日本語文字を含みます.
+\BOOKMARK [1][-]{section.1}{行列と行列式の表現}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{前提知識}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Penroseのグラフ記法を用いた行列の表記}{section.1}% 3
+\BOOKMARK [3][-]{subsubsection.1.2.1}{行列・ベクトル}{subsection.1.2}% 4
+\BOOKMARK [3][-]{subsubsection.1.2.2}{行列積}{subsection.1.2}% 5
+\BOOKMARK [3][-]{subsubsection.1.2.3}{トレース}{subsection.1.2}% 6
+\BOOKMARK [3][-]{subsubsection.1.2.4}{転置}{subsection.1.2}% 7
+\BOOKMARK [3][-]{subsubsection.1.2.5}{和とスカラー倍}{subsection.1.2}% 8
+\BOOKMARK [2][-]{subsection.1.3}{行列式と逆行列}{section.1}% 9
+\BOOKMARK [3][-]{subsubsection.1.3.1}{行列式}{subsection.1.3}% 10
+\BOOKMARK [3][-]{subsubsection.1.3.2}{余因子展開}{subsection.1.3}% 11
+\BOOKMARK [3][-]{subsubsection.1.3.3}{逆行列}{subsection.1.3}% 12
+\BOOKMARK [2][-]{subsection.1.4}{行列式の性質}{section.1}% 13
+\BOOKMARK [3][-]{subsubsection.1.4.1}{定数倍の行列式}{subsection.1.4}% 14
+\BOOKMARK [3][-]{subsubsection.1.4.2}{行列積の行列式}{subsection.1.4}% 15
+\BOOKMARK [3][-]{subsubsection.1.4.3}{逆行列の行列式}{subsection.1.4}% 16
+\BOOKMARK [3][-]{subsubsection.1.4.4}{余因子行列の行列式}{subsection.1.4}% 17
+\BOOKMARK [3][-]{subsubsection.1.4.5}{転置行列の行列式}{subsection.1.4}% 18

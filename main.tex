@@ -1,0 +1,71 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{penrosetensor}
+
+\begin{document}
+
+\maketitle
+
+電磁気学以来, ベクトル解析の公式は決して暗記できるものではないと筆者が考えていたように, ベクトルの公式を覚えられない物理学徒は多いだろう.
+Levi-Civita記号の縮約公式がわかれば暗記は不要であると世に言われるが, Levi-Civita記号をいちいち使って計算していては非効率極まりない.
+効率が悪いだけならまだしも, 本来自然なはずの計算が技巧的に見えてしまい, ベクトル解析を自在に操ることが難しくなってしまう.
+
+しかし, Penroseのグラフ記法(Penrose graphical notation; tensor diagram notation)という強力なツールを使えば, 以下に示す基本的なベクトル解析の公式を暗記することなく, 暗算で求められるようになる.
+
+また本来Penroseのグラフ記法はテンソル解析のために考案されたものである.
+ここでは物理学のテンソル解析に頻繁に現れる完全反対称Levi-Civitaテンソルの公式, およびそれを駆使した微分形式の公式を扱っていく.
+物理におけるテンソル計算の難易度が格段に下がると同時に, 計算を直観的に捉えることができるようになるだろう.
+
+誤植の報告や質問などは
+\url{https://note.com/teion_burns/n/n5f486f83dd81}
+のコメント機能もしくは
+\url{https://twitter.com/teion_burns}
+のダイレクトメッセージに気軽に寄せていただきたい.
+
+
+\section*{変更履歴}
+\begin{description}
+    \item[2021年5月22日] 初版
+    \item[2022年2月5日] \ref{sec: Levi-Civita}「完全反対称Levi-Civita記号の公式の表現」を追加
+    \item[2023年4月3日] \ref{sec: k-form}「微分形式の公式の表現」を追加
+    \item[2023年5月15日] \ref{sec: matrix: det and inverse}「行列式と逆行列」を追加
+    \item[2024年1月17日] \ref{sec: matrix}を\ref{sec: Levi-Civita}から分離, \ref{sec: matrix: display of matrix}「Penroseのグラフ記法を用いた行列の表記」及び\ref{sec: matrix: properties of determinant}「行列式の性質」を追記
+    \item[2024年2月6日] \ref{sec: levicivita: general dim and metric contraction}, \ref{sec: k-form: differential form on riemann manifold}, \ref{sec: kform: formulae of k-form on Riemann manifold}を追記.
+    \item[2024年8月2日] \eqref{eq: matrix: det M result}, \eqref{eq: k-form: Cartan formula result}, \eqref{eq: k-form: Hodge star def in Einstein contraction}を修正. \ref{sec: k-form: formulae of k-form} の表記を全面的に修正.
+\end{description}
+
+
+
+\tableofcontents
+
+\pagebreak
+
+\input{vector.tex}
+
+\pagebreak
+
+\input{levicivita.tex}
+
+\pagebreak
+
+\input{matrix.tex}
+
+\pagebreak
+
+\input{kform.tex}
+
+\pagebreak
+
+\appendix
+
+
+
+\begin{thebibliography}{2}
+    \bibitem{Penrose article} Roger Penrose, \textit{Applications of Negative Dimensional Tensors}, Academic Press, 1971.
+    \bibitem{Landau} E. ランダウ, E. M. リフシッツ, 恒藤敏彦訳「場の古典論 (原書第6版)」東京図書, 1978.
+    \bibitem{KikaTopo} 中原幹夫「理論物理学のための幾何学とトポロジー 第2版」日本評論社, 2021.
+    \bibitem{boosting} arXiv:1911.00892 [physics.ed-ph]
+\end{thebibliography}
+
+
+
+\end{document}
