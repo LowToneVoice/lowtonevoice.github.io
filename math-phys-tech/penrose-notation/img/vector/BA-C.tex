@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+    \draw
+        node[anchor=south, draw, rectangle](A1)at(3.65,1.25){$\bm{A}$}
+        node[anchor=north, draw, rectangle](B1)at(3.05,.75){$\bm{B}$}
+        node[anchor=north, draw, rectangle](C1)at(3.65,.75){$\bm{C}$}
+        (A1.south)--(C1.north)
+        (B1.north)-- ++(0,.5)
+    ;
+\end{tikzpicture}

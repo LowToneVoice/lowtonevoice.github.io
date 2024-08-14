@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \draw[ultra thick](origin1)--++(1.5,0);
+    \draw($(origin1)+(0,.25)$)rectangle++(1.5,.4);
+    \node at($(origin1)+(.75,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin1)+(.1,.25)$)--++(0,-.5)node[anchor=north]{$\mu_1$}
+    ++(.4,.5)--++(0,-.5)node[anchor=north]{$\mu_2$}
+    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+    ($(origin1)+(1.4,.25)$)--++(0,-.5)node[anchor=north]{$\mu_k$};
+\end{tikzpicture}

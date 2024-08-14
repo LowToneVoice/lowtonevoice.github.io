@@ -1,0 +1,29 @@
+\begin{tikzpicture}
+    \draw[ultra thick]
+        (0,1)--(1,1)
+        (0,2)--(1,2)
+    ;
+    \draw
+        (0,1)--(0,.75) node[anchor=north]{$k$}
+        (.5,1)--(.5,.75) node[anchor=north]{$l$}
+        (1,1)--(1,2)
+        (0,2)--(0,1.75) node[anchor=north]{$i$}
+        (.5,2)--(.5,1.75) node[anchor=north]{$j$}
+        node[anchor=center]at(1.5,1){$=$}
+    ;
+    \draw
+        node (i1) at (2,1.25) [anchor=south]{$i$}
+        node (j1) at (2.5,1.25)[anchor=south]{$j$}
+        node (k1) at (2,.75) [anchor=north]{$k$}
+        node (l1) at (2.5,.75) [anchor=north]{$l$}
+        (i1) -- (k1)
+        (j1) -- (l1)
+        node[anchor=center]at(3,1){$-$}
+        node (i2) at (3.5,1.25) [anchor=south]{$i$}
+        node (j2) at (4,1.25)[anchor=south]{$j$}
+        node (k2) at (3.5,.75) [anchor=north]{$k$}
+        node (l2) at (4,.75) [anchor=north]{$l$}
+        (i2)--(l2)
+        (j2)--(k2)
+    ;
+\end{tikzpicture}

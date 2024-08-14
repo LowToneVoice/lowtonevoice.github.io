@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+    \coordinate(origin)at(3,2);
+    \draw
+        ($(origin)+(0,-.25)$)
+        node[anchor=north,draw,rectangle](A2){$\bm{A}$}
+        ++(.6,0)
+        node[anchor=north,draw,rectangle](B2){$\bm{B}$}
+        ++(-.6,-1)
+        node[anchor=north,draw,rectangle](C2){$\bm{C}$}
+        ++(.6,0)
+        node[anchor=north,draw,rectangle](D2){$\bm{D}$}
+        (A2.south)--(C2.north)
+        (B2.south)--(D2.north)
+    ;
+\end{tikzpicture}

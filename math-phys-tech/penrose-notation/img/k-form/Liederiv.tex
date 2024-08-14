@@ -1,0 +1,74 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,-.2);
+    \coordinate(origin2)at(2.8,-.2);
+    \coordinate(origin3)at(3,-2.);
+    \coordinate(origin4)at(3,-3.7);
+    \node at(-.5,0)[anchor=center]{$\mathcal{L}_V$};
+    \node at(2.,0)[anchor=center]{$=$};
+    \node at(2.5,-2)[anchor=center]{$-$};
+    \node at(5.2,-2)[anchor=center]{$-\cdots$};
+    \node at(2.5,-3.7)[anchor=center]{$+$};
+    \node at(5.2,-3.7)[anchor=center]{$+\cdots$};
+
+    % LHS
+    \draw
+    (origin1)rectangle++(1.5,.4);
+    \node at($(origin1)+(.75,.2)$)[anchor=center]{$t$};
+    \draw
+    ($(origin1)+(.1,.4)$)--++(0,.25)
+    ++(.4,-.25)--++(0,.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin1)+(1.5,.4)-(.1,0)$)--++(0,.25)
+    ($(origin1)+(.1,0)$)--++(0,-.25)
+    ++(.4,.25)--++(0,-.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin1)+(1.5,0)-(.1,0)$)--++(0,-.25)
+    ;
+
+    % RHS diff normally
+    \draw
+    (origin2)rectangle++(1.5,.4);
+    \node at($(origin2)+(.75,.2)$)[anchor=center]{$t$};
+    \draw
+    ($(origin2)+(.1,.4)$)--++(0,.25)
+    ++(.4,-.25)--++(0,.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin2)+(1.5,.4)-(.1,0)$)--++(0,.25)
+    ($(origin2)+(.1,0)$)--++(0,-.25)
+    ++(.4,.25)--++(0,-.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin2)+(1.5,0)-(.1,0)$)--++(0,-.25)
+    ($(origin2)+(.75,.2)$)circle[x radius=1,y radius=.35]
+    ++(-.95,-.1)--++(0,-.25)node[anchor=north, draw, rectangle]{$V$}
+    ;
+
+    % RHS on vector
+    \draw(origin3)rectangle++(1.5,-.4);
+    \node at($(origin3)+(.75,-.2)$)[anchor=center]{$t$};
+    \node at($(origin3)+(.1,.5)$)[anchor=center, draw, rectangle](VonVector){$V$};
+    \draw
+    (VonVector.north)--++(0,.25)
+    (VonVector.center)circle[radius=.35]
+    ++(0,-.35)--($(origin3)+(.1,0)$)
+    ($(origin3)+(.5,0)$)--++(0,.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin3)+(.1,-.4)$)--++(0,-.25)
+    ++(.5,.25)--++(0,-.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ;
+
+    % RHS on covector
+    \draw(origin4)rectangle++(1.5,.4);
+    \node at($(origin4)+(.75,.2)$)[anchor=center]{$t$};
+    \node at($(origin4)+(.1,-.5)$)[anchor=center, draw, rectangle](VonCovector){$V$};
+    \draw
+    (VonCovector.north)--($(origin4)+(.1,0)$)
+    (VonCovector.center)circle[radius=.35]
+    ++(0,-.35)--++(0,-.25)
+    ($(origin4)+(.5,0)$)--++(0,-.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin4)+(.1,.4)$)--++(0,.25)
+    ++(.5,-.25)--++(0,.25)
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ;
+\end{tikzpicture}

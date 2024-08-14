@@ -1,0 +1,81 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \node at(1.8,-1)[anchor=center]{$=$};
+    \coordinate(origin2)at(2.75,-.5);
+    \node at(4.1,-1)[anchor=center]{$-$};
+    \coordinate(origin3)at(5,-.5);
+    \node at(1.8,-2.75)[anchor=center]{$=$};
+    \coordinate(origin4)at(2.75,-2);
+    \node at(4.3,-2.75)[anchor=center]{$+$};
+    \coordinate(origin5)at(5,-2);
+    \node at(6.6,-2.75)[anchor=center]{$-$};
+    \coordinate(origin6)at(7.5,-2);
+    \node at(8.9,-2.75)[anchor=center]{$-$};
+    \coordinate(origin7)at(9.5,-2);
+    % LHS
+    \draw [ultra thick]
+        (origin1)--++(1.1,0)
+        ($(origin1)-(0,1.)$)--++(1.1,0)
+    ;
+    \draw
+        (origin1)--++(0,-.25)
+        ++(.6,.25)--++(0,-.25) node[anchor=north](dv1){}
+        ++(.5,.25)--++(0,-1.0)
+        ($(origin1)-(0,1.)$)--++(0,-.25) node[anchor=north,draw,rectangle](u1){$\bm{u}$}
+        ++(.6,.25)--++(0,-.25) node[anchor=north,draw,rectangle](v1){$\bm{v}$}
+        ($(u1.center)!.5!(v1.center)$)circle[x radius=.7,y radius=.5]
+        (dv1.north)--++(-.3,-.7)
+    ;
+    % RHS up
+    \draw
+        (origin2)--++(0,-.5)
+        node[anchor=north,draw,rectangle](u2){$\bm{u}$}
+        node at ++(.6,0)[anchor=north,draw,rectangle](v2){$\bm{v}$}
+        (v2.north)--++(0,.5)
+        .. controls ++(0,.2) and ++(0,.2) .. ++(-.2,0)
+        -- ++(0,-.2)
+        ($(u2.center)!.5!(v2.center)$) circle[x radius=.7,y radius=.5]
+    ;
+    \draw
+        (origin3)--++(.6,-.5)
+        node[anchor=north,draw,rectangle](v3){$\bm{v}$}
+        node at ++(-.6,0)[anchor=north,draw,rectangle](u3){$\bm{u}$}
+        (u3.north)--++(.6,.5)
+        .. controls ++(.1,.1) and ++(0,.1) .. ++(.2,0)
+        -- ++(0,-.35)
+        ($(u3.center)!.5!(v3.center)$) circle[x radius=.7,y radius=.5]
+    ;
+    % RHS down
+    \draw
+        (origin4)--++(0,-.5)
+        node[anchor=north,draw,rectangle](u4){$\bm{u}$}
+        ++(.8,0) node[anchor=north,draw,rectangle](v4){$\bm{v}$}
+        (u4)circle[radius=.4]
+        (v4.west)--++(-.155,0)
+    ;
+    \draw
+        (origin5)--++(0,-.5)
+        node[anchor=north,draw,rectangle](u5){$\bm{u}$}
+        ++(.8,0) node[anchor=north,draw,rectangle](v5){$\bm{v}$}
+        (v5)circle[radius=.4]
+        (v5.north)--++(0,.5)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+        --++(0,-.35)
+    ;
+    \draw
+        (origin6)--++(0,-.5)
+        node[anchor=north,draw,rectangle](u6){$\bm{u}$}
+        ++(.8,0) node[anchor=north,draw,rectangle](v6){$\bm{v}$}
+        (u6.center)circle[radius=.4]
+        (v6.north)--++(0,.5)
+        (origin6) .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+        --++(0,-.35)
+    ;
+    \draw
+        ($(origin7)+(0,-.5)$) node[anchor=north,draw,rectangle](u7){$\bm{u}$}
+        ++(.8,0) node[anchor=north,draw,rectangle](v7){$\bm{v}$}
+        (v7.north)--++(0,.5)
+        (v7.center)circle[radius=.4]
+        (u7.east)--++(.155,0)
+    ;
+\end{tikzpicture}

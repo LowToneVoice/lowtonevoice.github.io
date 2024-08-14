@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(2.5,0);
+    \node at(2.,0)[anchor=center]{$=$};
+    \node at(-.5,0)[anchor=center]{$\iota_V$};
+
+    % LHS
+    \draw[ultra thick](origin1)--++(1.5,0);
+    \draw($(origin1)+(0,.25)$)rectangle++(1.5,.4);
+    \node at($(origin1)+(.75,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin1)+(.1,.25)$)--++(0,-.5)node[anchor=north](mu1){$\mu_1$}
+    ++(.4,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+    ($(origin1)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+
+    % RHS
+    \draw[ultra thick](origin2)--++(1.5,0);
+    \draw($(origin2)+(0,.25)$)rectangle++(1.5,.4);
+    \node at($(origin2)+(.75,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin2)+(.1,.25)$)--++(0,-.5)node[anchor=north,draw,rectangle]{$V$}
+    ++(.5,.5)--++(0,-.5)node[anchor=north](mu2){$\mu_2$}
+    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+    ($(origin2)+(1.4,.25)$)--++(0,-.5)node[anchor=north](muk){$\mu_k$};
+\end{tikzpicture}

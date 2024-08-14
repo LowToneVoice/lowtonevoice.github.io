@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+    \coordinate(O)at(0,0);
+    \draw
+        (O)node[anchor=center, draw, rectangle](A){$A$}
+        (A.west)--++(-.25,0)
+        --++(0,.5)
+        -|($(A.east)+(.25,0)$)
+        --(A.east)
+    ;
+\end{tikzpicture}

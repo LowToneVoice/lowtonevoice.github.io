@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+    \coordinate(origin)at(0,1);
+    \draw[ultra thick]
+        (origin) -- ++(1.2,0)
+    ;
+    \draw
+        (origin) -- ++(0,-.25)
+        ($(origin)+(.6,0)$) -- ++(0,-.25)
+        ++(.6,0) -- ++(0,.25)
+        ($(origin)+(-.25,-.75)$) rectangle ++(.5,.5)
+        ++(.1,-.5) rectangle ++(.5,.5)
+        ++(.1,-.5) rectangle ++(.5,.5)
+        node[anchor=center]at ($(origin)+(0,-.5)$) {$\bm{C}$}
+        node[anchor=center]at ($(origin)+(.6,-.5)$) {$\bm{A}$}
+        node[anchor=center]at ($(origin)+(1.2,-.5)$) {$\bm{B}$}
+    ;
+\end{tikzpicture}

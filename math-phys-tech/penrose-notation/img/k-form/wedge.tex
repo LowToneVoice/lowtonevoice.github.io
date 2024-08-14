@@ -1,0 +1,42 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \node at(2,0)[anchor=center](wedge){$\wedge$};
+    \coordinate(origin2)at(2.5,0);
+    \node at(4.5,0)[anchor=center](eq){$=$};
+    \coordinate(origin3)at(5,0);
+
+    % xi
+    \draw[ultra thick](origin1)--++(1.5,0);
+    \draw($(origin1)+(0,.25)$)rectangle++(1.5,.4);
+    \node at($(origin1)+(.75,.45)$)[anchor=center]{$\xi$};
+    \draw
+    ($(origin1)+(.1,.25)$)--++(0,-.5)node[anchor=north]{$\mu_1$}
+    ++(.4,.5)--++(0,-.5)node[anchor=north]{$\mu_2$}
+    ++(.4,0)node[anchor=center](cdots){$\cdots$}
+    ($(origin1)+(1.4,.25)$)--++(0,-.5)node[anchor=north]{$\mu_k$};
+
+    % eta
+    \draw[ultra thick](origin2)--++(1.5,0);
+    \draw($(origin2)+(0,.25)$)rectangle++(1.5,.4);
+    \node at($(origin2)+(.75,.45)$)[anchor=center]{$\eta$};
+    \draw
+    ($(origin2)+(.1,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+1}$}
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin2)+(1.4,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+l}$};
+
+    % xi ^ eta
+    \draw[ultra thick](origin3)--++(3.6,0);
+    \draw
+    ($(origin3)+(0,.25)$)rectangle++(1.5,.4)
+    ($(origin3)+(.1,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{1}$}
+    ++(.4,0)node[anchor=center]{$\cdots$}
+    ($(origin3)+(1.4,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k}$};
+    \node at($(origin3)+(.75,.45)$)[anchor=center]{$\xi$};
+
+    \draw
+    ($(origin3)+(2.1,.25)$)rectangle++(1.5,.4)
+    ($(origin3)+(2.2,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+1}$}
+    ++(.5,0)node[anchor=center]{$\cdots$}
+    ($(origin3)+(3.5,.25)$)--++(0,-.5)node[anchor=north]{$\mu_{k+l}$};
+    \node at($(origin3)+(2.8,.45)$)[anchor=center]{$\eta$};
+\end{tikzpicture}

@@ -1,0 +1,19 @@
+\begin{tikzpicture}
+    \draw[ultra thick]
+        (-.1,2)--(1,2)
+        (-.1,1)--(1,1)
+    ;
+    \draw
+        (1,1)--(1,2)
+        (-.1,2)--(-.1,1.75)
+        (.5,2)--(.5,1.75)
+        (.25,1.25)rectangle(.75,1.75)
+        node[anchor=center]at(.5,1.5){$\bm{A}$}
+        (-.1,1)--(-.1,.75)
+        (-.35,.25)rectangle(.15,.75)
+        node[anchor=center]at(-.1,.5){$\bm{B}$}
+        (.5,1)--(.5,.75)
+        (.25,.25)rectangle(.75,.75)
+        node[anchor=center]at(.5,.5){$\bm{C}$}
+    ;
+\end{tikzpicture}

@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+    \coordinate(origin2)at(2,0);
+    \draw
+        (origin2) node[anchor=center, draw, rectangle](v){$\bm{v}$}
+        (v.north)--++(0,.5)
+        ($(v.north)+(.2,.15)$)--++(0,.7)
+        .. controls ++(0,.1) and ++(0,.1) .. ++(.2,0)
+        --++(0,-.6)
+        (v.center) circle[radius=.4]
+        (v.center) circle[radius=.6]
+    ;
+\end{tikzpicture}

@@ -1,0 +1,11 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \node at(0,-.2)[anchor=center]{$t$};
+    \node at(0,.5)[anchor=center, draw, rectangle](V){$V$};
+    \draw
+    ($(origin1)+(-.6,-.4)$)rectangle++(1.2,.4)
+    (V.center)circle[radius=.35]
+    ++(0,-.35)--(origin1)
+    (V.north)--++(0,.25)
+    ;
+\end{tikzpicture}

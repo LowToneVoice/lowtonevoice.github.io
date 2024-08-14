@@ -1,0 +1,15 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,.25);
+    \draw[ultra thick]
+        (origin1)--++(1.5,0)
+    ;
+    \draw
+        (origin1)--++(0,-.25)
+        node[anchor=north]{$i$}
+        ++(.5,.25)--++(0,-.25)
+        node[anchor=north]{$j$}
+        ++(.5,0)node[anchor=north]{$...$}
+        ++(.5,.25)--++(0,-.25)
+        node[anchor=north]{$k$}
+    ;
+\end{tikzpicture}

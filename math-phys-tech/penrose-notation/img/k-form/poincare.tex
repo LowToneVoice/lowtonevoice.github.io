@@ -1,0 +1,49 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \coordinate(origin2)at(3.5,0);
+    \coordinate(origin3)at(7,0);
+    \node at(2.6,0)[anchor=center]{$=$};
+    \node at(6.1,0)[anchor=center]{$=-$};
+
+    % LHS 1
+    \draw[ultra thick]($(origin1)+(-.4,0)$)--++(2.5,0);
+    \draw($(origin1)+(.3,.25)$)rectangle++(1.5,.4);
+    \node at($(origin1)+(1.05,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin1)+(.4,.25)$)--++(0,-.5)
+    ($(origin1)+(1.7,.25)$)--++(0,-.5);
+    \draw
+    ($(origin1)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+    ($(origin1)+(1.05,.45)$)circle[x radius=1.1,y radius=.4]
+    ++(-1.1,0)-|++(-.3,-.7)
+    ($(origin1)+(.05,.4)$)--++(0,-.65)
+    ;
+
+    % LHS 2
+    \draw[ultra thick]($(origin2)+(-.4,0)$)--++(2.5,0);
+    \draw($(origin2)+(.3,.25)$)rectangle++(1.5,.4);
+    \node at($(origin2)+(1.05,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin2)+(.4,.25)$)--++(0,-.5)
+    ($(origin2)+(1.7,.25)$)--++(0,-.5);
+    \draw
+    ($(origin2)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+    ++(-1,0)-|++(-.35,-.7)
+    ($(origin2)+(1.05,.45)$)circle[x radius=1.1,y radius=.4]
+    ($(origin2)+(.05,.3)$)--++(0,-.525)
+    ;
+
+    % LHS 3
+    \draw[ultra thick]($(origin3)+(-.4,0)$)--++(2.5,0);
+    \draw($(origin3)+(.3,.25)$)rectangle++(1.5,.4);
+    \node at($(origin3)+(1.05,.45)$)[anchor=center]{$\omega$};
+    \draw
+    ($(origin3)+(.4,.25)$)--++(0,-.5)
+    ($(origin3)+(1.7,.25)$)--++(0,-.5);
+    \draw
+    ($(origin3)+(1.05,.45)$)circle[x radius=1.,y radius=.35]
+    ($(origin3)+(1.05,.45)$)circle[x radius=1.1,y radius=.4]
+    ++(-1.1,0)-|++(-.3,-.7)
+    ($(origin3)+(.05,.4)$)--++(0,-.65)
+    ;
+\end{tikzpicture}

@@ -1,0 +1,14 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \node at(1.25,0) [anchor=center]{$=$};
+    \coordinate(origin2)at(2,0);
+    \draw
+    (origin1)node[anchor=center,draw,rectangle](r1){$\bm{r}$}
+    (origin1.center)circle[radius=.4]
+    ++(-.4,0)--++(-.4,0)
+    (r1.east)--++(.4,0)
+    ;
+    \draw
+    (origin2)--++(1.2,0)
+    ;
+\end{tikzpicture}

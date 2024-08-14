@@ -1,0 +1,20 @@
+\begin{tikzpicture}
+    \coordinate(origin1)at(0,0);
+    \node at(1,-.0)[anchor=center]{$g^{ij}$};
+    \coordinate(origin2)at(3,0);
+    \node at(4,-.0)[anchor=center]{$g_{ij}$};
+    \draw
+    (origin1)node[anchor=south]{$i$}
+    --++(0,-.3)
+    .. controls ++(0,-.3) and ++(0,-.3) .. ++(.4,0)
+    --++(0,.3)
+    node[anchor=south]{$j$}
+    ;
+    \draw
+    (origin2)node[anchor=north]{$i$}
+    --++(0,.3)
+    .. controls ++(0,.3) and ++(0,.3) .. ++(.4,0)
+    --++(0,-.3)
+    node[anchor=north]{$j$}
+    ;
+\end{tikzpicture}

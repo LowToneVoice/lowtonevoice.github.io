@@ -1144,7 +1144,8 @@ $g$を計量テンソルの絶対値を$g=\det(g_{\mu\nu})$とする.
     (-1)^{nk+n+1}\frac{g}{|g|}\ast\dd\ast
 \end{equation*}
 の$k$-form $\omega$に対する作用は, これまでの図式から以下のように計算できる.
-\begin{equation*}
+\begin{equation}
+    \label{eq: codifferential in Penrose graphical notation}
     \begin{split}
         \delta\qty(
             \frac{1}{k!}
@@ -1234,7 +1235,7 @@ $g$を計量テンソルの絶対値を$g=\det(g_{\mu\nu})$とする.
         \vcenter{\hbox{
             \begin{tikzpicture}
                 \coordinate(origin)at(0,0);
-                \draw[ultra thick]($(origin)+(1.4,-.6)$)--++(1.6,0);
+                % \draw[ultra thick]($(origin)+(1.4,-.6)$)--++(1.6,0); % error was found on Aug 10 2024 on note.
                 \draw($(origin)+(0,.25)$)rectangle++(1.5,.4);
                 \draw
                     ($(origin)+(.1,.25)$)--++(0,-.3)node[anchor=north](mu1){}
@@ -1282,7 +1283,7 @@ $g$を計量テンソルの絶対値を$g=\det(g_{\mu\nu})$とする.
             \end{tikzpicture}
         }}
     \end{split}
-\end{equation*}
+\end{equation}
 微分が$\omega$から直接つながる$g^{ij}$や係数$\sqrt{|g|}$にも作用していることに注意.
 
 

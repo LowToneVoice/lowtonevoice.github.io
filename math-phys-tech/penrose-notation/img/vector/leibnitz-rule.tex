@@ -1,0 +1,25 @@
+\begin{tikzpicture}
+    \coordinate(O1)at(0,0);
+    \coordinate(O2)at(2.8,0);
+    \coordinate(O3)at(5.6,0);
+    \node[anchor=center]at(1.4,0){$=$};
+    \node[anchor=center]at(4.2,0){$+$};
+    \draw
+    ($(O1)+(-.4,0)$) node[anchor=center,draw,rectangle]{$A$}
+    ($(O1)+(.4,0)$) node[anchor=center,draw,rectangle]{$B$}
+    (O1)circle[x radius=1,y radius=.4]
+    ++(0,.4)--++(0,.5)
+    ;
+    \draw
+    ($(O2)+(-.4,0)$) node[anchor=center,draw,rectangle](A){$A$}
+    ($(O2)+(.4,0)$) node[anchor=center,draw,rectangle]{$B$}
+    (A)circle[radius=.4]
+    ++(0,.4)--++(0,.5)
+    ;
+    \draw
+    ($(O3)+(-.4,0)$) node[anchor=center,draw,rectangle]{$A$}
+    ($(O3)+(.4,0)$) node[anchor=center,draw,rectangle](B){$B$}
+    (B)circle[radius=.4]
+    ++(0,.4)--++(0,.5)
+    ;
+\end{tikzpicture}

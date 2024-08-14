@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+    \coordinate(O1)at(0,0);
+    \coordinate(O2)at(0,-1);
+    \draw[ultra thick]
+        (O1)--++(3,0)
+        (O2)--++(3,0)
+    ;
+    \draw
+        (O1)++(.2,0)
+        .. controls ++(0,-.25) and ++(0,.25) .. ($(O1)+(-.4,-.25)$)
+        node[anchor=north, draw, rectangle](B0){$M$}
+        (B0.south)--++(0,-.125)
+        node[anchor=north]{$j$}
+        (O2)++(.2,0)
+        --++(0,.125)
+        node[anchor=south]{$i$}
+        (O1)++(1.,0)--++(0,-.25)
+        node[anchor=north, draw, rectangle](B1){$M$}
+        (O2)++(1.,0)--(B1.south)
+        (O1)++(2.6,0)--++(0,-.25)
+        node[anchor=north, draw, rectangle](B2){$M$}
+        (O2)++(2.6,0)--(B2.south)
+        (O1)++(1.8,0)++(0,-.5)
+        node[anchor=center]{$\cdots$}
+    ;
+\end{tikzpicture}

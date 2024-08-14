@@ -1,0 +1,10 @@
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.log
+*.out
+*.toc
+*.synctex
+*.synctex(busy)
+*.DS_Store

@@ -1,0 +1,22 @@
+\begin{tikzpicture}
+    \coordinate(O1)at(0,0);
+    \coordinate(O2)at(0,-1);
+    \draw[ultra thick]
+        (O1)--++(2,0)
+    ;
+    \draw
+        (O1)++(.2,0)
+        --++(0,-.25)
+        node[anchor=north, draw, rectangle](B0){$M$}
+        (B0.south)--++(0,-.25)
+        node[anchor=north]{$i$}
+        (O1)++(1.8,0)--++(0,-.25)
+        node[anchor=north, draw, rectangle](B1){$M$}
+        (B1.south)--++(0,-.25)
+        node[anchor=north]{$n$}
+        (O1)++(1.,-.8)
+        node[anchor=center]{$\cdots$}
+        (O2)++(1.,-.5)
+        % node[anchor=center]{$j$}
+    ;
+\end{tikzpicture}

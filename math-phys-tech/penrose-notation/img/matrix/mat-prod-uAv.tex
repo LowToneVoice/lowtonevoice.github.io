@@ -1,0 +1,9 @@
+\begin{tikzpicture}
+    \node at(0,0)[anchor=center, draw, rectangle](A){$A$};
+    \node at(-1,0)[anchor=center, draw, rectangle](u){$\bm{u}$};
+    \node at(1,0)[anchor=center, draw, rectangle](v){$\bm{v}$};
+    \draw
+        (u.east)--(A.west)
+        (A.east)--(v.west)
+    ;
+\end{tikzpicture}
